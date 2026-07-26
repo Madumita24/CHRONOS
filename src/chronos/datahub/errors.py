@@ -17,6 +17,12 @@ class FailureCode(str, Enum):
     CANONICAL_DATASET_AMBIGUOUS = "canonical_dataset_ambiguous"
     CANONICAL_FIELD_NOT_FOUND = "canonical_field_not_found"
     CANONICAL_FIELD_TYPE_MISMATCH = "canonical_field_type_mismatch"
+    ENTITY_NOT_FOUND = "entity_not_found"
+    ENTITY_AMBIGUOUS = "entity_ambiguous"
+    FIELD_NOT_FOUND = "field_not_found"
+    INVALID_CANONICAL_IDENTITY = "invalid_canonical_identity"
+    RESOLUTION_UNAVAILABLE = "resolution_unavailable"
+    UNEXPECTED_RESOLUTION_ERROR = "unexpected_resolution_error"
     UNEXPECTED_DATAHUB_ERROR = "unexpected_datahub_error"
 
 
@@ -94,3 +100,27 @@ class CanonicalFieldTypeMismatch(DataHubAccessError):
 
 class UnexpectedDataHubError(DataHubAccessError):
     code = FailureCode.UNEXPECTED_DATAHUB_ERROR
+
+
+class EntityNotFound(DataHubAccessError):
+    code = FailureCode.ENTITY_NOT_FOUND
+
+
+class EntityAmbiguous(DataHubAccessError):
+    code = FailureCode.ENTITY_AMBIGUOUS
+
+
+class FieldNotFound(DataHubAccessError):
+    code = FailureCode.FIELD_NOT_FOUND
+
+
+class InvalidCanonicalIdentity(DataHubAccessError):
+    code = FailureCode.INVALID_CANONICAL_IDENTITY
+
+
+class ResolutionUnavailable(DataHubAccessError):
+    code = FailureCode.RESOLUTION_UNAVAILABLE
+
+
+class UnexpectedResolutionError(DataHubAccessError):
+    code = FailureCode.UNEXPECTED_RESOLUTION_ERROR

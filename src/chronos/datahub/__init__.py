@@ -11,6 +11,12 @@ from .errors import (
     CapabilityError,
     ConfigurationError,
     ConnectionError,
+    EntityAmbiguous,
+    EntityNotFound,
+    FieldNotFound,
+    InvalidCanonicalIdentity,
+    ResolutionUnavailable,
+    UnexpectedResolutionError,
     UnexpectedDataHubError,
 )
 from .models import (
@@ -35,8 +41,14 @@ __all__ = [
     "ChronosDataHubAccess",
     "ConfigurationError",
     "ConnectionError",
+    "EntityAmbiguous",
+    "EntityNotFound",
+    "FieldNotFound",
+    "InvalidCanonicalIdentity",
     "ReadinessResult",
     "ReadinessState",
+    "ResolutionUnavailable",
+    "UnexpectedResolutionError",
     "UnexpectedDataHubError",
     "check_readiness",
 ]

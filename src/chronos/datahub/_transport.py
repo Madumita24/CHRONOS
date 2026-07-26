@@ -18,7 +18,11 @@ from importlib.metadata import PackageNotFoundError, version
 from typing import Mapping, Protocol, Sequence
 
 from datahub.ingestion.graph.client import DataHubGraph, DatahubClientConfig
-from datahub.metadata.schema_classes import SchemaMetadataClass
+from datahub.metadata.schema_classes import (
+    DataPlatformInstanceClass,
+    DatasetPropertiesClass,
+    SchemaMetadataClass,
+)
 from datahub.metadata.urns import DatasetUrn
 
 from .config import DataHubConfig
@@ -62,6 +66,20 @@ class SchemaFieldObservation:
     name: str
     normalized_type: str
     native_type: str | None
+    description: str | None = None
+    schema_field_urn: str | None = None
+
+
+@dataclass(frozen=True)
+class DatasetMetadataObservation:
+    urn: str
+    platform: str
+    environment: str
+    urn_name: str
+    logical_name: str
+    schema_name: str
+    properties_qualified_name: str | None
+    platform_instance: str | None
 
 
 class AuthenticationEnforcement(str, Enum):
@@ -90,6 +108,8 @@ class ReadOnlyTransport(Protocol):
     ) -> Sequence[str]: ...
 
     def dataset_identity(self, urn: str) -> DatasetIdentity: ...
+
+    def dataset_metadata(self, urn: str) -> DatasetMetadataObservation: ...
 
     def schema_fields(self, urn: str) -> Sequence[SchemaFieldObservation]: ...
 
@@ -292,6 +312,51 @@ class DataHubSdkReadOnlyTransport:
                 diagnostic=redact_secrets(exc, (self._config._credential,)),
             ) from exc
 
+    def dataset_metadata(self, urn: str) -> DatasetMetadataObservation:
+        try:
+            parsed = self.dataset_identity(urn)
+            properties = self._graph.get_aspect(urn, DatasetPropertiesClass)
+            platform_instance = self._graph.get_aspect(
+                urn,
+                DataPlatformInstanceClass,
+            )
+            schema = self._graph.get_aspect(urn, SchemaMetadataClass)
+        except Exception as exc:
+            if isinstance(exc, UnexpectedDataHubError):
+                raise
+            raise self._classify_sdk_exception(
+                exc,
+                "Dataset identity metadata read failed.",
+            ) from exc
+
+        if properties is None or not properties.name:
+            raise UnexpectedDataHubError(
+                "Dataset properties required for identity verification are absent."
+            )
+        if platform_instance is None or not platform_instance.platform:
+            raise UnexpectedDataHubError(
+                "Dataset platform metadata required for identity verification is absent."
+            )
+        if schema is None or not schema.schemaName:
+            raise UnexpectedDataHubError(
+                "Dataset schema metadata required for identity verification is absent."
+            )
+
+        observed_platform = platform_instance.platform
+        if observed_platform.startswith("urn:li:dataPlatform:"):
+            observed_platform = observed_platform.rsplit(":", 1)[-1]
+
+        return DatasetMetadataObservation(
+            urn=urn,
+            platform=observed_platform,
+            environment=parsed.environment,
+            urn_name=parsed.name,
+            logical_name=properties.name,
+            schema_name=schema.schemaName,
+            properties_qualified_name=properties.qualifiedName,
+            platform_instance=platform_instance.instance,
+        )
+
     def schema_fields(self, urn: str) -> Sequence[SchemaFieldObservation]:
         try:
             aspect = self._graph.get_aspect(urn, SchemaMetadataClass)
@@ -306,6 +371,7 @@ class DataHubSdkReadOnlyTransport:
                 name=field.fieldPath,
                 normalized_type=_normalized_type_name(field.type.type),
                 native_type=field.nativeDataType,
+                description=field.description,
             )
             for field in aspect.fields
         )
