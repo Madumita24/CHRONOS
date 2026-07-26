@@ -1,0 +1,15 @@
+# Local secrets and credentials
+.env
+.datahubenv
+*.token
+
+# Local Python environments
+.venv*/
+
+# Python and test artifacts
+__pycache__/
+**pycache**/
+*.py[cod]
+*.egg-info/
+.coverage
+.pytest_cache/
