@@ -18,11 +18,19 @@ from importlib.metadata import PackageNotFoundError, version
 from typing import Mapping, Protocol, Sequence
 
 from datahub.ingestion.graph.client import DataHubGraph, DatahubClientConfig
+from datahub.ingestion.graph.openapi import RelationshipDirection
 from datahub.metadata.schema_classes import (
+    CorpGroupInfoClass,
+    CorpUserInfoClass,
     DataJobInputOutputClass,
+    DocumentInfoClass,
+    DomainPropertiesClass,
     DataPlatformInstanceClass,
     DatasetPropertiesClass,
+    GlossaryNodeInfoClass,
+    GlossaryTermInfoClass,
     SchemaMetadataClass,
+    TagPropertiesClass,
     UpstreamLineageClass,
 )
 from datahub.metadata.urns import DatasetUrn
@@ -32,7 +40,10 @@ from .errors import (
     AuthenticationError,
     AuthorizationError,
     ConnectionError,
+    ContextRelationshipUnavailable,
     FineGrainedLineageUnavailable,
+    GovernanceRetrievalUnavailable,
+    MalformedGovernanceAspect,
     UnexpectedDataHubError,
     redact_secrets,
 )
@@ -137,6 +148,110 @@ class FineGrainedLineageAspectObservation:
 
 
 @dataclass(frozen=True)
+class OwnerAssignmentObservation:
+    owner_urn: str
+    owner_kind: str
+    ownership_type: str | None
+    ownership_type_urn: str | None
+
+
+@dataclass(frozen=True)
+class FieldGovernanceObservation:
+    field_path: str
+    tag_urns: tuple[str, ...]
+    term_urns: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class GovernanceAspectObservation:
+    dataset_urn: str
+    owners: tuple[OwnerAssignmentObservation, ...]
+    domain_urns: tuple[str, ...]
+    tag_urns: tuple[str, ...]
+    term_urns: tuple[str, ...]
+    field_governance: tuple[FieldGovernanceObservation, ...]
+    interface: str
+
+
+@dataclass(frozen=True)
+class MetadataReferenceObservation:
+    urn: str
+    entity_type: str
+    name: str | None
+    parent_urn: str | None
+    resolved: bool
+    interface: str
+
+
+@dataclass(frozen=True)
+class StructuredPropertyDefinitionObservation:
+    property_urn: str
+    qualified_name: str
+    display_name: str | None
+    value_type: str
+    value_type_urn: str
+    interface: str
+
+
+@dataclass(frozen=True)
+class StructuredPropertyAssignmentObservation:
+    property_urn: str
+    qualified_name: str
+    display_name: str | None
+    value_type: str
+    value_type_urn: str
+    values: tuple[str | float, ...]
+    assignment_target: str
+    interface: str
+
+
+@dataclass(frozen=True)
+class DataProductMembershipObservation:
+    product_urn: str
+    name: str
+    asset_urn: str
+    relationship: str
+    interface: str
+
+
+@dataclass(frozen=True)
+class DocumentRelationshipObservation:
+    document_urn: str
+    title: str | None
+    related_asset_urn: str
+    relationship: str
+    interface: str
+
+
+@dataclass(frozen=True)
+class PipelineEntityObservation:
+    job_urn: str
+    job_name: str
+    job_platform: str | None
+    flow_urn: str | None
+    flow_name: str | None
+    flow_platform: str | None
+    interface: str
+
+
+@dataclass(frozen=True)
+class ContextLineageEntityObservation:
+    urn: str
+    entity_type: str
+    degree: int
+    interface: str
+
+
+@dataclass(frozen=True)
+class BusinessIntelligenceEntityObservation:
+    urn: str
+    entity_type: str
+    platform: str
+    name: str
+    interface: str
+
+
+@dataclass(frozen=True)
 class DatasetMetadataObservation:
     urn: str
     platform: str
@@ -199,6 +314,56 @@ class LineageReadOnlyTransport(ReadOnlyTransport, Protocol):
     def schema_field_exists(self, schema_field_urn: str) -> bool: ...
 
 
+class ContextReadOnlyTransport(LineageReadOnlyTransport, Protocol):
+    """Phase 1.5 read-only extension for stored business context."""
+
+    def governance_aspects(
+        self,
+        dataset_urn: str,
+    ) -> GovernanceAspectObservation: ...
+
+    def metadata_reference(
+        self,
+        urn: str,
+        entity_type: str,
+    ) -> MetadataReferenceObservation: ...
+
+    def structured_property_definitions(
+        self,
+    ) -> Sequence[StructuredPropertyDefinitionObservation]: ...
+
+    def structured_property_assignments(
+        self,
+        dataset_urn: str,
+    ) -> Sequence[StructuredPropertyAssignmentObservation]: ...
+
+    def data_product_memberships(
+        self,
+        asset_urn: str,
+    ) -> Sequence[DataProductMembershipObservation]: ...
+
+    def related_documents(
+        self,
+        asset_urn: str,
+    ) -> Sequence[DocumentRelationshipObservation]: ...
+
+    def pipeline_entity(
+        self,
+        job_urn: str,
+    ) -> PipelineEntityObservation | None: ...
+
+    def direct_context_lineage_entities(
+        self,
+        entity_urn: str,
+    ) -> Sequence[ContextLineageEntityObservation]: ...
+
+    def business_intelligence_entity(
+        self,
+        urn: str,
+        entity_type: str,
+    ) -> BusinessIntelligenceEntityObservation | None: ...
+
+
 _CAPABILITY_QUERY = """
 query ChronosCapabilityProbe {
   __schema {
@@ -237,6 +402,153 @@ query ChronosDirectDownstreamLineage(
       degree
       entity { urn type }
     }
+  }
+}
+"""
+
+_STRUCTURED_PROPERTY_DEFINITIONS_QUERY = """
+query ChronosStructuredPropertyDefinitions($start: Int!) {
+  searchAcrossEntities(
+    input: {
+      types: [STRUCTURED_PROPERTY]
+      query: "*"
+      start: $start
+      count: 100
+    }
+  ) {
+    total
+    searchResults {
+      entity {
+        ... on StructuredPropertyEntity {
+          urn
+          definition {
+            qualifiedName
+            displayName
+            valueType {
+              urn
+              info { type qualifiedName displayName }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+_STRUCTURED_PROPERTY_ASSIGNMENTS_QUERY = """
+query ChronosStructuredPropertyAssignments($urn: String!) {
+  dataset(urn: $urn) {
+    structuredProperties {
+      properties {
+        associatedUrn
+        structuredProperty {
+          urn
+          definition {
+            qualifiedName
+            displayName
+            valueType {
+              urn
+              info { type qualifiedName displayName }
+            }
+          }
+        }
+        values {
+          ... on StringValue { stringValue }
+          ... on NumberValue { numberValue }
+        }
+      }
+    }
+  }
+}
+"""
+
+_DATA_PRODUCT_MEMBERSHIPS_QUERY = """
+query ChronosDataProductMemberships($urn: String!) {
+  dataset(urn: $urn) {
+    relationships(
+      input: {
+        types: ["DataProductContains"]
+        direction: INCOMING
+        start: 0
+        count: 100
+      }
+    ) {
+      total
+      relationships {
+        type
+        direction
+        entity {
+          urn
+          type
+          ... on DataProduct { properties { name } }
+        }
+      }
+    }
+  }
+}
+"""
+
+_PIPELINE_ENTITY_QUERY = """
+query ChronosPipelineEntity($urn: String!) {
+  dataJob(urn: $urn) {
+    urn
+    jobId
+    properties { name }
+    platform { name }
+    dataFlow {
+      urn
+      flowId
+      properties { name }
+      platform { name }
+    }
+  }
+}
+"""
+
+_DIRECT_CONTEXT_LINEAGE_QUERY = """
+query ChronosDirectContextLineage(
+  $urn: String!
+  $scrollId: String
+) {
+  scrollAcrossLineage(
+    input: {
+      urn: $urn
+      direction: DOWNSTREAM
+      types: [DATASET, CHART, DASHBOARD]
+      query: "*"
+      count: 500
+      scrollId: $scrollId
+    }
+  ) {
+    nextScrollId
+    isPartial
+    searchResults {
+      degree
+      entity { urn type }
+    }
+  }
+}
+"""
+
+_CHART_CONTEXT_QUERY = """
+query ChronosChartContext($urn: String!) {
+  chart(urn: $urn) {
+    urn
+    tool
+    properties { name }
+    platform { name properties { displayName } }
+  }
+}
+"""
+
+_DASHBOARD_CONTEXT_QUERY = """
+query ChronosDashboardContext($urn: String!) {
+  dashboard(urn: $urn) {
+    urn
+    tool
+    properties { name }
+    platform { name properties { displayName } }
   }
 }
 """
@@ -671,6 +983,578 @@ class DataHubSdkReadOnlyTransport:
                 "Schema-field existence read failed.",
             ) from exc
 
+    def governance_aspects(
+        self,
+        dataset_urn: str,
+    ) -> GovernanceAspectObservation:
+        aspect_names = (
+            "ownership",
+            "domains",
+            "globalTags",
+            "glossaryTerms",
+            "editableSchemaMetadata",
+        )
+        try:
+            aspects = self._graph.get_entity_semityped(
+                dataset_urn,
+                aspects=list(aspect_names),
+            )
+            ownership = aspects.get("ownership")
+            domains = aspects.get("domains")
+            tags = aspects.get("globalTags")
+            terms = aspects.get("glossaryTerms")
+            editable_schema = aspects.get("editableSchemaMetadata")
+            owners = tuple(
+                OwnerAssignmentObservation(
+                    owner_urn=_required_string(
+                        getattr(owner, "owner", None),
+                        "Ownership owner URN",
+                    ),
+                    owner_kind=_owner_kind(
+                        _required_string(
+                            getattr(owner, "owner", None),
+                            "Ownership owner URN",
+                        )
+                    ),
+                    ownership_type=_optional_string(
+                        getattr(owner, "type", None)
+                    ),
+                    ownership_type_urn=_optional_string(
+                        getattr(owner, "typeUrn", None)
+                    ),
+                )
+                for owner in (
+                    getattr(ownership, "owners", None) or ()
+                )
+            )
+            domain_urns = _sorted_required_urns(
+                getattr(domains, "domains", None) or (),
+                "Domain reference",
+            )
+            tag_urns = _association_urns(
+                getattr(tags, "tags", None) or (),
+                "tag",
+                "Tag reference",
+            )
+            term_urns = _association_urns(
+                getattr(terms, "terms", None) or (),
+                "urn",
+                "Glossary term reference",
+            )
+            field_governance = tuple(
+                sorted(
+                    (
+                        FieldGovernanceObservation(
+                            field_path=_required_string(
+                                getattr(field, "fieldPath", None),
+                                "Field governance path",
+                            ),
+                            tag_urns=_association_urns(
+                                getattr(
+                                    getattr(field, "globalTags", None),
+                                    "tags",
+                                    None,
+                                )
+                                or (),
+                                "tag",
+                                "Field tag reference",
+                            ),
+                            term_urns=_association_urns(
+                                getattr(
+                                    getattr(field, "glossaryTerms", None),
+                                    "terms",
+                                    None,
+                                )
+                                or (),
+                                "urn",
+                                "Field glossary term reference",
+                            ),
+                        )
+                        for field in (
+                            getattr(
+                                editable_schema,
+                                "editableSchemaFieldInfo",
+                                None,
+                            )
+                            or ()
+                        )
+                        if (
+                            getattr(field, "globalTags", None) is not None
+                            or getattr(field, "glossaryTerms", None) is not None
+                        )
+                    ),
+                    key=lambda item: item.field_path,
+                )
+            )
+        except MalformedGovernanceAspect:
+            raise
+        except Exception as exc:
+            raise GovernanceRetrievalUnavailable(
+                "Dataset governance metadata could not be retrieved.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+        return GovernanceAspectObservation(
+            dataset_urn=dataset_urn,
+            owners=tuple(
+                sorted(
+                    owners,
+                    key=lambda item: (
+                        item.owner_urn,
+                        item.ownership_type or "",
+                        item.ownership_type_urn or "",
+                    ),
+                )
+            ),
+            domain_urns=domain_urns,
+            tag_urns=tag_urns,
+            term_urns=term_urns,
+            field_governance=field_governance,
+            interface=(
+                "DataHubGraph.get_entity_semityped("
+                "ownership,domains,globalTags,glossaryTerms,"
+                "editableSchemaMetadata)"
+            ),
+        )
+
+    def metadata_reference(
+        self,
+        urn: str,
+        entity_type: str,
+    ) -> MetadataReferenceObservation:
+        normalized_type = entity_type.upper()
+        mapping: dict[str, tuple[type, str, str | None]] = {
+            "CORP_USER": (CorpUserInfoClass, "corpUserInfo", None),
+            "CORP_GROUP": (CorpGroupInfoClass, "corpGroupInfo", None),
+            "DOMAIN": (DomainPropertiesClass, "domainProperties", "parentDomain"),
+            "TAG": (TagPropertiesClass, "tagProperties", None),
+            "GLOSSARY_TERM": (
+                GlossaryTermInfoClass,
+                "glossaryTermInfo",
+                "parentNode",
+            ),
+            "GLOSSARY_NODE": (
+                GlossaryNodeInfoClass,
+                "glossaryNodeInfo",
+                "parentNode",
+            ),
+        }
+        selected = mapping.get(normalized_type)
+        if selected is None:
+            raise GovernanceRetrievalUnavailable(
+                "Unsupported governance reference type.",
+                diagnostic=f"Entity type: {entity_type}.",
+            )
+        aspect_type, aspect_name, parent_attribute = selected
+        try:
+            aspect = self._graph.get_aspect(urn, aspect_type)
+        except Exception as exc:
+            raise GovernanceRetrievalUnavailable(
+                "Governance reference could not be resolved.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+        name = _reference_name(normalized_type, aspect)
+        parent_urn = (
+            _optional_string(getattr(aspect, parent_attribute, None))
+            if aspect is not None and parent_attribute is not None
+            else None
+        )
+        return MetadataReferenceObservation(
+            urn=urn,
+            entity_type=normalized_type,
+            name=name,
+            parent_urn=parent_urn,
+            resolved=aspect is not None and name is not None,
+            interface=f"DataHubGraph.get_aspect({aspect_name})",
+        )
+
+    def structured_property_definitions(
+        self,
+    ) -> Sequence[StructuredPropertyDefinitionObservation]:
+        results: dict[str, StructuredPropertyDefinitionObservation] = {}
+        start = 0
+        while True:
+            data = self._graphql_request(
+                _STRUCTURED_PROPERTY_DEFINITIONS_QUERY,
+                variables={"start": start},
+            )
+            try:
+                page = data["searchAcrossEntities"]
+                items = page["searchResults"]
+                total = page["total"]
+                for item in items:
+                    entity = item["entity"]
+                    observation = _structured_property_definition(entity)
+                    results[observation.property_urn] = observation
+            except (KeyError, TypeError, ValueError) as exc:
+                raise MalformedGovernanceAspect(
+                    "Structured-property definition response was malformed.",
+                    diagnostic=redact_secrets(
+                        exc,
+                        (self._config._credential,),
+                    ),
+                ) from exc
+            start += len(items)
+            if start >= total:
+                break
+            if not items:
+                raise GovernanceRetrievalUnavailable(
+                    "Structured-property definition pagination stalled."
+                )
+        return tuple(results[key] for key in sorted(results))
+
+    def structured_property_assignments(
+        self,
+        dataset_urn: str,
+    ) -> Sequence[StructuredPropertyAssignmentObservation]:
+        data = self._graphql_request(
+            _STRUCTURED_PROPERTY_ASSIGNMENTS_QUERY,
+            variables={"urn": dataset_urn},
+        )
+        try:
+            dataset = data["dataset"]
+            if dataset is None:
+                raise KeyError("dataset")
+            container = dataset.get("structuredProperties") or {}
+            items = container.get("properties") or ()
+            observations = tuple(
+                _structured_property_assignment(item) for item in items
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise MalformedGovernanceAspect(
+                "Structured-property assignment response was malformed.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+        return tuple(
+            sorted(
+                observations,
+                key=lambda item: (
+                    item.property_urn,
+                    tuple(str(value) for value in item.values),
+                ),
+            )
+        )
+
+    def data_product_memberships(
+        self,
+        asset_urn: str,
+    ) -> Sequence[DataProductMembershipObservation]:
+        data = self._graphql_request(
+            _DATA_PRODUCT_MEMBERSHIPS_QUERY,
+            variables={"urn": asset_urn},
+        )
+        try:
+            dataset = data["dataset"]
+            if dataset is None:
+                raise KeyError("dataset")
+            page = dataset["relationships"]
+            items = page["relationships"]
+            if page["total"] > len(items):
+                raise ContextRelationshipUnavailable(
+                    "Data-product membership response exceeded its bound."
+                )
+            observations = []
+            for item in items:
+                entity = item["entity"]
+                if (
+                    item["type"] != "DataProductContains"
+                    or item["direction"] != "INCOMING"
+                    or entity["type"] != "DATA_PRODUCT"
+                ):
+                    continue
+                observations.append(
+                    DataProductMembershipObservation(
+                        product_urn=_required_response_string(
+                            entity.get("urn"),
+                            "Data product URN",
+                        ),
+                        name=_required_response_string(
+                            (entity.get("properties") or {}).get("name"),
+                            "Data product name",
+                        ),
+                        asset_urn=asset_urn,
+                        relationship="DataProductContains",
+                        interface=(
+                            "GraphQL Dataset.relationships("
+                            "DataProductContains,INCOMING)"
+                        ),
+                    )
+                )
+        except ContextRelationshipUnavailable:
+            raise
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ContextRelationshipUnavailable(
+                "Data-product membership response was malformed.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+        return tuple(
+            sorted(observations, key=lambda item: item.product_urn)
+        )
+
+    def related_documents(
+        self,
+        asset_urn: str,
+    ) -> Sequence[DocumentRelationshipObservation]:
+        try:
+            related = tuple(
+                self._graph.get_related_entities(
+                    asset_urn,
+                    ["RelatedAsset"],
+                    RelationshipDirection.INCOMING,
+                )
+            )
+            observations = []
+            for item in related:
+                document_urn = _required_string(
+                    getattr(item, "urn", None),
+                    "Related document URN",
+                )
+                info = self._graph.get_aspect(
+                    document_urn,
+                    DocumentInfoClass,
+                )
+                if info is None:
+                    observations.append(
+                        DocumentRelationshipObservation(
+                            document_urn=document_urn,
+                            title=None,
+                            related_asset_urn=asset_urn,
+                            relationship="RelatedAsset",
+                            interface=(
+                                "DataHubGraph.get_related_entities("
+                                "RelatedAsset,INCOMING)"
+                            ),
+                        )
+                    )
+                    continue
+                observations.append(
+                    DocumentRelationshipObservation(
+                        document_urn=document_urn,
+                        title=_optional_string(getattr(info, "title", None)),
+                        related_asset_urn=asset_urn,
+                        relationship="RelatedAsset",
+                        interface=(
+                            "DataHubGraph.get_related_entities("
+                            "RelatedAsset,INCOMING) + "
+                            "DataHubGraph.get_aspect(documentInfo)"
+                        ),
+                    )
+                )
+        except MalformedGovernanceAspect:
+            raise
+        except Exception as exc:
+            raise ContextRelationshipUnavailable(
+                "Related documents could not be retrieved.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+        return tuple(
+            sorted(observations, key=lambda item: item.document_urn)
+        )
+
+    def pipeline_entity(
+        self,
+        job_urn: str,
+    ) -> PipelineEntityObservation | None:
+        data = self._graphql_request(
+            _PIPELINE_ENTITY_QUERY,
+            variables={"urn": job_urn},
+        )
+        try:
+            job = data["dataJob"]
+            if job is None:
+                return None
+            flow = job.get("dataFlow")
+            return PipelineEntityObservation(
+                job_urn=_required_response_string(
+                    job.get("urn"),
+                    "Data Job URN",
+                ),
+                job_name=_required_response_string(
+                    (job.get("properties") or {}).get("name")
+                    or job.get("jobId"),
+                    "Data Job name",
+                ),
+                job_platform=_optional_response_string(
+                    (job.get("platform") or {}).get("name")
+                ),
+                flow_urn=(
+                    _required_response_string(
+                        flow.get("urn"),
+                        "Data Flow URN",
+                    )
+                    if flow is not None
+                    else None
+                ),
+                flow_name=(
+                    _required_response_string(
+                        (flow.get("properties") or {}).get("name")
+                        or flow.get("flowId"),
+                        "Data Flow name",
+                    )
+                    if flow is not None
+                    else None
+                ),
+                flow_platform=(
+                    _optional_response_string(
+                        (flow.get("platform") or {}).get("name")
+                    )
+                    if flow is not None
+                    else None
+                ),
+                interface="GraphQL Query.dataJob + DataJob.dataFlow",
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ContextRelationshipUnavailable(
+                "Pipeline context response was malformed.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+
+    def direct_context_lineage_entities(
+        self,
+        entity_urn: str,
+    ) -> Sequence[ContextLineageEntityObservation]:
+        results: dict[
+            tuple[str, str],
+            ContextLineageEntityObservation,
+        ] = {}
+        scroll_id: str | None = None
+        seen_scroll_ids: set[str] = set()
+        while True:
+            data = self._graphql_request(
+                _DIRECT_CONTEXT_LINEAGE_QUERY,
+                variables={
+                    "urn": entity_urn,
+                    "scrollId": scroll_id,
+                },
+            )
+            try:
+                page = data["scrollAcrossLineage"]
+                if page.get("isPartial") is True:
+                    raise ContextRelationshipUnavailable(
+                        "DataHub returned a partial context-lineage page."
+                    )
+                for item in page["searchResults"]:
+                    entity = item["entity"]
+                    degree = item["degree"]
+                    urn = entity["urn"]
+                    entity_type = entity["type"]
+                    if (
+                        degree == 1
+                        and entity_type
+                        in {"DATASET", "CHART", "DASHBOARD"}
+                        and isinstance(urn, str)
+                        and urn
+                    ):
+                        results[(entity_type, urn)] = (
+                            ContextLineageEntityObservation(
+                                urn=urn,
+                                entity_type=entity_type,
+                                degree=degree,
+                                interface=(
+                                    "GraphQL Query.scrollAcrossLineage("
+                                    "DOWNSTREAM,degree=1)"
+                                ),
+                            )
+                        )
+                next_scroll_id = page.get("nextScrollId")
+            except ContextRelationshipUnavailable:
+                raise
+            except (KeyError, TypeError) as exc:
+                raise ContextRelationshipUnavailable(
+                    "DataHub context-lineage response was incomplete.",
+                    diagnostic=redact_secrets(
+                        exc,
+                        (self._config._credential,),
+                    ),
+                ) from exc
+            if next_scroll_id is None:
+                break
+            if (
+                not isinstance(next_scroll_id, str)
+                or not next_scroll_id
+                or next_scroll_id in seen_scroll_ids
+            ):
+                raise ContextRelationshipUnavailable(
+                    "DataHub context-lineage pagination cursor was invalid."
+                )
+            seen_scroll_ids.add(next_scroll_id)
+            scroll_id = next_scroll_id
+        return tuple(results[key] for key in sorted(results))
+
+    def business_intelligence_entity(
+        self,
+        urn: str,
+        entity_type: str,
+    ) -> BusinessIntelligenceEntityObservation | None:
+        normalized_type = entity_type.upper()
+        if normalized_type == "CHART":
+            root = "chart"
+            query = _CHART_CONTEXT_QUERY
+        elif normalized_type == "DASHBOARD":
+            root = "dashboard"
+            query = _DASHBOARD_CONTEXT_QUERY
+        else:
+            raise ContextRelationshipUnavailable(
+                "Unsupported BI context entity type.",
+                diagnostic=f"Entity type: {entity_type}.",
+            )
+        data = self._graphql_request(query, variables={"urn": urn})
+        try:
+            entity = data[root]
+            if entity is None:
+                return None
+            platform_data = entity.get("platform") or {}
+            platform = (
+                _optional_response_string(
+                    (platform_data.get("properties") or {}).get(
+                        "displayName"
+                    )
+                )
+                or _optional_response_string(platform_data.get("name"))
+                or _optional_response_string(entity.get("tool"))
+            )
+            if platform is None:
+                raise ValueError("BI platform was absent.")
+            name = _required_response_string(
+                (entity.get("properties") or {}).get("name"),
+                "BI entity name",
+            )
+            return BusinessIntelligenceEntityObservation(
+                urn=_required_response_string(
+                    entity.get("urn"),
+                    "BI entity URN",
+                ),
+                entity_type=normalized_type,
+                platform=platform,
+                name=name,
+                interface=f"GraphQL Query.{root}",
+            )
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ContextRelationshipUnavailable(
+                "BI context response was malformed.",
+                diagnostic=redact_secrets(
+                    exc,
+                    (self._config._credential,),
+                ),
+            ) from exc
+
     def _graphql_request(
         self,
         query: str,
@@ -816,6 +1700,158 @@ def _optional_string(value: object | None) -> str | None:
     if value is None:
         return None
     return str(value)
+
+
+def _required_string(value: object | None, label: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise MalformedGovernanceAspect(f"{label} was malformed.")
+    return value
+
+
+def _required_response_string(value: object | None, label: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{label} was malformed.")
+    return value
+
+
+def _optional_response_string(value: object | None) -> str | None:
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        raise ValueError("Optional GraphQL string was malformed.")
+    return value
+
+
+def _sorted_required_urns(
+    values: Sequence[object],
+    label: str,
+) -> tuple[str, ...]:
+    return tuple(
+        sorted({_required_string(value, label) for value in values})
+    )
+
+
+def _association_urns(
+    values: Sequence[object],
+    attribute: str,
+    label: str,
+) -> tuple[str, ...]:
+    return _sorted_required_urns(
+        tuple(getattr(value, attribute, None) for value in values),
+        label,
+    )
+
+
+def _owner_kind(owner_urn: str) -> str:
+    if owner_urn.startswith("urn:li:corpuser:"):
+        return "CORP_USER"
+    if owner_urn.startswith("urn:li:corpGroup:"):
+        return "CORP_GROUP"
+    return "UNKNOWN"
+
+
+def _reference_name(
+    entity_type: str,
+    aspect: object | None,
+) -> str | None:
+    if aspect is None:
+        return None
+    if entity_type == "CORP_USER":
+        for attribute in ("displayName", "fullName", "email"):
+            value = getattr(aspect, attribute, None)
+            if isinstance(value, str) and value:
+                return value
+        return None
+    if entity_type == "CORP_GROUP":
+        value = getattr(aspect, "displayName", None)
+    else:
+        value = getattr(aspect, "name", None)
+    return value if isinstance(value, str) and value else None
+
+
+def _structured_property_definition(
+    entity: Mapping[str, object],
+) -> StructuredPropertyDefinitionObservation:
+    definition = entity.get("definition")
+    if not isinstance(definition, Mapping):
+        raise ValueError("Structured-property definition was absent.")
+    value_type = definition.get("valueType")
+    if not isinstance(value_type, Mapping):
+        raise ValueError("Structured-property value type was absent.")
+    value_info = value_type.get("info")
+    if not isinstance(value_info, Mapping):
+        raise ValueError("Structured-property value type info was absent.")
+    return StructuredPropertyDefinitionObservation(
+        property_urn=_required_response_string(
+            entity.get("urn"),
+            "Structured property URN",
+        ),
+        qualified_name=_required_response_string(
+            definition.get("qualifiedName"),
+            "Structured property qualified name",
+        ),
+        display_name=_optional_response_string(
+            definition.get("displayName")
+        ),
+        value_type=_required_response_string(
+            value_info.get("type"),
+            "Structured property value type",
+        ),
+        value_type_urn=_required_response_string(
+            value_type.get("urn"),
+            "Structured property value type URN",
+        ),
+        interface=(
+            "GraphQL Query.searchAcrossEntities(STRUCTURED_PROPERTY)"
+        ),
+    )
+
+
+def _structured_property_assignment(
+    item: Mapping[str, object],
+) -> StructuredPropertyAssignmentObservation:
+    property_entity = item.get("structuredProperty")
+    if not isinstance(property_entity, Mapping):
+        raise ValueError("Structured-property entity was absent.")
+    definition = _structured_property_definition(property_entity)
+    raw_values = item.get("values")
+    if not isinstance(raw_values, Sequence) or isinstance(
+        raw_values,
+        (str, bytes),
+    ):
+        raise ValueError("Structured-property values were malformed.")
+    values: list[str | float] = []
+    for raw_value in raw_values:
+        if not isinstance(raw_value, Mapping):
+            raise ValueError("Structured-property value was malformed.")
+        if "stringValue" in raw_value:
+            value = raw_value["stringValue"]
+            if not isinstance(value, str):
+                raise ValueError("Structured-property string was malformed.")
+            values.append(value)
+        elif "numberValue" in raw_value:
+            value = raw_value["numberValue"]
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                raise ValueError("Structured-property number was malformed.")
+            values.append(float(value))
+        else:
+            raise ValueError("Structured-property value type was unsupported.")
+    return StructuredPropertyAssignmentObservation(
+        property_urn=definition.property_urn,
+        qualified_name=definition.qualified_name,
+        display_name=definition.display_name,
+        value_type=definition.value_type,
+        value_type_urn=definition.value_type_urn,
+        values=tuple(values),
+        assignment_target=_required_response_string(
+            item.get("associatedUrn"),
+            "Structured property assignment target",
+        ),
+        interface=(
+            "GraphQL Dataset.structuredProperties + "
+            "StructuredPropertiesEntry"
+        ),
+    )
 
 
 def _principal_from_auth_response(data: Mapping[str, object]) -> str:

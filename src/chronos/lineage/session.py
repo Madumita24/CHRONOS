@@ -46,6 +46,7 @@ class LineageRetrievalSession:
         logger: logging.Logger | None = None,
     ) -> None:
         transport = DataHubSdkReadOnlyTransport(config)
+        self._transport = transport
         self._readiness = ChronosDataHubAccess(
             config,
             transport,
@@ -147,7 +148,6 @@ class LineageRetrievalSession:
             source_snapshot,
             field_path,
         )
-
 
 def create_lineage_retrieval_session(
     *,

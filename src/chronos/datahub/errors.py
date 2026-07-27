@@ -35,6 +35,11 @@ class FailureCode(str, Enum):
     LINEAGE_TRAVERSAL_UNAVAILABLE = "lineage_traversal_unavailable"
     LINEAGE_EVIDENCE_CONFLICT = "lineage_evidence_conflict"
     UNEXPECTED_LINEAGE_ERROR = "unexpected_lineage_error"
+    GOVERNANCE_RETRIEVAL_UNAVAILABLE = "governance_retrieval_unavailable"
+    CONTEXT_RELATIONSHIP_UNAVAILABLE = "context_relationship_unavailable"
+    UNRESOLVED_METADATA_REFERENCE = "unresolved_metadata_reference"
+    MALFORMED_GOVERNANCE_ASPECT = "malformed_governance_aspect"
+    UNEXPECTED_CONTEXT_ERROR = "unexpected_context_error"
     UNEXPECTED_DATAHUB_ERROR = "unexpected_datahub_error"
 
 
@@ -184,3 +189,23 @@ class LineageEvidenceConflict(DataHubAccessError):
 
 class UnexpectedLineageError(DataHubAccessError):
     code = FailureCode.UNEXPECTED_LINEAGE_ERROR
+
+
+class GovernanceRetrievalUnavailable(DataHubAccessError):
+    code = FailureCode.GOVERNANCE_RETRIEVAL_UNAVAILABLE
+
+
+class ContextRelationshipUnavailable(DataHubAccessError):
+    code = FailureCode.CONTEXT_RELATIONSHIP_UNAVAILABLE
+
+
+class UnresolvedMetadataReference(DataHubAccessError):
+    code = FailureCode.UNRESOLVED_METADATA_REFERENCE
+
+
+class MalformedGovernanceAspect(DataHubAccessError):
+    code = FailureCode.MALFORMED_GOVERNANCE_ASPECT
+
+
+class UnexpectedContextError(DataHubAccessError):
+    code = FailureCode.UNEXPECTED_CONTEXT_ERROR
