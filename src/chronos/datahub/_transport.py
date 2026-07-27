@@ -19,9 +19,11 @@ from typing import Mapping, Protocol, Sequence
 
 from datahub.ingestion.graph.client import DataHubGraph, DatahubClientConfig
 from datahub.metadata.schema_classes import (
+    DataJobInputOutputClass,
     DataPlatformInstanceClass,
     DatasetPropertiesClass,
     SchemaMetadataClass,
+    UpstreamLineageClass,
 )
 from datahub.metadata.urns import DatasetUrn
 
@@ -30,9 +32,11 @@ from .errors import (
     AuthenticationError,
     AuthorizationError,
     ConnectionError,
+    FineGrainedLineageUnavailable,
     UnexpectedDataHubError,
     redact_secrets,
 )
+from .schema_types import normalize_datahub_type
 
 
 @dataclass(frozen=True)
@@ -68,6 +72,68 @@ class SchemaFieldObservation:
     native_type: str | None
     description: str | None = None
     schema_field_urn: str | None = None
+
+
+@dataclass(frozen=True)
+class SchemaFieldMetadataObservation:
+    field_path: str | None
+    datahub_type: str | None
+    native_type: str | None
+    description: str | None
+    nullable: bool | None
+    is_part_of_key: bool | None
+    is_partitioning_key: bool | None
+    json_path: str | None
+    label: str | None
+    recursive: bool | None
+    schema_field_urn: str | None = None
+
+
+@dataclass(frozen=True)
+class SchemaMetadataObservation:
+    dataset_urn: str
+    schema_name: str | None
+    platform: str | None
+    version: int | None
+    schema_hash: str | None
+    fields: tuple[SchemaFieldMetadataObservation, ...]
+    created_time: int | None
+    last_modified_time: int | None
+    dataset_reference: str | None
+    cluster: str | None
+    primary_keys: tuple[str, ...] | None
+
+
+@dataclass(frozen=True)
+class LineageEntityObservation:
+    urn: str
+    entity_type: str
+    degree: int
+
+
+@dataclass(frozen=True)
+class FineGrainedLineageGroupObservation:
+    source_entity_urn: str
+    source_entity_type: str
+    source_aspect: str
+    group_index: int
+    upstream_type: str | None
+    downstream_type: str | None
+    upstreams: tuple[object, ...]
+    downstreams: tuple[object, ...]
+    transform_operation: object | None
+    confidence_score: object | None
+    query: object | None
+    match_type: object | None
+
+
+@dataclass(frozen=True)
+class FineGrainedLineageAspectObservation:
+    source_entity_urn: str
+    source_entity_type: str
+    source_aspect: str
+    interface: str
+    groups: tuple[FineGrainedLineageGroupObservation, ...]
 
 
 @dataclass(frozen=True)
@@ -113,6 +179,25 @@ class ReadOnlyTransport(Protocol):
 
     def schema_fields(self, urn: str) -> Sequence[SchemaFieldObservation]: ...
 
+    def schema_metadata(self, urn: str) -> SchemaMetadataObservation | None: ...
+
+
+class LineageReadOnlyTransport(ReadOnlyTransport, Protocol):
+    """Phase 1.4 extension that does not widen earlier public boundaries."""
+
+    def direct_downstream_lineage_entities(
+        self,
+        dataset_urn: str,
+    ) -> Sequence[LineageEntityObservation]: ...
+
+    def fine_grained_lineage(
+        self,
+        entity_urn: str,
+        entity_type: str,
+    ) -> FineGrainedLineageAspectObservation | None: ...
+
+    def schema_field_exists(self, schema_field_urn: str) -> bool: ...
+
 
 _CAPABILITY_QUERY = """
 query ChronosCapabilityProbe {
@@ -128,6 +213,31 @@ query ChronosCapabilityProbe {
 _AUTH_QUERY = """
 query ChronosAuthenticationProbe {
   me { corpUser { urn } }
+}
+"""
+
+_DIRECT_DOWNSTREAM_LINEAGE_QUERY = """
+query ChronosDirectDownstreamLineage(
+  $urn: String!
+  $scrollId: String
+) {
+  scrollAcrossLineage(
+    input: {
+      urn: $urn
+      direction: DOWNSTREAM
+      types: [DATASET, DATA_JOB]
+      query: "*"
+      count: 500
+      scrollId: $scrollId
+    }
+  ) {
+    nextScrollId
+    isPartial
+    searchResults {
+      degree
+      entity { urn type }
+    }
+  }
 }
 """
 
@@ -358,6 +468,23 @@ class DataHubSdkReadOnlyTransport:
         )
 
     def schema_fields(self, urn: str) -> Sequence[SchemaFieldObservation]:
+        aspect = self.schema_metadata(urn)
+        if aspect is None:
+            return ()
+        return tuple(
+            SchemaFieldObservation(
+                name=field.field_path or "",
+                normalized_type=normalize_datahub_type(
+                    field.datahub_type
+                ).value,
+                native_type=field.native_type,
+                description=field.description,
+                schema_field_urn=field.schema_field_urn,
+            )
+            for field in aspect.fields
+        )
+
+    def schema_metadata(self, urn: str) -> SchemaMetadataObservation | None:
         try:
             aspect = self._graph.get_aspect(urn, SchemaMetadataClass)
         except Exception as exc:
@@ -365,22 +492,191 @@ class DataHubSdkReadOnlyTransport:
                 exc, "Schema metadata read failed."
             ) from exc
         if aspect is None:
-            return ()
-        return tuple(
-            SchemaFieldObservation(
-                name=field.fieldPath,
-                normalized_type=_normalized_type_name(field.type.type),
-                native_type=field.nativeDataType,
-                description=field.description,
+            return None
+
+        fields = tuple(
+            SchemaFieldMetadataObservation(
+                field_path=getattr(field, "fieldPath", None),
+                datahub_type=_datahub_type_name(field),
+                native_type=getattr(field, "nativeDataType", None),
+                description=getattr(field, "description", None),
+                nullable=getattr(field, "nullable", None),
+                is_part_of_key=getattr(field, "isPartOfKey", None),
+                is_partitioning_key=getattr(
+                    field,
+                    "isPartitioningKey",
+                    None,
+                ),
+                json_path=getattr(field, "jsonPath", None),
+                label=getattr(field, "label", None),
+                recursive=getattr(field, "recursive", None),
             )
-            for field in aspect.fields
+            for field in (getattr(aspect, "fields", None) or ())
         )
+        primary_keys = getattr(aspect, "primaryKeys", None)
+        return SchemaMetadataObservation(
+            dataset_urn=urn,
+            schema_name=getattr(aspect, "schemaName", None),
+            platform=getattr(aspect, "platform", None),
+            version=getattr(aspect, "version", None),
+            schema_hash=getattr(aspect, "hash", None),
+            fields=fields,
+            created_time=_audit_time(getattr(aspect, "created", None)),
+            last_modified_time=_audit_time(
+                getattr(aspect, "lastModified", None)
+            ),
+            dataset_reference=getattr(aspect, "dataset", None),
+            cluster=getattr(aspect, "cluster", None),
+            primary_keys=(
+                tuple(str(item) for item in primary_keys)
+                if primary_keys is not None
+                else None
+            ),
+        )
+
+    def direct_downstream_lineage_entities(
+        self,
+        dataset_urn: str,
+    ) -> Sequence[LineageEntityObservation]:
+        results: dict[tuple[str, str], LineageEntityObservation] = {}
+        scroll_id: str | None = None
+        seen_scroll_ids: set[str] = set()
+        while True:
+            data = self._graphql_request(
+                _DIRECT_DOWNSTREAM_LINEAGE_QUERY,
+                variables={
+                    "urn": dataset_urn,
+                    "scrollId": scroll_id,
+                },
+            )
+            try:
+                page = data["scrollAcrossLineage"]
+                if page.get("isPartial") is True:
+                    raise FineGrainedLineageUnavailable(
+                        "DataHub returned a partial lineage page.",
+                    )
+                for item in page["searchResults"]:
+                    entity = item["entity"]
+                    degree = item["degree"]
+                    entity_urn = entity["urn"]
+                    entity_type = entity["type"]
+                    if (
+                        degree == 1
+                        and entity_type in {"DATASET", "DATA_JOB"}
+                        and isinstance(entity_urn, str)
+                        and entity_urn
+                    ):
+                        results[(entity_type, entity_urn)] = (
+                            LineageEntityObservation(
+                                urn=entity_urn,
+                                entity_type=entity_type,
+                                degree=degree,
+                            )
+                        )
+                next_scroll_id = page.get("nextScrollId")
+            except FineGrainedLineageUnavailable:
+                raise
+            except (KeyError, TypeError) as exc:
+                raise FineGrainedLineageUnavailable(
+                    "DataHub lineage response was incomplete.",
+                ) from exc
+            if next_scroll_id is None:
+                break
+            if (
+                not isinstance(next_scroll_id, str)
+                or not next_scroll_id
+                or next_scroll_id in seen_scroll_ids
+            ):
+                raise FineGrainedLineageUnavailable(
+                    "DataHub lineage pagination cursor was invalid.",
+                )
+            seen_scroll_ids.add(next_scroll_id)
+            scroll_id = next_scroll_id
+        return tuple(
+            results[key]
+            for key in sorted(results)
+        )
+
+    def fine_grained_lineage(
+        self,
+        entity_urn: str,
+        entity_type: str,
+    ) -> FineGrainedLineageAspectObservation | None:
+        normalized_type = entity_type.upper()
+        if normalized_type == "DATASET":
+            aspect_class = UpstreamLineageClass
+            aspect_name = "upstreamLineage"
+        elif normalized_type == "DATA_JOB":
+            aspect_class = DataJobInputOutputClass
+            aspect_name = "dataJobInputOutput"
+        else:
+            raise FineGrainedLineageUnavailable(
+                "Fine-grained lineage is unsupported for this entity type.",
+                diagnostic=f"Entity type: {entity_type}.",
+            )
+        try:
+            aspect = self._graph.get_aspect(entity_urn, aspect_class)
+        except Exception as exc:
+            raise self._classify_sdk_exception(
+                exc,
+                "Fine-grained lineage aspect read failed.",
+            ) from exc
+        if aspect is None:
+            return None
+
+        raw_groups = getattr(aspect, "fineGrainedLineages", None) or ()
+        groups = tuple(
+            FineGrainedLineageGroupObservation(
+                source_entity_urn=entity_urn,
+                source_entity_type=normalized_type,
+                source_aspect=aspect_name,
+                group_index=index,
+                upstream_type=_optional_string(
+                    getattr(group, "upstreamType", None)
+                ),
+                downstream_type=_optional_string(
+                    getattr(group, "downstreamType", None)
+                ),
+                upstreams=tuple(getattr(group, "upstreams", None) or ()),
+                downstreams=tuple(
+                    getattr(group, "downstreams", None) or ()
+                ),
+                transform_operation=getattr(
+                    group,
+                    "transformOperation",
+                    None,
+                ),
+                confidence_score=getattr(group, "confidenceScore", None),
+                query=getattr(group, "query", None),
+                match_type=getattr(group, "matchType", None),
+            )
+            for index, group in enumerate(raw_groups)
+        )
+        return FineGrainedLineageAspectObservation(
+            source_entity_urn=entity_urn,
+            source_entity_type=normalized_type,
+            source_aspect=aspect_name,
+            interface=(
+                f"DataHubGraph.get_aspect({aspect_class.__name__})"
+            ),
+            groups=groups,
+        )
+
+    def schema_field_exists(self, schema_field_urn: str) -> bool:
+        try:
+            return self._graph.exists(schema_field_urn)
+        except Exception as exc:
+            raise self._classify_sdk_exception(
+                exc,
+                "Schema-field existence read failed.",
+            ) from exc
 
     def _graphql_request(
         self,
         query: str,
         *,
         token: object = _CONFIGURED_CREDENTIAL,
+        variables: Mapping[str, object] | None = None,
     ) -> dict:
         bearer_token = (
             self._config._credential
@@ -391,8 +687,11 @@ class DataHubSdkReadOnlyTransport:
             self._config._credential,
             bearer_token if isinstance(bearer_token, str) else "",
         )
+        payload: dict[str, object] = {"query": query}
+        if variables is not None:
+            payload["variables"] = dict(variables)
         body = json.dumps(
-            {"query": query},
+            payload,
             sort_keys=True,
             separators=(",", ":"),
         ).encode("utf-8")
@@ -498,13 +797,25 @@ class DataHubSdkReadOnlyTransport:
         return UnexpectedDataHubError(safe_message, diagnostic=diagnostic)
 
 
-def _normalized_type_name(type_object: object) -> str:
-    name = type(type_object).__name__
-    if name.endswith("TypeClass"):
-        return name[: -len("TypeClass")]
-    if name.endswith("Class"):
-        return name[: -len("Class")]
-    return name
+def _datahub_type_name(field: object) -> str | None:
+    schema_type = getattr(field, "type", None)
+    type_object = getattr(schema_type, "type", None)
+    if type_object is None:
+        return None
+    return type(type_object).__name__
+
+
+def _audit_time(audit_stamp: object | None) -> int | None:
+    if audit_stamp is None:
+        return None
+    value = getattr(audit_stamp, "time", None)
+    return value if isinstance(value, int) else None
+
+
+def _optional_string(value: object | None) -> str | None:
+    if value is None:
+        return None
+    return str(value)
 
 
 def _principal_from_auth_response(data: Mapping[str, object]) -> str:

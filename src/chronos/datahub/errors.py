@@ -23,6 +23,18 @@ class FailureCode(str, Enum):
     INVALID_CANONICAL_IDENTITY = "invalid_canonical_identity"
     RESOLUTION_UNAVAILABLE = "resolution_unavailable"
     UNEXPECTED_RESOLUTION_ERROR = "unexpected_resolution_error"
+    SCHEMA_NOT_FOUND = "schema_not_found"
+    SCHEMA_EMPTY = "schema_empty"
+    SCHEMA_MALFORMED = "schema_malformed"
+    DUPLICATE_FIELD_PATH = "duplicate_field_path"
+    UNSUPPORTED_FIELD_METADATA = "unsupported_field_metadata"
+    SCHEMA_RETRIEVAL_UNAVAILABLE = "schema_retrieval_unavailable"
+    FINE_GRAINED_LINEAGE_UNAVAILABLE = "fine_grained_lineage_unavailable"
+    MALFORMED_LINEAGE_GROUP = "malformed_lineage_group"
+    UNRESOLVED_FIELD_REFERENCE = "unresolved_field_reference"
+    LINEAGE_TRAVERSAL_UNAVAILABLE = "lineage_traversal_unavailable"
+    LINEAGE_EVIDENCE_CONFLICT = "lineage_evidence_conflict"
+    UNEXPECTED_LINEAGE_ERROR = "unexpected_lineage_error"
     UNEXPECTED_DATAHUB_ERROR = "unexpected_datahub_error"
 
 
@@ -124,3 +136,51 @@ class ResolutionUnavailable(DataHubAccessError):
 
 class UnexpectedResolutionError(DataHubAccessError):
     code = FailureCode.UNEXPECTED_RESOLUTION_ERROR
+
+
+class SchemaNotFound(DataHubAccessError):
+    code = FailureCode.SCHEMA_NOT_FOUND
+
+
+class SchemaEmpty(DataHubAccessError):
+    code = FailureCode.SCHEMA_EMPTY
+
+
+class SchemaMalformed(DataHubAccessError):
+    code = FailureCode.SCHEMA_MALFORMED
+
+
+class DuplicateFieldPath(DataHubAccessError):
+    code = FailureCode.DUPLICATE_FIELD_PATH
+
+
+class UnsupportedFieldMetadata(DataHubAccessError):
+    code = FailureCode.UNSUPPORTED_FIELD_METADATA
+
+
+class SchemaRetrievalUnavailable(DataHubAccessError):
+    code = FailureCode.SCHEMA_RETRIEVAL_UNAVAILABLE
+
+
+class FineGrainedLineageUnavailable(DataHubAccessError):
+    code = FailureCode.FINE_GRAINED_LINEAGE_UNAVAILABLE
+
+
+class MalformedLineageGroup(DataHubAccessError):
+    code = FailureCode.MALFORMED_LINEAGE_GROUP
+
+
+class UnresolvedFieldReference(DataHubAccessError):
+    code = FailureCode.UNRESOLVED_FIELD_REFERENCE
+
+
+class LineageTraversalUnavailable(DataHubAccessError):
+    code = FailureCode.LINEAGE_TRAVERSAL_UNAVAILABLE
+
+
+class LineageEvidenceConflict(DataHubAccessError):
+    code = FailureCode.LINEAGE_EVIDENCE_CONFLICT
+
+
+class UnexpectedLineageError(DataHubAccessError):
+    code = FailureCode.UNEXPECTED_LINEAGE_ERROR
