@@ -1,0 +1,71 @@
+"""Public CHRONOS Phase 4.1 technical-impact API."""
+
+from .builder import (
+    derive_technical_impact,
+    derive_technical_impact_from_artifacts,
+    derive_technical_impact_state,
+    validate_technical_impact,
+)
+from .errors import (
+    TechnicalImpactEntryError,
+    TechnicalImpactError,
+    TechnicalImpactSerializationError,
+    TechnicalImpactValidationError,
+)
+from .models import (
+    TECHNICAL_IMPACT_SCHEMA_VERSION,
+    DatasetTechnicalImpactSummary,
+    FieldTechnicalImpact,
+    ImpactArtifactReference,
+    ImpactCausalChain,
+    PathTechnicalImpact,
+    RelationshipTechnicalImpact,
+    SourceChangeImpact,
+    SourceTechnicalRole,
+    TechnicalImpactAggregateMetrics,
+    TechnicalImpactAnalysis,
+    TechnicalImpactCause,
+    TechnicalImpactReasonCode,
+    TechnicalImpactState,
+    TechnicalImpactValidationState,
+)
+from .serialization import (
+    export_technical_impact,
+    load_technical_impact,
+    technical_impact_from_json,
+    technical_impact_semantic_fingerprint,
+    technical_impact_to_dict,
+    technical_impact_to_json,
+)
+
+__all__ = [
+    "TECHNICAL_IMPACT_SCHEMA_VERSION",
+    "DatasetTechnicalImpactSummary",
+    "FieldTechnicalImpact",
+    "ImpactArtifactReference",
+    "ImpactCausalChain",
+    "PathTechnicalImpact",
+    "RelationshipTechnicalImpact",
+    "SourceChangeImpact",
+    "SourceTechnicalRole",
+    "TechnicalImpactAggregateMetrics",
+    "TechnicalImpactAnalysis",
+    "TechnicalImpactCause",
+    "TechnicalImpactEntryError",
+    "TechnicalImpactError",
+    "TechnicalImpactReasonCode",
+    "TechnicalImpactSerializationError",
+    "TechnicalImpactState",
+    "TechnicalImpactValidationError",
+    "TechnicalImpactValidationState",
+    "derive_technical_impact",
+    "derive_technical_impact_from_artifacts",
+    "derive_technical_impact_state",
+    "export_technical_impact",
+    "load_technical_impact",
+    "technical_impact_from_json",
+    "technical_impact_semantic_fingerprint",
+    "technical_impact_to_dict",
+    "technical_impact_to_json",
+    "validate_technical_impact",
+]
