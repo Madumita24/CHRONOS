@@ -1,0 +1,71 @@
+"""Public CHRONOS Phase 4.5 certification API."""
+
+from .certifier import (
+    certify_phase4,
+    certify_phase4_from_artifacts,
+    validate_phase4_certification,
+)
+from .errors import (
+    Phase4CertificationError,
+    Phase4CertificationInputError,
+    Phase4CertificationSerializationError,
+    Phase4CertificationValidationError,
+)
+from .models import (
+    PHASE4_CERTIFICATION_SCHEMA_VERSION,
+    ArtifactImmutabilityEvidence,
+    CertificationCheck,
+    CertificationCheckCategory,
+    CertificationCheckStatus,
+    CertificationFailureSeverity,
+    ContextBaseline,
+    DecisionBaseline,
+    InputArtifactIdentity,
+    InputSemanticFingerprint,
+    Phase4CertificationResult,
+    Phase4CertificationStatus,
+    Phase4SemanticFingerprints,
+    SeverityBaseline,
+    SeverityDistribution,
+    TechnicalBaseline,
+)
+from .serialization import (
+    export_phase4_certification,
+    load_phase4_certification,
+    phase4_certification_from_json,
+    phase4_certification_semantic_fingerprint,
+    phase4_certification_to_dict,
+    phase4_certification_to_json,
+)
+
+__all__ = [
+    "PHASE4_CERTIFICATION_SCHEMA_VERSION",
+    "ArtifactImmutabilityEvidence",
+    "CertificationCheck",
+    "CertificationCheckCategory",
+    "CertificationCheckStatus",
+    "CertificationFailureSeverity",
+    "ContextBaseline",
+    "DecisionBaseline",
+    "InputArtifactIdentity",
+    "InputSemanticFingerprint",
+    "Phase4CertificationError",
+    "Phase4CertificationInputError",
+    "Phase4CertificationResult",
+    "Phase4CertificationSerializationError",
+    "Phase4CertificationStatus",
+    "Phase4CertificationValidationError",
+    "Phase4SemanticFingerprints",
+    "SeverityBaseline",
+    "SeverityDistribution",
+    "TechnicalBaseline",
+    "certify_phase4",
+    "certify_phase4_from_artifacts",
+    "export_phase4_certification",
+    "load_phase4_certification",
+    "phase4_certification_from_json",
+    "phase4_certification_semantic_fingerprint",
+    "phase4_certification_to_dict",
+    "phase4_certification_to_json",
+    "validate_phase4_certification",
+]
