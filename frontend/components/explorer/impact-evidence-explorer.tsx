@@ -12,7 +12,6 @@ import {
   Route,
   Search,
   ShieldAlert,
-  Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -41,20 +40,24 @@ type ExplorerTab =
   | "datasets"
   | "paths"
   | "relationships"
-  | "context"
-  | "evidence"
-  | "decision";
+  | "context";
 
 export function ImpactEvidenceExplorer({
   reviewId,
   selection,
   selectedMachineKey,
   onSelect,
+  onNavigate,
+  onRootFocus,
 }: {
   reviewId: string;
   selection: GraphSelection;
   selectedMachineKey: string | null;
   onSelect: (selection: Exclude<GraphSelection, null>) => void;
+  onNavigate?: (
+    section: "overview" | "graph" | "impact" | "evidence" | "decision",
+  ) => void;
+  onRootFocus?: () => void;
 }) {
   const [state, setState] = useState<ExplorerState>({ kind: "loading" });
   const [attempt, setAttempt] = useState(0);
@@ -164,9 +167,18 @@ export function ImpactEvidenceExplorer({
       : null;
 
   return (
-    <section className="explorer-section" aria-labelledby="explorer-title">
+    <>
+    <section
+      id="impact"
+      className="explorer-section workflow-anchor"
+      aria-labelledby="explorer-title"
+    >
       <ExplorerHeading />
-      <RootCauseBanner explorer={explorer} />
+      <RootCauseBanner
+        explorer={explorer}
+        onRootFocus={onRootFocus}
+        onEvidence={() => onNavigate?.("evidence")}
+      />
       <div className="explorer-metrics" aria-label="Certified explorer totals">
         <ExplorerMetric label="Fields" value={explorer.summary.downstreamFields} />
         <ExplorerMetric
@@ -194,8 +206,6 @@ export function ImpactEvidenceExplorer({
                 "paths",
                 "relationships",
                 "context",
-                "evidence",
-                "decision",
               ] as const
             ).map((item) => (
               <button
@@ -311,6 +321,15 @@ export function ImpactEvidenceExplorer({
         </div>
       </div>
     </section>
+    <EvidenceReviewSection
+      explorer={explorer}
+      onRootFocus={onRootFocus}
+    />
+    <DecisionReviewSection
+      explorer={explorer}
+      onNavigate={onNavigate}
+    />
+    </>
   );
 }
 
@@ -386,8 +405,12 @@ function ExplorerHeading() {
 
 function RootCauseBanner({
   explorer,
+  onRootFocus,
+  onEvidence,
 }: {
   explorer: CertifiedImpactExplorer;
+  onRootFocus?: () => void;
+  onEvidence?: () => void;
 }) {
   const root = explorer.rootCause;
   return (
@@ -432,6 +455,20 @@ function RootCauseBanner({
               {item.label}
             </span>
           ))}
+        </div>
+        <div className="workflow-actions">
+          <button type="button" className="button" onClick={onRootFocus}>
+            <GitBranch size={15} aria-hidden="true" />
+            View unresolved boundary
+          </button>
+          <button
+            type="button"
+            className="button button-secondary"
+            onClick={onEvidence}
+          >
+            <FileSearch size={15} aria-hidden="true" />
+            View evidence
+          </button>
         </div>
       </div>
     </article>
@@ -515,7 +552,13 @@ function ExplorerList({
             key={item.fieldId}
             item={item}
             selected={selection?.kind === "node" && selection.id === item.fieldId}
-            onClick={() => onSelect({ kind: "node", id: item.fieldId })}
+            onClick={() =>
+              onSelect({
+                kind: "node",
+                id: item.fieldId,
+                machineKey: item.machineKey,
+              })
+            }
           />
         ))}
       </RecordList>
@@ -645,57 +688,267 @@ function ExplorerList({
       </RecordList>
     );
   }
-  if (tab === "evidence") {
-    const records = explorer.evidenceChain.filter((item) =>
-      includes(
-        item.description,
-        item.category,
-        item.classification,
-        item.sourceArtifact,
-      ),
-    );
-    return (
-      <RecordList
-        label="Certified evidence chain"
-        empty={records.length === 0}
-        icon={Sparkles}
-      >
-        {records.map((item) => (
-          <div className="explorer-record evidence-record" key={item.evidenceId}>
-            <span className={`evidence-class ${item.classification}`}>
-              {humanize(item.classification)}
-            </span>
-            <strong>{item.description}</strong>
-            <small>
-              {humanize(item.verificationState)} · {item.sourceArtifact}
-            </small>
-          </div>
-        ))}
-      </RecordList>
-    );
-  }
+  return null;
+}
 
-  const decision = explorer.decisionExplanation;
-  const reasons = decision.reasons.filter((item) =>
-    includes(item.statement, item.reasonCode),
-  );
+function EvidenceReviewSection({
+  explorer,
+  onRootFocus,
+}: {
+  explorer: CertifiedImpactExplorer;
+  onRootFocus?: () => void;
+}) {
+  const groups = [
+    {
+      key: "observed",
+      label: "Observed evidence",
+      description: "What DataHub records in the certified current state.",
+      records: explorer.evidenceChain.filter(
+        (item) => item.classification === "observed",
+      ),
+    },
+    {
+      key: "counterfactual",
+      label: "Counterfactual derivation",
+      description: "What CHRONOS projects from the certified proposal.",
+      records: explorer.evidenceChain.filter(
+        (item) =>
+          item.classification === "counterfactual" ||
+          item.classification === "derived",
+      ),
+    },
+    {
+      key: "missing",
+      label: "Missing evidence",
+      description: "What CHRONOS does not know and requires to resolve.",
+      records: explorer.evidenceChain.filter(
+        (item) => item.classification === "missing",
+      ),
+    },
+    {
+      key: "decision",
+      label: "Decision evidence",
+      description: "Certified facts supplied to the review disposition.",
+      records: explorer.evidenceChain.filter(
+        (item) => item.classification === "decision",
+      ),
+    },
+  ] as const;
+
   return (
-    <RecordList
-      label="Certified decision explanation"
-      empty={reasons.length === 0}
-      icon={ShieldAlert}
+    <section
+      id="evidence"
+      className="workflow-section workflow-anchor"
+      aria-labelledby="workflow-evidence-title"
     >
-      <div className="decision-record">
-        <span className="explorer-state hold">Hold for review</span>
-        <p>{decision.narrative}</p>
-        {reasons.map((reason) => (
-          <div className="explorer-record" key={reason.reasonId}>
-            <strong>{humanize(reason.reasonCode)}</strong>
-            <small>{reason.statement}</small>
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">Evidence review</p>
+          <h2 id="workflow-evidence-title">Known, unknown, and required</h2>
+        </div>
+        <p>
+          Current DataHub observations remain distinct from counterfactual
+          CHRONOS projections and missing execution evidence.
+        </p>
+      </div>
+
+      <div className="evidence-summary-grid">
+        <article>
+          <span>Known</span>
+          <strong>Current schema, lineage, and downstream topology</strong>
+          <small>Certified observed evidence</small>
+        </article>
+        <article>
+          <span>Unknown</span>
+          <strong>Source rename adaptation at the Spark export boundary</strong>
+          <small>Technical certainty remains unresolved</small>
+        </article>
+        <article>
+          <span>Required to resolve</span>
+          <strong>{explorer.requiredEvidence.length} evidence classes</strong>
+          <small>Not available in the certified package</small>
+        </article>
+      </div>
+
+      <article className="workflow-blocking-card">
+        <div className="blocking-question-inline">
+          <CircleHelp size={20} aria-hidden="true" />
+          <div>
+            <span>Blocking question · unresolved</span>
+            <strong>{explorer.blockingQuestion.question}</strong>
           </div>
+        </div>
+        <p>{explorer.blockingQuestion.reason}</p>
+        <div className="blocking-stats">
+          <span>{explorer.blockingQuestion.affectedFields} fields</span>
+          <span>{explorer.blockingQuestion.affectedDatasets} datasets</span>
+          <span>{explorer.blockingQuestion.affectedPaths} paths</span>
+          <span>1 root relationship</span>
+        </div>
+        <button
+          className="text-action"
+          type="button"
+          onClick={onRootFocus}
+        >
+          View root relationship
+        </button>
+      </article>
+
+      <div className="required-checklist" aria-label="Required evidence checklist">
+        {explorer.requiredEvidence.map((item) => (
+          <article key={item.evidenceId}>
+            <span className="check-box" aria-hidden="true" />
+            <div>
+              <strong>{item.label}</strong>
+              <small>{item.reason}</small>
+            </div>
+            <span className="required-state">Required · not available</span>
+          </article>
         ))}
       </div>
-    </RecordList>
+
+      <div className="evidence-groups">
+        {groups.map((group) => (
+          <article className={`evidence-group ${group.key}`} key={group.key}>
+            <div>
+              <span>{group.label}</span>
+              <small>{group.description}</small>
+            </div>
+            {group.records.map((item) => (
+              <div className="evidence-chain-row" key={item.evidenceId}>
+                <span className={`evidence-class ${item.classification}`}>
+                  {humanize(item.classification)}
+                </span>
+                <div>
+                  <strong>{item.description}</strong>
+                  <small>
+                    {humanize(item.verificationState)} · {item.sourceArtifact}
+                  </small>
+                </div>
+              </div>
+            ))}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DecisionReviewSection({
+  explorer,
+  onNavigate,
+}: {
+  explorer: CertifiedImpactExplorer;
+  onNavigate?: (
+    section: "overview" | "graph" | "impact" | "evidence" | "decision",
+  ) => void;
+}) {
+  const decision = explorer.decisionExplanation;
+  return (
+    <section
+      id="decision"
+      className="workflow-section workflow-anchor"
+      aria-labelledby="workflow-decision-title"
+    >
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">Certified decision</p>
+          <h2 id="workflow-decision-title">Why CHRONOS holds the review</h2>
+        </div>
+        <p>
+          The disposition is rendered from certified decision inputs and is
+          not recomputed in this browser.
+        </p>
+      </div>
+
+      <div className="workflow-decision-panel">
+        <div className="decision-outcome">
+          <span>Disposition</span>
+          <h3>Hold for review</h3>
+          <p>{decision.narrative}</p>
+          <span>Certified decision rule</span>
+          <code>{decision.decisionRuleId}</code>
+        </div>
+        <dl className="decision-facts">
+          <div>
+            <dt>Decision certainty</dt>
+            <dd>{humanize(decision.decisionCertainty)}</dd>
+          </div>
+          <div>
+            <dt>Technical certainty</dt>
+            <dd>{humanize(decision.technicalCertainty)}</dd>
+          </div>
+          <div>
+            <dt>Severity if realized</dt>
+            <dd>{humanize(decision.inputs.severityIfRealized)}</dd>
+          </div>
+          <div>
+            <dt>Breadth</dt>
+            <dd>{humanize(decision.inputs.breadth)}</dd>
+          </div>
+          <div>
+            <dt>Criticality</dt>
+            <dd>{humanize(decision.inputs.criticality)}</dd>
+          </div>
+          <div>
+            <dt>Confirmed failures</dt>
+            <dd>{explorer.summary.confirmedFailures}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <h3 className="decision-reasons-title">Certified reason codes</h3>
+      <div className="decision-reasons" aria-label="Certified decision reasons">
+        {decision.reasons.map((reason) => (
+          <article key={reason.reasonId}>
+            <span>{humanize(reason.reasonCode)}</span>
+            <p>{reason.statement}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="hold-distinction">
+        <div>
+          <span>Hold for review</span>
+          <strong>≠</strong>
+          <span>Failed change</span>
+        </div>
+        <p>{decision.confirmedFailureDistinction}</p>
+      </div>
+
+      <div className="review-handoff-grid">
+        <article className="review-summary-card">
+          <p className="eyebrow">Verbal review summary</p>
+          <dl>
+            <div><dt>Change</dt><dd>order_total → order_amount</dd></div>
+            <div><dt>Decision</dt><dd>Hold for review</dd></div>
+            <div><dt>Why</dt><dd>Source compatibility unresolved</dd></div>
+            <div><dt>Reach</dt><dd>25 fields / 20 datasets / 48 paths</dd></div>
+            <div><dt>Potential consequence</dt><dd>High if realized</dd></div>
+            <div><dt>Confirmed failures</dt><dd>0</dd></div>
+            <div><dt>Needed</dt><dd>Spark mapping and execution evidence</dd></div>
+          </dl>
+        </article>
+        <article className="review-next-action">
+          <FileSearch size={22} aria-hidden="true" />
+          <div>
+            <p className="eyebrow">Read-only next action</p>
+            <h3>Resolve the blocking question with evidence</h3>
+            <p>
+              Obtain the four required evidence classes. CHRONOS does not
+              recommend or execute a technical repair in this phase.
+            </p>
+            <button
+              type="button"
+              className="button"
+              onClick={() => onNavigate?.("evidence")}
+            >
+              Review required evidence
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 }
 

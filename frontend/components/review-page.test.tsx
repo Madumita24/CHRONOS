@@ -48,7 +48,7 @@ describe("ReviewPage", () => {
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
     expect(await screen.findByText("Decision certainty")).toBeInTheDocument();
-    expect(screen.getByText("Technical certainty")).toBeInTheDocument();
+    expect(screen.getAllByText("Technical certainty")).toHaveLength(2);
     expect(screen.getByText("High Confidence")).toBeInTheDocument();
     expect(screen.getAllByText("Unresolved").length).toBeGreaterThan(0);
   });

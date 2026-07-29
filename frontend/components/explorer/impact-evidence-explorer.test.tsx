@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -55,12 +55,14 @@ describe("ImpactEvidenceExplorer", () => {
   it("renders the blocking question", async () => {
     renderExplorer();
     expect(
-      await screen.findByText("Does the Spark export accept the renamed input?"),
-    ).toBeInTheDocument();
-    expect(screen.getByText("Spark configuration")).toBeInTheDocument();
-    expect(screen.getByText("Input query or code")).toBeInTheDocument();
-    expect(screen.getByText("Explicit rename mapping")).toBeInTheDocument();
-    expect(screen.getByText("Validated execution")).toBeInTheDocument();
+      await screen.findAllByText(
+        "Does the Spark export accept the renamed input?",
+      ),
+    ).toHaveLength(2);
+    expect(screen.getAllByText("Spark configuration")).toHaveLength(2);
+    expect(screen.getAllByText("Input query or code")).toHaveLength(2);
+    expect(screen.getAllByText("Explicit rename mapping")).toHaveLength(2);
+    expect(screen.getAllByText("Validated execution")).toHaveLength(2);
   });
 
   it("renders canonical explorer totals", async () => {
@@ -79,6 +81,7 @@ describe("ImpactEvidenceExplorer", () => {
     expect(onSelect).toHaveBeenCalledWith({
       kind: "node",
       id: "future-field-0",
+      machineKey: fixture.fields[0].machineKey,
     });
   });
 
@@ -181,17 +184,17 @@ describe("ImpactEvidenceExplorer", () => {
 
   it("shows the evidence chain and its observed classification", async () => {
     renderExplorer();
-    const user = userEvent.setup();
-    await user.click(await screen.findByRole("tab", { name: "Evidence" }));
-    expect(screen.getByText("Current source field observed.")).toBeInTheDocument();
-    expect(screen.getByText("Observed")).toBeInTheDocument();
+    expect(
+      await screen.findByText("Current source field observed."),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Observed evidence")).toBeInTheDocument();
   });
 
   it("shows the certified decision explanation", async () => {
     renderExplorer();
-    const user = userEvent.setup();
-    await user.click(await screen.findByRole("tab", { name: "Decision" }));
-    expect(screen.getByText("Hold for review")).toBeInTheDocument();
+    expect(
+      await screen.findByRole("heading", { name: "Hold for review" }),
+    ).toBeInTheDocument();
     expect(
       screen.getByText("The source boundary remains unresolved."),
     ).toBeInTheDocument();
@@ -239,7 +242,11 @@ describe("ImpactEvidenceExplorer", () => {
     expect(await screen.findByText("Context detail")).toBeInTheDocument();
     expect(screen.getByText("Relationship count")).toBeInTheDocument();
     expect(screen.getByText("Certified provenance")).toBeInTheDocument();
-    expect(screen.queryByText("Severity if realized")).not.toBeInTheDocument();
+    expect(
+      within(screen.getByLabelText("Impact evidence detail")).queryByText(
+        "Severity if realized",
+      ),
+    ).not.toBeInTheDocument();
   });
 
   it("renders a certification integrity failure without fallback data", async () => {

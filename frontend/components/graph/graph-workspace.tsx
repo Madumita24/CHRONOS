@@ -37,7 +37,6 @@ import {
   GraphFieldNode,
   type FieldFlowNode,
 } from "@/components/graph/graph-node";
-import { ImpactEvidenceExplorer } from "@/components/explorer/impact-evidence-explorer";
 import {
   GraphContractError,
   ReviewApiError,
@@ -53,9 +52,9 @@ import {
 } from "@/lib/graph-contract";
 import { layoutGraph } from "@/lib/graph-layout";
 
-type GraphMode = "current" | "future" | "diff";
+export type GraphMode = "current" | "future" | "diff";
 export type GraphSelection =
-  | { kind: "node"; id: string }
+  | { kind: "node"; id: string; machineKey?: string }
   | { kind: "edge"; id: string }
   | { kind: "path"; id: string }
   | { kind: "dataset"; id: string }
@@ -69,25 +68,74 @@ type GraphState =
 const nodeTypes = { field: GraphFieldNode };
 const edgeTypes = { lineage: GraphLineageEdge };
 
-export function GraphWorkspace({ reviewId }: { reviewId: string }) {
+export function GraphWorkspace({
+  reviewId,
+  selection,
+  onSelectionChange,
+  mode,
+  onModeChange,
+  onRootBoundaryReady,
+}: {
+  reviewId: string;
+  selection?: GraphSelection;
+  onSelectionChange?: (selection: GraphSelection) => void;
+  mode?: GraphMode;
+  onModeChange?: (mode: GraphMode) => void;
+  onRootBoundaryReady?: (edgeId: string) => void;
+}) {
   return (
     <ReactFlowProvider>
-      <CertifiedGraphWorkspace reviewId={reviewId} />
+      <CertifiedGraphWorkspace
+        reviewId={reviewId}
+        controlledSelection={selection}
+        onSelectionChange={onSelectionChange}
+        controlledMode={mode}
+        onModeChange={onModeChange}
+        onRootBoundaryReady={onRootBoundaryReady}
+      />
     </ReactFlowProvider>
   );
 }
 
-function CertifiedGraphWorkspace({ reviewId }: { reviewId: string }) {
+function CertifiedGraphWorkspace({
+  reviewId,
+  controlledSelection,
+  onSelectionChange,
+  controlledMode,
+  onModeChange,
+  onRootBoundaryReady,
+}: {
+  reviewId: string;
+  controlledSelection?: GraphSelection;
+  onSelectionChange?: (selection: GraphSelection) => void;
+  controlledMode?: GraphMode;
+  onModeChange?: (mode: GraphMode) => void;
+  onRootBoundaryReady?: (edgeId: string) => void;
+}) {
   const [state, setState] = useState<GraphState>({ kind: "loading" });
   const [attempt, setAttempt] = useState(0);
-  const [mode, setMode] = useState<GraphMode>("future");
-  const [selection, setSelection] = useState<GraphSelection>(null);
+  const [internalMode, setInternalMode] = useState<GraphMode>("future");
+  const [internalSelection, setInternalSelection] =
+    useState<GraphSelection>(null);
   const [search, setSearch] = useState("");
   const [platform, setPlatform] = useState("all");
   const [compatibility, setCompatibility] = useState("all");
   const flowRef = useRef<
     ReactFlowInstance<FieldFlowNode, LineageFlowEdge> | null
   >(null);
+  const mode = controlledMode ?? internalMode;
+  const selection =
+    controlledSelection === undefined
+      ? internalSelection
+      : controlledSelection;
+  const setMode = (nextMode: GraphMode) => {
+    if (onModeChange) onModeChange(nextMode);
+    else setInternalMode(nextMode);
+  };
+  const setSelection = (nextSelection: GraphSelection) => {
+    if (onSelectionChange) onSelectionChange(nextSelection);
+    else setInternalSelection(nextSelection);
+  };
 
   useEffect(() => {
     const controller = new AbortController();
@@ -111,6 +159,14 @@ function CertifiedGraphWorkspace({ reviewId }: { reviewId: string }) {
       });
     return () => controller.abort();
   }, [attempt, reviewId]);
+
+  useEffect(() => {
+    if (state.kind !== "ready" || !onRootBoundaryReady) return;
+    const root = state.graph.futureGraph.edges.find(
+      (edge) => edge.isRootUncertainty,
+    );
+    if (root) onRootBoundaryReady(root.id);
+  }, [onRootBoundaryReady, state]);
 
   const retry = useCallback(() => {
     setState({ kind: "loading" });
@@ -201,12 +257,6 @@ function CertifiedGraphWorkspace({ reviewId }: { reviewId: string }) {
       : new Set(filteredEdges.flatMap((edge) => [edge.source, edge.target]));
   const visibleNodes = baseNodes.filter((node) => visibleNodeIds.has(node.id));
   const hasPathHighlight = selectedPath !== null;
-  const selectedMachineKey =
-    selection?.kind === "node"
-      ? projection.nodes.find((item) => item.id === selection.id)?.machineKey ??
-        null
-      : null;
-
   const flowEdges: LineageFlowEdge[] = filteredEdges.map((edge) => ({
     id: edge.id,
     source: edge.source,
@@ -238,13 +288,20 @@ function CertifiedGraphWorkspace({ reviewId }: { reviewId: string }) {
   const flowNodes = layoutGraph(rawNodes, flowEdges);
 
   const selectNode: NodeMouseHandler<FieldFlowNode> = (_event, node) =>
-    setSelection({ kind: "node", id: node.id });
+    setSelection({
+      kind: "node",
+      id: node.id,
+      machineKey: node.data.machineKey,
+    });
   const selectEdge: EdgeMouseHandler<LineageFlowEdge> = (_event, edge) =>
     setSelection({ kind: "edge", id: edge.id });
 
   return (
-    <>
-      <section className="graph-section" aria-labelledby="graph-title">
+      <section
+        id="graph"
+        className="graph-section workflow-anchor"
+        aria-labelledby="graph-title"
+      >
       <GraphSectionHeading />
       <div className="graph-shell">
         <GraphToolbar
@@ -333,16 +390,6 @@ function CertifiedGraphWorkspace({ reviewId }: { reviewId: string }) {
         />
       </div>
       </section>
-      <ImpactEvidenceExplorer
-        reviewId={reviewId}
-        selection={selection}
-        selectedMachineKey={selectedMachineKey}
-        onSelect={(nextSelection) => {
-          setMode("future");
-          setSelection(nextSelection);
-        }}
-      />
-    </>
   );
 }
 

@@ -3,26 +3,34 @@
 import {
   AlertTriangle,
   ArrowRight,
+  BarChart3,
   Boxes,
   Braces,
   CheckCircle2,
   ChevronRight,
   CircleHelp,
   Database,
+  Eye,
   FileCode2,
+  FileSearch,
   GitBranch,
-  Layers3,
-  Network,
+  GitCompareArrows,
+  ListChecks,
   RefreshCw,
-  Route,
+  RotateCcw,
   ShieldAlert,
   ShieldCheck,
-  Sparkles,
+  Waypoints,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 import { AppShell } from "@/components/app-shell";
-import { GraphWorkspace } from "@/components/graph/graph-workspace";
+import { ImpactEvidenceExplorer } from "@/components/explorer/impact-evidence-explorer";
+import {
+  GraphWorkspace,
+  type GraphMode,
+  type GraphSelection,
+} from "@/components/graph/graph-workspace";
 import { MetricCard } from "@/components/metric-card";
 import { StatusBadge } from "@/components/status-badge";
 import {
@@ -159,48 +167,162 @@ function ReviewContent({
   reviewId: string;
 }) {
   const question = review.blockingQuestions[0];
+  const [selection, setSelection] = useState<GraphSelection>(null);
+  const [graphMode, setGraphMode] = useState<GraphMode>("future");
+  const [rootEdgeId, setRootEdgeId] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<WorkflowSection>("overview");
+  const [navigationNotice, setNavigationNotice] = useState<string | null>(null);
+
+  const navigateTo = useCallback((section: WorkflowSection) => {
+    setActiveSection(section);
+    setNavigationNotice(null);
+    const target = document.getElementById(section);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const url = new URL(window.location.href);
+    url.searchParams.set("section", section);
+    url.hash = section;
+    window.history.replaceState({}, "", url);
+  }, []);
+
+  useEffect(() => {
+    const section = new URLSearchParams(window.location.search).get("section");
+    if (!section) return;
+    window.requestAnimationFrame(() => {
+      if (!isWorkflowSection(section)) {
+        setNavigationNotice(
+          "The requested review section is unavailable. Showing the certified overview.",
+        );
+        return;
+      }
+      setActiveSection(section);
+      document.getElementById(section)?.scrollIntoView({ block: "start" });
+    });
+  }, []);
+
+  const selectReviewEntity = useCallback((next: GraphSelection) => {
+    setSelection(next);
+    if (
+      next?.kind === "node" ||
+      next?.kind === "edge" ||
+      next?.kind === "path"
+    ) {
+      setGraphMode("future");
+    }
+  }, []);
+
+  const focusRootBoundary = useCallback(() => {
+    if (!rootEdgeId) {
+      setNavigationNotice(
+        "The certified graph is still loading. Try the boundary action again.",
+      );
+      return;
+    }
+    setGraphMode("future");
+    setSelection({ kind: "edge", id: rootEdgeId });
+    navigateTo("graph");
+  }, [navigateTo, rootEdgeId]);
+
+  const resetReview = useCallback(() => {
+    setSelection(null);
+    setGraphMode("future");
+    navigateTo("overview");
+  }, [navigateTo]);
+
   return (
     <main className="main">
+      <div id="overview" className="workflow-anchor" />
       <div className="breadcrumb" aria-label="Breadcrumb">
         <span>Change reviews</span>
         <ChevronRight size={14} aria-hidden="true" />
         <span aria-current="page">{review.change.demonstrationId}</span>
       </div>
 
-      <header className="page-heading">
+      <header className="review-context-header">
+        <div className="review-context-change">
+          <span>Certified change review</span>
+          <strong>
+            orders.{review.change.currentField}
+            <ArrowRight size={14} aria-label="renamed to" />
+            orders.{review.change.requestedField}
+          </strong>
+        </div>
         <div>
-          <p className="eyebrow">Certified impact assessment</p>
-          <h1>
-            <span>{review.change.currentField}</span>
-            <ArrowRight size={26} aria-label="renamed to" />
-            <span>{review.change.requestedField}</span>
-          </h1>
-          <p className="dataset-identity">{review.change.displayIdentity}</p>
+          <span>Operation</span>
+          <strong>{humanize(review.change.operation)}</strong>
         </div>
-        <div className="heading-meta">
-          <StatusBadge tone="certified">
-            <ShieldCheck size={14} aria-hidden="true" />
-            {humanize(review.certification.status)}
-          </StatusBadge>
-          <span>{review.change.proposalId}</span>
+        <div>
+          <span>Disposition</span>
+          <strong className="hold-text">Hold for review</strong>
         </div>
+        <div>
+          <span>Technical certainty</span>
+          <strong className="hold-text">
+            {humanize(review.decision.technicalCertainty)}
+          </strong>
+        </div>
+        <StatusBadge tone="certified">
+          <ShieldCheck size={14} aria-hidden="true" />
+          Phase 4 certified
+        </StatusBadge>
       </header>
 
-      <section className="decision-hero" aria-labelledby="decision-title">
-        <div className="decision-primary">
-          <p className="eyebrow">Certified disposition</p>
-          <div className="decision-title-row">
-            <h2 id="decision-title">Hold for review</h2>
+      <WorkflowNavigation
+        active={activeSection}
+        onNavigate={navigateTo}
+        onReset={resetReview}
+      />
+
+      {navigationNotice && (
+        <p className="workflow-notice" role="status">
+          {navigationNotice}
+        </p>
+      )}
+
+      <section className="review-hero" aria-labelledby="review-title">
+        <div className="review-hero-main">
+          <p className="eyebrow">Certified impact assessment</p>
+          <div className="review-change-title">
+            <span>orders.{review.change.currentField}</span>
+            <ArrowRight size={25} aria-label="renamed to" />
+            <span>orders.{review.change.requestedField}</span>
+          </div>
+          <p className="dataset-identity">{review.change.displayIdentity}</p>
+          <div className="review-decision-title">
+            <h1 id="review-title">Hold for review</h1>
             <StatusBadge tone="hold">Review required</StatusBadge>
           </div>
-          <p className="decision-narrative">{review.decision.narrative}</p>
-          <div className="reason-row" aria-label="Decision reasons">
-            {review.decision.reasons.map((reason) => (
-              <span key={reason.code}>{humanize(reason.code)}</span>
-            ))}
+          <p className="decision-narrative">
+            CHRONOS cannot establish compatibility at the first Spark export
+            boundary. The change is not a confirmed failure.
+          </p>
+          <div className="hero-fact-row">
+            <span>
+              <strong>
+                {review.technicalSummary.confirmedDownstreamFailures}
+              </strong>
+              confirmed failures
+            </span>
+            <span>
+              <strong>{review.technicalSummary.unresolvedFields}</strong>
+              technically unresolved fields
+            </span>
+          </div>
+          <div className="workflow-actions">
+            <button className="button" type="button" onClick={focusRootBoundary}>
+              <Eye size={15} aria-hidden="true" />
+              View unresolved boundary
+            </button>
+            <button
+              className="button button-secondary"
+              type="button"
+              onClick={() => navigateTo("evidence")}
+            >
+              <FileSearch size={15} aria-hidden="true" />
+              Review evidence gap
+            </button>
           </div>
         </div>
-        <div className="certainty-panel">
+        <div className="review-hero-side">
           <div>
             <span>Decision certainty</span>
             <strong>{humanize(review.decision.decisionCertainty)}</strong>
@@ -213,18 +335,22 @@ function ReviewContent({
             </strong>
             <small>No confirmed downstream failure</small>
           </div>
+          <div>
+            <span>Severity if realized</span>
+            <strong>{review.severityProfile.severityIfRealized.toUpperCase()}</strong>
+            <small>if the unresolved condition materializes</small>
+          </div>
         </div>
       </section>
 
-      <GraphWorkspace reviewId={reviewId} />
-
-      <section aria-labelledby="scope-title">
+      <section className="overview-section" aria-labelledby="scope-title">
         <SectionHeading
-          eyebrow="Certified scope"
-          title="What the evidence reaches"
+          eyebrow="Overview"
+          title="The review in one screen"
           id="scope-title"
+          supporting="Certified display facts from the Phase 4 presentation package."
         />
-        <div className="metric-grid">
+        <div className="overview-metric-grid">
           <MetricCard
             icon={CheckCircle2}
             label="Confirmed failures"
@@ -244,221 +370,160 @@ function ReviewContent({
             detail="In certified technical scope"
           />
           <MetricCard
+            icon={Waypoints}
+            label="Dependency paths"
+            value={review.technicalSummary.dependencyPaths}
+            detail="Certified modeled paths"
+          />
+          <MetricCard
             icon={Boxes}
             label="Context assets"
             value={review.scopeSummary.connectedContextAssets}
-            detail="Connected business context"
+            detail="Connectivity, not breakage"
           />
         </div>
-      </section>
 
-      <section className="two-column" aria-label="Source state comparison">
-        <article className="panel state-panel">
-          <SectionHeading
-            eyebrow="Certified change"
-            title="Source state comparison"
-            id="state-title"
-          />
-          <div className="state-flow">
-            <SourceState
-              label="Current"
-              field={review.currentState.fieldPath}
-              classification={review.currentState.classification}
-              type={review.currentState.nativeType}
-            />
-            <div className="state-arrow" aria-hidden="true">
-              <ArrowRight size={18} />
-              <span>Rename</span>
-            </div>
-            <SourceState
-              label="Counterfactual"
-              field={review.counterfactualState.fieldPath}
-              classification={review.counterfactualState.classification}
-              type={review.counterfactualState.nativeType}
-            />
-          </div>
-          <dl className="detail-list">
-            <div>
-              <dt>Dataset</dt>
-              <dd title={review.change.datasetUrn}>
-                {compactIdentifier(review.change.datasetUrn, 24)}
-              </dd>
-            </div>
-            <div>
-              <dt>Schema fields</dt>
-              <dd>{review.counterfactualState.schemaFieldCount}</dd>
-            </div>
-            <div>
-              <dt>Environment</dt>
-              <dd>{review.change.environment}</dd>
-            </div>
-          </dl>
-        </article>
-
-        <article className="panel severity-panel">
-          <SectionHeading
-            eyebrow="Conditional impact"
-            title="Severity if realized"
-            id="severity-title"
-          />
-          <div className="severity-callout">
-            <StatusBadge tone="high">
-              {humanize(review.severityProfile.severityIfRealized)}
-            </StatusBadge>
-            <span>if the unresolved condition materializes</span>
-          </div>
-          <div className="severity-grid">
-            <LabelValue
-              label="Breadth"
-              value={review.severityProfile.breadth}
-            />
-            <LabelValue
-              label="Context"
-              value={review.severityProfile.contextCriticality}
-            />
-            <LabelValue
-              label="Sensitivity"
-              value={review.severityProfile.sensitivity}
-            />
-            <LabelValue
-              label="Consequence"
-              value={review.severityProfile.technicalConsequence}
-            />
-          </div>
-        </article>
-      </section>
-
-      {question && (
-        <section className="blocking-panel" aria-labelledby="blocking-title">
-          <div className="blocking-icon" aria-hidden="true">
-            <CircleHelp size={22} />
-          </div>
-          <div>
-            <div className="section-kicker-row">
-              <p className="eyebrow">Blocking question</p>
-              <StatusBadge tone="unresolved">Unresolved</StatusBadge>
-            </div>
-            <h2 id="blocking-title">{question.question}</h2>
-            <p>{question.reason}</p>
-            <div className="blocking-stats">
-              <span>{question.affectedFields} fields</span>
-              <span>{question.affectedDatasets} datasets</span>
-              <span>{question.affectedPaths} paths</span>
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section className="two-column evidence-layout">
-        <article className="panel" aria-labelledby="evidence-title">
-          <SectionHeading
-            eyebrow="Resolution requirements"
-            title="Required evidence"
-            id="evidence-title"
-          />
-          <div className="evidence-list">
-            {review.requiredEvidence.map((item, index) => (
-              <div className="evidence-row" key={item.evidenceId}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <strong>{humanize(item.evidenceClass)}</strong>
-                  <p>{item.reason}</p>
-                </div>
-                <FileCode2 size={17} aria-hidden="true" />
+        <div className="review-overview-grid">
+          <article className="panel source-review-card">
+            <p className="eyebrow">Current vs future</p>
+            <div className="state-flow">
+              <SourceState
+                label="Current"
+                field={review.currentState.fieldPath}
+                classification={review.currentState.classification}
+                type={review.currentState.nativeType}
+              />
+              <div className="state-arrow" aria-hidden="true">
+                <ArrowRight size={18} />
+                <span>Rename</span>
               </div>
-            ))}
-          </div>
-        </article>
+              <SourceState
+                label="Counterfactual"
+                field={review.counterfactualState.fieldPath}
+                classification={review.counterfactualState.classification}
+                type={review.counterfactualState.nativeType}
+              />
+            </div>
+          </article>
+          <article className="panel overview-certainty-card">
+            <p className="eyebrow">Certified interpretation</p>
+            <div className="severity-grid">
+              <LabelValue
+                label="Severity if realized"
+                value={review.severityProfile.severityIfRealized}
+              />
+              <LabelValue label="Breadth" value={review.severityProfile.breadth} />
+              <LabelValue
+                label="Criticality"
+                value={review.severityProfile.contextCriticality}
+              />
+              <LabelValue
+                label="Sensitivity"
+                value={review.severityProfile.sensitivity}
+              />
+            </div>
+            <small>No explicit business criticality is present.</small>
+          </article>
+        </div>
 
-        <article className="panel" aria-labelledby="root-title">
-          <SectionHeading
-            eyebrow="Technical origin"
-            title={review.rootCause.title}
-            id="root-title"
-          />
-          <p className="panel-copy">{review.rootCause.explanation}</p>
-          <dl className="code-details">
-            <div>
-              <dt>Root cause</dt>
-              <dd>{review.rootCause.rootCauseId}</dd>
-            </div>
-            <div>
-              <dt>Boundary</dt>
-              <dd>{review.rootCause.rootRelationshipId}</dd>
-            </div>
-            <div>
-              <dt>Unresolved paths</dt>
-              <dd>{review.technicalSummary.unresolvedPaths}</dd>
-            </div>
-          </dl>
-        </article>
-      </section>
+        <ReviewStory review={review} />
+        <ReviewProgress review={review} />
 
-      <section aria-labelledby="paths-title">
-        <SectionHeading
-          eyebrow="Certified evidence"
-          title="Representative dependency paths"
-          id="paths-title"
-          supporting="Selected by the certified impact synthesis; no graph is recomputed in the browser."
-        />
-        <div className="path-grid">
-          {review.representativePaths.map((path) => (
-            <article className="path-card" key={path.pathId}>
-              <div className="path-card-head">
-                <span className="path-icon" aria-hidden="true">
-                  <Route size={17} />
+        {question && (
+          <article className="overview-blocking-question">
+            <CircleHelp size={21} aria-hidden="true" />
+            <div>
+              <p className="eyebrow">The question holding this review</p>
+              <h2>{question.question}</h2>
+              <p>{question.reason}</p>
+              <div className="blocking-stats">
+                <span>{question.affectedFields} fields</span>
+                <span>{question.affectedDatasets} datasets</span>
+                <span>{question.affectedPaths} paths</span>
+                <span>{review.requiredEvidence.length} evidence classes</span>
+              </div>
+            </div>
+            <button type="button" className="text-action" onClick={focusRootBoundary}>
+              View root boundary
+            </button>
+          </article>
+        )}
+
+        <div className="overview-supporting-records">
+          <article className="panel">
+            <p className="eyebrow">Resolution requirements</p>
+            <h2>Required evidence</h2>
+            <div className="overview-evidence-list">
+              {review.requiredEvidence.map((item) => (
+                <span key={item.evidenceId}>
+                  <FileCode2 size={13} aria-hidden="true" />
+                  {humanize(item.evidenceClass)}
                 </span>
-                <StatusBadge tone="neutral">
-                  {humanize(path.kind)}
-                </StatusBadge>
+              ))}
+            </div>
+          </article>
+          <article className="panel">
+            <p className="eyebrow">Certified evidence</p>
+            <h2>Representative dependency paths</h2>
+            {review.representativePaths.map((path) => (
+              <div className="overview-path" key={path.pathId}>
+                <strong>
+                  {path.sourceField.fieldPath} →{" "}
+                  {path.downstreamField.fieldPath}
+                </strong>
                 <span>{path.hopCount} hops</span>
               </div>
-              <div className="path-endpoints">
-                <div>
-                  <small>Source</small>
-                  <strong>{path.sourceField.fieldPath}</strong>
-                </div>
-                <ArrowRight size={18} aria-hidden="true" />
-                <div>
-                  <small>Downstream</small>
-                  <strong>{path.downstreamField.fieldPath}</strong>
-                </div>
-              </div>
-              <p>{path.explanation}</p>
-              <code title={path.contextAssetId}>
-                {compactIdentifier(path.contextAssetId, 20)}
-              </code>
-            </article>
-          ))}
+            ))}
+          </article>
+          <article className="panel">
+            <p className="eyebrow">Connected context</p>
+            <h2>Certified context highlights</h2>
+            <div className="overview-context-list">
+              {review.contextHighlights.map((item) => (
+                <span key={item.highlightId}>
+                  {item.displayName ??
+                    compactIdentifier(item.subjectId, 18)}
+                </span>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
-      <section aria-labelledby="context-title">
-        <SectionHeading
-          eyebrow="Connected context"
-          title="Certified context highlights"
-          id="context-title"
-          supporting={`${review.scopeSummary.connectedContextAssets} assets are connected in total. These highlights are the certified representative selection.`}
-        />
-        <div className="context-grid">
-          {review.contextHighlights.map((item) => (
-            <article className="context-card" key={item.highlightId}>
-              <ContextIcon kind={item.kind} />
-              <div>
-                <span>{humanize(item.kind)}</span>
-                <strong>
-                  {item.displayName ??
-                    compactIdentifier(item.subjectId, 18)}
-                </strong>
-                <small>
-                  {item.supportingFieldCount} supporting field
-                  {item.supportingFieldCount === 1 ? "" : "s"}
-                </small>
-              </div>
-            </article>
-          ))}
+      <div className="workflow-section-intro">
+        <GitCompareArrows size={20} aria-hidden="true" />
+        <div>
+          <p className="eyebrow">Future state</p>
+          <h2>Inspect where uncertainty begins</h2>
+          <p>
+            Future is the default view. Current and Diff remain available for
+            comparison; the UNKNOWN root edge stays explicit.
+          </p>
         </div>
-      </section>
+      </div>
+
+      <GraphWorkspace
+        reviewId={reviewId}
+        selection={selection}
+        onSelectionChange={selectReviewEntity}
+        mode={graphMode}
+        onModeChange={setGraphMode}
+        onRootBoundaryReady={setRootEdgeId}
+      />
+
+      <ImpactEvidenceExplorer
+        reviewId={reviewId}
+        selection={selection}
+        selectedMachineKey={
+          selection?.kind === "node" ? selection.machineKey ?? null : null
+        }
+        onSelect={(nextSelection) => {
+          selectReviewEntity(nextSelection);
+          setActiveSection("impact");
+        }}
+        onNavigate={navigateTo}
+        onRootFocus={focusRootBoundary}
+      />
 
       <footer className="certification-footer">
         <div>
@@ -478,6 +543,146 @@ function ReviewContent({
         </code>
       </footer>
     </main>
+  );
+}
+
+type WorkflowSection =
+  | "overview"
+  | "graph"
+  | "impact"
+  | "evidence"
+  | "decision";
+
+const WORKFLOW_SECTIONS: readonly WorkflowSection[] = [
+  "overview",
+  "graph",
+  "impact",
+  "evidence",
+  "decision",
+];
+
+function isWorkflowSection(value: string | null): value is WorkflowSection {
+  return WORKFLOW_SECTIONS.includes(value as WorkflowSection);
+}
+
+function WorkflowNavigation({
+  active,
+  onNavigate,
+  onReset,
+}: {
+  active: WorkflowSection;
+  onNavigate: (section: WorkflowSection) => void;
+  onReset: () => void;
+}) {
+  return (
+    <nav className="review-section-nav" aria-label="Review sections">
+      <div>
+        {WORKFLOW_SECTIONS.map((section, index) => (
+          <button
+            key={section}
+            type="button"
+            aria-current={active === section ? "location" : undefined}
+            onClick={() => onNavigate(section)}
+          >
+            <span aria-hidden="true">{index + 1}</span>
+            {humanize(section)}
+          </button>
+        ))}
+      </div>
+      <button type="button" className="review-reset" onClick={onReset}>
+        <RotateCcw size={13} aria-hidden="true" />
+        Reset review
+      </button>
+    </nav>
+  );
+}
+
+function ReviewStory({ review }: { review: CertifiedChangeReview }) {
+  const story = [
+    {
+      key: "change",
+      label: "Change",
+      value: `${review.change.currentField} → ${review.change.requestedField}`,
+      icon: FileCode2,
+    },
+    {
+      key: "future",
+      label: "Current vs future",
+      value: "Source identity changes",
+      icon: GitCompareArrows,
+    },
+    {
+      key: "root",
+      label: "Root uncertainty",
+      value: `${review.technicalSummary.unresolvedRelationships} UNKNOWN boundary`,
+      icon: GitBranch,
+    },
+    {
+      key: "reach",
+      label: "Downstream reach",
+      value: `${review.technicalSummary.downstreamFields} fields · ${review.technicalSummary.downstreamDatasets} datasets · ${review.technicalSummary.dependencyPaths} paths`,
+      icon: BarChart3,
+    },
+    {
+      key: "context",
+      label: "Context",
+      value: `${review.scopeSummary.connectedContextAssets} connected assets`,
+      icon: Boxes,
+    },
+    {
+      key: "evidence",
+      label: "Missing evidence",
+      value: `${review.requiredEvidence.length} required classes`,
+      icon: ListChecks,
+    },
+    {
+      key: "decision",
+      label: "Decision",
+      value: "Hold for review",
+      icon: ShieldAlert,
+    },
+  ];
+
+  return (
+    <div className="review-story" aria-label="Certified review story">
+      {story.map((item) => {
+        const Icon = item.icon;
+        return (
+          <article key={item.key}>
+            <Icon size={15} aria-hidden="true" />
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function ReviewProgress({ review }: { review: CertifiedChangeReview }) {
+  const items = [
+    ["Change identified", "Complete"],
+    ["Future graph constructed", "Complete"],
+    ["Dependency exposure evaluated", "Complete"],
+    [
+      "Compatibility resolved",
+      `${review.technicalSummary.unresolvedRelationships} unknown`,
+    ],
+    ["Evidence sufficient", `${review.requiredEvidence.length} required`],
+    ["Review decision", "Hold"],
+  ];
+  return (
+    <div className="review-progress" aria-label="Certified review sequence">
+      {items.map(([label, state], index) => (
+        <div key={label}>
+          <span aria-hidden="true">{index + 1}</span>
+          <div>
+            <strong>{label}</strong>
+            <small>{state}</small>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -530,25 +735,5 @@ function LabelValue({ label, value }: { label: string; value: string }) {
       <span>{label}</span>
       <strong>{humanize(value)}</strong>
     </div>
-  );
-}
-
-function ContextIcon({ kind }: { kind: string }) {
-  const Icon =
-    kind === "technical_dataset"
-      ? Database
-      : kind === "pipeline_context"
-        ? GitBranch
-        : kind === "bi_consumer"
-          ? Layers3
-          : kind === "data_product"
-            ? Sparkles
-            : kind === "associated_owner"
-              ? ShieldCheck
-              : Network;
-  return (
-    <span className="context-icon" aria-hidden="true">
-      <Icon size={17} />
-    </span>
   );
 }

@@ -132,9 +132,12 @@ describe("GraphWorkspace", () => {
 
   it("opens a field inspector from a node selection", async () => {
     const { container } = await renderGraph();
+    await waitFor(() => {
+      expect(container.querySelector('[data-id="future-0"]')).not.toBeNull();
+    });
     const node = container.querySelector('[data-id="future-0"]');
     expect(node).not.toBeNull();
-    fireEvent.click(node as Element);
+    fireEvent.click(node!);
     expect(screen.getByText("Field")).toBeVisible();
     expect(screen.getByText("Graph state")).toBeVisible();
   });

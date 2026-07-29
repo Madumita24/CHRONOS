@@ -1,6 +1,6 @@
 # CHRONOS
 
-Current completed phase: **Phase 5.3 - Impact & Evidence Explorer**.
+Current completed phase: **Phase 5.4 - Change Review Workflow**.
 
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
@@ -63,6 +63,8 @@ npm run build
 
 - [Phase 5.3 impact and evidence architecture](PHASE_5_3_IMPACT_EVIDENCE_ARCHITECTURE.md)
 - [Phase 5.3 verification result](PHASE_5_3_IMPACT_EVIDENCE_RESULT.md)
+- [Phase 5.4 change review architecture](PHASE_5_4_CHANGE_REVIEW_ARCHITECTURE.md)
+- [Phase 5.4 verification result](PHASE_5_4_CHANGE_REVIEW_RESULT.md)
 - [Phase 5.2 graph architecture](PHASE_5_2_GRAPH_ARCHITECTURE.md)
 - [Phase 5.2 verification result](PHASE_5_2_FUTURE_GRAPH_UI_RESULT.md)
 - [Architecture](PHASE_5_1_FRONTEND_ARCHITECTURE.md)
