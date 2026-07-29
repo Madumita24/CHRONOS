@@ -63,7 +63,11 @@ export type GraphSelection =
 type GraphState =
   | { kind: "loading" }
   | { kind: "ready"; graph: CertifiedGraphReview }
-  | { kind: "error"; message: string; integrity: boolean };
+  | {
+      kind: "error";
+      message: string;
+      category: "service" | "contract" | "integrity";
+    };
 
 const nodeTypes = { field: GraphFieldNode };
 const edgeTypes = { lineage: GraphLineageEdge };
@@ -147,10 +151,13 @@ function CertifiedGraphWorkspace({
         }
         setState({
           kind: "error",
-          integrity:
-            error instanceof GraphContractError ||
-            (error instanceof ReviewApiError &&
-              error.code === "certification_integrity_error"),
+          category:
+            error instanceof GraphContractError
+              ? "contract"
+              : error instanceof ReviewApiError &&
+                    error.code === "certification_integrity_error"
+                ? "integrity"
+                : "service",
           message:
             error instanceof Error
               ? error.message
@@ -187,22 +194,30 @@ function CertifiedGraphWorkspace({
   }
 
   if (state.kind === "error") {
-    const Icon = state.integrity ? ShieldAlert : AlertTriangle;
+    const trustFailure = state.category !== "service";
+    const Icon = trustFailure ? ShieldAlert : AlertTriangle;
+    const title =
+      state.category === "integrity"
+        ? "Certification integrity failure"
+        : state.category === "contract"
+          ? "Graph contract invalid"
+          : "Graph unavailable";
     return (
       <section className="graph-section" aria-labelledby="graph-title">
         <GraphSectionHeading />
         <div
-          className={`graph-error ${state.integrity ? "integrity" : ""}`}
+          className={`graph-error ${trustFailure ? "integrity" : ""}`}
           role="alert"
         >
           <Icon size={24} aria-hidden="true" />
           <div>
-            <strong>
-              {state.integrity
-                ? "Certified graph integrity check failed"
-                : "Certified graph unavailable"}
-            </strong>
+            <strong>{title}</strong>
             <p>{state.message}</p>
+            <small>
+              {trustFailure
+                ? "Graph conclusions are withheld. The certified overview remains available."
+                : "The certified overview remains available while graph detail is unavailable."}
+            </small>
           </div>
           <button className="button button-small" type="button" onClick={retry}>
             <RefreshCw size={14} aria-hidden="true" />
@@ -266,6 +281,7 @@ function CertifiedGraphWorkspace({
     markerEnd: { type: MarkerType.ArrowClosed, width: 15, height: 15 },
     data: {
       ...edge,
+      diffState: mode === "diff" ? edge.diffState : null,
       highlighted:
         highlightedEdgeIds.has(edge.id) ||
         (selection?.kind === "edge" && selection.id === edge.id),
@@ -279,6 +295,7 @@ function CertifiedGraphWorkspace({
     ariaLabel: `${node.fieldPath}, ${node.platform}, depth ${node.depth}`,
     data: {
       ...node,
+      diffState: mode === "diff" ? node.diffState : null,
       highlighted:
         highlightedNodeIds.has(node.id) ||
         (selection?.kind === "node" && selection.id === node.id),
@@ -324,6 +341,12 @@ function CertifiedGraphWorkspace({
             setPlatform("all");
             setCompatibility("all");
           }}
+        />
+        <GraphModeBanner
+          graph={graph}
+          mode={mode}
+          projection={projection}
+          onSelectEdge={(id) => setSelection({ kind: "edge", id })}
         />
         <div className="graph-body">
           <div className="graph-canvas" data-testid={`graph-mode-${mode}`}>
@@ -511,6 +534,99 @@ function GraphToolbar({
   );
 }
 
+function GraphModeBanner({
+  graph,
+  projection,
+  mode,
+  onSelectEdge,
+}: {
+  graph: CertifiedGraphReview;
+  projection: GraphProjection;
+  mode: GraphMode;
+  onSelectEdge: (id: string) => void;
+}) {
+  const root = graph.rootUncertainty;
+  const sourceIdentity =
+    mode === "current" ? root.currentSource : root.futureSource;
+  const targetIdentity =
+    mode === "current" ? root.currentTarget : root.futureTarget;
+  const sourcePlatform =
+    projection.nodes.find(
+      (node) =>
+        node.datasetUrn === sourceIdentity.datasetUrn &&
+        node.fieldPath === sourceIdentity.fieldPath,
+    )?.platform ?? "Source";
+  const targetPlatform =
+    projection.nodes.find(
+      (node) =>
+        node.datasetUrn === targetIdentity.datasetUrn &&
+        node.fieldPath === targetIdentity.fieldPath,
+    )?.platform ?? "Downstream";
+
+  if (mode === "diff") {
+    return (
+      <article className="graph-mode-banner mode-diff" aria-label="Diff summary">
+        <div>
+          <span>Removed current source</span>
+          <strong>{root.currentSource.fieldPath}</strong>
+        </div>
+        <span className="graph-mode-arrow" aria-hidden="true">→</span>
+        <div>
+          <span>Added future source</span>
+          <strong>{root.futureSource.fieldPath}</strong>
+        </div>
+        <div>
+          <span>Preserved downstream identities</span>
+          <strong>25</strong>
+        </div>
+        <button
+          type="button"
+          onClick={() => onSelectEdge(root.futureEdgeId)}
+        >
+          Projected root · UNKNOWN
+        </button>
+      </article>
+    );
+  }
+
+  const isFuture = mode === "future";
+  return (
+    <article
+      className={`graph-mode-banner mode-${mode}`}
+      aria-label={isFuture ? "Root uncertainty summary" : "Observed source summary"}
+    >
+      <div>
+        <span>{isFuture ? "Counterfactual source" : "Observed source"}</span>
+        <strong>
+          {sourcePlatform} · {sourceIdentity.fieldPath}
+        </strong>
+      </div>
+      <div className={`graph-boundary-state ${isFuture ? "unknown" : "observed"}`}>
+        <span>{isFuture ? "UNKNOWN" : "OBSERVED"}</span>
+        <small>
+          {isFuture ? "Evidence · INSUFFICIENT" : "Certified current lineage"}
+        </small>
+      </div>
+      <div>
+        <span>First downstream field</span>
+        <strong>
+          {targetPlatform} · {targetIdentity.fieldPath}
+        </strong>
+      </div>
+      <button
+        type="button"
+        onClick={() =>
+          onSelectEdge(
+            isFuture ? root.futureEdgeId : root.currentEdgeId,
+          )
+        }
+      >
+        {isFuture ? "Inspect boundary" : "Inspect relationship"}
+      </button>
+    </article>
+  );
+}
+
 function GraphInspector({
   graph,
   projection,
@@ -571,9 +687,14 @@ function GraphInspector({
           onSelectPath={onSelectPath}
         />
       )}
-      {path && <PathDetails path={path} mode={mode} />}
+      {path && <PathDetails graph={graph} path={path} mode={mode} />}
       {!node && !edge && !path && (
-        <GraphSummary graph={graph} onSelectEdge={onSelectEdge} />
+        <GraphSummary
+          graph={graph}
+          projection={projection}
+          mode={mode}
+          onSelectEdge={onSelectEdge}
+        />
       )}
     </aside>
   );
@@ -594,8 +715,20 @@ function NodeDetails({
         dataset={node.secondaryLabel}
       />
       <InspectorRow label="Graph state" value={humanize(node.graphState)} />
+      {node.exposureState && (
+        <InspectorRow label="Exposure" value={humanize(node.exposureState)} />
+      )}
       <InspectorRow label="Depth" value={String(node.depth)} />
       <InspectorRow label="Supporting paths" value={String(node.pathCount)} />
+      {node.severityIfRealized && (
+        <InspectorRow
+          label="Severity if realized"
+          value={humanize(node.severityIfRealized)}
+        />
+      )}
+      {node.certainty && (
+        <InspectorRow label="Certainty" value={humanize(node.certainty)} />
+      )}
       {node.compatibilityState && (
         <InspectorRow
           label="Compatibility"
@@ -652,6 +785,12 @@ function EdgeDetails({
         value={String(edge.pathParticipationCount)}
       />
       {edge.explanation && <p className="inspector-explanation">{edge.explanation}</p>}
+      {edge.evidenceStrength && (
+        <InspectorRow
+          label="Evidence"
+          value={humanize(edge.evidenceStrength)}
+        />
+      )}
       {root && (
         <div className="root-evidence">
           <strong>Unresolved rename boundary</strong>
@@ -682,19 +821,27 @@ function EdgeDetails({
 }
 
 function PathDetails({
+  graph,
   path,
   mode,
 }: {
+  graph: CertifiedGraphReview;
   path: GraphPathRecord;
   mode: GraphMode;
 }) {
+  const source =
+    mode === "current"
+      ? graph.rootUncertainty.currentSource
+      : graph.rootUncertainty.futureSource;
   return (
     <div className="inspector-content">
       <div className="path-heading">
         <Waypoints size={18} aria-hidden="true" />
         <div>
-          <strong>{path.targetField.fieldPath}</strong>
-          <span>{path.targetField.datasetUrn}</span>
+          <strong>
+            {source.fieldPath} → {path.targetField.fieldPath}
+          </strong>
+          <span>{compactDataset(path.targetField.datasetUrn)}</span>
         </div>
       </div>
       <InspectorRow label="Depth" value={String(path.depth)} />
@@ -721,11 +868,40 @@ function PathDetails({
 
 function GraphSummary({
   graph,
+  projection,
+  mode,
   onSelectEdge,
 }: {
   graph: CertifiedGraphReview;
+  projection: GraphProjection;
+  mode: GraphMode;
   onSelectEdge: (id: string) => void;
 }) {
+  const summary =
+    mode === "current"
+      ? {
+          label: "Observed current state",
+          copy:
+            "All 27 relationships are certified current lineage. Future compatibility is intentionally not applied.",
+          action: "Inspect observed source relationship",
+          edgeId: graph.rootUncertainty.currentEdgeId,
+        }
+      : mode === "diff"
+        ? {
+            label: "Certified source diff",
+            copy:
+              "One current source is removed, one future source is added, and 25 downstream identities are preserved. The projected root boundary is UNKNOWN.",
+            action: "Inspect projected UNKNOWN boundary",
+            edgeId: graph.rootUncertainty.futureEdgeId,
+          }
+        : {
+            label: "Counterfactual future",
+            copy:
+              "One projected root relationship is UNKNOWN. The other 26 assessed future relationships are CONDITIONALLY COMPATIBLE.",
+            action: "Inspect UNKNOWN root boundary",
+            edgeId: graph.rootUncertainty.futureEdgeId,
+          };
+  const SummaryIcon = mode === "current" ? Network : AlertTriangle;
   return (
     <div className="inspector-content">
       <div className="graph-summary-origin">
@@ -735,16 +911,16 @@ function GraphSummary({
             {graph.sourceChange.current.fieldPath} →{" "}
             {graph.sourceChange.future.fieldPath}
           </strong>
-          <span>Certified source replacement</span>
+          <span>{summary.label}</span>
         </div>
       </div>
       <div className="summary-number-grid">
         <div>
-          <strong>{graph.summary.futureFieldNodes}</strong>
+          <strong>{projection.nodes.length}</strong>
           <span>fields</span>
         </div>
         <div>
-          <strong>{graph.summary.structuralRelationships}</strong>
+          <strong>{projection.edges.length}</strong>
           <span>relationships</span>
         </div>
         <div>
@@ -756,19 +932,16 @@ function GraphSummary({
           <span>max depth</span>
         </div>
       </div>
-      <div className="root-summary">
-        <AlertTriangle size={17} aria-hidden="true" />
-        <p>
-          One root relationship is <strong>UNKNOWN</strong>. All 26 assessed
-          future relationships are conditionally compatible.
-        </p>
+      <div className={`root-summary mode-${mode}`}>
+        <SummaryIcon size={17} aria-hidden="true" />
+        <p>{summary.copy}</p>
       </div>
       <button
         className="inspect-root-button"
         type="button"
-        onClick={() => onSelectEdge(graph.rootUncertainty.futureEdgeId)}
+        onClick={() => onSelectEdge(summary.edgeId)}
       >
-        Inspect unknown root boundary
+        {summary.action}
       </button>
       <p className="inspector-note">
         Select a field, relationship, or representative path to inspect

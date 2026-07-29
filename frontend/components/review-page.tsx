@@ -4,9 +4,7 @@ import {
   AlertTriangle,
   ArrowRight,
   BarChart3,
-  Boxes,
   Braces,
-  CheckCircle2,
   ChevronRight,
   CircleHelp,
   Database,
@@ -48,7 +46,11 @@ import type { CertifiedChangeReview } from "@/lib/review-contract";
 type ReviewState =
   | { kind: "loading" }
   | { kind: "ready"; review: CertifiedChangeReview }
-  | { kind: "error"; message: string; integrity: boolean };
+  | {
+      kind: "error";
+      message: string;
+      category: "service" | "contract" | "integrity";
+    };
 
 export function ReviewPage({ reviewId }: { reviewId: string }) {
   const [state, setState] = useState<ReviewState>({ kind: "loading" });
@@ -67,13 +69,16 @@ export function ReviewPage({ reviewId }: { reviewId: string }) {
         if (controller.signal.aborted) {
           return;
         }
-        const integrity =
-          error instanceof ReviewContractError ||
-          (error instanceof ReviewApiError &&
-            error.code === "certification_integrity_error");
+        const category =
+          error instanceof ReviewContractError
+            ? "contract"
+            : error instanceof ReviewApiError &&
+                error.code === "certification_integrity_error"
+              ? "integrity"
+              : "service";
         setState({
           kind: "error",
-          integrity,
+          category,
           message:
             error instanceof Error
               ? error.message
@@ -88,7 +93,7 @@ export function ReviewPage({ reviewId }: { reviewId: string }) {
       {state.kind === "loading" && <ReviewLoading />}
       {state.kind === "error" && (
         <ReviewError
-          integrity={state.integrity}
+          category={state.category}
           message={state.message}
           onRetry={retry}
         />
@@ -117,38 +122,43 @@ function ReviewLoading() {
 }
 
 function ReviewError({
-  integrity,
+  category,
   message,
   onRetry,
 }: {
-  integrity: boolean;
+  category: "service" | "contract" | "integrity";
   message: string;
   onRetry: () => void;
 }) {
-  const Icon = integrity ? ShieldAlert : AlertTriangle;
+  const trustFailure = category !== "service";
+  const Icon = trustFailure ? ShieldAlert : AlertTriangle;
+  const label =
+    category === "integrity"
+      ? "Certification integrity failure"
+      : category === "contract"
+        ? "Contract invalid"
+        : "Service unavailable";
   return (
     <main className="main centered-state">
       <section
-        className={`error-panel ${integrity ? "integrity" : ""}`}
+        className={`error-panel ${trustFailure ? "integrity" : ""}`}
         aria-labelledby="error-title"
         role="alert"
       >
         <span className="error-icon" aria-hidden="true">
           <Icon size={26} />
         </span>
-        <p className="eyebrow">
-          {integrity ? "Certification gate closed" : "Connection interrupted"}
-        </p>
+        <p className="eyebrow">{label}</p>
         <h1 id="error-title">
-          {integrity
-            ? "Certified evidence cannot be displayed"
+          {trustFailure
+            ? "Certified review withheld"
             : "The review service is unavailable"}
         </h1>
         <p>{message}</p>
         <p className="error-guidance">
-          {integrity
+          {trustFailure
             ? "No fallback data is shown. Restore the certified artifacts and retry."
-            : "Confirm the local presentation API is running, then retry."}
+            : "The review, graph conclusions, and impact conclusions are unavailable. Confirm the local presentation API is running, then retry."}
         </p>
         <button className="button" type="button" onClick={onRetry}>
           <RefreshCw size={16} aria-hidden="true" />
@@ -172,6 +182,24 @@ function ReviewContent({
   const [rootEdgeId, setRootEdgeId] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<WorkflowSection>("overview");
   const [navigationNotice, setNavigationNotice] = useState<string | null>(null);
+  const graphNarrative =
+    graphMode === "current"
+      ? {
+          eyebrow: "Current state",
+          title: "Inspect observed lineage",
+          copy: "Current shows certified observed relationships only. Counterfactual compatibility styling is intentionally absent.",
+        }
+      : graphMode === "diff"
+        ? {
+            eyebrow: "Certified diff",
+            title: "Compare the source identity change",
+            copy: "Diff makes the removed current source, added future source, and preserved downstream identities explicit.",
+          }
+        : {
+            eyebrow: "Future state",
+            title: "Inspect where uncertainty begins",
+            copy: "Future is the default view. Current and Diff remain available for comparison; the UNKNOWN root edge stays explicit.",
+          };
 
   const navigateTo = useCallback((section: WorkflowSection) => {
     setActiveSection(section);
@@ -252,12 +280,12 @@ function ReviewContent({
         </div>
         <div>
           <span>Disposition</span>
-          <strong className="hold-text">Hold for review</strong>
+          <strong className="hold-text">HOLD FOR REVIEW</strong>
         </div>
         <div>
           <span>Technical certainty</span>
           <strong className="hold-text">
-            {humanize(review.decision.technicalCertainty)}
+            {review.decision.technicalCertainty.toUpperCase()}
           </strong>
         </div>
         <StatusBadge tone="certified">
@@ -280,15 +308,19 @@ function ReviewContent({
 
       <section className="review-hero" aria-labelledby="review-title">
         <div className="review-hero-main">
-          <p className="eyebrow">Certified impact assessment</p>
+          <p className="eyebrow">Field rename</p>
           <div className="review-change-title">
             <span>orders.{review.change.currentField}</span>
             <ArrowRight size={25} aria-label="renamed to" />
             <span>orders.{review.change.requestedField}</span>
           </div>
-          <p className="dataset-identity">{review.change.displayIdentity}</p>
+          <div className="review-change-meta" aria-label="Change identity">
+            <span>{humanize(review.change.platform)}</span>
+            <span>{humanize(review.change.operation)}</span>
+            <span>Dataset unchanged: orders</span>
+          </div>
           <div className="review-decision-title">
-            <h1 id="review-title">Hold for review</h1>
+            <h1 id="review-title">HOLD FOR REVIEW</h1>
             <StatusBadge tone="hold">Review required</StatusBadge>
           </div>
           <p className="decision-narrative">
@@ -300,11 +332,11 @@ function ReviewContent({
               <strong>
                 {review.technicalSummary.confirmedDownstreamFailures}
               </strong>
-              confirmed failures
+              CONFIRMED FAILURES
             </span>
             <span>
               <strong>{review.technicalSummary.unresolvedFields}</strong>
-              technically unresolved fields
+              TECHNICALLY UNRESOLVED FIELDS
             </span>
           </div>
           <div className="workflow-actions">
@@ -325,13 +357,15 @@ function ReviewContent({
         <div className="review-hero-side">
           <div>
             <span>Decision certainty</span>
-            <strong>{humanize(review.decision.decisionCertainty)}</strong>
+            <strong>
+              {humanize(review.decision.decisionCertainty).toUpperCase()}
+            </strong>
             <small>Confidence in the review rule</small>
           </div>
           <div>
             <span>Technical certainty</span>
             <strong className="unresolved-text">
-              {humanize(review.decision.technicalCertainty)}
+              {review.decision.technicalCertainty.toUpperCase()}
             </strong>
             <small>No confirmed downstream failure</small>
           </div>
@@ -352,14 +386,8 @@ function ReviewContent({
         />
         <div className="overview-metric-grid">
           <MetricCard
-            icon={CheckCircle2}
-            label="Confirmed failures"
-            value={review.technicalSummary.confirmedDownstreamFailures}
-            detail="No breakage asserted"
-          />
-          <MetricCard
             icon={Braces}
-            label="Unresolved fields"
+            label="Technically unresolved fields"
             value={review.technicalSummary.unresolvedFields}
             detail="Across the dependency cone"
           />
@@ -374,12 +402,6 @@ function ReviewContent({
             label="Dependency paths"
             value={review.technicalSummary.dependencyPaths}
             detail="Certified modeled paths"
-          />
-          <MetricCard
-            icon={Boxes}
-            label="Context assets"
-            value={review.scopeSummary.connectedContextAssets}
-            detail="Connectivity, not breakage"
           />
         </div>
 
@@ -427,7 +449,6 @@ function ReviewContent({
         </div>
 
         <ReviewStory review={review} />
-        <ReviewProgress review={review} />
 
         {question && (
           <article className="overview-blocking-question">
@@ -493,12 +514,9 @@ function ReviewContent({
       <div className="workflow-section-intro">
         <GitCompareArrows size={20} aria-hidden="true" />
         <div>
-          <p className="eyebrow">Future state</p>
-          <h2>Inspect where uncertainty begins</h2>
-          <p>
-            Future is the default view. Current and Diff remain available for
-            comparison; the UNKNOWN root edge stays explicit.
-          </p>
+          <p className="eyebrow">{graphNarrative.eyebrow}</p>
+          <h2>{graphNarrative.title}</h2>
+          <p>{graphNarrative.copy}</p>
         </div>
       </div>
 
@@ -601,14 +619,14 @@ function ReviewStory({ review }: { review: CertifiedChangeReview }) {
   const story = [
     {
       key: "change",
-      label: "Change",
+      label: "Proposed change",
       value: `${review.change.currentField} → ${review.change.requestedField}`,
       icon: FileCode2,
     },
     {
       key: "future",
-      label: "Current vs future",
-      value: "Source identity changes",
+      label: "Counterfactual future",
+      value: "Source identity changes tomorrow",
       icon: GitCompareArrows,
     },
     {
@@ -624,21 +642,15 @@ function ReviewStory({ review }: { review: CertifiedChangeReview }) {
       icon: BarChart3,
     },
     {
-      key: "context",
-      label: "Context",
-      value: `${review.scopeSummary.connectedContextAssets} connected assets`,
-      icon: Boxes,
-    },
-    {
       key: "evidence",
-      label: "Missing evidence",
+      label: "Evidence gap",
       value: `${review.requiredEvidence.length} required classes`,
       icon: ListChecks,
     },
     {
       key: "decision",
       label: "Decision",
-      value: "Hold for review",
+      value: "HOLD FOR REVIEW",
       icon: ShieldAlert,
     },
   ];
@@ -655,33 +667,6 @@ function ReviewStory({ review }: { review: CertifiedChangeReview }) {
           </article>
         );
       })}
-    </div>
-  );
-}
-
-function ReviewProgress({ review }: { review: CertifiedChangeReview }) {
-  const items = [
-    ["Change identified", "Complete"],
-    ["Future graph constructed", "Complete"],
-    ["Dependency exposure evaluated", "Complete"],
-    [
-      "Compatibility resolved",
-      `${review.technicalSummary.unresolvedRelationships} unknown`,
-    ],
-    ["Evidence sufficient", `${review.requiredEvidence.length} required`],
-    ["Review decision", "Hold"],
-  ];
-  return (
-    <div className="review-progress" aria-label="Certified review sequence">
-      {items.map(([label, state], index) => (
-        <div key={label}>
-          <span aria-hidden="true">{index + 1}</span>
-          <div>
-            <strong>{label}</strong>
-            <small>{state}</small>
-          </div>
-        </div>
-      ))}
     </div>
   );
 }

@@ -2,7 +2,12 @@ export function humanize(value: string): string {
   return value
     .split("_")
     .filter(Boolean)
-    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .map((part) => {
+      const normalized = part.toLocaleLowerCase();
+      if (normalized === "pii") return "PII";
+      if (normalized === "s3") return "S3";
+      return part[0].toUpperCase() + part.slice(1);
+    })
     .join(" ");
 }
 

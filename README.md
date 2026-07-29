@@ -1,6 +1,6 @@
 # CHRONOS
 
-Current completed phase: **Phase 5.4 - Change Review Workflow**.
+Current completed phase: **Phase 5.5 - Demo Polish & UX Hardening**.
 
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
@@ -10,9 +10,14 @@ context, evidence, root-cause, and decision records and synchronizes field,
 path, and relationship selection with the graph. Its records come from a
 Python presentation API that fails closed unless the Phase 4 certification
 and supporting artifacts pass their public deserializers and fingerprint
-checks. The browser does not traverse lineage or derive compatibility, impact,
-severity, or disposition. Repair workflow, proposal entry, and metadata
-writes remain out of scope.
+checks. Phase 5.5 makes the proposed field rename, dataset identity,
+uncertainty boundary, evidence gap, and `HOLD FOR REVIEW` decision legible in
+a short demo without changing certified analytical values.
+
+The browser does not traverse lineage or derive compatibility, impact,
+severity, or disposition. It calls only the three read-only CHRONOS
+presentation endpoints. Direct DataHub access, repair workflow, proposal
+entry, approval controls, and metadata writes remain out of scope.
 
 ## Run locally
 
@@ -44,6 +49,25 @@ npm run dev
 
 Open `http://localhost:3000/review`.
 
+Before a demo, confirm that `http://127.0.0.1:8000/health` reports `ready`,
+open the review in a fresh browser tab, and follow [DEMO_CHECKLIST.md](DEMO_CHECKLIST.md).
+
+## Demo story
+
+The frozen scenario is a PostgreSQL field rename inside the unchanged
+`orders` dataset:
+
+`orders.order_total` → `orders.order_amount`
+
+CHRONOS shows zero confirmed downstream failures, one technically unresolved
+Spark export boundary, 25 technically unresolved downstream fields across 20
+datasets and 48 certified paths, missing execution evidence, and a
+high-confidence disposition of `HOLD FOR REVIEW`. This is a request for
+evidence review, not a claim that the change has failed.
+
+The judge-ready sequence is documented in
+[PHASE_5_DEMO_WALKTHROUGH.md](PHASE_5_DEMO_WALKTHROUGH.md).
+
 ## Validate
 
 ```powershell
@@ -61,6 +85,11 @@ npm run build
 
 ## Phase 5 documents
 
+- [Phase 5.5 demo checklist](DEMO_CHECKLIST.md)
+- [Phase 5 demo walkthrough](PHASE_5_DEMO_WALKTHROUGH.md)
+- [Phase 5.5 polish audit](PHASE_5_5_POLISH_AUDIT.md)
+- [Phase 5.5 polish architecture](PHASE_5_5_DEMO_POLISH_ARCHITECTURE.md)
+- [Phase 5.5 verification result](PHASE_5_5_DEMO_POLISH_RESULT.md)
 - [Phase 5.3 impact and evidence architecture](PHASE_5_3_IMPACT_EVIDENCE_ARCHITECTURE.md)
 - [Phase 5.3 verification result](PHASE_5_3_IMPACT_EVIDENCE_RESULT.md)
 - [Phase 5.4 change review architecture](PHASE_5_4_CHANGE_REVIEW_ARCHITECTURE.md)
@@ -72,3 +101,19 @@ npm run build
 - [Frontend operating notes](frontend/README.md)
 - [Phase 4 certification](PHASE_4_CERTIFICATION_RESULT.md)
 - [Authoritative certification artifact](artifacts/phase_4_certification.json)
+
+## Troubleshooting
+
+- **Frontend says the review service is unavailable:** start
+  `python -m chronos.presentation` in the project virtual environment and
+  verify `/health`.
+- **Certified review is withheld:** do not bypass the message. Restore the
+  Phase 4 certified artifacts and rerun certification; the UI intentionally
+  has no fallback analytical data.
+- **Graph or explorer alone is unavailable:** the corresponding feature is
+  isolated. The certified overview remains usable while that read-only
+  endpoint is diagnosed.
+- **Port already in use:** identify the process already listening on port
+  `8000` or `3000`; do not start duplicate demo servers.
+- **Stale browser state:** use **Reset review** or reload `/review`. Display
+  filters never alter the certified result.

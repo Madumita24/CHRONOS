@@ -68,6 +68,9 @@ describe("GraphWorkspace", () => {
     await renderGraph();
     await userEvent.click(screen.getByRole("button", { name: "Current" }));
     expect(screen.getByText(/Current · 26 fields · 27 relationships/)).toBeVisible();
+    expect(
+      screen.getByText(/All 27 relationships are certified current lineage/),
+    ).toBeVisible();
   });
 
   it("shows order_total as the current source", async () => {
@@ -82,6 +85,9 @@ describe("GraphWorkspace", () => {
     await renderGraph();
     await userEvent.click(screen.getByRole("button", { name: "Diff" }));
     expect(screen.getByText(/Diff · 27 fields · 28 relationships/)).toBeVisible();
+    expect(
+      screen.getByText(/25 downstream identities are preserved/),
+    ).toBeVisible();
   });
 
   it("shows removed and added source identities in Diff", async () => {
@@ -118,7 +124,7 @@ describe("GraphWorkspace", () => {
   it("reports all 26 conditionally compatible relationships", async () => {
     await renderGraph();
     expect(
-      screen.getByText(/All 26 assessed future relationships are conditionally compatible/),
+      screen.getByText(/The other 26 assessed future relationships are CONDITIONALLY COMPATIBLE/),
     ).toBeVisible();
   });
 
@@ -145,7 +151,7 @@ describe("GraphWorkspace", () => {
   it("opens a relationship inspector from an edge selection", async () => {
     await renderGraph();
     await userEvent.click(
-      screen.getByRole("button", { name: "Inspect unknown root boundary" }),
+      screen.getByRole("button", { name: "Inspect UNKNOWN root boundary" }),
     );
     expect(screen.getByText("Relationship")).toBeVisible();
     expect(screen.getByText("Path participation")).toBeVisible();
@@ -154,7 +160,7 @@ describe("GraphWorkspace", () => {
   it("shows root current and future identities in the edge inspector", async () => {
     await renderGraph();
     await userEvent.click(
-      screen.getByRole("button", { name: "Inspect unknown root boundary" }),
+      screen.getByRole("button", { name: "Inspect UNKNOWN root boundary" }),
     );
     expect(screen.getByText(/Current: order_total → derived_total_1/)).toBeVisible();
     expect(screen.getByText(/Future: order_amount → derived_total_1/)).toBeVisible();
@@ -163,7 +169,7 @@ describe("GraphWorkspace", () => {
   it("shows all four missing-evidence labels for the root edge", async () => {
     await renderGraph();
     await userEvent.click(
-      screen.getByRole("button", { name: "Inspect unknown root boundary" }),
+      screen.getByRole("button", { name: "Inspect UNKNOWN root boundary" }),
     );
     expect(screen.getByText("Explicit rename mapping")).toBeVisible();
     expect(screen.getByText("Transform semantics")).toBeVisible();
@@ -282,7 +288,7 @@ describe("GraphWorkspace", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ invalid: true })));
     render(<GraphWorkspace reviewId="CHRONOS-DEMO-001" />);
     expect(
-      await screen.findByText("Certified graph integrity check failed"),
+      await screen.findByText("Graph contract invalid"),
     ).toBeVisible();
     expect(screen.queryByText("Graph summary")).not.toBeInTheDocument();
   });
@@ -304,7 +310,7 @@ describe("GraphWorkspace", () => {
     );
     render(<GraphWorkspace reviewId="CHRONOS-DEMO-001" />);
     expect(
-      await screen.findByText("Certified graph integrity check failed"),
+      await screen.findByText("Certification integrity failure"),
     ).toBeVisible();
     expect(screen.getByText("Certification mismatch.")).toBeVisible();
   });

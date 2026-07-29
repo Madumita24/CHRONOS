@@ -195,13 +195,6 @@ a:focus-visible {
   color: #7a8b97;
 }
 
-.dataset-identity {
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.77rem;
-}
-
 .heading-meta {
   display: flex;
   flex-direction: column;
@@ -1303,6 +1296,108 @@ a:focus-visible {
   border-color: #96c7c1;
 }
 
+.graph-mode-banner {
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) auto minmax(170px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 68px;
+  padding: 10px 14px;
+  background: #f7faf9;
+  border-bottom: 1px solid var(--line);
+}
+
+.graph-mode-banner > div > span,
+.graph-mode-banner > div > strong {
+  display: block;
+}
+
+.graph-mode-banner > div > span {
+  color: #6d7c84;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.graph-mode-banner > div > strong {
+  margin-top: 4px;
+  color: var(--navy);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.graph-boundary-state {
+  min-width: 145px;
+  padding: 8px 13px;
+  text-align: center;
+  border: 1px solid #bbd8d3;
+  border-radius: 8px;
+}
+
+.graph-boundary-state span,
+.graph-boundary-state small {
+  display: block;
+}
+
+.graph-boundary-state span {
+  color: #2c6f67;
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.graph-boundary-state small {
+  margin-top: 3px;
+  color: #65767d;
+  font-size: 0.53rem;
+}
+
+.graph-boundary-state.unknown {
+  background: #fff7e8;
+  border-color: #dfb36f;
+}
+
+.graph-boundary-state.unknown span {
+  color: #8b530f;
+}
+
+.graph-mode-banner button {
+  padding: 8px 11px;
+  color: #315e62;
+  background: white;
+  border: 1px solid #abd2cc;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.6rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.graph-mode-banner.mode-diff {
+  grid-template-columns: 1fr auto 1fr 1fr auto;
+  background: #fbfaf8;
+}
+
+.graph-mode-banner.mode-diff > div:first-child strong {
+  color: var(--red);
+  text-decoration: line-through;
+}
+
+.graph-mode-banner.mode-diff > div:nth-child(3) strong {
+  color: var(--teal);
+}
+
+.graph-mode-banner.mode-diff button {
+  color: #805214;
+  border-color: #dfbd87;
+}
+
+.graph-mode-arrow {
+  color: #73868f;
+  font-weight: 800;
+}
+
 .graph-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 268px;
@@ -1490,6 +1585,12 @@ a:focus-visible {
 .graph-lineage-edge.diff-projected_source_relationship {
   stroke: var(--teal);
   stroke-width: 3;
+}
+
+.graph-lineage-edge.diff-projected_source_relationship.root-uncertainty {
+  stroke: var(--amber);
+  stroke-width: 3.4;
+  stroke-dasharray: 7 5;
 }
 
 .graph-lineage-edge.highlighted,
@@ -1805,6 +1906,11 @@ a:focus-visible {
   line-height: 1.45;
 }
 
+.root-summary.mode-current {
+  color: #35625e;
+  background: #edf7f5;
+}
+
 .inspect-root-button {
   width: 100%;
   margin-top: 8px;
@@ -1950,6 +2056,13 @@ a:focus-visible {
   font-size: 0.68rem;
 }
 
+.graph-error small {
+  display: block;
+  margin-top: 6px;
+  color: #73818a;
+  font-size: 0.62rem;
+}
+
 .button-small {
   flex: 0 0 auto;
   margin: 0;
@@ -1991,6 +2104,15 @@ a:focus-visible {
   .graph-search {
     max-width: none;
   }
+
+  .graph-mode-banner,
+  .graph-mode-banner.mode-diff {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .graph-mode-arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -2022,6 +2144,15 @@ a:focus-visible {
     flex: 1;
   }
 
+  .graph-mode-banner,
+  .graph-mode-banner.mode-diff {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-mode-banner button {
+    justify-self: start;
+  }
+
   .graph-footer {
     grid-template-columns: 1fr;
   }
@@ -2033,5 +2164,16 @@ a:focus-visible {
 
   .graph-legend {
     grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

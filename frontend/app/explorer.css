@@ -9,6 +9,9 @@
   border-radius: 14px; background: #fff8f6; color: #67291d;
 }
 .explorer-error p { margin: 4px 0 0; }
+.explorer-error small {
+  display: block; margin-top: 6px; color: #765d58; font-size: 11px;
+}
 .root-cause-banner {
   display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px;
   padding: 24px; border: 1px solid #d8cdc5; border-left: 4px solid #9f5d3e;
@@ -145,6 +148,9 @@
   border-top: 1px solid #e8edef; background: transparent; color: #26333a; text-align: left;
 }
 .explorer-record.selectable { cursor: pointer; font: inherit; }
+.explorer-record.selectable {
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
 .explorer-record.selectable:hover, .explorer-record.selectable[aria-pressed="true"] { background: #f3f7f8; }
 .explorer-record.selectable[aria-pressed="true"] { box-shadow: inset 3px 0 #2d6973; }
 .explorer-record:disabled { cursor: default; opacity: .7; }
@@ -173,6 +179,8 @@
 .evidence-class.missing { background: #fff0d5; color: #815416; }
 .evidence-class.observed { background: #dff0e9; color: #28604e; }
 .evidence-class.counterfactual { background: #e7e6f7; color: #514c83; }
+.evidence-class.derived { background: #e9e6f5; color: #514c83; }
+.evidence-class.decision { background: #e7eff3; color: #345965; }
 .decision-record > p { margin: 14px 4px; color: #526069; line-height: 1.6; }
 .explorer-detail {
   padding: 22px; border-left: 1px solid #dce3e7; background: #f8fafb;
@@ -182,9 +190,9 @@
   font-size: 24px; font-weight: 520;
 }
 .explorer-detail > p { color: #56646d; font-size: 13px; line-height: 1.6; }
-.explorer-detail > code {
-  display: block; max-height: 60px; overflow: hidden; color: #53616a;
-  font-size: 10px; overflow-wrap: anywhere;
+.detail-subidentity {
+  margin: -3px 0 10px !important; color: #64737c !important;
+  font-size: 11px !important; font-weight: 700;
 }
 .detail-chain {
   display: grid; grid-template-columns: 1fr auto 1fr; gap: 7px;
@@ -198,6 +206,21 @@
 }
 .explorer-detail-row span { color: #6b777f; }
 .explorer-detail-row strong { text-align: right; }
+.provenance-details {
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid #dde4e7;
+}
+.provenance-details summary {
+  width: fit-content; cursor: pointer; color: #4e6872; font-size: 11px;
+  font-weight: 750;
+}
+.provenance-details code, .provenance-details small {
+  display: block; margin-top: 8px; color: #6b7981; font-size: 9px;
+  overflow-wrap: anywhere;
+}
+.evidence-group.observed > div:first-child { background: #edf7f3; }
+.evidence-group.counterfactual > div:first-child { background: #f1f0f8; }
+.evidence-group.missing > div:first-child { background: #fff7e9; }
+.evidence-group.decision > div:first-child { background: #edf3f6; }
 .explorer-empty {
   display: grid; place-items: center; min-height: 340px; color: #68757c; text-align: center;
 }

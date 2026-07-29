@@ -34,7 +34,11 @@ import { humanize } from "@/lib/format";
 type ExplorerState =
   | { kind: "loading" }
   | { kind: "ready"; explorer: CertifiedImpactExplorer }
-  | { kind: "error"; message: string; integrity: boolean };
+  | {
+      kind: "error";
+      message: string;
+      category: "service" | "contract" | "integrity";
+    };
 type ExplorerTab =
   | "fields"
   | "datasets"
@@ -78,10 +82,13 @@ export function ImpactEvidenceExplorer({
         if (controller.signal.aborted) return;
         setState({
           kind: "error",
-          integrity:
-            error instanceof ExplorerContractError ||
-            (error instanceof ReviewApiError &&
-              error.code === "certification_integrity_error"),
+          category:
+            error instanceof ExplorerContractError
+              ? "contract"
+              : error instanceof ReviewApiError &&
+                    error.code === "certification_integrity_error"
+                ? "integrity"
+                : "service",
           message:
             error instanceof Error
               ? error.message
@@ -105,19 +112,27 @@ export function ImpactEvidenceExplorer({
   }
 
   if (state.kind === "error") {
-    const Icon = state.integrity ? ShieldAlert : AlertTriangle;
+    const trustFailure = state.category !== "service";
+    const Icon = trustFailure ? ShieldAlert : AlertTriangle;
+    const title =
+      state.category === "integrity"
+        ? "Certification integrity failure"
+        : state.category === "contract"
+          ? "Explorer contract invalid"
+          : "Explorer unavailable";
     return (
       <section className="explorer-section" aria-labelledby="explorer-title">
         <ExplorerHeading />
         <div className="explorer-error" role="alert">
           <Icon size={22} aria-hidden="true" />
           <div>
-            <strong>
-              {state.integrity
-                ? "Certified explorer integrity check failed"
-                : "Certified explorer unavailable"}
-            </strong>
+            <strong>{title}</strong>
             <p>{state.message}</p>
+            <small>
+              {trustFailure
+                ? "Impact and evidence conclusions are withheld. The certified overview and available graph remain inspectable."
+                : "The certified overview and available graph remain inspectable while explorer detail is unavailable."}
+            </small>
           </div>
           <button
             type="button"
@@ -180,14 +195,17 @@ export function ImpactEvidenceExplorer({
         onEvidence={() => onNavigate?.("evidence")}
       />
       <div className="explorer-metrics" aria-label="Certified explorer totals">
-        <ExplorerMetric label="Fields" value={explorer.summary.downstreamFields} />
+        <ExplorerMetric
+          label="Technically unresolved fields"
+          value={explorer.summary.downstreamFields}
+        />
         <ExplorerMetric
           label="Datasets"
           value={explorer.summary.downstreamDatasets}
         />
         <ExplorerMetric label="Paths" value={explorer.summary.dependencyPaths} />
         <ExplorerMetric
-          label="Context assets"
+          label="Connected context assets"
           value={explorer.summary.contextAssets}
         />
         <ExplorerMetric
@@ -429,7 +447,7 @@ function RootCauseBanner({
             </h3>
           </div>
           <span className="explorer-state unresolved">
-            Unknown · evidence insufficient
+            UNKNOWN · evidence INSUFFICIENT
           </span>
         </div>
         <p>{root.humanExplanation}</p>
@@ -797,12 +815,16 @@ function EvidenceReviewSection({
       <div className="required-checklist" aria-label="Required evidence checklist">
         {explorer.requiredEvidence.map((item) => (
           <article key={item.evidenceId}>
-            <span className="check-box" aria-hidden="true" />
+            <FileSearch
+              className="required-evidence-icon"
+              size={17}
+              aria-hidden="true"
+            />
             <div>
               <strong>{item.label}</strong>
               <small>{item.reason}</small>
             </div>
-            <span className="required-state">Required · not available</span>
+            <span className="required-state">REQUIRED — NOT AVAILABLE</span>
           </article>
         ))}
       </div>
@@ -864,27 +886,52 @@ function DecisionReviewSection({
       <div className="workflow-decision-panel">
         <div className="decision-outcome">
           <span>Disposition</span>
-          <h3>Hold for review</h3>
-          <p>{decision.narrative}</p>
-          <span>Certified decision rule</span>
-          <code>{decision.decisionRuleId}</code>
+          <h3>HOLD FOR REVIEW</h3>
+          <div
+            className="decision-input-chain"
+            aria-label="Certified decision inputs"
+          >
+            <div><strong>UNKNOWN</strong><small>source compatibility</small></div>
+            <b aria-hidden="true">+</b>
+            <div>
+              <strong>{decision.inputs.severityIfRealized.toUpperCase()}</strong>
+              <small>severity if realized</small>
+            </div>
+            <b aria-hidden="true">+</b>
+            <div>
+              <strong>{decision.inputs.breadth.toUpperCase()}</strong>
+              <small>downstream reach</small>
+            </div>
+            <b aria-hidden="true">+</b>
+            <div><strong>MISSING</strong><small>execution evidence</small></div>
+          </div>
+          <p>
+            Compatibility at the first Spark export boundary remains
+            unresolved. The certified disposition calls for evidence review;
+            it does not claim a confirmed failure.
+          </p>
+          <details className="decision-provenance">
+            <summary>Certified narrative and rule</summary>
+            <p>{decision.narrative}</p>
+            <code>{decision.decisionRuleId}</code>
+          </details>
         </div>
         <dl className="decision-facts">
           <div>
             <dt>Decision certainty</dt>
-            <dd>{humanize(decision.decisionCertainty)}</dd>
+            <dd>{humanize(decision.decisionCertainty).toUpperCase()}</dd>
           </div>
           <div>
             <dt>Technical certainty</dt>
-            <dd>{humanize(decision.technicalCertainty)}</dd>
+            <dd>{decision.technicalCertainty.toUpperCase()}</dd>
           </div>
           <div>
             <dt>Severity if realized</dt>
-            <dd>{humanize(decision.inputs.severityIfRealized)}</dd>
+            <dd>{decision.inputs.severityIfRealized.toUpperCase()}</dd>
           </div>
           <div>
             <dt>Breadth</dt>
-            <dd>{humanize(decision.inputs.breadth)}</dd>
+            <dd>{decision.inputs.breadth.toUpperCase()}</dd>
           </div>
           <div>
             <dt>Criticality</dt>
@@ -892,7 +939,9 @@ function DecisionReviewSection({
           </div>
           <div>
             <dt>Confirmed failures</dt>
-            <dd>{explorer.summary.confirmedFailures}</dd>
+            <dd className="zero-failures">
+              {explorer.summary.confirmedFailures} CONFIRMED
+            </dd>
           </div>
         </dl>
       </div>
@@ -909,9 +958,9 @@ function DecisionReviewSection({
 
       <div className="hold-distinction">
         <div>
-          <span>Hold for review</span>
+          <span>HOLD FOR REVIEW</span>
           <strong>≠</strong>
-          <span>Failed change</span>
+          <span>FAILED CHANGE</span>
         </div>
         <p>{decision.confirmedFailureDistinction}</p>
       </div>
@@ -921,10 +970,10 @@ function DecisionReviewSection({
           <p className="eyebrow">Verbal review summary</p>
           <dl>
             <div><dt>Change</dt><dd>order_total → order_amount</dd></div>
-            <div><dt>Decision</dt><dd>Hold for review</dd></div>
+            <div><dt>Decision</dt><dd>HOLD FOR REVIEW</dd></div>
             <div><dt>Why</dt><dd>Source compatibility unresolved</dd></div>
             <div><dt>Reach</dt><dd>25 fields / 20 datasets / 48 paths</dd></div>
-            <div><dt>Potential consequence</dt><dd>High if realized</dd></div>
+            <div><dt>Potential consequence</dt><dd>HIGH if realized</dd></div>
             <div><dt>Confirmed failures</dt><dd>0</dd></div>
             <div><dt>Needed</dt><dd>Spark mapping and execution evidence</dd></div>
           </dl>
@@ -1061,7 +1110,7 @@ function PathRow({
       <Route size={16} aria-hidden="true" />
       <span>
         <strong>{item.targetField.fieldPath}</strong>
-        <small>{item.pathId}</small>
+        <small>{compactDataset(item.targetDatasetUrn)}</small>
       </span>
       <span className="record-meta">
         <em>{item.depth} hops</em>
@@ -1092,7 +1141,10 @@ function RelationshipRow({
         <strong>
           {item.upstream.fieldPath} → {item.downstream.fieldPath}
         </strong>
-        <small>{item.relationshipId}</small>
+        <small>
+          {compactDataset(item.upstream.datasetUrn)} →{" "}
+          {compactDataset(item.downstream.datasetUrn)}
+        </small>
       </span>
       <span className="record-meta">
         <em>{humanize(item.compatibilityState)}</em>
@@ -1188,7 +1240,9 @@ function ExplorerDetail({
       {field && (
         <>
           <h3>{field.identity.fieldPath}</h3>
-          <code>{field.datasetUrn}</code>
+          <p className="detail-subidentity">
+            {field.platform} · {field.datasetDisplayName}
+          </p>
           <p>{field.humanExplanation}</p>
           <DetailRow label="Platform" value={field.platform} />
           <DetailRow label="Exposure" value={field.exposureClassification} />
@@ -1205,12 +1259,19 @@ function ExplorerDetail({
             label="Supporting paths"
             value={String(field.supportingPathCount)}
           />
+          <DetailRow label="Root cause" value="Shared source rename boundary" />
+          <ProvenanceDetails
+            identifier={field.datasetUrn}
+            references={field.provenanceReferences}
+          />
         </>
       )}
       {path && (
         <>
           <h3>{path.targetField.fieldPath}</h3>
-          <code>{path.pathId}</code>
+          <p className="detail-subidentity">
+            {compactDataset(path.targetDatasetUrn)}
+          </p>
           <p>{path.humanExplanation}</p>
           <div className="detail-chain">
             <span>{path.orderedFields[0].fieldPath}</span>
@@ -1231,6 +1292,10 @@ function ExplorerDetail({
             label="Context assets"
             value={String(path.contextAssetIds.length)}
           />
+          <ProvenanceDetails
+            identifier={path.pathId}
+            references={path.provenanceReferences}
+          />
         </>
       )}
       {relationship && (
@@ -1239,7 +1304,6 @@ function ExplorerDetail({
             {relationship.upstream.fieldPath} →{" "}
             {relationship.downstream.fieldPath}
           </h3>
-          <code>{relationship.relationshipId}</code>
           <p>{relationship.humanExplanation}</p>
           <DetailRow
             label="Compatibility"
@@ -1257,12 +1321,16 @@ function ExplorerDetail({
             label="Path participation"
             value={String(relationship.pathParticipationCount)}
           />
+          <ProvenanceDetails
+            identifier={relationship.relationshipId}
+            references={relationship.provenanceReferences}
+          />
         </>
       )}
       {dataset && (
         <>
           <h3>{dataset.displayName}</h3>
-          <code>{dataset.datasetUrn}</code>
+          <p className="detail-subidentity">{dataset.platform}</p>
           <p>{dataset.technicalSummary}</p>
           <DetailRow
             label="Exposed fields"
@@ -1285,12 +1353,15 @@ function ExplorerDetail({
             value={dataset.severityIfRealized}
           />
           <DetailRow label="Certainty" value={dataset.certainty} />
+          <ProvenanceDetails
+            identifier={dataset.datasetUrn}
+            references={dataset.provenanceReferences}
+          />
         </>
       )}
       {contextAsset && (
         <>
           <h3>{contextAsset.displayName}</h3>
-          <code>{contextAsset.contextAssetId}</code>
           <p>
             Certified {humanize(contextAsset.group)} context. Connectivity is
             not a severity or failure claim.
@@ -1316,6 +1387,10 @@ function ExplorerDetail({
             label="Certified provenance"
             value={String(contextAsset.provenanceReferences.length)}
           />
+          <ProvenanceDetails
+            identifier={contextAsset.contextAssetId}
+            references={contextAsset.provenanceReferences}
+          />
         </>
       )}
     </aside>
@@ -1329,4 +1404,26 @@ function DetailRow({ label, value }: { label: string; value: string }) {
       <strong>{humanize(value)}</strong>
     </div>
   );
+}
+
+function ProvenanceDetails({
+  identifier,
+  references,
+}: {
+  identifier: string;
+  references: string[];
+}) {
+  return (
+    <details className="provenance-details">
+      <summary>Certified provenance</summary>
+      <code>{identifier}</code>
+      <small>{references.length} bounded reference(s)</small>
+    </details>
+  );
+}
+
+function compactDataset(value: string): string {
+  if (!value.startsWith("urn:li:dataset:(")) return value;
+  const parts = value.slice("urn:li:dataset:(".length, -1).split(",");
+  return parts[1] ?? value;
 }

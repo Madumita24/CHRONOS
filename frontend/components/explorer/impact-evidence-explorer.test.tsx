@@ -49,7 +49,7 @@ describe("ImpactEvidenceExplorer", () => {
     expect(
       await screen.findByText("One shared technical root cause"),
     ).toBeInTheDocument();
-    expect(screen.getByText("Unknown · evidence insufficient")).toBeInTheDocument();
+    expect(screen.getByText("UNKNOWN · evidence INSUFFICIENT")).toBeInTheDocument();
   });
 
   it("renders the blocking question", async () => {
@@ -89,7 +89,9 @@ describe("ImpactEvidenceExplorer", () => {
     const onSelect = renderExplorer();
     const user = userEvent.setup();
     await user.click(await screen.findByRole("tab", { name: "Paths" }));
-    await user.click(screen.getByRole("button", { name: /dependency-path-0/i }));
+    await user.click(
+      screen.getByRole("button", { name: /field_0.*dataset_0/i }),
+    );
     expect(onSelect).toHaveBeenCalledWith({
       kind: "path",
       id: "dependency-path-0",
@@ -102,7 +104,11 @@ describe("ImpactEvidenceExplorer", () => {
     await user.click(
       await screen.findByRole("tab", { name: "Relationships" }),
     );
-    await user.click(screen.getByRole("button", { name: /future-lineage-0/i }));
+    await user.click(
+      screen.getByRole("button", {
+        name: /field_0.*field_1.*dataset_0.*dataset_1/i,
+      }),
+    );
     expect(onSelect).toHaveBeenCalledWith({
       kind: "edge",
       id: "future-edge-0",
@@ -193,7 +199,7 @@ describe("ImpactEvidenceExplorer", () => {
   it("shows the certified decision explanation", async () => {
     renderExplorer();
     expect(
-      await screen.findByRole("heading", { name: "Hold for review" }),
+      await screen.findByRole("heading", { name: "HOLD FOR REVIEW" }),
     ).toBeInTheDocument();
     expect(
       screen.getByText("The source boundary remains unresolved."),
@@ -241,7 +247,7 @@ describe("ImpactEvidenceExplorer", () => {
     );
     expect(await screen.findByText("Context detail")).toBeInTheDocument();
     expect(screen.getByText("Relationship count")).toBeInTheDocument();
-    expect(screen.getByText("Certified provenance")).toBeInTheDocument();
+    expect(screen.getAllByText("Certified provenance").length).toBeGreaterThan(0);
     expect(
       within(screen.getByLabelText("Impact evidence detail")).queryByText(
         "Severity if realized",
@@ -255,7 +261,7 @@ describe("ImpactEvidenceExplorer", () => {
     );
     renderExplorer();
     expect(
-      await screen.findByText("Certified explorer integrity check failed"),
+      await screen.findByText("Explorer contract invalid"),
     ).toBeInTheDocument();
     expect(screen.queryByText("Context 0")).not.toBeInTheDocument();
   });

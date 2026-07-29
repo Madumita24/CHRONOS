@@ -42,7 +42,7 @@ afterEach(() => {
 describe("certified change review workflow", () => {
   it("presents the five-stage workflow with persistent review context", async () => {
     renderWorkflow();
-    await screen.findByText("Certified impact assessment");
+    await screen.findByText("Certified change review");
     const navigation = screen.getByRole("navigation", { name: "Review sections" });
     for (const section of ["Overview", "Graph", "Impact", "Evidence", "Decision"]) {
       expect(within(navigation).getByRole("button", { name: section })).toBeVisible();
@@ -65,7 +65,7 @@ describe("certified change review workflow", () => {
       ).toHaveAttribute("aria-current", "location");
     }
     expect(
-      screen.getByRole("heading", { name: "Hold for review", level: 1 }),
+      screen.getByRole("heading", { name: "HOLD FOR REVIEW", level: 1 }),
     ).toBeVisible();
   });
 
@@ -97,7 +97,7 @@ describe("certified change review workflow", () => {
     const user = userEvent.setup();
     await user.click(
       await screen.findByRole("button", {
-        name: "Inspect unknown root boundary",
+        name: "Inspect UNKNOWN root boundary",
       }),
     );
     expect(await screen.findByText("Relationship evidence")).toBeVisible();
@@ -110,7 +110,7 @@ describe("certified change review workflow", () => {
     const user = userEvent.setup();
     await user.click(await within(explorer).findByRole("tab", { name: "Paths" }));
     await user.click(
-      within(explorer).getByRole("button", { name: /dependency-path-0/i }),
+      within(explorer).getByRole("button", { name: /field_0.*dataset_0/i }),
     );
     expect(await screen.findByText("Path evidence")).toBeVisible();
   });
@@ -150,6 +150,9 @@ describe("certified change review workflow", () => {
     );
     await screen.findByText("Field impact");
     await user.click(screen.getByRole("button", { name: "Current" }));
+    expect(
+      await screen.findByRole("heading", { name: "Inspect observed lineage" }),
+    ).toBeVisible();
     expect(await screen.findByText("Unresolved is not failed")).toBeVisible();
   });
 
@@ -175,17 +178,17 @@ describe("certified change review workflow", () => {
   it("fails a partial graph feature honestly while preserving other certified sections", async () => {
     renderWorkflow(503);
     expect(
-      await screen.findByText("Certified graph unavailable"),
+      await screen.findByText("Graph unavailable"),
     ).toBeVisible();
     expect(
-      screen.getByRole("heading", { name: "Hold for review", level: 1 }),
+      screen.getByRole("heading", { name: "HOLD FOR REVIEW", level: 1 }),
     ).toBeVisible();
     expect(await screen.findByRole("region", { name: "Show me why" })).toBeVisible();
   });
 
   it("contains no repair, approval, or mutation controls", async () => {
     renderWorkflow();
-    await screen.findByText("Certified impact assessment");
+    await screen.findByText("Certified change review");
     expect(screen.queryByRole("button", { name: /repair/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /approve/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /apply/i })).not.toBeInTheDocument();
@@ -200,7 +203,7 @@ describe("certified change review workflow", () => {
       ),
     ).toBeVisible();
     expect(
-      screen.getByRole("heading", { name: "Hold for review", level: 1 }),
+      screen.getByRole("heading", { name: "HOLD FOR REVIEW", level: 1 }),
     ).toBeVisible();
   });
 
@@ -208,7 +211,7 @@ describe("certified change review workflow", () => {
     renderWorkflow();
     await screen.findByText("Known, unknown, and required");
     expect(screen.getAllByText("0").length).toBeGreaterThan(0);
-    expect(screen.getByText("HIGH")).toBeVisible();
+    expect(screen.getAllByText("HIGH").length).toBeGreaterThan(0);
     expect(
       screen.getAllByText(/not a confirmed failure/i).length,
     ).toBeGreaterThan(0);
@@ -220,7 +223,49 @@ describe("certified change review workflow", () => {
     ]) {
       expect(screen.getAllByText(evidence).length).toBeGreaterThan(0);
     }
-    expect(screen.getByText("Certified decision rule")).toBeVisible();
+    expect(screen.getByText("Certified narrative and rule")).toBeVisible();
     expect(screen.getByText("Certified reason codes")).toBeVisible();
+  });
+
+  it("loads each certified surface once and keeps cosmetic interactions local", async () => {
+    renderWorkflow();
+    const navigation = await screen.findByRole("navigation", {
+      name: "Review sections",
+    });
+    const user = userEvent.setup();
+    await user.click(within(navigation).getByRole("button", { name: "Graph" }));
+    await user.click(screen.getByRole("button", { name: "Current" }));
+    await user.click(screen.getByRole("button", { name: "Future" }));
+
+    const calls = vi.mocked(fetch).mock.calls.map(([input]) => String(input));
+    expect(calls).toHaveLength(3);
+    expect(calls.filter((url) => url.endsWith("/graph"))).toHaveLength(1);
+    expect(calls.filter((url) => url.endsWith("/explorer"))).toHaveLength(1);
+    expect(
+      calls.every((url) =>
+        url.startsWith("http://127.0.0.1:8000/api/reviews/"),
+      ),
+    ).toBe(true);
+  });
+
+  it("supports keyboard focus and activation through the review navigation", async () => {
+    renderWorkflow();
+    await screen.findByText("Certified change review");
+    const user = userEvent.setup();
+
+    await user.tab();
+    expect(
+      screen.getByRole("link", { name: "CHRONOS review home" }),
+    ).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("link", { name: "Review" })).toHaveFocus();
+
+    const graphButton = within(
+      screen.getByRole("navigation", { name: "Review sections" }),
+    ).getByRole("button", { name: "Graph" });
+    graphButton.focus();
+    await user.keyboard("{Enter}");
+    expect(window.location.search).toBe("?section=graph");
+    expect(graphButton).toHaveAttribute("aria-current", "location");
   });
 });

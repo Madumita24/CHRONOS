@@ -37,7 +37,7 @@ describe("ReviewPage", () => {
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
     expect(
-      await screen.findByRole("heading", { name: "Hold for review" }),
+      await screen.findByRole("heading", { name: "HOLD FOR REVIEW" }),
     ).toBeInTheDocument();
   });
 
@@ -49,29 +49,41 @@ describe("ReviewPage", () => {
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
     expect(await screen.findByText("Decision certainty")).toBeInTheDocument();
     expect(screen.getAllByText("Technical certainty")).toHaveLength(2);
-    expect(screen.getByText("High Confidence")).toBeInTheDocument();
-    expect(screen.getAllByText("Unresolved").length).toBeGreaterThan(0);
+    expect(screen.getByText("HIGH CONFIDENCE")).toBeInTheDocument();
+    expect(screen.getAllByText("UNRESOLVED").length).toBeGreaterThan(0);
   });
 
-  it("renders all four primary scope metrics", async () => {
+  it("renders the consolidated primary scope metrics", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(response(reviewFixture)),
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
-    await screen.findByText("Confirmed failures");
-    expect(screen.getByText("Unresolved fields")).toBeInTheDocument();
+    await screen.findByText("Technically unresolved fields");
     expect(screen.getByText("Datasets")).toBeInTheDocument();
-    expect(screen.getByText("Context assets")).toBeInTheDocument();
+    expect(screen.getByText("Dependency paths")).toBeInTheDocument();
   });
 
-  it("states that no breakage is asserted", async () => {
+  it("identifies the exact change without implying a dataset rename", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(response(reviewFixture)),
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
-    expect(await screen.findByText("No breakage asserted")).toBeInTheDocument();
+    expect(await screen.findByText("Dataset unchanged: orders")).toBeVisible();
+    expect(screen.getByText("order_total")).toBeVisible();
+    expect(screen.getByText("order_amount")).toBeVisible();
+  });
+
+  it("states that no downstream failure is confirmed", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(response(reviewFixture)),
+    );
+    render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
+    expect(
+      await screen.findByText("No confirmed downstream failure"),
+    ).toBeInTheDocument();
   });
 
   it("renders current and counterfactual fields", async () => {
@@ -185,7 +197,7 @@ describe("ReviewPage", () => {
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
     expect(
       await screen.findByRole("heading", {
-        name: "Certified evidence cannot be displayed",
+        name: "Certified review withheld",
       }),
     ).toBeInTheDocument();
     expect(
@@ -202,7 +214,7 @@ describe("ReviewPage", () => {
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
     expect(
-      await screen.findByText("Certification gate closed"),
+      await screen.findByText("Contract invalid"),
     ).toBeInTheDocument();
   });
 
@@ -216,7 +228,7 @@ describe("ReviewPage", () => {
     fireEvent.click(await screen.findByRole("button", { name: /Retry/ }));
     await waitFor(() => expect(fetcher).toHaveBeenCalledTimes(2));
     expect(
-      await screen.findByRole("heading", { name: "Hold for review" }),
+      await screen.findByRole("heading", { name: "HOLD FOR REVIEW" }),
     ).toBeInTheDocument();
   });
 
@@ -226,7 +238,7 @@ describe("ReviewPage", () => {
       vi.fn().mockResolvedValue(response(reviewFixture)),
     );
     render(<ReviewPage reviewId="CHRONOS-DEMO-001" />);
-    await screen.findByText("Certified impact assessment");
+    await screen.findByText("Certified change review");
     expect(
       screen.getByRole("navigation", { name: "Primary navigation" }),
     ).toBeInTheDocument();
