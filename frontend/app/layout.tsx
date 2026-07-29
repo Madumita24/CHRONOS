@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import "@/app/globals.css";
+import "@xyflow/react/dist/style.css";
 
 export const metadata: Metadata = {
   title: "CHRONOS · Certified Change Review",

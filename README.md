@@ -1,14 +1,18 @@
 # CHRONOS
 
-Current completed phase: **Phase 5.1 — Frontend Foundation and Certified
-Presentation Contract**.
+Current completed phase: **Phase 5.3 - Impact & Evidence Explorer**.
 
-CHRONOS now has a read-only engineering review surface for the frozen
-`CHRONOS-DEMO-001` result. The browser consumes a strict presentation DTO from
-a Python API that fails closed unless the Phase 4 certification and its
-supporting artifacts pass their public deserializers and fingerprint checks.
-No Phase 5.2 graph visualization, repair workflow, proposal entry, metadata
-write, or browser-side decision logic is included.
+CHRONOS has a read-only engineering review surface for the frozen
+`CHRONOS-DEMO-001` result. The review now includes a certified, interactive
+Current/Future/Diff field-lineage graph and a coordinated Impact & Evidence
+Explorer. The explorer exposes certified field, dataset, path, relationship,
+context, evidence, root-cause, and decision records and synchronizes field,
+path, and relationship selection with the graph. Its records come from a
+Python presentation API that fails closed unless the Phase 4 certification
+and supporting artifacts pass their public deserializers and fingerprint
+checks. The browser does not traverse lineage or derive compatibility, impact,
+severity, or disposition. Repair workflow, proposal entry, and metadata
+writes remain out of scope.
 
 ## Run locally
 
@@ -25,8 +29,10 @@ Start the certified presentation API:
 ```
 
 The API is available at `http://127.0.0.1:8000`, with the review endpoint at
-`/api/reviews/CHRONOS-DEMO-001`, health at `/health`, and interactive API
-documentation at `/api/docs`.
+`/api/reviews/CHRONOS-DEMO-001`, graph endpoint at
+`/api/reviews/CHRONOS-DEMO-001/graph`, explorer endpoint at
+`/api/reviews/CHRONOS-DEMO-001/explorer`, health at `/health`, and interactive
+API documentation at `/api/docs`.
 
 In a second terminal, start the frontend:
 
@@ -53,8 +59,12 @@ npm test
 npm run build
 ```
 
-## Phase 5.1 documents
+## Phase 5 documents
 
+- [Phase 5.3 impact and evidence architecture](PHASE_5_3_IMPACT_EVIDENCE_ARCHITECTURE.md)
+- [Phase 5.3 verification result](PHASE_5_3_IMPACT_EVIDENCE_RESULT.md)
+- [Phase 5.2 graph architecture](PHASE_5_2_GRAPH_ARCHITECTURE.md)
+- [Phase 5.2 verification result](PHASE_5_2_FUTURE_GRAPH_UI_RESULT.md)
 - [Architecture](PHASE_5_1_FRONTEND_ARCHITECTURE.md)
 - [Verification result](PHASE_5_1_FRONTEND_FOUNDATION_RESULT.md)
 - [Frontend operating notes](frontend/README.md)

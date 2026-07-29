@@ -1,17 +1,17 @@
 import { z } from "zod";
 
-const fingerprintSchema = z
+export const fingerprintSchema = z
   .string()
   .regex(/^sha256:[0-9a-f]{64}$/);
 
-const fieldIdentitySchema = z
+export const fieldIdentitySchema = z
   .object({
     datasetUrn: z.string().startsWith("urn:li:dataset:("),
     fieldPath: z.string().min(1),
   })
   .strict();
 
-const distributionSchema = z
+export const severityDistributionSchema = z
   .object({
     critical: z.number().int().nonnegative(),
     high: z.number().int().nonnegative(),
@@ -21,21 +21,23 @@ const distributionSchema = z
   })
   .strict();
 
+export const certificationSchema = z
+  .object({
+    status: z.literal("certified"),
+    fingerprint: fingerprintSchema,
+    certifiedAt: z.iso.datetime({ offset: true }),
+    checksPassed: z.number().int().positive(),
+    checkCount: z.number().int().positive(),
+    scopeStatement: z.string().min(1),
+  })
+  .strict()
+  .refine((value) => value.checksPassed === value.checkCount, {
+    message: "Every certification check must pass",
+  });
+
 export const certifiedChangeReviewSchema = z
   .object({
-    certification: z
-      .object({
-        status: z.literal("certified"),
-        fingerprint: fingerprintSchema,
-        certifiedAt: z.iso.datetime({ offset: true }),
-        checksPassed: z.number().int().positive(),
-        checkCount: z.number().int().positive(),
-        scopeStatement: z.string().min(1),
-      })
-      .strict()
-      .refine((value) => value.checksPassed === value.checkCount, {
-        message: "Every certification check must pass",
-      }),
+    certification: certificationSchema,
     change: z
       .object({
         demonstrationId: z.literal("CHRONOS-DEMO-001"),
@@ -103,8 +105,8 @@ export const certifiedChangeReviewSchema = z
         breadth: z.literal("widespread"),
         sensitivity: z.string().min(1),
         severityIfRealized: z.literal("high"),
-        fieldDistribution: distributionSchema,
-        datasetDistribution: distributionSchema,
+        fieldDistribution: severityDistributionSchema,
+        datasetDistribution: severityDistributionSchema,
       })
       .strict(),
     rootCause: z

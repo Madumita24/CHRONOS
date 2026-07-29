@@ -22,6 +22,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 
 import { AppShell } from "@/components/app-shell";
+import { GraphWorkspace } from "@/components/graph/graph-workspace";
 import { MetricCard } from "@/components/metric-card";
 import { StatusBadge } from "@/components/status-badge";
 import {
@@ -84,7 +85,9 @@ export function ReviewPage({ reviewId }: { reviewId: string }) {
           onRetry={retry}
         />
       )}
-      {state.kind === "ready" && <ReviewContent review={state.review} />}
+      {state.kind === "ready" && (
+        <ReviewContent review={state.review} reviewId={reviewId} />
+      )}
     </AppShell>
   );
 }
@@ -148,7 +151,13 @@ function ReviewError({
   );
 }
 
-function ReviewContent({ review }: { review: CertifiedChangeReview }) {
+function ReviewContent({
+  review,
+  reviewId,
+}: {
+  review: CertifiedChangeReview;
+  reviewId: string;
+}) {
   const question = review.blockingQuestions[0];
   return (
     <main className="main">
@@ -206,6 +215,8 @@ function ReviewContent({ review }: { review: CertifiedChangeReview }) {
           </div>
         </div>
       </section>
+
+      <GraphWorkspace reviewId={reviewId} />
 
       <section aria-labelledby="scope-title">
         <SectionHeading

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Callable, TypeVar
 
 from chronos.counterfactual_source import (
     CounterfactualSourceState,
@@ -13,13 +12,15 @@ from chronos.impact_synthesis import ImpactSynthesis, load_impact_synthesis
 from chronos.phase4_certification import (
     CertificationCheckStatus,
     Phase4CertificationResult,
-    Phase4CertificationStatus,
-    load_phase4_certification,
-    validate_phase4_certification,
 )
 from chronos.proposal import ChangeProposal, load_proposal
 
-from .errors import CertifiedReviewNotFound, PresentationIntegrityError
+from .artifacts import (
+    EXPECTED_PHASE4_CERTIFICATION_FINGERPRINT,
+    SUPPORTED_REVIEW_ID,
+    CertifiedArtifactLoader,
+)
+from .errors import PresentationIntegrityError
 from .models import (
     BlockingQuestionDTO,
     CertificationDTO,
@@ -40,14 +41,6 @@ from .models import (
 )
 
 
-EXPECTED_PHASE4_CERTIFICATION_FINGERPRINT = (
-    "sha256:3e8444ec904e0ba1c55c5ae22d69edfa"
-    "8e722310f51ab30fc783b8175a87ac4a"
-)
-SUPPORTED_REVIEW_ID = "CHRONOS-DEMO-001"
-_T = TypeVar("_T")
-
-
 class CertifiedReviewService:
     """Load one certified review without adding decision semantics."""
 
@@ -59,62 +52,28 @@ class CertifiedReviewService:
             EXPECTED_PHASE4_CERTIFICATION_FINGERPRINT
         ),
     ) -> None:
-        self._artifact_dir = Path(artifact_dir)
-        self._expected_fingerprint = expected_fingerprint
+        self._artifacts = CertifiedArtifactLoader(
+            Path(artifact_dir),
+            expected_fingerprint=expected_fingerprint,
+        )
 
     def get_review(self, review_id: str) -> CertifiedChangeReview:
-        if review_id != SUPPORTED_REVIEW_ID:
-            raise CertifiedReviewNotFound(
-                f"Certified review {review_id!r} was not found."
-            )
-
-        certification = self._load(
-            "phase_4_certification.json",
-            load_phase4_certification,
+        certification = self._artifacts.certification(review_id)
+        proposal = self._artifacts.load(
+            certification,
+            "change_proposal.json",
+            load_proposal,
         )
-        try:
-            validate_phase4_certification(certification)
-        except Exception as exc:
-            raise PresentationIntegrityError(
-                "Phase 4 certification validation failed."
-            ) from exc
-        if (
-            certification.certification_status
-            is not Phase4CertificationStatus.CERTIFIED
-            or certification.semantic_fingerprint
-            != self._expected_fingerprint
-            or any(
-                check.status is not CertificationCheckStatus.PASS
-                for check in certification.certification_checks
-            )
-        ):
-            raise PresentationIntegrityError(
-                "Phase 4 certification gate rejected the artifact."
-            )
-
-        proposal = self._load("change_proposal.json", load_proposal)
-        synthesis = self._load(
-            "impact_synthesis.json", load_impact_synthesis
+        synthesis = self._artifacts.load(
+            certification,
+            "impact_synthesis.json",
+            load_impact_synthesis,
         )
-        source_state = self._load(
-            "counterfactual_source_state.json", load_source_state
+        source_state = self._artifacts.load(
+            certification,
+            "counterfactual_source_state.json",
+            load_source_state,
         )
-        identities = {
-            item.artifact_name: item.semantic_fingerprint
-            for item in certification.input_artifact_identities
-        }
-        for name, actual in (
-            ("change_proposal.json", proposal.semantic_fingerprint),
-            ("impact_synthesis.json", synthesis.semantic_fingerprint),
-            (
-                "counterfactual_source_state.json",
-                source_state.semantic_fingerprint,
-            ),
-        ):
-            if identities.get(name) != actual:
-                raise PresentationIntegrityError(
-                    f"Certified identity mismatch for {name}."
-                )
         if not (
             proposal.demonstration_id
             == synthesis.demonstration_id
@@ -134,15 +93,6 @@ class CertifiedReviewService:
             synthesis=synthesis,
             source_state=source_state,
         )
-
-    def _load(self, name: str, loader: Callable[[Path], _T]) -> _T:
-        try:
-            return loader(self._artifact_dir / name)
-        except Exception as exc:
-            raise PresentationIntegrityError(
-                f"Certified artifact {name} could not be loaded."
-            ) from exc
-
 
 def _map_review(
     *,

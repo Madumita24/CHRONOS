@@ -2,6 +2,14 @@ import {
   certifiedChangeReviewSchema,
   type CertifiedChangeReview,
 } from "@/lib/review-contract";
+import {
+  certifiedGraphReviewSchema,
+  type CertifiedGraphReview,
+} from "@/lib/graph-contract";
+import {
+  certifiedImpactExplorerSchema,
+  type CertifiedImpactExplorer,
+} from "@/lib/explorer-contract";
 
 const DEFAULT_API_BASE_URL = "http://127.0.0.1:8000";
 
@@ -20,6 +28,20 @@ export class ReviewContractError extends Error {
   constructor() {
     super("The API response did not match the certified review contract.");
     this.name = "ReviewContractError";
+  }
+}
+
+export class GraphContractError extends Error {
+  constructor() {
+    super("The API response did not match the certified graph contract.");
+    this.name = "GraphContractError";
+  }
+}
+
+export class ExplorerContractError extends Error {
+  constructor() {
+    super("The API response did not match the certified impact explorer contract.");
+    this.name = "ExplorerContractError";
   }
 }
 
@@ -66,6 +88,102 @@ export async function fetchCertifiedReview(
   const parsed = certifiedChangeReviewSchema.safeParse(body);
   if (!parsed.success) {
     throw new ReviewContractError();
+  }
+  return parsed.data;
+}
+
+export async function fetchCertifiedGraph(
+  reviewId: string,
+  options: {
+    signal?: AbortSignal;
+    fetcher?: typeof fetch;
+    baseUrl?: string;
+  } = {},
+): Promise<CertifiedGraphReview> {
+  const fetcher = options.fetcher ?? fetch;
+  const baseUrl =
+    options.baseUrl ??
+    process.env.NEXT_PUBLIC_CHRONOS_API_BASE_URL ??
+    DEFAULT_API_BASE_URL;
+  const response = await fetcher(
+    `${baseUrl}/api/reviews/${encodeURIComponent(reviewId)}/graph`,
+    {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      signal: options.signal,
+      cache: "no-store",
+    },
+  );
+
+  const body: unknown = await response.json().catch(() => null);
+  if (!response.ok) {
+    const detail =
+      typeof body === "object" && body !== null && "detail" in body
+        ? (body as {
+            detail?: { code?: unknown; message?: unknown };
+          }).detail
+        : undefined;
+    throw new ReviewApiError(
+      typeof detail?.message === "string"
+        ? detail.message
+        : "The certified graph could not be loaded.",
+      typeof detail?.code === "string" ? detail.code : "graph_api_error",
+      response.status,
+    );
+  }
+
+  const parsed = certifiedGraphReviewSchema.safeParse(body);
+  if (!parsed.success) {
+    throw new GraphContractError();
+  }
+  return parsed.data;
+}
+
+export async function fetchCertifiedExplorer(
+  reviewId: string,
+  options: {
+    signal?: AbortSignal;
+    fetcher?: typeof fetch;
+    baseUrl?: string;
+  } = {},
+): Promise<CertifiedImpactExplorer> {
+  const fetcher = options.fetcher ?? fetch;
+  const baseUrl =
+    options.baseUrl ??
+    process.env.NEXT_PUBLIC_CHRONOS_API_BASE_URL ??
+    DEFAULT_API_BASE_URL;
+  const response = await fetcher(
+    `${baseUrl}/api/reviews/${encodeURIComponent(reviewId)}/explorer`,
+    {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      signal: options.signal,
+      cache: "no-store",
+    },
+  );
+
+  const body: unknown = await response.json().catch(() => null);
+  if (!response.ok) {
+    const detail =
+      typeof body === "object" && body !== null && "detail" in body
+        ? (body as {
+            detail?: { code?: unknown; message?: unknown };
+          }).detail
+        : undefined;
+    throw new ReviewApiError(
+      typeof detail?.message === "string"
+        ? detail.message
+        : "The certified impact explorer could not be loaded.",
+      typeof detail?.code === "string"
+        ? detail.code
+        : "explorer_api_error",
+      response.status,
+    );
+  }
+
+  const parsed = certifiedImpactExplorerSchema.safeParse(body);
+  if (!parsed.success) {
+    throw new ExplorerContractError();
   }
   return parsed.data;
 }

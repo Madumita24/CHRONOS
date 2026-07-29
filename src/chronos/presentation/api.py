@@ -9,6 +9,10 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from .errors import CertifiedReviewNotFound, PresentationIntegrityError
+from .explorer_models import CertifiedImpactExplorer
+from .explorer_service import CertifiedImpactExplorerService
+from .graph_models import CertifiedGraphReview
+from .graph_service import CertifiedGraphService
 from .models import CertifiedChangeReview, HealthDTO
 from .service import (
     EXPECTED_PHASE4_CERTIFICATION_FINGERPRINT,
@@ -35,9 +39,15 @@ def create_app(
     service = CertifiedReviewService(
         artifact_dir or _default_artifact_dir()
     )
+    graph_service = CertifiedGraphService(
+        artifact_dir or _default_artifact_dir()
+    )
+    explorer_service = CertifiedImpactExplorerService(
+        artifact_dir or _default_artifact_dir()
+    )
     app = FastAPI(
         title="CHRONOS Certified Presentation API",
-        version="5.1.0",
+        version="5.3.0",
         docs_url="/api/docs",
         redoc_url=None,
         openapi_url="/api/openapi.json",
@@ -69,6 +79,22 @@ def create_app(
     def get_review(review_id: str) -> CertifiedChangeReview:
         return _get_review_or_http(service, review_id)
 
+    @app.get(
+        "/api/reviews/{review_id}/graph",
+        response_model=CertifiedGraphReview,
+        response_model_by_alias=True,
+    )
+    def get_graph(review_id: str) -> CertifiedGraphReview:
+        return _get_graph_or_http(graph_service, review_id)
+
+    @app.get(
+        "/api/reviews/{review_id}/explorer",
+        response_model=CertifiedImpactExplorer,
+        response_model_by_alias=True,
+    )
+    def get_explorer(review_id: str) -> CertifiedImpactExplorer:
+        return _get_explorer_or_http(explorer_service, review_id)
+
     return app
 
 
@@ -94,6 +120,60 @@ def _get_review_or_http(
                 "message": (
                     "The certified review is unavailable because its "
                     "integrity checks failed."
+                ),
+            },
+        ) from exc
+
+
+def _get_graph_or_http(
+    service: CertifiedGraphService,
+    review_id: str,
+) -> CertifiedGraphReview:
+    try:
+        return service.get_graph(review_id)
+    except CertifiedReviewNotFound as exc:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "code": "certified_review_not_found",
+                "message": "The requested certified review was not found.",
+            },
+        ) from exc
+    except PresentationIntegrityError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "certification_integrity_error",
+                "message": (
+                    "The certified graph is unavailable because its "
+                    "integrity checks failed."
+                ),
+            },
+        ) from exc
+
+
+def _get_explorer_or_http(
+    service: CertifiedImpactExplorerService,
+    review_id: str,
+) -> CertifiedImpactExplorer:
+    try:
+        return service.get_explorer(review_id)
+    except CertifiedReviewNotFound as exc:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "code": "certified_review_not_found",
+                "message": "The requested certified review was not found.",
+            },
+        ) from exc
+    except PresentationIntegrityError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "certification_integrity_error",
+                "message": (
+                    "The certified impact explorer is unavailable because "
+                    "its integrity checks failed."
                 ),
             },
         ) from exc
