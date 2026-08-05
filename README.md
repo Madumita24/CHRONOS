@@ -1,6 +1,11 @@
 # CHRONOS
 
-Current completed phase: **Phase 5.5 - Demo Polish & UX Hardening**.
+Current completed presentation phase: **Phase 5.5 - Demo Polish & UX Hardening**.
+
+Phase 6.1 adds a separate reusable backend structural-change engine for
+`FIELD_RENAME`, `FIELD_DELETE`, and `FIELD_TYPE_CHANGE`. It consumes a frozen
+DataHub-derived snapshot, creates an isolated certified analysis package, and
+preserves the Phase 1-5 golden fixture and frontend behavior.
 
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
@@ -82,6 +87,17 @@ npm run lint
 npm test
 npm run build
 ```
+
+## Generalized structural analysis
+
+See [the Phase 6.1 developer guide](PHASE_6_1_DEVELOPER_GUIDE.md) for the
+Python and CLI entry points and the three strict JSON proposal examples. The
+engine does not query or write DataHub, parse SQL/dbt, ingest pull requests,
+or generate repairs.
+
+Architecture and verification are recorded in
+[PHASE_6_1_GENERALIZED_ENGINE_ARCHITECTURE.md](PHASE_6_1_GENERALIZED_ENGINE_ARCHITECTURE.md)
+and `PHASE_6_1_GENERALIZED_ENGINE_RESULT.md`.
 
 ## Phase 5 documents
 

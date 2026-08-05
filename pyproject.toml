@@ -13,6 +13,9 @@ dependencies = [
   "uvicorn[standard]>=0.34,<1",
 ]
 
+[project.scripts]
+chronos = "chronos.cli:main"
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 

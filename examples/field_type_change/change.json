@@ -1,0 +1,16 @@
+{
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-TYPE-CHANGE-001",
+  "created_at": "2026-08-05T00:00:00Z",
+  "current_field_path": "order_total",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "description": "Change a real numeric source field to a string type without inventing consumer expectations.",
+  "operation": "FIELD_TYPE_CHANGE",
+  "proposal_id": "CHRONOS-EXAMPLE-TYPE-PROPOSAL-001",
+  "proposal_metadata": {
+    "source": "official_frozen_snapshot"
+  },
+  "proposed_native_type": "TEXT",
+  "proposed_normalized_type": "STRING",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}
