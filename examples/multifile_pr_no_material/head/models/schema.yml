@@ -1,0 +1,7 @@
+models:
+  - columns:
+      - data_type: numeric
+        description: Documented current order total.
+        name: order_total
+    name: order_details
+version: 2

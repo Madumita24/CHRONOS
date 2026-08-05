@@ -1,0 +1,4 @@
+quality:
+  checks:
+    - field: order_total
+      expected_type: numeric

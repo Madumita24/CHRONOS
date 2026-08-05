@@ -1,0 +1,8 @@
+{
+  "changed_file_count": 4,
+  "expected_coherence": "INCONSISTENT",
+  "expected_decision": "hold_for_review",
+  "expected_future_field": "order_amount",
+  "expected_semantic_delta": "AGGREGATION_CHANGE",
+  "expected_stale_field": "order_total"
+}

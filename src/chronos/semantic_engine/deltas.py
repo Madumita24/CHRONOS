@@ -41,14 +41,13 @@ def detect_deltas(
     # A one-for-one same-position name change is represented as a rename.
     renamed_removed: set[str] = set()
     renamed_added: set[str] = set()
+    rename_pairs: list[tuple[str, str]] = []
     for old in removed:
         old_output = before_outputs[old]
         matches = [
             name
             for name in added
             if after_outputs[name].ordinal == old_output.ordinal
-            and after_outputs[name].expression_fingerprint
-            == old_output.expression_fingerprint
         ]
         if len(matches) == 1:
             new = matches[0]
@@ -68,6 +67,7 @@ def detect_deltas(
             )
             renamed_removed.add(old)
             renamed_added.add(new)
+            rename_pairs.append((old, new))
     for name in removed:
         if name not in renamed_removed:
             structural.append(
@@ -101,10 +101,12 @@ def detect_deltas(
                 )
             )
 
-    common = sorted(set(before_outputs) & set(after_outputs))
-    for name in common:
-        previous = before_outputs[name]
-        future = after_outputs[name]
+    output_pairs = [(name, name) for name in sorted(set(before_outputs) & set(after_outputs))]
+    output_pairs.extend(sorted(rename_pairs))
+    for before_name, after_name in output_pairs:
+        previous = before_outputs[before_name]
+        future = after_outputs[after_name]
+        name = after_name
         grouping_changed_for_aggregate = (
             bool(previous.aggregations or future.aggregations)
             and before.grouping != after.grouping

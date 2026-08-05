@@ -1,0 +1,6 @@
+version: 2
+models:
+  - name: order_details
+    columns:
+      - name: total_amount
+        data_type: numeric

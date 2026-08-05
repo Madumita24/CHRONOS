@@ -1,0 +1,6 @@
+{
+  "changed_file_count": 4,
+  "expected_coherence": "COHERENT",
+  "expected_decision": "hold_for_review",
+  "expected_future_field": "order_amount"
+}

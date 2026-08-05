@@ -63,6 +63,14 @@ def load_code_input(
     )
 
 
+def resolve_bounded_dbt_sql(
+    raw: str,
+    manifest: dict[str, Any] | None,
+) -> tuple[str, tuple[str, ...], str]:
+    """Resolve only static dbt ref/source expressions without executing Jinja."""
+    return _compile_bounded_dbt(raw, manifest)
+
+
 def safe_repository_path(reference: str, *, repository_root: Path) -> Path:
     if not isinstance(reference, str) or not reference.strip():
         raise UnsafeCodeInputError("Code reference must be a non-empty relative path.")

@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: order_details
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: order_amount
+        data_type: numeric
+        data_tests: [not_null]

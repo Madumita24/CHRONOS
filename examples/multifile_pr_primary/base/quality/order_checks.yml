@@ -1,0 +1,5 @@
+quality:
+  description: Validate the current total.
+  checks:
+    - field: order_total
+      expected_type: numeric

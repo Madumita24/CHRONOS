@@ -14,6 +14,12 @@ from .semantic_engine import (
     SemanticCompatibilityState,
     analyze_semantic_code_change,
 )
+from .pr_engine import (
+    PullRequestAnalysisProposal,
+    PullRequestAnalysisResult,
+    analyze_pull_request,
+    analyze_pull_request_bundle,
+)
 
 __all__ = [
     "FieldDeleteProposal",
@@ -24,6 +30,10 @@ __all__ = [
     "SemanticAnalysisResult",
     "SemanticCodeChangeProposal",
     "SemanticCompatibilityState",
+    "PullRequestAnalysisProposal",
+    "PullRequestAnalysisResult",
+    "analyze_pull_request",
+    "analyze_pull_request_bundle",
     "analyze_semantic_code_change",
     "analyze_structural_change",
 ]

@@ -1,0 +1,23 @@
+{
+  "analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "base_revision": "fixture-base-no-material-v1",
+  "file_model_mappings": [
+    {
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "model_relation": "order_entry_db.analytics.order_details",
+      "path": "models/order_details.sql",
+      "sql_dialect": "postgres"
+    }
+  ],
+  "head_revision": "fixture-head-no-material-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_id": "CHRONOS-PR-NO-MATERIAL-PROPOSAL-001",
+  "repository_identity": {
+    "repository_name": "chronos-multifile-no-material",
+    "repository_namespace": "Madumita24"
+  },
+  "scenario_id": "CHRONOS-MULTIFILE-NO-MATERIAL",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

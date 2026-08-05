@@ -1,0 +1,6 @@
+{
+  "changed_file_count": 3,
+  "expected_coherence": "INCONSISTENT",
+  "expected_conflict_type": "CONFLICTING_FUTURE_FIELD_IDENTITIES",
+  "expected_decision": "block_confirmed_incompatibility"
+}

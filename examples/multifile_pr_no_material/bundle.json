@@ -1,0 +1,12 @@
+{
+  "base_revision": "fixture-base-no-material-v1",
+  "files": [
+    {"base_fingerprint":"sha256:68819737da0043c5820221fc0cda190e4f82214ae1d84f9ac53df344a3a1ccaf","base_path":"dags/orders_pipeline.py","head_fingerprint":"sha256:30c4be69801bb7774d6475916f189cfccb9bdb8082d3790bab6bec704dc1bbc5","head_path":"dags/orders_pipeline.py","status":"MODIFIED"},
+    {"base_fingerprint":"sha256:212d0af14d68ca3e98b31799d4760ec8b6844c3a7a2db6695e337808ba3a4758","base_path":"docs/order_details.md","head_fingerprint":"sha256:78a4b55d14e0f887e52c3b8e9a63b78b93c73b9d4352e98f3c841520a51ed826","head_path":"docs/order_details.md","status":"MODIFIED"},
+    {"base_fingerprint":"sha256:658574489453d92fc5be50916d00148f73557d29762131b2b6f5634056847bbf","base_path":"models/order_details.sql","head_fingerprint":"sha256:096584efd5798633585631249b71adba187a2d7c13293ccf0d297a6b703b7719","head_path":"models/order_details.sql","status":"MODIFIED"},
+    {"base_fingerprint":"sha256:798382dfecdea3f3064471b7108ab629323c74685b90a51d355c32a7c1e29024","base_path":"models/schema.yml","head_fingerprint":"sha256:c75c3eb9d4df81fe3100a5af55fa121243e355f956a2d6efbac0d957f09f577a","head_path":"models/schema.yml","status":"MODIFIED"}
+  ],
+  "head_revision": "fixture-head-no-material-v1",
+  "repository_identity": {"repository_name":"chronos-multifile-no-material","repository_namespace":"Madumita24"},
+  "schema_version": "1.0"
+}

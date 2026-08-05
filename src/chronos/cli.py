@@ -9,6 +9,7 @@ from typing import Sequence
 
 from .structural_engine import StructuralEngineError, analyze_structural_change
 from .semantic_engine import analyze_semantic_code_change
+from .pr_engine import analyze_pull_request
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -47,6 +48,22 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Replace only a prior semantic analysis directory.",
     )
+    pull_request = commands.add_parser(
+        "analyze-pr",
+        help="Analyze one bounded multi-file repository transition.",
+    )
+    pull_request.add_argument("--proposal", required=True, help="Strict PR proposal JSON path.")
+    pull_request.add_argument("--snapshot", required=True, help="Snapshot JSON path.")
+    intake = pull_request.add_mutually_exclusive_group(required=True)
+    intake.add_argument("--repo", help="Local Git repository root.")
+    intake.add_argument("--bundle", help="Exported PR bundle root.")
+    pull_request.add_argument("--base", help="Base revision; must match the proposal.")
+    pull_request.add_argument("--head", help="Head revision; must match the proposal.")
+    pull_request.add_argument("--output", required=True, help="Isolated output directory.")
+    pull_request.add_argument(
+        "--overwrite", action="store_true",
+        help="Replace only a recognized prior PR analysis package.",
+    )
     return parser
 
 
@@ -54,7 +71,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
-        if args.command == "analyze-semantic-change":
+        if args.command == "analyze-pr":
+            result = analyze_pull_request(
+                snapshot=args.snapshot,
+                proposal=args.proposal,
+                output_dir=args.output,
+                repository=args.repo,
+                bundle=args.bundle,
+                base_revision=args.base,
+                head_revision=args.head,
+                overwrite=args.overwrite,
+            )
+        elif args.command == "analyze-semantic-change":
             result = analyze_semantic_code_change(
                 snapshot=args.snapshot,
                 proposal=args.proposal,
@@ -103,6 +131,16 @@ def main(argv: Sequence[str] | None = None) -> int:
                         "semantic_compatibility": result.semantic_compatibility.value,
                     }
                     if args.command == "analyze-semantic-change"
+                    else {}
+                ),
+                **(
+                    {
+                        "changed_file_count": result.changed_file_summary["changed_file_count"],
+                        "coherence_state": result.coherence_state.value,
+                        "conflict_count": len(result.conflicts),
+                        "root_cause_count": len(result.root_causes),
+                    }
+                    if args.command == "analyze-pr"
                     else {}
                 ),
             },

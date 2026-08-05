@@ -14,6 +14,13 @@ aggregation, filter, join, expression, and structural output deltas, and
 certifies an isolated 18-artifact analysis package. It never executes SQL or
 Jinja, queries or writes DataHub, generates repairs, or changes the frontend.
 
+Phase 6.3 adds deterministic analysis for one coordinated multi-file
+BASE-to-HEAD repository transition. It supports safe local Git ranges and
+offline PR bundles, bounded SQL/dbt/YAML/JSON/Python-AST parsing, exact
+cross-file correlation, coherence/conflict detection, a composite Future
+Graph, multi-root propagation, and a certified 26-artifact PR decision. It
+does not execute repository code or generate repairs.
+
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
 Current/Future/Diff field-lineage graph and a coordinated Impact & Evidence
@@ -116,6 +123,18 @@ with pre-change inspection in
 [PHASE_6_2_SQL_SEMANTIC_INVENTORY.md](PHASE_6_2_SQL_SEMANTIC_INVENTORY.md).
 Final verification, fingerprints, and exact regression totals are recorded in
 [PHASE_6_2_SEMANTIC_CHANGE_RESULT.md](PHASE_6_2_SEMANTIC_CHANGE_RESULT.md).
+
+## Multi-file pull-request analysis
+
+See [the Phase 6.3 developer guide](PHASE_6_3_DEVELOPER_GUIDE.md) for local
+Git and exported-bundle APIs, CLI usage, supported files/DAG patterns, and the
+four examples. Design and evidence boundaries are documented in
+[PHASE_6_3_MULTIFILE_PR_ARCHITECTURE.md](PHASE_6_3_MULTIFILE_PR_ARCHITECTURE.md),
+with the inspection-first findings in
+[PHASE_6_3_PR_INTAKE_INVENTORY.md](PHASE_6_3_PR_INTAKE_INVENTORY.md).
+Final outcomes, fingerprints, security audit, and exact regression totals are
+recorded in
+[PHASE_6_3_MULTIFILE_PR_RESULT.md](PHASE_6_3_MULTIFILE_PR_RESULT.md).
 
 ## Phase 5 documents
 
