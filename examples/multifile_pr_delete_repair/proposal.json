@@ -1,0 +1,28 @@
+{
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "repository_identity": {
+    "repository_name": "chronos-delete-repair",
+    "repository_namespace": "Madumita24"
+  },
+  "base_revision": "fixture-base-delete-repair-v1",
+  "head_revision": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "description": "Explicit field removal with one stale bounded quality reference.",
+  "proposal_metadata": {
+    "approved_delete_field": "order_total",
+    "delete_replacement": "none"
+  },
+  "file_model_mappings": [
+    {
+      "path": "models/order_details.sql",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "model_relation": "order_entry_db.analytics.order_details",
+      "sql_dialect": "postgres"
+    }
+  ]
+}

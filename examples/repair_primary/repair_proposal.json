@@ -1,0 +1,17 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "repository_identity": {
+    "repository_name": "chronos-multifile-primary",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa"
+  },
+  "base_revision": "fixture-base-primary-v1",
+  "head_revision": "fixture-head-primary-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "description": "Generate only exact stale DAG and quality field-reference repairs."
+}

@@ -1,0 +1,4 @@
+quality:
+  field:
+    - order_total
+    - order_status

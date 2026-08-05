@@ -1,0 +1,20 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "repository_identity": {
+    "repository_name": "chronos-type-alignment",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30"
+  },
+  "base_revision": "fixture-base-type-alignment-v1",
+  "head_revision": "fixture-head-type-alignment-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "description": "Align only the bounded contract type declaration; add no runtime cast.",
+  "proposal_metadata": {
+    "approved_type_transition": "integer->numeric"
+  }
+}

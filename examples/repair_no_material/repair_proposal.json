@@ -1,0 +1,17 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-NO-MATERIAL-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-NO-MATERIAL-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "predecessor_manifest_fingerprint": "sha256:d1b6dc5d638a6295d1d67579265a794397d80fe35d762c71dcf099765f1bfe74",
+  "repository_identity": {
+    "repository_name": "chronos-multifile-no-material",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5"
+  },
+  "base_revision": "fixture-base-no-material-v1",
+  "head_revision": "fixture-head-no-material-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-NO-MATERIAL",
+  "description": "Confirm that formatting and documentation changes do not generate repairs."
+}

@@ -1,0 +1,7 @@
+{
+  "affected_file_count": 1,
+  "patch_hunk_count": 1,
+  "repair_action_count": 1,
+  "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+  "runtime_verified": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "repository_identity": {
+    "repository_name": "chronos-delete-repair",
+    "repository_namespace": "Madumita24"
+  },
+  "base_revision": "fixture-base-delete-repair-v1",
+  "head_revision": "fixture-head-delete-repair-v1",
+  "files": [
+    {
+      "status": "MODIFIED",
+      "base_path": "models/order_details.sql",
+      "head_path": "models/order_details.sql",
+      "base_fingerprint": "sha256:56410d995b9ab4e6a5b3a392cdd6d8fb175f2af32faa308f10f83c397228dd38",
+      "head_fingerprint": "sha256:b62bb63f940c9debdba12dc2c3a28789e68941df7eab279af4f6dbcc16202310"
+    },
+    {
+      "status": "MODIFIED",
+      "base_path": "quality/order_checks.yml",
+      "head_path": "quality/order_checks.yml",
+      "base_fingerprint": "sha256:3804650172143f572adb81f505dc7da531e0dce5dc4294dfe64543bde9520fed",
+      "head_fingerprint": "sha256:3804650172143f572adb81f505dc7da531e0dce5dc4294dfe64543bde9520fed"
+    }
+  ]
+}

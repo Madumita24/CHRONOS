@@ -1,0 +1,17 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-CONFLICT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "predecessor_manifest_fingerprint": "sha256:b5f185680543f7e9bb422a9a4302e6d7d05b41cbbfe0ecb5015b0162dab1eae2",
+  "repository_identity": {
+    "repository_name": "chronos-multifile-conflict",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219"
+  },
+  "base_revision": "fixture-base-conflict-v1",
+  "head_revision": "fixture-head-conflict-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-CONFLICT",
+  "description": "Preserve competing future field identities without choosing a repair."
+}

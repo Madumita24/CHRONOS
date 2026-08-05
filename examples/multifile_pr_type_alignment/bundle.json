@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "repository_identity": {
+    "repository_name": "chronos-type-alignment",
+    "repository_namespace": "Madumita24"
+  },
+  "base_revision": "fixture-base-type-alignment-v1",
+  "head_revision": "fixture-head-type-alignment-v1",
+  "files": [
+    {
+      "status": "MODIFIED",
+      "base_path": "contracts/order_details.yml",
+      "head_path": "contracts/order_details.yml",
+      "base_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+      "head_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1"
+    },
+    {
+      "status": "MODIFIED",
+      "base_path": "models/schema.yml",
+      "head_path": "models/schema.yml",
+      "base_fingerprint": "sha256:8111000f1b4f9ee7a11a549a0902c6ce690216dd38cefa1373aab5c984fc0277",
+      "head_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f"
+    }
+  ]
+}

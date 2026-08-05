@@ -21,6 +21,13 @@ cross-file correlation, coherence/conflict detection, a composite Future
 Graph, multi-root propagation, and a certified 26-artifact PR decision. It
 does not execute repository code or generate repairs.
 
+Phase 6.4 adds deterministic, isolated repair-candidate generation from one
+complete certified Phase 6.3 package and its exact repository bundle. It
+classifies repairability, creates a typed Repair Plan, uses registered
+parser-aware editors, emits review-only patches and previews, and reruns Phase
+6.3 as a static projection. It never applies a patch, executes analyzed code,
+certifies runtime correctness, modifies DataHub, commits, or pushes.
+
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
 Current/Future/Diff field-lineage graph and a coordinated Impact & Evidence
@@ -135,6 +142,17 @@ with the inspection-first findings in
 Final outcomes, fingerprints, security audit, and exact regression totals are
 recorded in
 [PHASE_6_3_MULTIFILE_PR_RESULT.md](PHASE_6_3_MULTIFILE_PR_RESULT.md).
+
+## Deterministic repair candidate generation
+
+See [the Phase 6.4 developer guide](PHASE_6_4_DEVELOPER_GUIDE.md) for the
+strict proposal, Python and CLI entry points, review package, supported edit
+boundary, and six deterministic examples. Design and trust boundaries are in
+[PHASE_6_4_REPAIR_ARCHITECTURE.md](PHASE_6_4_REPAIR_ARCHITECTURE.md), with the
+inspection-first findings in
+[PHASE_6_4_REPAIR_INVENTORY.md](PHASE_6_4_REPAIR_INVENTORY.md). Final scenario
+fingerprints, security checks, limitations, and exact regression totals are
+recorded in [PHASE_6_4_REPAIR_RESULT.md](PHASE_6_4_REPAIR_RESULT.md).
 
 ## Phase 5 documents
 

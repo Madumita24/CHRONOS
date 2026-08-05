@@ -1,0 +1,17 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-COHERENT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-COHERENT-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-COHERENT-001",
+  "predecessor_manifest_fingerprint": "sha256:c365a6736f2b0bd2a972206523a784cb5daa17a25ede41841d6f7aeac2edd94a",
+  "repository_identity": {
+    "repository_name": "chronos-multifile-coherent",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7"
+  },
+  "base_revision": "fixture-base-coherent-v1",
+  "head_revision": "fixture-head-coherent-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-COHERENT",
+  "description": "Confirm that a coherent PR does not manufacture a patch."
+}

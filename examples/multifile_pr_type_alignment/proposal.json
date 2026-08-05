@@ -1,0 +1,20 @@
+{
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "repository_identity": {
+    "repository_name": "chronos-type-alignment",
+    "repository_namespace": "Madumita24"
+  },
+  "base_revision": "fixture-base-type-alignment-v1",
+  "head_revision": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "description": "Explicit declaration type transition with a stale bounded contract declaration.",
+  "proposal_metadata": {
+    "approved_type_transition": "integer->numeric",
+    "runtime_cast_approved": "false"
+  }
+}

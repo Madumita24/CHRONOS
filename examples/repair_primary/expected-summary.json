@@ -1,0 +1,9 @@
+{
+  "affected_file_count": 2,
+  "patch_hunk_count": 2,
+  "projected_coherence": "COHERENT",
+  "projected_stale_reference_count": 0,
+  "repair_action_count": 2,
+  "repair_disposition": "PARTIAL_REPAIR_CANDIDATE",
+  "runtime_verified": false
+}

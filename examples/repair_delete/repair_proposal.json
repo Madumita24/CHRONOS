@@ -1,0 +1,20 @@
+{
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "repository_identity": {
+    "repository_name": "chronos-delete-repair",
+    "repository_namespace": "Madumita24",
+    "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca"
+  },
+  "base_revision": "fixture-base-delete-repair-v1",
+  "head_revision": "fixture-head-delete-repair-v1",
+  "repair_mode": "ALL_SUPPORTED",
+  "scenario_id": "CHRONOS-REPAIR-DELETE",
+  "description": "Remove only the exact stale bounded quality-list reference.",
+  "proposal_metadata": {
+    "approved_delete_field": "order_total"
+  }
+}

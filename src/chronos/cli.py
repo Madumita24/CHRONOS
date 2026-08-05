@@ -10,6 +10,7 @@ from typing import Sequence
 from .structural_engine import StructuralEngineError, analyze_structural_change
 from .semantic_engine import analyze_semantic_code_change
 from .pr_engine import analyze_pull_request
+from .repair_engine import generate_repair
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -64,6 +65,23 @@ def build_parser() -> argparse.ArgumentParser:
         "--overwrite", action="store_true",
         help="Replace only a recognized prior PR analysis package.",
     )
+    repair = commands.add_parser(
+        "generate-repair",
+        help="Generate one isolated evidence-backed candidate repair package.",
+    )
+    repair.add_argument("--analysis", required=True, help="Certified predecessor package.")
+    repair.add_argument("--proposal", required=True, help="Strict repair proposal JSON path.")
+    repair.add_argument("--bundle", required=True, help="Matching exported repository bundle.")
+    repair.add_argument("--output", required=True, help="New isolated repair output directory.")
+    repair.add_argument("--snapshot", help="Frozen snapshot JSON; defaults to the certified root snapshot.")
+    repair.add_argument(
+        "--root", action="append", default=[],
+        help="Optional selected predecessor root; repeat for multiple roots.",
+    )
+    repair.add_argument(
+        "--overwrite", action="store_true",
+        help="Replace only a recognized prior repair package.",
+    )
     return parser
 
 
@@ -71,7 +89,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
-        if args.command == "analyze-pr":
+        if args.command == "generate-repair":
+            repair_proposal = _repair_cli_proposal(args.proposal, args.root)
+            result = generate_repair(
+                predecessor_analysis=args.analysis,
+                proposal=repair_proposal,
+                repository_bundle=args.bundle,
+                output_dir=args.output,
+                snapshot=args.snapshot,
+                overwrite=args.overwrite,
+            )
+        elif args.command == "analyze-pr":
             result = analyze_pull_request(
                 snapshot=args.snapshot,
                 proposal=args.proposal,
@@ -115,6 +143,29 @@ def main(argv: Sequence[str] | None = None) -> int:
             file=sys.stderr,
         )
         return 2
+    if args.command == "generate-repair":
+        print(
+            json.dumps(
+                {
+                    "repair_analysis_id": result.identity.repair_analysis_id,
+                    "predecessor_analysis_id": result.identity.predecessor_analysis_id,
+                    "certification_status": result.certification_status,
+                    "repair_disposition": result.repair_disposition.value,
+                    "repair_completeness": result.completeness.value,
+                    "repair_action_count": len(result.repair_actions),
+                    "affected_file_count": len(result.affected_files),
+                    "projected_closed_root_count": len(result.projected_closed_roots),
+                    "remaining_finding_count": len(result.remaining_findings),
+                    "projected_coherence": result.projected_coherence,
+                    "output_dir": str(result.output_dir),
+                    "semantic_fingerprint": result.semantic_fingerprint,
+                    "runtime_verified": False,
+                    "status": "succeeded",
+                },
+                sort_keys=True,
+            )
+        )
+        return 0
     print(
         json.dumps(
             {
@@ -148,6 +199,26 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
     )
     return 0
+
+
+def _repair_cli_proposal(path: str, roots: list[str]):
+    if not roots:
+        return path
+    try:
+        value = json.loads(open(path, encoding="utf-8").read())
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ValueError("Unable to load repair proposal for selected-root mode.") from exc
+    if not isinstance(value, dict):
+        raise ValueError("Repair proposal must be a JSON object.")
+    declared_mode = value.get("repair_mode")
+    declared_roots = value.get("target_root_cause_ids", [])
+    if declared_mode == "ALL_SUPPORTED" and not declared_roots:
+        value["repair_mode"] = "SELECTED_ROOTS"
+        value["target_root_cause_ids"] = sorted(set(roots))
+        value.pop("target_logical_change_group_ids", None)
+    elif declared_mode != "SELECTED_ROOTS" or sorted(declared_roots) != sorted(set(roots)):
+        raise ValueError("CLI selected roots conflict with the strict repair proposal.")
+    return value
 
 
 if __name__ == "__main__":

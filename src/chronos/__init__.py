@@ -20,6 +20,15 @@ from .pr_engine import (
     analyze_pull_request,
     analyze_pull_request_bundle,
 )
+from .repair_engine import (
+    RepairCompleteness,
+    RepairDisposition,
+    RepairGenerationProposal,
+    RepairGenerationResult,
+    RepairMode,
+    RepairabilityState,
+    generate_repair,
+)
 
 __all__ = [
     "FieldDeleteProposal",
@@ -32,8 +41,15 @@ __all__ = [
     "SemanticCompatibilityState",
     "PullRequestAnalysisProposal",
     "PullRequestAnalysisResult",
+    "RepairCompleteness",
+    "RepairDisposition",
+    "RepairGenerationProposal",
+    "RepairGenerationResult",
+    "RepairMode",
+    "RepairabilityState",
     "analyze_pull_request",
     "analyze_pull_request_bundle",
     "analyze_semantic_code_change",
     "analyze_structural_change",
+    "generate_repair",
 ]
