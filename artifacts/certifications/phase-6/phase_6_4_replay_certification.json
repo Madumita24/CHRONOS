@@ -1,0 +1,150 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_4_replay_certification",
+  "certification_version": "6.5.0",
+  "engine_version": "6.4.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "scenarios": [
+    {
+      "affected_file_count": 2,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:83fdcb18673295d80a2fadad5c46c158d746952711c52f8f7de824e763459232",
+        "repairs/patches/files/dags/orders_pipeline.py.patch": "sha256:85126a92b82f7ece2708970c2f1c66f56ace065515c8dbdc89b0908f76bb17a0",
+        "repairs/patches/files/quality/order_checks.yml.patch": "sha256:24d4332aba19e6121aaaaebc7bf4d5e592bdba99c0d63c017f515d6b4ba41efa",
+        "repairs/patches/groups/logical-change-126d3f18d2b8ecd8f7db.patch": "sha256:83fdcb18673295d80a2fadad5c46c158d746952711c52f8f7de824e763459232"
+      },
+      "patch_hunk_count": 2,
+      "projected_coherence": "COHERENT",
+      "remaining_finding_count": 5,
+      "repair_action_count": 2,
+      "repair_completeness": "PARTIALLY_ADDRESSED_SELECTED_ROOTS",
+      "repair_disposition": "PARTIAL_REPAIR_CANDIDATE",
+      "runtime_verified": false,
+      "scenario": "primary",
+      "second_run_patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:83fdcb18673295d80a2fadad5c46c158d746952711c52f8f7de824e763459232",
+        "repairs/patches/files/dags/orders_pipeline.py.patch": "sha256:85126a92b82f7ece2708970c2f1c66f56ace065515c8dbdc89b0908f76bb17a0",
+        "repairs/patches/files/quality/order_checks.yml.patch": "sha256:24d4332aba19e6121aaaaebc7bf4d5e592bdba99c0d63c017f515d6b4ba41efa",
+        "repairs/patches/groups/logical-change-126d3f18d2b8ecd8f7db.patch": "sha256:83fdcb18673295d80a2fadad5c46c158d746952711c52f8f7de824e763459232"
+      },
+      "second_run_semantic_fingerprint": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1",
+      "semantic_fingerprint": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1"
+    },
+    {
+      "affected_file_count": 0,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {},
+      "patch_hunk_count": 0,
+      "projected_coherence": "COHERENT",
+      "remaining_finding_count": 9,
+      "repair_action_count": 0,
+      "repair_completeness": "NO_SUPPORTED_REPAIR",
+      "repair_disposition": "NO_SUPPORTED_AUTOMATIC_REPAIR",
+      "runtime_verified": false,
+      "scenario": "coherent",
+      "second_run_patch_fingerprints": {},
+      "second_run_semantic_fingerprint": "sha256:9e27a719ee9e068f7af50582d9c433d812bfe02e2f0ac9de9ad7f7cb4500e131",
+      "semantic_fingerprint": "sha256:9e27a719ee9e068f7af50582d9c433d812bfe02e2f0ac9de9ad7f7cb4500e131"
+    },
+    {
+      "affected_file_count": 0,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {},
+      "patch_hunk_count": 0,
+      "projected_coherence": "COHERENT",
+      "remaining_finding_count": 0,
+      "repair_action_count": 0,
+      "repair_completeness": "NO_SUPPORTED_REPAIR",
+      "repair_disposition": "NO_SUPPORTED_AUTOMATIC_REPAIR",
+      "runtime_verified": false,
+      "scenario": "no_material",
+      "second_run_patch_fingerprints": {},
+      "second_run_semantic_fingerprint": "sha256:81969c9e8e110dd013564eecde9a1d396f7d77d26a4fa3a4bb2026c4bda18d91",
+      "semantic_fingerprint": "sha256:81969c9e8e110dd013564eecde9a1d396f7d77d26a4fa3a4bb2026c4bda18d91"
+    },
+    {
+      "affected_file_count": 0,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {},
+      "patch_hunk_count": 0,
+      "projected_coherence": "INCONSISTENT",
+      "remaining_finding_count": 5,
+      "repair_action_count": 0,
+      "repair_completeness": "NO_SUPPORTED_REPAIR",
+      "repair_disposition": "REPAIR_BLOCKED_BY_CONFLICT",
+      "runtime_verified": false,
+      "scenario": "conflict",
+      "second_run_patch_fingerprints": {},
+      "second_run_semantic_fingerprint": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d",
+      "semantic_fingerprint": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d"
+    },
+    {
+      "affected_file_count": 1,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+        "repairs/patches/files/quality/order_checks.yml.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+        "repairs/patches/groups/logical-change-c1f873b076b1024a2d48.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb"
+      },
+      "patch_hunk_count": 1,
+      "projected_coherence": "UNRESOLVED",
+      "remaining_finding_count": 1,
+      "repair_action_count": 1,
+      "repair_completeness": "FULLY_ADDRESSED_SELECTED_ROOTS",
+      "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+      "runtime_verified": false,
+      "scenario": "delete",
+      "second_run_patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+        "repairs/patches/files/quality/order_checks.yml.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+        "repairs/patches/groups/logical-change-c1f873b076b1024a2d48.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb"
+      },
+      "second_run_semantic_fingerprint": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c",
+      "semantic_fingerprint": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c"
+    },
+    {
+      "affected_file_count": 1,
+      "artifact_count": 27,
+      "candidate_files_isolated": true,
+      "deterministic": true,
+      "patch_applied_to_source": false,
+      "patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c",
+        "repairs/patches/files/contracts/order_details.yml.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c",
+        "repairs/patches/groups/logical-change-d929fb4bd57945b75cc3.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c"
+      },
+      "patch_hunk_count": 1,
+      "projected_coherence": "UNRESOLVED",
+      "remaining_finding_count": 1,
+      "repair_action_count": 1,
+      "repair_completeness": "FULLY_ADDRESSED_SELECTED_ROOTS",
+      "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+      "runtime_verified": false,
+      "scenario": "type_alignment",
+      "second_run_patch_fingerprints": {
+        "repairs/patches/combined.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c",
+        "repairs/patches/files/contracts/order_details.yml.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c",
+        "repairs/patches/groups/logical-change-d929fb4bd57945b75cc3.patch": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c"
+      },
+      "second_run_semantic_fingerprint": "sha256:6d886251db59f521ba878011c07153127408254de509a5235c54c06abed9c934",
+      "semantic_fingerprint": "sha256:6d886251db59f521ba878011c07153127408254de509a5235c54c06abed9c934"
+    }
+  ],
+  "state": "PASS"
+}

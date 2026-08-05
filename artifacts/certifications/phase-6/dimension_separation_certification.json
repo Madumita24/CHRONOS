@@ -1,0 +1,79 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "dimension_separation_certification",
+  "certification_version": "6.5.0",
+  "dimensions": [
+    {
+      "dimension": "structural_compatibility",
+      "independent": true
+    },
+    {
+      "dimension": "semantic_compatibility",
+      "independent": true
+    },
+    {
+      "dimension": "repository_coherence",
+      "independent": true
+    },
+    {
+      "dimension": "execution_validity",
+      "independent": true
+    },
+    {
+      "dimension": "evidence_certainty",
+      "independent": true
+    },
+    {
+      "dimension": "severity_if_realized",
+      "independent": true
+    },
+    {
+      "dimension": "business_context_criticality",
+      "independent": true
+    },
+    {
+      "dimension": "pr_disposition",
+      "independent": true
+    },
+    {
+      "dimension": "repair_disposition",
+      "independent": true
+    },
+    {
+      "dimension": "repair_completeness",
+      "independent": true
+    },
+    {
+      "dimension": "static_projected_state",
+      "independent": true
+    },
+    {
+      "dimension": "runtime_verified_state",
+      "independent": true
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "separation_assertions": [
+    {
+      "does_not_imply": "SEMANTICALLY_COMPATIBLE",
+      "left": "COHERENT",
+      "result": "PASS"
+    },
+    {
+      "does_not_imply": "SAFE_TO_MERGE",
+      "left": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+      "result": "PASS"
+    },
+    {
+      "does_not_imply": "CONFIRMED_RUNTIME_FAILURE",
+      "left": "BLOCK_CONFIRMED_INCOMPATIBILITY",
+      "result": "PASS"
+    },
+    {
+      "does_not_imply": "RUNTIME_VERIFIED",
+      "left": "STATIC_PROJECTED",
+      "result": "PASS"
+    }
+  ],
+  "state": "PASS"
+}

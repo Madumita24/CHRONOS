@@ -1,0 +1,24 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_certification_scope",
+  "certification_version": "6.5.0",
+  "excluded": [
+    "runtime_correctness",
+    "business_approval",
+    "safe_to_merge_status",
+    "warehouse_execution",
+    "dbt_execution",
+    "orchestration_execution",
+    "consumer_behavior",
+    "datahub_write_back",
+    "frontend_scenario_selection"
+  ],
+  "included": [
+    "deterministic_structural_counterfactual_analysis",
+    "deterministic_sql_dbt_semantic_analysis",
+    "deterministic_multifile_repository_analysis",
+    "deterministic_candidate_repair_generation_and_static_projection"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "runtime_correctness_certified": false
+}

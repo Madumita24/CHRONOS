@@ -1,0 +1,65 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "dynamic_construct_certification",
+  "certification_version": "6.5.0",
+  "constructs": [
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "python_f_string",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "loop_generated_dag_tasks",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "runtime_function_call",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "environment_derived_reference",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "arbitrary_jinja",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "macro",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "computed_yaml_value",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    },
+    {
+      "conservative_state": "UNSUPPORTED_OR_BLOCKED_BY_MISSING_EVIDENCE",
+      "construct": "unsupported_dynamic_sql",
+      "executed": false,
+      "patched": false,
+      "result": "PASS"
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

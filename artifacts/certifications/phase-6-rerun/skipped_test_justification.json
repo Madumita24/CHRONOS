@@ -1,0 +1,73 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "skipped_test_justification",
+  "certification_version": "6.5.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "skip_count": 7,
+  "skipped_tests": [
+    {
+      "blocks_certification": false,
+      "category": "live DataHub reconstruction",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.certification.test_phase_1_live_reconstruction.Phase1LiveReconstructionCertificationTests.test_fresh_snapshot_matches_certified_semantics"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub readiness",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_datahub_readiness_integration.DataHubReadinessIntegrationTests.test_live_showcase_environment_is_ready"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub entity resolution",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_entity_resolution_integration.CanonicalEntityResolutionIntegrationTests.test_live_canonical_dataset_field_and_platform_collision"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub schema retrieval",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_schema_retrieval_integration.SchemaRetrievalIntegrationTests.test_complete_postgres_and_isolated_snowflake_schemas"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub field lineage",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_field_lineage_integration.FieldLineageIntegrationTests.test_direct_and_complete_order_total_lineage"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub asset context",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_asset_context_integration.AssetContextIntegrationTests.test_complete_verified_context_scope"
+    },
+    {
+      "blocks_certification": false,
+      "category": "live DataHub snapshot reconstruction",
+      "deterministic_coverage_elsewhere": true,
+      "environment_requirement": "matching live showcase DataHub instance and CLI profile",
+      "reason": "CHRONOS_RUN_INTEGRATION was not enabled",
+      "risk": "live service drift is not revalidated by this offline run",
+      "test_identifier": "tests.integration.test_current_metadata_snapshot_integration.CurrentMetadataSnapshotIntegrationTests.test_live_snapshot_validation_determinism_and_round_trip"
+    }
+  ],
+  "state": "PASS"
+}

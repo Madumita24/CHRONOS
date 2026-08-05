@@ -1,0 +1,54 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "resource_bound_certification",
+  "certification_version": "6.5.0",
+  "limits": [
+    {
+      "boundary_tested": true,
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "name": "maximum_changed_files",
+      "over_limit_rejected": true,
+      "test_reference": "test_088_changed_file_limit_allows_boundary_and_rejects_over",
+      "unit": "files",
+      "value": 200
+    },
+    {
+      "boundary_tested": true,
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "name": "maximum_source_file_size",
+      "over_limit_rejected": true,
+      "test_reference": "test_089_source_file_limit_allows_boundary_and_rejects_over",
+      "unit": "bytes",
+      "value": 1048576
+    },
+    {
+      "boundary_tested": true,
+      "implementation_reference": "src/chronos/repair_engine/trust.py",
+      "name": "maximum_predecessor_artifact_size",
+      "over_limit_rejected": true,
+      "test_reference": "test_090_predecessor_artifact_limit_allows_boundary_and_rejects_over",
+      "unit": "bytes",
+      "value": 5242880
+    },
+    {
+      "boundary_tested": true,
+      "implementation_reference": "src/chronos/repair_engine/planning.py",
+      "name": "maximum_repair_actions",
+      "over_limit_rejected": true,
+      "test_reference": "test_091_repair_action_limit_allows_boundary_and_rejects_over",
+      "unit": "actions",
+      "value": 500
+    },
+    {
+      "boundary_tested": true,
+      "implementation_reference": "src/chronos/repair_engine/patching.py",
+      "name": "maximum_patch_hunks",
+      "over_limit_rejected": true,
+      "test_reference": "test_092_patch_hunk_limit_allows_boundary_and_rejects_over",
+      "unit": "hunks",
+      "value": 500
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

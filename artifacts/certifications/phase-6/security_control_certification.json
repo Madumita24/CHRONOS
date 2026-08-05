@@ -1,0 +1,179 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "security_control_certification",
+  "certification_version": "6.5.0",
+  "controls": [
+    {
+      "control": "safe_proposal_parsing",
+      "implementation_reference": "src/chronos/structural_engine/proposals.py; semantic_engine/proposals.py; pr_engine/proposals.py; repair_engine/proposals.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "git_argument_construction",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "revision_validation",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "repository_containment",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "bundle_containment",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "symlink_rejection",
+      "implementation_reference": "src/chronos/pr_engine/intake.py; repair_engine/trust.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "non_regular_file_rejection",
+      "implementation_reference": "src/chronos/pr_engine/intake.py; repair_engine/trust.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "binary_detection",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "utf8_validation",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "file_count_limit",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "file_size_limit",
+      "implementation_reference": "src/chronos/pr_engine/intake.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "artifact_size_limit",
+      "implementation_reference": "src/chronos/repair_engine/trust.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "action_hunk_limits",
+      "implementation_reference": "src/chronos/repair_engine/planning.py; repair_engine/patching.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "yaml_safe_loading",
+      "implementation_reference": "src/chronos/pr_engine/parsers/config.py; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "duplicate_key_rejection",
+      "implementation_reference": "src/chronos/repair_engine/editors.py; phase6_certification/certifier.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "sql_ast_parsing",
+      "implementation_reference": "src/chronos/semantic_engine/parser.py; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "python_ast_only_parsing",
+      "implementation_reference": "src/chronos/pr_engine/parsers/dag.py; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "jinja_rejection",
+      "implementation_reference": "src/chronos/semantic_engine/intake.py; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "parser_editor_exact_targeting",
+      "implementation_reference": "src/chronos/pr_engine/registry.py; repair_engine/rules.py; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "patch_path_validation",
+      "implementation_reference": "src/chronos/repair_engine/patching.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "isolated_patch_application",
+      "implementation_reference": "src/chronos/repair_engine/patching.py; repair_engine/projection.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "overwrite_protection",
+      "implementation_reference": "src/chronos/structural_engine/engine.py; semantic_engine/engine.py; pr_engine/engine.py; repair_engine/engine.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "atomic_staging",
+      "implementation_reference": "src/chronos/structural_engine/engine.py; semantic_engine/engine.py; pr_engine/engine.py; repair_engine/engine.py; phase6_certification/certifier.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "cleanup_on_failure",
+      "implementation_reference": "src/chronos/repair_engine/engine.py; phase6_certification/certifier.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "credential_detection",
+      "implementation_reference": "src/chronos/pr_engine/intake.py; repair_engine/trust.py; phase6_certification/certifier.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "bounded_cli_errors",
+      "implementation_reference": "src/chronos/cli.py; phase6_certification/__main__.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "no_repository_code_execution",
+      "implementation_reference": "src/chronos/pr_engine/parsers; repair_engine/editors.py",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "control": "no_datahub_write",
+      "implementation_reference": "src/chronos/structural_engine; semantic_engine; pr_engine; repair_engine",
+      "result": "PASS",
+      "test_reference": "tests/unit and tests/certification/test_phase_6_certification.py"
+    }
+  ],
+  "datahub_write_performed": false,
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "repository_code_executed": false,
+  "state": "PASS"
+}

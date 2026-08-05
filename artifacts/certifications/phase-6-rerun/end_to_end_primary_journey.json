@@ -1,0 +1,47 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "end_to_end_primary_journey",
+  "certification_version": "6.5.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "runtime_verified": false,
+  "state": "PASS",
+  "steps": [
+    {
+      "decision": "hold_for_review",
+      "inputs": {
+        "dag": "order_total",
+        "quality": "order_total",
+        "schema": "order_amount",
+        "sql": "AVG(order_total) AS order_amount"
+      },
+      "package_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+      "phase": "6.3",
+      "repository_coherence": "INCONSISTENT",
+      "semantic_state": "SUM_TO_AVG_UNRESOLVED",
+      "step": 1
+    },
+    {
+      "candidate_edits": [
+        "dag:order_total_to_order_amount",
+        "quality:order_total_to_order_amount"
+      ],
+      "package_fingerprint": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1",
+      "phase": "6.4",
+      "protected_semantics": [
+        "AVG_UNTOUCHED"
+      ],
+      "repair_disposition": "PARTIAL_REPAIR_CANDIDATE",
+      "step": 2
+    },
+    {
+      "execution_validity": "UNVERIFIED",
+      "phase": "6.4_static_projection",
+      "repair_scope_coherence_after": "COHERENT",
+      "repair_scope_coherence_before": "INCONSISTENT",
+      "semantic_intent": "UNRESOLVED",
+      "stale_references_after": 0,
+      "stale_references_before": 2,
+      "step": 3
+    }
+  ]
+}

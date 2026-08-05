@@ -1,0 +1,211 @@
+{
+  "artifact_package_types": {
+    "phase_6_1": 14,
+    "phase_6_2": 18,
+    "phase_6_3": 26,
+    "phase_6_4": "27_plus_repairs"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_release_manifest",
+  "certification_state": "PHASE_6_CERTIFIED_WITH_NON_BLOCKING_LIMITATIONS",
+  "certification_version": "6.5.0",
+  "cli_commands": [
+    "chronos analyze-structural-change",
+    "chronos analyze-semantic-change",
+    "chronos analyze-pr",
+    "chronos generate-repair"
+  ],
+  "engine_versions": {
+    "phase_6_1": "6.1.0",
+    "phase_6_2": "6.2.0",
+    "phase_6_3": "6.3.0",
+    "phase_6_4": "6.4.0"
+  },
+  "fixture_fingerprints": {
+    "phase_6_1": {
+      "field_delete": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201",
+      "field_rename": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99",
+      "field_type_change": "sha256:a8255c14a5ca0b2f889721f68e85a7fe46733851a20351804ece4fea7068b4b0"
+    },
+    "phase_6_2": {
+      "aggregation": "sha256:2fad35e7bcc1358535ac85786068261ed1a7d17f919536ede0213dcb864f848a",
+      "combined_aggregation_filter": "sha256:5e88d3d6ead93f20681e8179446c5f08a8f12b360772ff0134c65e5a52e3fa07",
+      "derived_expression": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc",
+      "filter": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e",
+      "join": "sha256:7606503e4570cb13686a6ec0a47acf715f8766135ca6c4afaa46443501fb0897"
+    },
+    "phase_6_3": {
+      "coherent": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621",
+      "conflict": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+      "no_material": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23",
+      "primary": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba"
+    },
+    "phase_6_4": {
+      "coherent": "sha256:9e27a719ee9e068f7af50582d9c433d812bfe02e2f0ac9de9ad7f7cb4500e131",
+      "conflict": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d",
+      "delete": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c",
+      "no_material": "sha256:81969c9e8e110dd013564eecde9a1d396f7d77d26a4fa3a4bb2026c4bda18d91",
+      "primary": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1",
+      "type_alignment": "sha256:6d886251db59f521ba878011c07153127408254de509a5235c54c06abed9c934"
+    }
+  },
+  "golden_fingerprints": {
+    "phase_4_physical_sha256": "5dc730bae390908fa14f5ee5dc5d6a2b6a71382eecf664950bf60f76a74c94e8",
+    "phase_4_semantic_fingerprint": "sha256:3e8444ec904e0ba1c55c5ae22d69edfa8e722310f51ab30fc783b8175a87ac4a"
+  },
+  "known_limitations": [
+    "live DataHub integration tests were not run",
+    "runtime correctness excluded",
+    "business approval excluded",
+    "dynamic constructs not executed or repaired"
+  ],
+  "parser_editor_versions": {
+    "python_ast": "stdlib",
+    "pyyaml": "6.0.3",
+    "repair_editors": [
+      {
+        "editor_name": "dbt_schema_editor",
+        "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+        "executes_content": false,
+        "supported_operations": [
+          "REMOVE_STALE_STATIC_REFERENCE",
+          "RENAME_MAPPING_KEY",
+          "REPLACE_STATIC_SCALAR",
+          "UPDATE_CONTRACT_FIELD",
+          "UPDATE_CONTRACT_TYPE",
+          "UPDATE_DBT_COLUMN_NAME",
+          "UPDATE_MAPPING_VALUE",
+          "UPDATE_MODEL_FILE_REFERENCE",
+          "UPDATE_PIPELINE_CONFIG_REFERENCE",
+          "UPDATE_QUALITY_REFERENCE"
+        ]
+      },
+      {
+        "editor_name": "python_dag_static_editor",
+        "editor_version": "6.4.0/python-ast-source-span",
+        "executes_content": false,
+        "supported_operations": [
+          "REPLACE_STATIC_SCALAR",
+          "UPDATE_DAG_STATIC_ARGUMENT",
+          "UPDATE_MODEL_FILE_REFERENCE"
+        ]
+      },
+      {
+        "editor_name": "sqlglot_ast_editor",
+        "editor_version": "6.4.0/sqlglot-30.13.0",
+        "executes_content": false,
+        "supported_operations": [
+          "UPDATE_SQL_IDENTIFIER",
+          "UPDATE_SQL_OUTPUT_ALIAS"
+        ]
+      },
+      {
+        "editor_name": "static_reference_editor",
+        "editor_version": "6.4.0/static-reference-dispatch",
+        "executes_content": false,
+        "supported_operations": [
+          "REPLACE_STATIC_SCALAR",
+          "UPDATE_MODEL_FILE_REFERENCE"
+        ]
+      },
+      {
+        "editor_name": "structured_config_editor",
+        "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+        "executes_content": false,
+        "supported_operations": [
+          "REMOVE_STALE_STATIC_REFERENCE",
+          "RENAME_MAPPING_KEY",
+          "REPLACE_STATIC_SCALAR",
+          "UPDATE_CONTRACT_FIELD",
+          "UPDATE_CONTRACT_TYPE",
+          "UPDATE_DBT_COLUMN_NAME",
+          "UPDATE_MAPPING_VALUE",
+          "UPDATE_MODEL_FILE_REFERENCE",
+          "UPDATE_PIPELINE_CONFIG_REFERENCE",
+          "UPDATE_QUALITY_REFERENCE"
+        ]
+      },
+      {
+        "editor_name": "structured_contract_editor",
+        "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+        "executes_content": false,
+        "supported_operations": [
+          "REMOVE_STALE_STATIC_REFERENCE",
+          "RENAME_MAPPING_KEY",
+          "REPLACE_STATIC_SCALAR",
+          "UPDATE_CONTRACT_FIELD",
+          "UPDATE_CONTRACT_TYPE",
+          "UPDATE_DBT_COLUMN_NAME",
+          "UPDATE_MAPPING_VALUE",
+          "UPDATE_MODEL_FILE_REFERENCE",
+          "UPDATE_PIPELINE_CONFIG_REFERENCE",
+          "UPDATE_QUALITY_REFERENCE"
+        ]
+      }
+    ],
+    "sqlglot": "30.13.0"
+  },
+  "phase_7_handoff_requirements": [
+    "execution_authorization",
+    "disposable_checkout",
+    "independent_patch_application",
+    "dependency_installation",
+    "sql_dbt_compilation",
+    "tests",
+    "schema_contract_validation",
+    "dag_validation",
+    "data_and_consumer_checks",
+    "runtime_evidence"
+  ],
+  "proposal_types": [
+    "StructuralChangeProposal",
+    "SemanticCodeChangeProposal",
+    "PullRequestAnalysisProposal",
+    "RepairGenerationProposal"
+  ],
+  "public_apis": [
+    "analyze_structural_change",
+    "analyze_semantic_code_change",
+    "analyze_pull_request",
+    "analyze_pull_request_bundle",
+    "generate_repair"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "runtime_correctness_certified": false,
+  "security_control_summary": {
+    "control_count": 28,
+    "failed": 0
+  },
+  "skipped_test_summary": {
+    "blocking": false,
+    "count": 7,
+    "live_datahub_revalidated": false
+  },
+  "source_commit": "3c7e1f1520e97a63975a58b23cc7efafe7ec9d4a",
+  "source_tree": "958ad3651492055875d2cad7037fa6e195d43321",
+  "supported_capabilities": [
+    "FIELD_RENAME",
+    "FIELD_DELETE",
+    "FIELD_TYPE_CHANGE",
+    "AGGREGATION_CHANGE",
+    "FILTER_CHANGE",
+    "JOIN_CHANGE",
+    "DERIVED_EXPRESSION_CHANGE",
+    "MULTI_FILE_PR_CHANGE",
+    "STALE_FIELD_REFERENCE_REPAIR",
+    "CONTRACT_TYPE_ALIGNMENT",
+    "NO_SUPPORTED_AUTOMATIC_REPAIR",
+    "REPAIR_BLOCKED_BY_CONFLICT"
+  ],
+  "test_totals": {
+    "executed": 1484,
+    "failed": 0,
+    "passed": 1477,
+    "skipped": 7
+  },
+  "unsupported_capabilities": [
+    "AUTOMATIC_SEMANTIC_INTENT_REPAIR",
+    "RUNTIME_VERIFICATION"
+  ],
+  "working_tree_state": "PHASE_6_5_DELIVERABLES_PLUS_PREEXISTING_UNRELATED_FRONTEND_CHANGE"
+}

@@ -1,0 +1,85 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_2_replay_certification",
+  "certification_version": "6.5.0",
+  "engine_version": "6.2.0",
+  "parser": {
+    "name": "sqlglot",
+    "version": "30.13.0"
+  },
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "scenarios": [
+    {
+      "artifact_count": 18,
+      "certification_status": "certified",
+      "delta_types": [
+        "AGGREGATION_CHANGE"
+      ],
+      "deterministic": true,
+      "jinja_executed": false,
+      "scenario": "aggregation",
+      "second_run_semantic_fingerprint": "sha256:2fad35e7bcc1358535ac85786068261ed1a7d17f919536ede0213dcb864f848a",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "semantic_fingerprint": "sha256:2fad35e7bcc1358535ac85786068261ed1a7d17f919536ede0213dcb864f848a",
+      "sql_executed": false
+    },
+    {
+      "artifact_count": 18,
+      "certification_status": "certified",
+      "delta_types": [
+        "AGGREGATION_CHANGE",
+        "FILTER_CHANGE"
+      ],
+      "deterministic": true,
+      "jinja_executed": false,
+      "scenario": "combined_aggregation_filter",
+      "second_run_semantic_fingerprint": "sha256:5e88d3d6ead93f20681e8179446c5f08a8f12b360772ff0134c65e5a52e3fa07",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "semantic_fingerprint": "sha256:5e88d3d6ead93f20681e8179446c5f08a8f12b360772ff0134c65e5a52e3fa07",
+      "sql_executed": false
+    },
+    {
+      "artifact_count": 18,
+      "certification_status": "certified",
+      "delta_types": [
+        "FILTER_CHANGE"
+      ],
+      "deterministic": true,
+      "jinja_executed": false,
+      "scenario": "filter",
+      "second_run_semantic_fingerprint": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "semantic_fingerprint": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e",
+      "sql_executed": false
+    },
+    {
+      "artifact_count": 18,
+      "certification_status": "certified",
+      "delta_types": [
+        "JOIN_TYPE_CHANGE"
+      ],
+      "deterministic": true,
+      "jinja_executed": false,
+      "scenario": "join",
+      "second_run_semantic_fingerprint": "sha256:7606503e4570cb13686a6ec0a47acf715f8766135ca6c4afaa46443501fb0897",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "semantic_fingerprint": "sha256:7606503e4570cb13686a6ec0a47acf715f8766135ca6c4afaa46443501fb0897",
+      "sql_executed": false
+    },
+    {
+      "artifact_count": 18,
+      "certification_status": "certified",
+      "delta_types": [
+        "DERIVED_EXPRESSION_CHANGE"
+      ],
+      "deterministic": true,
+      "jinja_executed": false,
+      "scenario": "derived_expression",
+      "second_run_semantic_fingerprint": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "semantic_fingerprint": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc",
+      "sql_executed": false
+    }
+  ],
+  "state": "PASS"
+}

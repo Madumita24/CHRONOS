@@ -1,0 +1,108 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "failure_mode_certification",
+  "certification_version": "6.5.0",
+  "failure_modes": [
+    {
+      "bounded_structured_error": true,
+      "classification": "INPUT_VALIDATION_FAILURE",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "IDENTITY_MISMATCH",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "AMBIGUOUS_RESOLUTION",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "UNSUPPORTED_SYNTAX",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "CERTIFICATION_FAILURE",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "TAMPER_DETECTED",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "UNSAFE_PATH",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "RESOURCE_LIMIT_EXCEEDED",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "CONFLICT_BLOCKED",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    },
+    {
+      "bounded_structured_error": true,
+      "classification": "NO_SUPPORTED_REPAIR",
+      "ordinary_stack_trace": false,
+      "partial_output": false,
+      "result": "PASS",
+      "secret_exposure": false,
+      "source_mutation": false
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

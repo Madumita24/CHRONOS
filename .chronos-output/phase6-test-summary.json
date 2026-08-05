@@ -1,0 +1,28 @@
+{
+  "collections": {
+    "unit": {
+      "executed": 1050,
+      "passed": 1050,
+      "skipped": 0,
+      "failed": 0
+    },
+    "certification": {
+      "executed": 333,
+      "passed": 332,
+      "skipped": 1,
+      "failed": 0
+    },
+    "api": {
+      "executed": 95,
+      "passed": 95,
+      "skipped": 0,
+      "failed": 0
+    },
+    "integration": {
+      "executed": 6,
+      "passed": 0,
+      "skipped": 6,
+      "failed": 0
+    }
+  }
+}

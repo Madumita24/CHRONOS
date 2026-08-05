@@ -1,0 +1,128 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "determinism_certification",
+  "certification_version": "6.5.0",
+  "fixture_run_count": 18,
+  "fixtures": [
+    {
+      "deterministic": true,
+      "phase_scenario": "field_rename",
+      "second_run_semantic_fingerprint": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99",
+      "semantic_fingerprint": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "field_delete",
+      "second_run_semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201",
+      "semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "field_type_change",
+      "second_run_semantic_fingerprint": "sha256:a8255c14a5ca0b2f889721f68e85a7fe46733851a20351804ece4fea7068b4b0",
+      "semantic_fingerprint": "sha256:a8255c14a5ca0b2f889721f68e85a7fe46733851a20351804ece4fea7068b4b0"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "aggregation",
+      "second_run_semantic_fingerprint": "sha256:2fad35e7bcc1358535ac85786068261ed1a7d17f919536ede0213dcb864f848a",
+      "semantic_fingerprint": "sha256:2fad35e7bcc1358535ac85786068261ed1a7d17f919536ede0213dcb864f848a"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "combined_aggregation_filter",
+      "second_run_semantic_fingerprint": "sha256:5e88d3d6ead93f20681e8179446c5f08a8f12b360772ff0134c65e5a52e3fa07",
+      "semantic_fingerprint": "sha256:5e88d3d6ead93f20681e8179446c5f08a8f12b360772ff0134c65e5a52e3fa07"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "filter",
+      "second_run_semantic_fingerprint": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e",
+      "semantic_fingerprint": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "join",
+      "second_run_semantic_fingerprint": "sha256:7606503e4570cb13686a6ec0a47acf715f8766135ca6c4afaa46443501fb0897",
+      "semantic_fingerprint": "sha256:7606503e4570cb13686a6ec0a47acf715f8766135ca6c4afaa46443501fb0897"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "derived_expression",
+      "second_run_semantic_fingerprint": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc",
+      "semantic_fingerprint": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "primary",
+      "second_run_semantic_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+      "semantic_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "coherent",
+      "second_run_semantic_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621",
+      "semantic_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "no_material",
+      "second_run_semantic_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23",
+      "semantic_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "conflict",
+      "second_run_semantic_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+      "semantic_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "primary",
+      "second_run_semantic_fingerprint": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1",
+      "semantic_fingerprint": "sha256:149ce6d2797a3a505f5fa4f0154aff56318262b13af6b1ec1e31dd26d1034ec1"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "coherent",
+      "second_run_semantic_fingerprint": "sha256:9e27a719ee9e068f7af50582d9c433d812bfe02e2f0ac9de9ad7f7cb4500e131",
+      "semantic_fingerprint": "sha256:9e27a719ee9e068f7af50582d9c433d812bfe02e2f0ac9de9ad7f7cb4500e131"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "no_material",
+      "second_run_semantic_fingerprint": "sha256:81969c9e8e110dd013564eecde9a1d396f7d77d26a4fa3a4bb2026c4bda18d91",
+      "semantic_fingerprint": "sha256:81969c9e8e110dd013564eecde9a1d396f7d77d26a4fa3a4bb2026c4bda18d91"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "conflict",
+      "second_run_semantic_fingerprint": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d",
+      "semantic_fingerprint": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "delete",
+      "second_run_semantic_fingerprint": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c",
+      "semantic_fingerprint": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c"
+    },
+    {
+      "deterministic": true,
+      "phase_scenario": "type_alignment",
+      "second_run_semantic_fingerprint": "sha256:6d886251db59f521ba878011c07153127408254de509a5235c54c06abed9c934",
+      "semantic_fingerprint": "sha256:6d886251db59f521ba878011c07153127408254de509a5235c54c06abed9c934"
+    }
+  ],
+  "identity_exclusions": [
+    "output_directory",
+    "execution_time",
+    "clone_location",
+    "temporary_workspace",
+    "safe_normalized_line_endings",
+    "semantically_irrelevant_comments_and_formatting",
+    "safely_canonicalized_yaml_order"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "repair_patch_fingerprints_deterministic": true,
+  "state": "PASS"
+}

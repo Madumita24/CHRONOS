@@ -1,0 +1,69 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "proposal_contract_certification",
+  "certification_version": "6.5.0",
+  "common_prohibitions": [
+    "unknown_fields",
+    "arbitrary_command",
+    "prompt",
+    "execution_option",
+    "path_escape"
+  ],
+  "proposal_families": [
+    {
+      "deterministic_ids": true,
+      "discriminators": [
+        "FIELD_RENAME",
+        "FIELD_DELETE",
+        "FIELD_TYPE_CHANGE"
+      ],
+      "predecessor_identity_required": false,
+      "proposal_family": "StructuralChangeProposal",
+      "repository_identity_required": false,
+      "snapshot_identity_required": true,
+      "state": "PASS",
+      "unknown_fields_rejected": true
+    },
+    {
+      "deterministic_ids": true,
+      "discriminators": [
+        "SEMANTIC_CODE_CHANGE"
+      ],
+      "proposal_family": "SemanticCodeChangeProposal",
+      "safe_paths_required": true,
+      "snapshot_identity_required": true,
+      "state": "PASS",
+      "unknown_fields_rejected": true
+    },
+    {
+      "base_head_identity_required": true,
+      "discriminators": [
+        "MULTI_FILE_PR_CHANGE"
+      ],
+      "proposal_family": "PullRequestAnalysisProposal",
+      "repository_identity_required": true,
+      "safe_paths_required": true,
+      "snapshot_identity_required": true,
+      "state": "PASS",
+      "unknown_fields_rejected": true
+    },
+    {
+      "base_head_identity_required": true,
+      "discriminators": [
+        "GENERATE_REPAIR"
+      ],
+      "predecessor_identity_required": true,
+      "proposal_family": "RepairGenerationProposal",
+      "repository_identity_required": true,
+      "selection_modes": [
+        "ALL_SUPPORTED",
+        "SELECTED_ROOTS",
+        "SELECTED_GROUPS"
+      ],
+      "state": "PASS",
+      "unknown_fields_rejected": true
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

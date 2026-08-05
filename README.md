@@ -28,6 +28,12 @@ parser-aware editors, emits review-only patches and previews, and reruns Phase
 6.3 as a static projection. It never applies a patch, executes analyzed code,
 certifies runtime correctness, modifies DataHub, commits, or pushes.
 
+Phase 6.5 adds an independent release-certification gate over the complete
+Phase 6 chain. It replays all final fixtures twice, validates cross-phase trust,
+golden fingerprints, vocabulary and dimension separation, determinism,
+portability, security, tamper handling, test evidence, and release readiness.
+It adds no analysis feature, frontend, patch application, or runtime claim.
+
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
 Current/Future/Diff field-lineage graph and a coordinated Impact & Evidence
@@ -153,6 +159,23 @@ inspection-first findings in
 [PHASE_6_4_REPAIR_INVENTORY.md](PHASE_6_4_REPAIR_INVENTORY.md). Final scenario
 fingerprints, security checks, limitations, and exact regression totals are
 recorded in [PHASE_6_4_REPAIR_RESULT.md](PHASE_6_4_REPAIR_RESULT.md).
+
+## Complete Phase 6 certification
+
+See [the Phase 6.5 developer guide](PHASE_6_5_DEVELOPER_GUIDE.md) for the
+independent certification command, regression commands, package interpretation,
+and rerun process. The trust and release-gate design is documented in
+[PHASE_6_5_CERTIFICATION_ARCHITECTURE.md](PHASE_6_5_CERTIFICATION_ARCHITECTURE.md),
+with inspection findings in
+[PHASE_6_5_CERTIFICATION_INVENTORY.md](PHASE_6_5_CERTIFICATION_INVENTORY.md).
+The final decision and evidence are in
+[PHASE_6_5_CERTIFICATION_RESULT.md](PHASE_6_5_CERTIFICATION_RESULT.md) and the
+machine package under `artifacts/certifications/phase-6/`.
+
+Release scope and next-phase contracts are recorded in
+[PHASE_6_RELEASE_NOTES.md](PHASE_6_RELEASE_NOTES.md),
+[PHASE_6_FRONTEND_HANDOFF.md](PHASE_6_FRONTEND_HANDOFF.md), and
+[PHASE_7_HANDOFF.md](PHASE_7_HANDOFF.md).
 
 ## Phase 5 documents
 

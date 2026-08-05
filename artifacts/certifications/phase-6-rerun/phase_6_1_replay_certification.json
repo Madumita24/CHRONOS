@@ -1,0 +1,43 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_1_replay_certification",
+  "certification_version": "6.5.0",
+  "engine_version": "6.1.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "scenarios": [
+    {
+      "artifact_count": 14,
+      "certification_status": "certified",
+      "deterministic": true,
+      "disposition": "hold_for_review",
+      "operation": "FIELD_RENAME",
+      "runtime_verified": false,
+      "scenario": "field_rename",
+      "second_run_semantic_fingerprint": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99",
+      "semantic_fingerprint": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99"
+    },
+    {
+      "artifact_count": 14,
+      "certification_status": "certified",
+      "deterministic": true,
+      "disposition": "block_confirmed_incompatibility",
+      "operation": "FIELD_DELETE",
+      "runtime_verified": false,
+      "scenario": "field_delete",
+      "second_run_semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201",
+      "semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201"
+    },
+    {
+      "artifact_count": 14,
+      "certification_status": "certified",
+      "deterministic": true,
+      "disposition": "hold_for_review",
+      "operation": "FIELD_TYPE_CHANGE",
+      "runtime_verified": false,
+      "scenario": "field_type_change",
+      "second_run_semantic_fingerprint": "sha256:a8255c14a5ca0b2f889721f68e85a7fe46733851a20351804ece4fea7068b4b0",
+      "semantic_fingerprint": "sha256:a8255c14a5ca0b2f889721f68e85a7fe46733851a20351804ece4fea7068b4b0"
+    }
+  ],
+  "state": "PASS"
+}

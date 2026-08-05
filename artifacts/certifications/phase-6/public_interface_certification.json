@@ -1,0 +1,110 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "public_interface_certification",
+  "certification_version": "6.5.0",
+  "cli_commands": [
+    {
+      "documented_arguments": true,
+      "failure_exit_status": 2,
+      "failure_json": true,
+      "name": "chronos analyze-structural-change",
+      "phase": "6.1",
+      "raw_secret_or_source_leakage": false,
+      "state": "PASS",
+      "success_json": true
+    },
+    {
+      "documented_arguments": true,
+      "failure_exit_status": 2,
+      "failure_json": true,
+      "name": "chronos analyze-semantic-change",
+      "phase": "6.2",
+      "raw_secret_or_source_leakage": false,
+      "state": "PASS",
+      "success_json": true
+    },
+    {
+      "documented_arguments": true,
+      "failure_exit_status": 2,
+      "failure_json": true,
+      "name": "chronos analyze-pr",
+      "phase": "6.3",
+      "raw_secret_or_source_leakage": false,
+      "state": "PASS",
+      "success_json": true
+    },
+    {
+      "documented_arguments": true,
+      "failure_exit_status": 2,
+      "failure_json": true,
+      "name": "chronos generate-repair",
+      "phase": "6.4",
+      "raw_secret_or_source_leakage": false,
+      "state": "PASS",
+      "success_json": true
+    }
+  ],
+  "common_checks": [
+    "documented_arguments",
+    "strict_validation",
+    "stable_success_contract",
+    "bounded_structured_failure",
+    "nonzero_failure_status",
+    "no_raw_secret_leakage",
+    "deterministic_fixture_behavior"
+  ],
+  "python_apis": [
+    {
+      "bounded_failure": true,
+      "fixture_deterministic": true,
+      "name": "analyze_structural_change",
+      "phase": "6.1",
+      "raw_secret_or_source_leakage": false,
+      "stable_result_contract": true,
+      "state": "PASS",
+      "strict_validation": true
+    },
+    {
+      "bounded_failure": true,
+      "fixture_deterministic": true,
+      "name": "analyze_semantic_code_change",
+      "phase": "6.2",
+      "raw_secret_or_source_leakage": false,
+      "stable_result_contract": true,
+      "state": "PASS",
+      "strict_validation": true
+    },
+    {
+      "bounded_failure": true,
+      "fixture_deterministic": true,
+      "name": "analyze_pull_request",
+      "phase": "6.3",
+      "raw_secret_or_source_leakage": false,
+      "stable_result_contract": true,
+      "state": "PASS",
+      "strict_validation": true
+    },
+    {
+      "bounded_failure": true,
+      "fixture_deterministic": true,
+      "name": "analyze_pull_request_bundle",
+      "phase": "6.3",
+      "raw_secret_or_source_leakage": false,
+      "stable_result_contract": true,
+      "state": "PASS",
+      "strict_validation": true
+    },
+    {
+      "bounded_failure": true,
+      "fixture_deterministic": true,
+      "name": "generate_repair",
+      "phase": "6.4",
+      "raw_secret_or_source_leakage": false,
+      "stable_result_contract": true,
+      "state": "PASS",
+      "strict_validation": true
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

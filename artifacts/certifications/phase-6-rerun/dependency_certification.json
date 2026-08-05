@@ -1,0 +1,22 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "dependency_certification",
+  "certification_version": "6.5.0",
+  "console_script": "chronos=chronos.cli:main",
+  "git_library_dependency": false,
+  "observed_python_major_minor": "3.10",
+  "offline_existing_environment_install_command": "python -m pip install --no-build-isolation -e .",
+  "package_install_command": "python -m pip install -e .",
+  "python_requirement": ">=3.10",
+  "pyyaml_observed": "6.0.3",
+  "pyyaml_required": "6.0.3",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "sqlglot_observed": "30.13.0",
+  "sqlglot_required": "30.13.0",
+  "standard_library_boundaries": [
+    "ast",
+    "json",
+    "subprocess"
+  ],
+  "state": "PASS"
+}

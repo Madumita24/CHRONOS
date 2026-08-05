@@ -1,0 +1,70 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "cross_phase_trust_chain",
+  "certification_version": "6.5.0",
+  "copied_prose_accepted_as_evidence": false,
+  "handoffs": [
+    {
+      "consumer": "6.3",
+      "consumer_version": "6.3.0",
+      "contract": "structural models and invariants",
+      "identities_checked": [
+        "model_version",
+        "snapshot_identity",
+        "field_identity"
+      ],
+      "producer": "6.1",
+      "producer_version": "6.1.0",
+      "state": "PASS"
+    },
+    {
+      "consumer": "6.3",
+      "consumer_version": "6.3.0",
+      "contract": "SQL/dbt parser and semantic deltas",
+      "identities_checked": [
+        "parser_version",
+        "model_version",
+        "snapshot_identity",
+        "dataset_identity"
+      ],
+      "producer": "6.2",
+      "producer_version": "6.2.0",
+      "state": "PASS"
+    },
+    {
+      "consumer": "6.4",
+      "consumer_version": "6.4.0",
+      "contract": "certified PR predecessor package",
+      "identities_checked": [
+        "manifest_fingerprint",
+        "artifact_fingerprints",
+        "snapshot_identity",
+        "repository_identity",
+        "base_head_identity",
+        "file_root_group_identities"
+      ],
+      "producer": "6.3",
+      "producer_version": "6.3.0",
+      "state": "PASS"
+    },
+    {
+      "consumer": "unchanged_6.3_projection",
+      "consumer_version": "6.3.0",
+      "contract": "isolated repaired preview",
+      "identities_checked": [
+        "candidate_fingerprints",
+        "patch_fingerprints",
+        "repository_identity",
+        "base_head_identity",
+        "parser_versions"
+      ],
+      "producer": "6.4",
+      "producer_version": "6.4.0",
+      "projection_state": "STATIC_PROJECTED",
+      "state": "PASS"
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS",
+  "trust_bypass_detected": false
+}

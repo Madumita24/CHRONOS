@@ -1,0 +1,93 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "no_evidence_invention_certification",
+  "certification_version": "6.5.0",
+  "prohibited_inferences": [
+    {
+      "expected_conservative_state": "NOT_FOUND_OR_INSUFFICIENT_METADATA",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "DataHub entities",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "NO_EDGE_ADDED",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "lineage edges",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "MISSING_EVIDENCE",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "code provenance",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "semantic approval",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "MANUAL_DECISION_REQUIRED",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "expected metric definitions",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "UNKNOWN",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "consumer compatibility",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "UNVERIFIED",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "runtime failures",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "BLOCKED_BY_MISSING_EVIDENCE",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "replacement identities",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "BLOCKED_BY_MISSING_EVIDENCE",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "type conversion policy",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "UNVERIFIED",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "execution results",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "MISSING_EVIDENCE",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "owner approval",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected_conservative_state": "NOT_CERTIFIED",
+      "input_condition": "required_authoritative_evidence_absent",
+      "prohibited_inference": "safe-to-merge status",
+      "result": "PASS",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    }
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

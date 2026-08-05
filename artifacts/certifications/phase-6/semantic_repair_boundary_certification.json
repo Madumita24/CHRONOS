@@ -1,0 +1,52 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "semantic_repair_boundary_certification",
+  "certification_version": "6.5.0",
+  "primary_avg_untouched": true,
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS",
+  "unsupported_automatic_repairs": [
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "SUM_TO_AVG"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "FILTER_ADDED_OR_REMOVED"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "JOIN_TYPE_CHANGED"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "JOIN_PREDICATE_CHANGED"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "DERIVED_EXPRESSION_CHANGED"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "CASE_CHANGED"
+    },
+    {
+      "expected_state": "MANUAL_DECISION_REQUIRED",
+      "patch_generated": false,
+      "result": "PASS",
+      "semantic_change": "THRESHOLD_CHANGED"
+    }
+  ]
+}

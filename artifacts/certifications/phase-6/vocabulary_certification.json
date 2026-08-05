@@ -1,0 +1,98 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "vocabulary_certification",
+  "certification_version": "6.5.0",
+  "forbidden_claims_absent": [
+    "VERIFIED_REPAIR",
+    "SAFE_TO_MERGE",
+    "EXECUTION_PASSED"
+  ],
+  "projection_terms": [
+    "STATIC_PROJECTED",
+    "PROJECTED_POST_REPAIR"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS",
+  "terms": [
+    {
+      "meaning": "structural compatibility supported by supplied evidence",
+      "term": "COMPATIBLE"
+    },
+    {
+      "meaning": "structural compatibility depends on explicit conditions",
+      "term": "CONDITIONALLY_COMPATIBLE"
+    },
+    {
+      "meaning": "insufficient structural compatibility evidence",
+      "term": "UNKNOWN"
+    },
+    {
+      "meaning": "confirmed model-level incompatibility from supplied evidence",
+      "term": "INCOMPATIBLE"
+    },
+    {
+      "meaning": "parsed meaning changed",
+      "term": "SEMANTICALLY_CHANGED"
+    },
+    {
+      "meaning": "semantic compatibility cannot be decided",
+      "term": "SEMANTIC_COMPATIBILITY_UNKNOWN"
+    },
+    {
+      "meaning": "repository claims agree",
+      "term": "COHERENT"
+    },
+    {
+      "meaning": "some repository claims agree and some are unresolved",
+      "term": "PARTIALLY_COHERENT"
+    },
+    {
+      "meaning": "repository claims conflict or stale references remain",
+      "term": "INCONSISTENT"
+    },
+    {
+      "meaning": "required evidence is absent",
+      "term": "UNRESOLVED"
+    },
+    {
+      "meaning": "execution was not performed",
+      "term": "UNVERIFIED"
+    },
+    {
+      "meaning": "human/evidence review required",
+      "term": "HOLD_FOR_REVIEW"
+    },
+    {
+      "meaning": "static evidence confirms a blocking incompatibility",
+      "term": "BLOCK_CONFIRMED_INCOMPATIBILITY"
+    },
+    {
+      "meaning": "no supported material delta detected",
+      "term": "NO_MATERIAL_CHANGE"
+    },
+    {
+      "meaning": "bounded candidate exists and needs review",
+      "term": "REPAIR_CANDIDATE_READY_FOR_REVIEW"
+    },
+    {
+      "meaning": "candidate addresses only supported selected roots",
+      "term": "PARTIAL_REPAIR_CANDIDATE"
+    },
+    {
+      "meaning": "no rule-authorized candidate exists",
+      "term": "NO_SUPPORTED_AUTOMATIC_REPAIR"
+    },
+    {
+      "meaning": "competing identities prevent repair",
+      "term": "REPAIR_BLOCKED_BY_CONFLICT"
+    },
+    {
+      "meaning": "static reanalysis of isolated candidate files",
+      "term": "STATIC_PROJECTED"
+    },
+    {
+      "meaning": "projected state, not verified execution",
+      "term": "PROJECTED_POST_REPAIR"
+    }
+  ]
+}

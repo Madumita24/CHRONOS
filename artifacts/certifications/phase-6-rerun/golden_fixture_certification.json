@@ -1,0 +1,113 @@
+{
+  "artifact_count": 16,
+  "artifact_schema_version": "1.0",
+  "artifact_type": "golden_fixture_certification",
+  "artifacts": [
+    {
+      "artifact": "business_context_propagation.json",
+      "byte_identical": true,
+      "expected_sha256": "2a5886861f25eb4dd5bdc97da934c5ce365ab3ec6a498df6e1a3b27ca3204b7d",
+      "observed_sha256": "2a5886861f25eb4dd5bdc97da934c5ce365ab3ec6a498df6e1a3b27ca3204b7d"
+    },
+    {
+      "artifact": "change_proposal.json",
+      "byte_identical": true,
+      "expected_sha256": "ad3840820c1a6db6d588fafab73f23763862105df6db44efe6d1e22b0ecc6bee",
+      "observed_sha256": "ad3840820c1a6db6d588fafab73f23763862105df6db44efe6d1e22b0ecc6bee"
+    },
+    {
+      "artifact": "change_proposal_validation.json",
+      "byte_identical": true,
+      "expected_sha256": "9b06df69bbcd4a889f24ecf3f749fcab9ec17cdbbeff50e97038803b387a7db4",
+      "observed_sha256": "9b06df69bbcd4a889f24ecf3f749fcab9ec17cdbbeff50e97038803b387a7db4"
+    },
+    {
+      "artifact": "change_semantic_contract.json",
+      "byte_identical": true,
+      "expected_sha256": "986139696a57b5a30a6772a0004799ebb213c4085c8da82d0e53c3996f79bee6",
+      "observed_sha256": "986139696a57b5a30a6772a0004799ebb213c4085c8da82d0e53c3996f79bee6"
+    },
+    {
+      "artifact": "compatibility_evaluation.json",
+      "byte_identical": true,
+      "expected_sha256": "547afbb5aebb1142ea04b51808724b856c663bbddfd4c094ec35ab9cbca71964",
+      "observed_sha256": "547afbb5aebb1142ea04b51808724b856c663bbddfd4c094ec35ab9cbca71964"
+    },
+    {
+      "artifact": "counterfactual_source_state.json",
+      "byte_identical": true,
+      "expected_sha256": "ba2e86a261f5c9bc66731543a9a3bcbb6ac2c60a10f34d57764f5577868dce80",
+      "observed_sha256": "ba2e86a261f5c9bc66731543a9a3bcbb6ac2c60a10f34d57764f5577868dce80"
+    },
+    {
+      "artifact": "current_metadata_snapshot.json",
+      "byte_identical": true,
+      "expected_sha256": "0f2df1e0f842d95296078f6e533b197b8a35a34683f31fb1c6cebe0cc3d2362e",
+      "observed_sha256": "0f2df1e0f842d95296078f6e533b197b8a35a34683f31fb1c6cebe0cc3d2362e"
+    },
+    {
+      "artifact": "dependency_propagation.json",
+      "byte_identical": true,
+      "expected_sha256": "e3691abd236d1142a307029627c8e6144367f813d319ec89e846931c467b54ae",
+      "observed_sha256": "e3691abd236d1142a307029627c8e6144367f813d319ec89e846931c467b54ae"
+    },
+    {
+      "artifact": "explanation_bundle.json",
+      "byte_identical": true,
+      "expected_sha256": "f9f97b48a667a9ed74657dac1555af09fcc681364fa1c9c8b35491f4ef3e4b1d",
+      "observed_sha256": "f9f97b48a667a9ed74657dac1555af09fcc681364fa1c9c8b35491f4ef3e4b1d"
+    },
+    {
+      "artifact": "future_metadata_graph.json",
+      "byte_identical": true,
+      "expected_sha256": "d298ec6e68fe2b85c79e32a790d9a697c37effaae910b2eca3105a752af9fa40",
+      "observed_sha256": "d298ec6e68fe2b85c79e32a790d9a697c37effaae910b2eca3105a752af9fa40"
+    },
+    {
+      "artifact": "impact_synthesis.json",
+      "byte_identical": true,
+      "expected_sha256": "27875791ab87745806b7b77e45ad37dfe3322914466d7b546b96ac4826690058",
+      "observed_sha256": "27875791ab87745806b7b77e45ad37dfe3322914466d7b546b96ac4826690058"
+    },
+    {
+      "artifact": "phase_2_certification.json",
+      "byte_identical": true,
+      "expected_sha256": "f08a56932898707a22e727a607d5bf0280a86c19eada3dca8d8f0b1be1ef12f2",
+      "observed_sha256": "f08a56932898707a22e727a607d5bf0280a86c19eada3dca8d8f0b1be1ef12f2"
+    },
+    {
+      "artifact": "phase_3_certification.json",
+      "byte_identical": true,
+      "expected_sha256": "f43b73e896934a3df0492d32f4cfa4d60c4e788b3ca4822046b1027b0d64629e",
+      "observed_sha256": "f43b73e896934a3df0492d32f4cfa4d60c4e788b3ca4822046b1027b0d64629e"
+    },
+    {
+      "artifact": "phase_4_certification.json",
+      "byte_identical": true,
+      "expected_sha256": "5dc730bae390908fa14f5ee5dc5d6a2b6a71382eecf664950bf60f76a74c94e8",
+      "observed_sha256": "5dc730bae390908fa14f5ee5dc5d6a2b6a71382eecf664950bf60f76a74c94e8"
+    },
+    {
+      "artifact": "severity_criticality_analysis.json",
+      "byte_identical": true,
+      "expected_sha256": "26ea2b4d85bc7e8cd89464f7d825ffe0f0baae707796b799d3efcbea1f952df4",
+      "observed_sha256": "26ea2b4d85bc7e8cd89464f7d825ffe0f0baae707796b799d3efcbea1f952df4"
+    },
+    {
+      "artifact": "technical_impact_analysis.json",
+      "byte_identical": true,
+      "expected_sha256": "1fb4301567c94b7557036a9521b556b751ec3f1a71483dd2f908d2b0058e64d5",
+      "observed_sha256": "1fb4301567c94b7557036a9521b556b751ec3f1a71483dd2f908d2b0058e64d5"
+    }
+  ],
+  "before_after_equal": true,
+  "certification_version": "6.5.0",
+  "generalized_manifest_treated_as_golden": false,
+  "phase_4_physical_hash": "5dc730bae390908fa14f5ee5dc5d6a2b6a71382eecf664950bf60f76a74c94e8",
+  "phase_4_semantic_fingerprint": "sha256:3e8444ec904e0ba1c55c5ae22d69edfa8e722310f51ab30fc783b8175a87ac4a",
+  "phase_5_review_id": "CHRONOS-DEMO-001",
+  "phase_5_review_loaded": true,
+  "phase_6_rewrite_detected": false,
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS"
+}

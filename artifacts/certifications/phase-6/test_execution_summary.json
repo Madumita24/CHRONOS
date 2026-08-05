@@ -1,0 +1,46 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "test_execution_summary",
+  "certification_version": "6.5.0",
+  "collections": {
+    "api": {
+      "executed": 95,
+      "failed": 0,
+      "passed": 95,
+      "skipped": 0
+    },
+    "certification": {
+      "executed": 333,
+      "failed": 0,
+      "passed": 332,
+      "skipped": 1
+    },
+    "integration": {
+      "executed": 6,
+      "failed": 0,
+      "passed": 0,
+      "skipped": 6
+    },
+    "unit": {
+      "executed": 1050,
+      "failed": 0,
+      "passed": 1050,
+      "skipped": 0
+    }
+  },
+  "commands": [
+    "python -m unittest discover -s tests/unit",
+    "python -m unittest discover -s tests/certification",
+    "python -m unittest discover -s tests/api",
+    "python -m unittest discover -s tests/integration"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "reporting_statement": "Across the four backend test collections, 1484 tests were executed: 1477 passed, 7 were intentionally skipped, and 0 failed.",
+  "state": "PASS",
+  "totals": {
+    "executed": 1484,
+    "failed": 0,
+    "passed": 1477,
+    "skipped": 7
+  }
+}

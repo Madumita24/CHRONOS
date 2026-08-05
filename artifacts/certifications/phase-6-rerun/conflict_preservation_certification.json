@@ -1,0 +1,13 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "conflict_preservation_certification",
+  "certification_version": "6.5.0",
+  "competing_identities_visible": true,
+  "file_type_override": false,
+  "parser_order_selection": false,
+  "patch_generated": false,
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "repair_disposition": "REPAIR_BLOCKED_BY_CONFLICT",
+  "state": "PASS",
+  "supporting_files_retained": true
+}

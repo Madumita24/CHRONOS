@@ -1,0 +1,21 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "portability_certification",
+  "certification_version": "6.5.0",
+  "checks": {
+    "absolute_paths": true,
+    "authenticated_urls": true,
+    "machine_usernames": true,
+    "private_keys": true,
+    "secrets": true,
+    "semantic_timestamps_excluded": true,
+    "stable_serialization": true,
+    "temporary_paths": true,
+    "windows_drive_prefixes": true
+  },
+  "forbidden_findings": [],
+  "raw_source_in_prohibited_json": false,
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "scan_scope": "all_replay_artifacts_patches_and_candidate_previews",
+  "state": "PASS"
+}

@@ -1,0 +1,62 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_3_replay_certification",
+  "certification_version": "6.5.0",
+  "engine_version": "6.3.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "scenarios": [
+    {
+      "artifact_count": 26,
+      "changed_file_count": 4,
+      "coherence": "INCONSISTENT",
+      "conflict_count": 0,
+      "decision": "hold_for_review",
+      "deterministic": true,
+      "repository_code_executed": false,
+      "root_cause_count": 7,
+      "scenario": "primary",
+      "second_run_semantic_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+      "semantic_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba"
+    },
+    {
+      "artifact_count": 26,
+      "changed_file_count": 4,
+      "coherence": "COHERENT",
+      "conflict_count": 0,
+      "decision": "hold_for_review",
+      "deterministic": true,
+      "repository_code_executed": false,
+      "root_cause_count": 9,
+      "scenario": "coherent",
+      "second_run_semantic_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621",
+      "semantic_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621"
+    },
+    {
+      "artifact_count": 26,
+      "changed_file_count": 4,
+      "coherence": "COHERENT",
+      "conflict_count": 0,
+      "decision": "no_material_change",
+      "deterministic": true,
+      "repository_code_executed": false,
+      "root_cause_count": 0,
+      "scenario": "no_material",
+      "second_run_semantic_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23",
+      "semantic_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23"
+    },
+    {
+      "artifact_count": 26,
+      "changed_file_count": 3,
+      "coherence": "INCONSISTENT",
+      "conflict_count": 1,
+      "decision": "block_confirmed_incompatibility",
+      "deterministic": true,
+      "repository_code_executed": false,
+      "root_cause_count": 5,
+      "scenario": "conflict",
+      "second_run_semantic_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+      "semantic_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a"
+    }
+  ],
+  "state": "PASS"
+}

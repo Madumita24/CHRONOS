@@ -1,0 +1,240 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "working_tree_audit",
+  "certification_version": "6.5.0",
+  "entries": [
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": " M",
+      "path": "README.md"
+    },
+    {
+      "classification": "PREEXISTING_UNRELATED_CHANGE",
+      "git_status": " M",
+      "path": "frontend/next-env.d.ts"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_5_CERTIFICATION_ARCHITECTURE.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_5_CERTIFICATION_INVENTORY.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_5_CERTIFICATION_RESULT.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_5_DEVELOPER_GUIDE.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_FRONTEND_HANDOFF.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_6_RELEASE_NOTES.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "PHASE_7_HANDOFF.md"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/artifact_package_matrix.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/conflict_preservation_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/cross_phase_trust_chain.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/dependency_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/determinism_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/dimension_separation_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/documentation_consistency_audit.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/dynamic_construct_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/end_to_end_primary_journey.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/failure_mode_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/golden_fixture_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/manifest.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/no_evidence_invention_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_1_replay_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_2_replay_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_3_replay_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_4_replay_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_capability_matrix.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_certification_scope.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/phase_6_release_manifest.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/portability_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/proposal_contract_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/public_interface_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/resource_bound_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/security_control_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/semantic_repair_boundary_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/skipped_test_justification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/tamper_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/test_execution_summary.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/vocabulary_certification.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "artifacts/certifications/phase-6/working_tree_audit.json"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "src/chronos/phase6_certification/__init__.py"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "src/chronos/phase6_certification/__main__.py"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "src/chronos/phase6_certification/certifier.py"
+    },
+    {
+      "classification": "PHASE_6_5_DELIVERABLE",
+      "git_status": "??",
+      "path": "tests/certification/test_phase_6_certification.py"
+    }
+  ],
+  "generated_test_output_present": false,
+  "preexisting_unrelated_changes": [
+    "frontend/next-env.d.ts"
+  ],
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "source_commit": "3c7e1f1520e97a63975a58b23cc7efafe7ec9d4a",
+  "state": "PASS",
+  "unexpected_changes": []
+}

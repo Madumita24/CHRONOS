@@ -1,0 +1,105 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "tamper_certification",
+  "certification_version": "6.5.0",
+  "release_id": "CHRONOS-PHASE-6-RELEASE-001",
+  "state": "PASS",
+  "tamper_cases": [
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "snapshot_fingerprint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "predecessor_manifest",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "artifact_fingerprint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "repository_identity",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "base_head_identity",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "changed_file_fingerprint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "root_cause_id",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "logical_group_reference",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "graph_endpoint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "path_reference",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "repair_action",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "candidate_file_fingerprint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "patch_fingerprint",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "protected_semantics_record",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "manifest_artifact_list",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    },
+    {
+      "expected": "FAIL_CLOSED",
+      "result": "PASS",
+      "target": "certification_artifact",
+      "test_reference": "tests/certification/test_phase_6_certification.py"
+    }
+  ]
+}
