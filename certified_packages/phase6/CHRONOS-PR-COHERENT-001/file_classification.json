@@ -1,0 +1,42 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "file_classification",
+  "base_commit": "fixture-base-coherent-v1",
+  "classifications": [
+    {
+      "category": "SQL_MODEL",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "parser_assignment": "phase_6_2_sql_adapter",
+      "warnings": []
+    },
+    {
+      "category": "QUALITY_CONFIG",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "parser_assignment": "bounded_contract_pipeline_config",
+      "warnings": []
+    },
+    {
+      "category": "DBT_SCHEMA",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "parser_assignment": "bounded_dbt_schema",
+      "warnings": []
+    },
+    {
+      "category": "PIPELINE_DAG",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "parser_assignment": "python_ast_static_dag",
+      "warnings": []
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

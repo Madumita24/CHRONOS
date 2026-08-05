@@ -1,0 +1,38 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-AGGREGATION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_semantic_state",
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "model_semantic_state": "SEMANTICS_CHANGED",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "outputs": [
+    {
+      "change_classifications": [
+        "semantic-delta-95435e4a710842bdcf9a"
+      ],
+      "current_expression_fingerprint": "sha256:ddb3a45fca70d325b5c35b61d0ebe7763f19d6c6e0542ed8207463bd97e6a292",
+      "current_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_expression_fingerprint": "sha256:4ce78c64972f4323b738c703009234edc37e7ef22f5537da8291a2d19f122be8",
+      "future_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "output_name": "order_total",
+      "resolved_inputs": [
+        "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+      ],
+      "semantic_state": "SEMANTICS_CHANGED",
+      "structural_state": "PRESERVED",
+      "unresolved_inputs": []
+    }
+  ],
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:71377af9190182ed9434365b6b21d35d5a0adf1c1b19cf9d0ede29e5472b741c",
+  "proposal_id": "CHRONOS-SEMANTIC-AGGREGATION-PROPOSAL-001",
+  "row_set_semantics_changed": false,
+  "scenario_id": "CHRONOS-SEMANTIC-AGGREGATION",
+  "snapshot_mutated": false,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres"
+}

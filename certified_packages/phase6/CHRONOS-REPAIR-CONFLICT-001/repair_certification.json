@@ -1,0 +1,164 @@
+{
+  "artifact_fingerprints": {
+    "affected_file_inventory.json": "sha256:7701718c7f5801dab531e9368f7c34a48f1efbdfe24662abf50caa7e2b0542b1",
+    "candidate_file_fingerprints.json": "sha256:87d576e60ad69c8bc9b5a7db9d8f65edaf36d91f9386a03ac07f97972a906dc3",
+    "combined_patch.json": "sha256:24e595eb1f56ef11affcd3af43ac77e3fe07d6a4a0d702e69219f7df44d64fb6",
+    "explanation_bundle.json": "sha256:548aafb490b9942d4b6d05a32de80ae83872883da10fbe89fff02b99586fd8f2",
+    "file_patch_records.json": "sha256:6e5f6611f4681171d5eca125be63df64dbad606c65e9259c0ab965fcc2b0a8f2",
+    "original_file_fingerprints.json": "sha256:d0308ecba9200ab260622dfbd7206f41af8b750c5a9b968d7c1040237afb7574",
+    "patch_manifest.json": "sha256:8bb3082fb2dfb1061bcd8f138b17108e8d128c75282ae018f58e6bebeeaba509",
+    "predecessor_trust_validation.json": "sha256:1f1fc15731e33147e617f326ea0788c93f4a893a25204aac1f9743ba9cc46e43",
+    "projected_coherence_evaluation.json": "sha256:661e5b344efbc304963a5c05ec70ebb0da1f2216457004d747cfd6a351f6fcba",
+    "projected_dependency_propagation.json": "sha256:f1e86ab12e1fab8186bbfb44e66c153993917fe723b7fa4c95872fb0cb7b2a63",
+    "projected_future_metadata_graph.json": "sha256:8b223a147742384ba3d4964f4ae12e609d6251538328fd4ac339c1de29098fa9",
+    "projected_pr_analysis.json": "sha256:84756339412a5bce03da5dbd4278c11e9b893d86217e453b4adf8fc8e6382db3",
+    "projected_repository_state.json": "sha256:4375a73f3e27f1de0755a17ba9d74ecd269869c4062763dfc0c625d281fab35c",
+    "proposal_validation.json": "sha256:ecd23d89ec62bedd92e6f1a80af895b2898738d9d41db9f6df50a3a952b15749",
+    "protected_semantics_validation.json": "sha256:577241e84783eeb93dbe23ae4c23de7486b73a03c3549e4393947ddbcd3456c0",
+    "remaining_findings.json": "sha256:76843f3e3895c3eee49753196cfd7aadb7cf22d991b3c11d2a8b96cc6d7b7cd9",
+    "repair_actions.json": "sha256:73d9bd1c848a8bb653833e90a052e6a9f393bed1d8922f3784ac97fd201001da",
+    "repair_comparison.json": "sha256:fd62c90c949d00cdced4702fee107c6270b2034a05623707d49e11e418d4de40",
+    "repair_generation_proposal.json": "sha256:fb8ff8ce5b033cca83267a14da4274641ab02d6230a5fd00e979b1a885af291b",
+    "repair_plan.json": "sha256:c0c43605cfa173704947fe44c713acde6c07e940d2e5264bdff54d188cdcbef6",
+    "repair_rule_evaluation.json": "sha256:92386e538915746139d61de5cedb980b64e1a7317adb1402c5f972c5a423e146",
+    "repairability_classification.json": "sha256:c3cc046fee624ca9d9b74240e3a641a7e8e1df7ec2e9b0ef940a3f9f6058dab4",
+    "required_phase_7_validation.json": "sha256:91652a5b7adab229ec76689909cffdceefb99e155c6211a6b6ffa9ec3f5266df",
+    "selected_root_causes.json": "sha256:5adfc112c21bd3039e7dac90f77f7168a800c7d109460681a90ec673e3567f68",
+    "static_patch_validation.json": "sha256:9fcb019824aafcb7e2d41aabfff3e93ccca2647b5cdd6e0d4f4c6542a1f3050e"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_certification",
+  "base_commit": "fixture-base-conflict-v1",
+  "certification_scope": "deterministic_candidate_generation_and_static_projection",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "proposal_predecessor_and_identity_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "selected_root_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "repairability_rule_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "action_to_root_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "action_to_file_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "exact_current_and_replacement_evidence",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_and_editor_assignment",
+      "status": "passed"
+    },
+    {
+      "check_id": "patch_target_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "candidate_file_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "unified_diff_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "patch_clean_application_to_certified_head_copy",
+      "status": "passed"
+    },
+    {
+      "check_id": "static_parser_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "protected_semantic_invariants",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_unsupported_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_conflict_blocked_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_manual_intent_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "projected_reanalysis_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "projected_coherence_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_new_unresolved_root_cause",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_new_conflict",
+      "status": "passed"
+    },
+    {
+      "check_id": "remaining_findings_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "required_phase_7_validation_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "artifact_and_patch_fingerprint_input_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "manifest_input_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "portable_relative_paths",
+      "status": "passed"
+    },
+    {
+      "check_id": "absence_of_credentials_and_absolute_paths",
+      "status": "passed"
+    },
+    {
+      "check_id": "runtime_correctness_not_certified",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "patch_fingerprints": {},
+  "predecessor_analysis_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+  "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "predecessor_manifest_fingerprint": "sha256:b5f185680543f7e9bb422a9a4302e6d7d05b41cbbfe0ecb5015b0162dab1eae2",
+  "proposal_fingerprint": "sha256:a2e551cb9219ddf4d28927727766c465406231d9ed098fc147dee42a838b48b3",
+  "proposal_id": "CHRONOS-REPAIR-CONFLICT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+  "repair_completeness": "NO_SUPPORTED_REPAIR",
+  "repair_disposition": "REPAIR_BLOCKED_BY_CONFLICT",
+  "repair_semantic_fingerprint": "sha256:51e1d34695789aebfff4a12ecbcdbcbed1699e0b94554a124a93657f3b9e924d",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "runtime_correctness_certified": false,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "warnings": [
+    "candidate_patch_is_unapplied",
+    "human_review_is_mandatory",
+    "phase_7_execution_validation_is_required"
+  ]
+}

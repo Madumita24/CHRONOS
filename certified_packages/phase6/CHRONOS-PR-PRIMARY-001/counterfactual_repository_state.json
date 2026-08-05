@@ -1,0 +1,181 @@
+{
+  "active_and_removed_files": [
+    {
+      "active_head_path": "models/order_details.sql",
+      "category": "SQL_MODEL",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "head_content_fingerprint": "sha256:6f4074251b0681b5b1fa43df1517a9ab80f613a1ef9327843e0c29c0c6b2745a",
+      "parsed_head": {
+        "canonical_ast_fingerprint": "sha256:0976bfc44cf0307548b61d50791994ed6010888b0c173499c5f5cc243580ce92",
+        "canonical_sql": "SELECT AVG(o.order_total) AS order_amount FROM order_entry_db.order_entry.orders AS o",
+        "ctes": [],
+        "dialect": "postgres",
+        "filter_columns": [],
+        "filter_literals": [],
+        "filter_operators": [],
+        "filter_predicate": null,
+        "grouping": [],
+        "joins": [],
+        "ordering": [],
+        "output_columns": [
+          {
+            "aggregations": [
+              {
+                "distinct": false,
+                "function": "AVG",
+                "input_references": [
+                  {
+                    "name": "order_total",
+                    "normalized": "o.order_total",
+                    "qualifier": "o"
+                  }
+                ],
+                "normalized_expression": "AVG(o.order_total)"
+              }
+            ],
+            "data_type_state": "UNKNOWN",
+            "expression_fingerprint": "sha256:4ce78c64972f4323b738c703009234edc37e7ef22f5537da8291a2d19f122be8",
+            "functions": [],
+            "has_case": false,
+            "has_window": false,
+            "input_columns": [
+              {
+                "name": "order_total",
+                "normalized": "o.order_total",
+                "qualifier": "o"
+              }
+            ],
+            "lineage_derivation": "CODE_DERIVED_REFERENCE",
+            "literals": [],
+            "normalized_expression": "AVG(o.order_total)",
+            "operators": [],
+            "ordinal": 0,
+            "output_name": "order_amount",
+            "source_relations": [
+              "o"
+            ]
+          }
+        ],
+        "parser_name": "sqlglot",
+        "parser_version": "30.13.0",
+        "source_relations": [
+          {
+            "alias": "o",
+            "is_cte": false,
+            "qualified_name": "order_entry_db.order_entry.orders"
+          }
+        ],
+        "statement_type": "SELECT",
+        "unresolved_stars": [],
+        "windows": []
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "quality/order_checks.yml",
+      "category": "QUALITY_CONFIG",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "head_content_fingerprint": "sha256:b0c5602493ce4f5a083e1f0a69ae52220dd0f43fbe892045866cfcd7f440671c",
+      "parsed_head": {
+        "references": [
+          {
+            "kind": "expected_type",
+            "location": "quality.checks[0].expected_type",
+            "value": "numeric"
+          },
+          {
+            "kind": "field",
+            "location": "quality.checks[0].field",
+            "value": "order_total"
+          }
+        ]
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "models/schema.yml",
+      "category": "DBT_SCHEMA",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "head_content_fingerprint": "sha256:b04e38bb4ac0932784cf6eb60dad86599d6994c3eeddebed2936f6f79b09e977",
+      "parsed_head": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "order_amount": {
+                "constraints": [],
+                "data_type": "numeric",
+                "description": null,
+                "meta": {},
+                "name": "order_amount",
+                "tags": [],
+                "tests": [
+                  "not_null"
+                ]
+              }
+            },
+            "constraints": [],
+            "contract_enforced": true,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "dags/orders_pipeline.py",
+      "category": "PIPELINE_DAG",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "head_content_fingerprint": "sha256:9c2bc8a698b421e54bb07c461ef17bc1134215ed6dfa8ae4102a93615ff675db",
+      "parsed_head": {
+        "dependencies": [],
+        "dynamic": [],
+        "references": [
+          {
+            "kind": "output_field",
+            "task_id": "publish_orders",
+            "value": "order_total"
+          }
+        ],
+        "tasks": [
+          {
+            "operator_type": "PythonOperator",
+            "static_arguments": {
+              "output_field": "order_total"
+            },
+            "task_id": "publish_orders",
+            "variable": "publish"
+          }
+        ]
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    }
+  ],
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_repository_state",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "current_repository_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

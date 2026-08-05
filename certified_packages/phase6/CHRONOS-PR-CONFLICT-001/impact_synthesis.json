@@ -1,0 +1,134 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "base_commit": "fixture-base-conflict-v1",
+  "blocking_questions": [
+    {
+      "affected_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "contributing_file_ids": [
+        "pr-file-ab119079a84818f63689"
+      ],
+      "downstream_scope": "dags/orders_pipeline.py",
+      "question": "Should the supported pipeline or quality reference still target the current field identity?",
+      "question_id": "pr-question-634d578827a60561f137",
+      "required_evidence_types": [
+        "updated_pipeline_or_quality_mapping",
+        "task_or_quality_validation"
+      ],
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847"
+    },
+    {
+      "affected_entities": [],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "downstream_scope": "STRUCTURAL",
+      "question": "Has every active consumer adapted to the proposed structural identity?",
+      "question_id": "pr-question-a22ae0045a6380b78d9f",
+      "required_evidence_types": [
+        "explicit_rename_mapping",
+        "consumer_contract_or_execution_validation"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124"
+    },
+    {
+      "affected_entities": [
+        "order_amount",
+        "total_amount"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "downstream_scope": "order_total",
+      "question": "Which explicitly proposed future field identity is authoritative?",
+      "question_id": "pr-question-e04754e0949223ea2495",
+      "required_evidence_types": [
+        "one_consistent_model_and_contract_identity",
+        "owner_approval"
+      ],
+      "root_cause_id": "pr-root-88a67c0122ccdf45b1aa"
+    }
+  ],
+  "decision": {
+    "certainty": "high_confidence",
+    "decision_rule_id": "pr-decision-explicit-conflict",
+    "disposition": "block_confirmed_incompatibility",
+    "precedence": [
+      "confirmed_blocking_incompatibility",
+      "material_unresolved_compatibility",
+      "no_material_change"
+    ]
+  },
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "required_evidence": [
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-231b34868b7ec23bdbf8",
+      "requirement_type": "updated_pipeline_or_quality_mapping",
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-3d114543e10e9e37f228",
+      "requirement_type": "explicit_rename_mapping",
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-7838915f3aa11ea935d2",
+      "requirement_type": "consumer_contract_or_execution_validation",
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-beb7dfa538ceefa53d1c",
+      "requirement_type": "task_or_quality_validation",
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-cba6a9f4e3cf8364a324",
+      "requirement_type": "owner_approval",
+      "root_cause_id": "pr-root-88a67c0122ccdf45b1aa",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-ce91cf416bf929cc9ef0",
+      "requirement_type": "one_consistent_model_and_contract_identity",
+      "root_cause_id": "pr-root-88a67c0122ccdf45b1aa",
+      "state": "MISSING"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "coherence_state": "INCONSISTENT",
+    "confirmed_runtime_failure_count": 0,
+    "conflict_count": 1,
+    "downstream_field_count": 21,
+    "logical_change_group_count": 1,
+    "material_delta_count": 3,
+    "root_cause_count": 5
+  },
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

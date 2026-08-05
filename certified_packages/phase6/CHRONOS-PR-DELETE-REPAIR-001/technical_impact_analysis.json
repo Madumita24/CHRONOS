@@ -1,0 +1,48 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "technical_impact_analysis",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "confirmed_runtime_failures": 0,
+  "engine_version": "6.3.0",
+  "findings": [
+    {
+      "certainty": "UNRESOLVED_RUNTIME_EFFECT",
+      "consequence": "UNRESOLVED_RENAME_ADAPTATION",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "downstream_target_count": 21,
+      "finding_id": "pr-impact-ed8c94b45c2af33d1028",
+      "root_cause_id": "pr-root-7598a0e1f1900946f565"
+    }
+  ],
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "root_causes": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-b78cd5bffc279952ffb3"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-c1f873b076b1024a2d48",
+      "resolved_entities": [
+        "o.order_total"
+      ],
+      "root_cause_id": "pr-root-7598a0e1f1900946f565",
+      "root_type": "STRUCTURAL_CHANGE",
+      "scope": "STRUCTURAL"
+    }
+  ],
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

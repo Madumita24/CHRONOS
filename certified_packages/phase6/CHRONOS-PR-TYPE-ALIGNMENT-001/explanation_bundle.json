@@ -1,0 +1,75 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "decision_explanation": {
+    "reason": "Explicit deterministic precedence over certified conflict, unresolved material change, and no-material state.",
+    "selected_rule": "pr-decision-material-unresolved"
+  },
+  "downstream_target_explanations": [],
+  "engine_version": "6.3.0",
+  "file_explanations": [
+    {
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "root_types": [
+        "CONTRACT_CHANGE"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_group_explanations": [
+    {
+      "coherence_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "correlation_basis": "Exact model mapping, field transition, parser evidence, and supported static references.",
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3"
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_explanation": {
+    "decision": {
+      "certainty": "high_confidence",
+      "decision_rule_id": "pr-decision-material-unresolved",
+      "disposition": "hold_for_review",
+      "precedence": [
+        "confirmed_blocking_incompatibility",
+        "material_unresolved_compatibility",
+        "no_material_change"
+      ]
+    },
+    "files_agree": "UNRESOLVED",
+    "known": "Parsed code/config claims and supplied DataHub observations are retained with separate provenance.",
+    "unresolved": "Runtime execution validity and missing contract/test evidence remain unverified.",
+    "what_changed": "1 supported material deltas were correlated across one repository transition."
+  },
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "root_cause_explanations": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-26908759368b4a2a9e24"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+      "resolved_entities": [
+        "order_details",
+        "order_total"
+      ],
+      "root_cause_id": "pr-root-11b39da8421d787f7498",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

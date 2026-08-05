@@ -1,0 +1,20 @@
+{
+  "application_order": [],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_actions",
+  "base_commit": "fixture-base-no-material-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-no-material-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23",
+  "predecessor_analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "predecessor_manifest_fingerprint": "sha256:d1b6dc5d638a6295d1d67579265a794397d80fe35d762c71dcf099765f1bfe74",
+  "proposal_fingerprint": "sha256:738a909c29da27aa166a26a3032ccdc0514ab7b63c9c7af689fa1f61d7a14900",
+  "proposal_id": "CHRONOS-REPAIR-NO-MATERIAL-PROPOSAL-001",
+  "repair_actions": [],
+  "repair_analysis_id": "CHRONOS-REPAIR-NO-MATERIAL-001",
+  "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+  "scenario_id": "CHRONOS-REPAIR-NO-MATERIAL",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

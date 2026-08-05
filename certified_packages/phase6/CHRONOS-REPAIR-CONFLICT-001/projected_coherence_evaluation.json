@@ -1,0 +1,52 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "projected_coherence_evaluation",
+  "base_commit": "fixture-base-conflict-v1",
+  "conflicts": [
+    {
+      "conflict_id": "pr-conflict-b24fe2ca5f297fa98a0f",
+      "conflict_type": "CONFLICTING_FUTURE_FIELD_IDENTITIES",
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "Supported files make contradictory future-identity claims; neither claim was overwritten.",
+      "file_change_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "proposed_future_fields": [
+        "order_amount",
+        "total_amount"
+      ]
+    }
+  ],
+  "engine_version": "6.4.0",
+  "findings": [
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "The proposed repository still contains a supported static reference to order_total while the model proposes order_amount.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "finding_id": "pr-stale-a5b4bdb8f3fe2e5fb55b",
+      "finding_type": "STALE_REFERENCE",
+      "future_field": "order_amount"
+    }
+  ],
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+  "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "predecessor_manifest_fingerprint": "sha256:b5f185680543f7e9bb422a9a4302e6d7d05b41cbbfe0ecb5015b0162dab1eae2",
+  "projection_state": "STATIC_PROJECTED_NO_PATCH",
+  "proposal_fingerprint": "sha256:a2e551cb9219ddf4d28927727766c465406231d9ed098fc147dee42a838b48b3",
+  "proposal_id": "CHRONOS-REPAIR-CONFLICT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-REPAIR-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "state": "INCONSISTENT"
+}

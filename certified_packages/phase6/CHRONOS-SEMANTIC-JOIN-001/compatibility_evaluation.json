@@ -1,0 +1,37 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-JOIN-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "engine_version": "6.2.0",
+  "execution_validity": "NOT_EXECUTED",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:40f925aee62f3e3aca581307069123372bde75eb0bd23f877d03bec5c5952908",
+  "proposal_id": "CHRONOS-SEMANTIC-JOIN-PROPOSAL-001",
+  "registry_version": "1.0",
+  "rule_evaluations": [
+    {
+      "delta_id": "semantic-delta-7392cfb823f2cc003a33",
+      "delta_type": "JOIN_TYPE_CHANGE",
+      "evidence_certainty": "UNRESOLVED",
+      "explanation": "Join behavior changed without certified row-preservation or cardinality evidence.",
+      "reason_code": "JOIN_BEHAVIOR_CHANGED_WITHOUT_EXECUTION_EVIDENCE",
+      "required_evidence": [
+        "cardinality_comparison",
+        "null_rate_comparison",
+        "uniqueness_validation",
+        "consumer_contract"
+      ],
+      "rule_id": "semantic-join-behavior-unresolved",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-JOIN",
+  "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "snowflake",
+  "structural_compatibility": "STRUCTURALLY_COMPATIBLE"
+}

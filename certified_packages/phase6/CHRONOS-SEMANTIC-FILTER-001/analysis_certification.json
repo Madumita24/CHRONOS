@@ -1,0 +1,76 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-FILTER-001",
+  "analysis_semantic_fingerprint": "sha256:f77a65b0678265ae7cff744684478c3945ec2b28250612f4d57333ad7dc11f7e",
+  "artifact_fingerprints": {
+    "after_parsed_model.json": "sha256:c53ad2a393e6ef44c41ffbea5e9467ad04d6e0dad93b1e87ecfe1ad9e07b2845",
+    "before_parsed_model.json": "sha256:61cbc4a1bbe1d711868f873ac49102bdb661dbcc596ec269e9f86cb461a8da4b",
+    "business_context_propagation.json": "sha256:83bf4d0f45d10672f641faf1096e8b59b4a3d7153b37d0888e610cbaa5094887",
+    "code_change_set.json": "sha256:b8ebbe79522351b6ee49cda060f8f8437bae4d39a9af41bcd096faeade022f67",
+    "compatibility_evaluation.json": "sha256:61b1be87167742012cb7976e7ff3dc308c27ee7033ac2889a9e8375d9deefe86",
+    "counterfactual_semantic_state.json": "sha256:2dddf17392a50d0f9fd7c70ad3fd0a8357dd0957e8aad67f3fe2a376a8e8700c",
+    "dependency_propagation.json": "sha256:a6daa23f619b14aa1e61e91d7785faa44bba28496103a4b590f9595591734816",
+    "entity_resolution.json": "sha256:5461f0cf6c57d8696f73044935f0a632f8a499b5149ec7e82e9bc5ea7254fcaf",
+    "explanation_bundle.json": "sha256:2aad1a6df52c8ec8891d243eb8e72ad0b937f6fa309963ae4e7190fe6fee65bd",
+    "future_metadata_graph.json": "sha256:fc3a1d38435316dfa9f7bc53fcefd25234103804ac56336756c5802de74b47db",
+    "impact_synthesis.json": "sha256:93fe870878ff4f94f7d024cbfdf6138a79f75dc78b1350c29a71cbf4c748e069",
+    "proposal_validation.json": "sha256:9684c8bb282b1460cfe6fd6f1ec17eeaa95fc95ec3bd195c1c00a2046b77522c",
+    "semantic_change_proposal.json": "sha256:2a19a5506f8fb499a8fbc0ff8f243b395a3648f0ea20ee94b612e6e4a0ab52b0",
+    "semantic_diff.json": "sha256:1c548e4991806f9e2245149e17739da5efb0ebf4b222d4afc9a9e7fd6e7e457f",
+    "severity_criticality_analysis.json": "sha256:b68685946dbb8c37a8148812f097aa532875d7ffafa6a79f4b70bb7c1baf479b",
+    "technical_impact_analysis.json": "sha256:b598698060930aeb73e19b5368a363bb620cb3b7cf28e75eb25ce95673abad92"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "semantic_analysis_certification",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "package_contract",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_and_snapshot",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_and_ast_normalization",
+      "status": "passed"
+    },
+    {
+      "check_id": "semantic_delta_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "operation_specific_semantics",
+      "status": "passed"
+    },
+    {
+      "check_id": "model_and_output_resolution",
+      "status": "passed"
+    },
+    {
+      "check_id": "graph_and_path_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "compatibility_impact_decision_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "evidence_classification",
+      "status": "passed"
+    },
+    {
+      "check_id": "security_and_portability",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:c58babb40980c649d3c0ca328c820e7877f7d3bfd25b3a0691e88d83af34515c",
+  "proposal_id": "CHRONOS-SEMANTIC-FILTER-PROPOSAL-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "sql_dialect": "postgres"
+}

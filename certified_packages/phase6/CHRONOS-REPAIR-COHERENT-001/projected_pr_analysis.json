@@ -1,0 +1,22 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "projected_pr_analysis",
+  "base_commit": "fixture-base-coherent-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621",
+  "predecessor_analysis_id": "CHRONOS-PR-COHERENT-001",
+  "predecessor_manifest_fingerprint": "sha256:c365a6736f2b0bd2a972206523a784cb5daa17a25ede41841d6f7aeac2edd94a",
+  "projection_state": "STATIC_PROJECTED_NO_PATCH",
+  "proposal_fingerprint": "sha256:d431bc20f8d8ea5fd980e6164da764d8ac8c6890b08bfd8f3407dcdee0491115",
+  "proposal_id": "CHRONOS-REPAIR-COHERENT-PROPOSAL-001",
+  "reason": "No supported repair actions were generated.",
+  "repair_analysis_id": "CHRONOS-REPAIR-COHERENT-001",
+  "repository_code_executed": false,
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "runtime_verified": false,
+  "scenario_id": "CHRONOS-REPAIR-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,8 @@
+--- a/contracts/order_details.yml
++++ b/contracts/order_details.yml
+@@ -1,4 +1,4 @@
+ contract:
+   model: order_details
+-  type: integer
++  type: numeric
+   enforced: true

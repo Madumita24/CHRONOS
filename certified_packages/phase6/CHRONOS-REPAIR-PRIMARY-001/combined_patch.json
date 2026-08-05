@@ -1,0 +1,22 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "combined_patch",
+  "base_commit": "fixture-base-primary-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-primary-v1",
+  "operation": "GENERATE_REPAIR",
+  "patch_fingerprint": "sha256:83fdcb18673295d80a2fadad5c46c158d746952711c52f8f7de824e763459232",
+  "patch_hunk_count": 2,
+  "patch_path": "repairs/patches/combined.patch",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "raw_patch_content_in_json": false,
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

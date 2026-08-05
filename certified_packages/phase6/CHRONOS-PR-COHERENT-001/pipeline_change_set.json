@@ -1,0 +1,85 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pipeline_change_set",
+  "base_commit": "fixture-base-coherent-v1",
+  "deltas": [
+    {
+      "after": "order_amount",
+      "before": null,
+      "delta_class": "FieldReferenceDelta",
+      "delta_id": "pr-delta-04f80ede6eacf77cde7b",
+      "delta_type": "DAG_REFERENCE_ADDED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A static DAG dataset, field, or file reference was added.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "material": true,
+      "path": "dags/orders_pipeline.py",
+      "references": [
+        "order_amount",
+        "publish_orders"
+      ],
+      "scope": "task:publish_orders"
+    },
+    {
+      "after": null,
+      "before": "order_total",
+      "delta_class": "FieldReferenceDelta",
+      "delta_id": "pr-delta-462dda0b0ce33097426b",
+      "delta_type": "DAG_REFERENCE_REMOVED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A static DAG dataset, field, or file reference was removed.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "material": true,
+      "path": "dags/orders_pipeline.py",
+      "references": [
+        "order_total",
+        "publish_orders"
+      ],
+      "scope": "task:publish_orders"
+    },
+    {
+      "after": {
+        "operator_type": "PythonOperator",
+        "static_arguments": {
+          "output_field": "order_amount"
+        },
+        "task_id": "publish_orders",
+        "variable": "publish"
+      },
+      "before": {
+        "operator_type": "PythonOperator",
+        "static_arguments": {
+          "output_field": "order_total"
+        },
+        "task_id": "publish_orders",
+        "variable": "publish"
+      },
+      "delta_class": "PipelineTaskDelta",
+      "delta_id": "pr-delta-b88efba064ec8ffb6cdb",
+      "delta_type": "TASK_CHANGED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A statically declared pipeline task changed.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "material": true,
+      "path": "dags/orders_pipeline.py",
+      "references": [
+        "publish_orders"
+      ],
+      "scope": "task:publish_orders"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

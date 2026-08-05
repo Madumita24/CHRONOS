@@ -1,0 +1,90 @@
+{
+  "adapted_references": [],
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_metadata_state",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "conflicting_alternatives": [],
+  "counterfactual_entities": [],
+  "current_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "current_snapshot_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_groups": [
+    {
+      "change_categories": [
+        "StructuralFieldDelta"
+      ],
+      "coherence_state": "UNRESOLVED",
+      "contract_delta_ids": [],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_entities": [],
+      "current_field": "order_total",
+      "evidence_references": [
+        "semantic-delta-b78cd5bffc279952ffb3"
+      ],
+      "future_fields": [],
+      "logical_change_id": "logical-change-c1f873b076b1024a2d48",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "pipeline_delta_ids": [],
+      "removed": true,
+      "resolved_current_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+      ],
+      "root_cause_candidates": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "semantic_delta_ids": [],
+      "structural_delta_ids": [
+        "semantic-delta-b78cd5bffc279952ffb3"
+      ],
+      "warnings": [
+        "output_removed_without_repository_wide_execution_evidence"
+      ]
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "removed_entities": [
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+  ],
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "stale_references": [],
+  "state": "COMPOSITE_PROPOSED",
+  "unresolved_references": [
+    {
+      "datahub_field_key": null,
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "mapping_state": "UNRESOLVED_OUTPUT",
+      "output_name": "order_status"
+    }
+  ]
+}

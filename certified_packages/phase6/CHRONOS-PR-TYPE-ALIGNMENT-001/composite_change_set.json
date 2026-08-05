@@ -1,0 +1,56 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "composite_change_set",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "changed_file_ids": [
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-af3cba3d5c11f38f91ca"
+  ],
+  "coherence_state": "UNRESOLVED",
+  "conflicts": [],
+  "counterfactual_entities": [],
+  "delta_ids": [
+    "pr-delta-26908759368b4a2a9e24"
+  ],
+  "engine_version": "6.3.0",
+  "evidence_summary": {
+    "conflict_count": 0,
+    "file_count": 2,
+    "material_delta_count": 1,
+    "root_cause_count": 1
+  },
+  "file_analysis_ids": [
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-af3cba3d5c11f38f91ca"
+  ],
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_group_ids": [
+    "logical-change-d929fb4bd57945b75cc3"
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_identity": {
+    "base": "fixture-base-type-alignment-v1",
+    "head": "fixture-head-type-alignment-v1"
+  },
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "repository_identity": {
+    "analysis_root": ".",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "head_commit": "fixture-head-type-alignment-v1",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "repository_name": "chronos-type-alignment",
+    "repository_namespace": "Madumita24"
+  },
+  "resolved_entities": [],
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "unresolved_references": [],
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

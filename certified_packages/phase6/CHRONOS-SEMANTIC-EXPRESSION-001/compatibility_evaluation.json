@@ -1,0 +1,36 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "engine_version": "6.2.0",
+  "execution_validity": "NOT_EXECUTED",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "registry_version": "1.0",
+  "rule_evaluations": [
+    {
+      "delta_id": "semantic-delta-eed5dc9cc5981138286b",
+      "delta_type": "DERIVED_EXPRESSION_CHANGE",
+      "evidence_certainty": "UNRESOLVED",
+      "explanation": "The derived field definition changed without certified business-definition evidence.",
+      "reason_code": "DERIVED_DEFINITION_CHANGED_WITHOUT_APPROVAL",
+      "required_evidence": [
+        "approved_business_definition",
+        "semantic_test",
+        "execution_comparison"
+      ],
+      "rule_id": "semantic-derived-definition-unresolved",
+      "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "structural_compatibility": "STRUCTURALLY_COMPATIBLE"
+}

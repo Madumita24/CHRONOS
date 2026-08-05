@@ -1,0 +1,653 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "decision_explanation": {
+    "reason": "Explicit deterministic precedence over certified conflict, unresolved material change, and no-material state.",
+    "selected_rule": "pr-decision-material-unresolved"
+  },
+  "downstream_target_explanations": [
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-1b8cc2164139a1abc38d",
+        "pr-path-6f34269a0493394d0c4e",
+        "pr-path-d7ba69f18f60c9ce7879",
+        "pr-path-e4b48f64f6a6ddb348b9"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-87eba6df19cd88431499",
+        "pr-path-9c560967470129202381",
+        "pr-path-af81d7bf6db0937d4004",
+        "pr-path-e03822e32f1ecbe7de42"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-44a4a697e6d28867869d",
+        "pr-path-a71d4b1a5b28b34bf900",
+        "pr-path-f53c20c29d94beaf88b5",
+        "pr-path-f7dec807dfe924ec5afb"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-47955c4ea2ad10ae1c6d",
+        "pr-path-66dc5cbea34f36943261",
+        "pr-path-9b7363a676b5271ee698",
+        "pr-path-fc5d03648bde419e2ece"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-50c9dd54946a14729249",
+        "pr-path-932202e056602f8730b0",
+        "pr-path-a513851167c2614bf01b",
+        "pr-path-e008028f5afefdd8c619"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-494a79c65f54df2001f1",
+        "pr-path-6bd112203bc3df35b49b",
+        "pr-path-b64b42167e7f4c3d8b16",
+        "pr-path-d96e0fd713d9bc0e2e82"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-5749e2d6e6b2acc729d6",
+        "pr-path-b1a66e7518cb7553ba94",
+        "pr-path-b1b1a0644f5433e01359",
+        "pr-path-e768603239997ad833f4"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-0493b46b65e561d3bdb9",
+        "pr-path-2f6a072d69ebef080c12",
+        "pr-path-475152f08d1726b59aa1",
+        "pr-path-7b90f6591cfd2df2a668"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-296238866a43425c5cc1",
+        "pr-path-5eff3571cfca88a7d2db",
+        "pr-path-6441c9d92c08d5971240",
+        "pr-path-94fe8abb0e87fe55bd81"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-5232c56e649a8df7eee0",
+        "pr-path-5dc50be5de510f76ba2f",
+        "pr-path-c37e983da844c50d5316",
+        "pr-path-c911491e9d6d7d278a60"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-2a3ca5e79e45b6122a80",
+        "pr-path-5318ce11943ba1adff2e",
+        "pr-path-66e43a3f67fafd7a190b",
+        "pr-path-86c7fd6df0f46eebf331"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-030105f45f76796574fc",
+        "pr-path-9dbd2c6118fd68dff9d4",
+        "pr-path-cc742f8911ca5afc2c99",
+        "pr-path-d3931e2d08edbbdf206e"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-0b6ff047a6136542fb97",
+        "pr-path-2a1fc8aad8444b1cff77",
+        "pr-path-35b2b03968d1705a27f0",
+        "pr-path-38a6831deb2135b73a4d",
+        "pr-path-3a519ec3c99aa87f2901",
+        "pr-path-a0317e4d286b8eb57f8e",
+        "pr-path-b9eeb4df0ef0d5a81899",
+        "pr-path-d71ed00a7ea226c054c2"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-256b1aa166aa9ee96b9b",
+        "pr-path-3f43d2388d00f801bdc4",
+        "pr-path-db0b9792fd80ddf79888",
+        "pr-path-dcf06bd083d231f463bd"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-0474b7fc85a3186648a7",
+        "pr-path-1aac9ec6e87fbf09028f",
+        "pr-path-3480ee86da49764a83b3",
+        "pr-path-978ab2f7658366a7ba09"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-050eeb09b04692922f67",
+        "pr-path-2b67958b86ad47e04197",
+        "pr-path-e6bee761a28c8c9a2b12",
+        "pr-path-f656e3a456427b1a0b9f"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-594ca731790fa2da33bb",
+        "pr-path-69c7a0b19391053aef51",
+        "pr-path-a77f599a2e5603ec0822",
+        "pr-path-ad976c2fce443b168df1"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-4213cc87faadf4ce6202",
+        "pr-path-89ad094c2a28b885fc55",
+        "pr-path-9412f4fde092a4860675",
+        "pr-path-b3870c37c31cfd200ddf"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-7f5a56afebdb837e10dc",
+        "pr-path-c92cac34500a39338bee",
+        "pr-path-caee394781def704381d",
+        "pr-path-db3bfbf919b8c0b27583"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-28ab5fe56875388096d2",
+        "pr-path-3d13bc673022a683639d",
+        "pr-path-42b6114d194d6e93915d",
+        "pr-path-dc341628d91a0ebde030"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-03e1711eaca4c520a765",
+        "pr-path-7d13fbd5725e3dee0ec2",
+        "pr-path-9dcee82d9ff0d9fb54f3",
+        "pr-path-b91092741be6e34802cc"
+      ],
+      "root_cause_ids": [
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "file_explanations": [
+    {
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "root_types": [
+        "SEMANTIC_DEFINITION_CHANGED",
+        "STRUCTURAL_CHANGE"
+      ]
+    },
+    {
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "root_types": [
+        "STALE_PIPELINE_OR_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "root_types": [
+        "CONTRACT_CHANGE",
+        "CONTRACT_CHANGE",
+        "CONTRACT_CHANGE"
+      ]
+    },
+    {
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "root_types": [
+        "STALE_PIPELINE_OR_QUALITY_REFERENCE"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_group_explanations": [
+    {
+      "coherence_state": "INCONSISTENT",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-3c1d30b2b3aca04b82b2",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "correlation_basis": "Exact model mapping, field transition, parser evidence, and supported static references.",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db"
+    },
+    {
+      "coherence_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "correlation_basis": "Exact model mapping, field transition, parser evidence, and supported static references.",
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3"
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_explanation": {
+    "decision": {
+      "certainty": "high_confidence",
+      "decision_rule_id": "pr-decision-material-unresolved",
+      "disposition": "hold_for_review",
+      "precedence": [
+        "confirmed_blocking_incompatibility",
+        "material_unresolved_compatibility",
+        "no_material_change"
+      ]
+    },
+    "files_agree": "INCONSISTENT",
+    "known": "Parsed code/config claims and supplied DataHub observations are retained with separate provenance.",
+    "unresolved": "Runtime execution validity and missing contract/test evidence remain unverified.",
+    "what_changed": "5 supported material deltas were correlated across one repository transition."
+  },
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "root_cause_explanations": [
+    {
+      "compatibility_state": "REPOSITORY_INCONSISTENT",
+      "contributing_file_ids": [
+        "pr-file-3c1d30b2b3aca04b82b2"
+      ],
+      "delta_ids": [],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": null,
+      "resolved_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "root_cause_id": "pr-root-2297cb428bdd70d7b419",
+      "root_type": "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+      "scope": "quality/order_checks.yml"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "resolved_entities": [
+        "o.order_total"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "root_type": "SEMANTIC_DEFINITION_CHANGED",
+      "scope": "OUTPUT_FIELD"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-ae1381ec53130635a53f"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "resolved_entities": [
+        "order_amount",
+        "order_details"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:order_amount"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-5a27fc6c51982093a333"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "resolved_entities": [
+        "order_details",
+        "order_total"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:order_total"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-a61eafde7eab35f8b410"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+      "resolved_entities": [
+        "order_details"
+      ],
+      "root_cause_id": "pr-root-a98a2a0a7336ab9891d8",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "resolved_entities": [],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "root_type": "STRUCTURAL_CHANGE",
+      "scope": "STRUCTURAL"
+    },
+    {
+      "compatibility_state": "REPOSITORY_INCONSISTENT",
+      "contributing_file_ids": [
+        "pr-file-ab119079a84818f63689"
+      ],
+      "delta_ids": [],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": null,
+      "resolved_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "root_type": "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+      "scope": "dags/orders_pipeline.py"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

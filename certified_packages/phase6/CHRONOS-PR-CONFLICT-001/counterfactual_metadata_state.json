@@ -1,0 +1,140 @@
+{
+  "adapted_references": [],
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_metadata_state",
+  "base_commit": "fixture-base-conflict-v1",
+  "conflicting_alternatives": [
+    {
+      "conflict_id": "pr-conflict-b24fe2ca5f297fa98a0f",
+      "conflict_type": "CONFLICTING_FUTURE_FIELD_IDENTITIES",
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "Supported files make contradictory future-identity claims; neither claim was overwritten.",
+      "file_change_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "proposed_future_fields": [
+        "order_amount",
+        "total_amount"
+      ]
+    }
+  ],
+  "counterfactual_entities": [
+    {
+      "counterfactual_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "current_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "resolution_state": "COUNTERFACTUAL"
+    },
+    {
+      "counterfactual_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|total_amount",
+      "current_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "resolution_state": "COUNTERFACTUAL"
+    }
+  ],
+  "current_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "current_snapshot_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_groups": [
+    {
+      "change_categories": [
+        "ModelContractDelta",
+        "StructuralFieldDelta"
+      ],
+      "coherence_state": "INCONSISTENT",
+      "contract_delta_ids": [
+        "pr-delta-bbb7074ea4274a953734",
+        "pr-delta-f552bbc8164e098604b6"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "counterfactual_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|total_amount"
+      ],
+      "current_field": "order_total",
+      "evidence_references": [
+        "pr-delta-bbb7074ea4274a953734",
+        "pr-delta-f552bbc8164e098604b6",
+        "pr-stale-a5b4bdb8f3fe2e5fb55b",
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "future_fields": [
+        "order_amount",
+        "total_amount"
+      ],
+      "logical_change_id": "logical-change-313ca281d034f2ee660a",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "pipeline_delta_ids": [],
+      "resolved_current_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+      ],
+      "root_cause_candidates": [
+        "pr-root-5a2ea23c792396a48c2e",
+        "pr-root-88a67c0122ccdf45b1aa",
+        "pr-root-a131c4680a349328b974",
+        "pr-root-c9162439da886c768124",
+        "pr-root-eeb16f4cbad69d12f847"
+      ],
+      "semantic_delta_ids": [],
+      "structural_delta_ids": [
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "warnings": [
+        "execution_validity_unverified"
+      ]
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "removed_entities": [],
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-MULTIFILE-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "stale_references": [
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "The proposed repository still contains a supported static reference to order_total while the model proposes order_amount.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "finding_id": "pr-stale-a5b4bdb8f3fe2e5fb55b",
+      "finding_type": "STALE_REFERENCE",
+      "future_field": "order_amount"
+    }
+  ],
+  "state": "CONFLICTED",
+  "unresolved_references": []
+}

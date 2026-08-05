@@ -1,0 +1,1059 @@
+{
+  "aggregate": {
+    "compatible": 0,
+    "conditionally_compatible": 0,
+    "incompatible": 0,
+    "total": 27,
+    "unknown": 27
+  },
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-TYPE-CHANGE-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "created_at": "2026-08-05T00:00:00Z",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "engine_version": "6.1.0",
+  "operation": "FIELD_TYPE_CHANGE",
+  "path_evaluations": [
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-02dad5a247b96fea3252",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-80323f82ef5a6b897d64"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-07ea2d2717e2cad59c62",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-099e347e292ba8c24419",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-80323f82ef5a6b897d64"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-0a28517a233afe6cb29c",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-f8b280fcbfdb0db64bb0"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-10d1a4c37c6b7350a83e",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-9c2ad9ac3eac9757114b"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-10daf6b8345f97269e53",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-9c2ad9ac3eac9757114b"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-16706c12dab5dcb9ea38",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-e128728626a624069ae2",
+        "relationship-e22716553b2ef54906e6"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-1cc3764c7c2fee390cdc",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-9e51abcc8b751ba54d03"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-212a004358dffaa6813a",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-f8b280fcbfdb0db64bb0"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-2aeeee648a195fea6fe0",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-d043118d90cd4c1f96ce"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-3677bd26cb646748330a",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-9f0f8e13a65149d568cb"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-3d84b31bcd677aa24e46",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-cecdf448d6e4069ec42f"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-3f1fec6a9870476108ec",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-f8b280fcbfdb0db64bb0",
+        "relationship-0af2d2b268ba101b0ca9"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-41f97916dc0dcf833920",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-55b050409d60652cf909",
+        "relationship-f39a962daa4af8c0edfa"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-461ca03d55ee48826a61",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-4352d333af9c5aa54df4"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-4962bfcbda304bcf38b6",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-52023b1062c6f7844db2",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-9534bd40329771b95d00",
+        "relationship-5fc73be931de189a796b"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-53e943ebfaf9d8f7df8c",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-3acfcd70d152d63cb52c"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-5c9cd49cf5109820cf5e",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-f8b280fcbfdb0db64bb0",
+        "relationship-0af2d2b268ba101b0ca9"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-5e51b3ae670946234384",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-e128728626a624069ae2"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-5ea94921ec99e4f958da",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-9534bd40329771b95d00",
+        "relationship-5fc73be931de189a796b"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-62a995377ae0fd631b45",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-225b08b1e8da0e045b49"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-6bc3bf858a4dca91e9d7",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-57a3f35e6b9e907d5577"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-746b46d9917dc7770ce9",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-4352d333af9c5aa54df4"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-86c93f0470af1f19e4a7",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-8a66c8ada8014bef47f3",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-9534bd40329771b95d00"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-8f563e2df58abb4556a1",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-9094fbb326c0a9896687",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-225b08b1e8da0e045b49",
+        "relationship-a3ed0a06952ee050b0e4"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-932554221865260dc024",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-9ef8dfb5197ed1eb408f",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-225b08b1e8da0e045b49"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a211141d61f53383a668",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-e128728626a624069ae2",
+        "relationship-e22716553b2ef54906e6"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a62e36228499b2e79d45",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-3acfcd70d152d63cb52c"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a7f7d0bd05622d7cdbef",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-55b050409d60652cf909"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-ae6724df048113efc34f",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-55b050409d60652cf909"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-b58c7bafe3968af5785d",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-e128728626a624069ae2"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-be32fc3cf90f7fb80b65",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-57a3f35e6b9e907d5577"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-c8e86f83a56072c5d5dc",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-cecdf448d6e4069ec42f"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-c9589f21a97c297b58fa",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-6f2b2b313a5a9a6f240f"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-cb70a350d299eadaebee",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-55b050409d60652cf909",
+        "relationship-f39a962daa4af8c0edfa"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-cce31c8e7f45868f203a",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-9f0f8e13a65149d568cb"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-cee6f864717f7f583458",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-9e51abcc8b751ba54d03"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-d5004cf23576d143e6ad",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-e3a9ed1771f4c9e83f61",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-9534bd40329771b95d00"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-e7348a50c79a4dd36fd8",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-225b08b1e8da0e045b49",
+        "relationship-a3ed0a06952ee050b0e4"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-eb369bf931202114b8b6",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-d043118d90cd4c1f96ce",
+        "relationship-747e376f7ad913c1b2f3"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-f76278f1d51715194521",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-6f2b2b313a5a9a6f240f"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-fc1a6406f6d7bf0fda4d",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-00a3626d41178d72aa7c",
+        "relationship-cbc4132ce1eb918d0852",
+        "relationship-3b558ce06a422634fdea",
+        "relationship-d043118d90cd4c1f96ce"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-fd5baf08517ab4fc2840",
+      "reason_codes": [
+        "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-1bd1752b68e5976d1373",
+        "relationship-bd749b31b9a780a509b8",
+        "relationship-732cd0adbd9424172be0",
+        "relationship-d043118d90cd4c1f96ce",
+        "relationship-747e376f7ad913c1b2f3"
+      ],
+      "rule_id": "compatibility-type-without-consumer-expectations"
+    }
+  ],
+  "proposal_fingerprint": "sha256:088e995d8193a209b44693683b1693c36722e4ac4ca727a7d9e790d3729c7de6",
+  "proposal_id": "CHRONOS-EXAMPLE-TYPE-PROPOSAL-001",
+  "registry_version": "1.0",
+  "relationship_evaluations": [
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-00a3626d41178d72aa7c",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-ac651d83fd0e630ab3ae",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-0af2d2b268ba101b0ca9",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-e2024105e09ff117e71e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-1bd1752b68e5976d1373",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-8a551fe12a61460bdc5a",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-225b08b1e8da0e045b49",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-9ceba247a084ddfca067",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-3acfcd70d152d63cb52c",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-d9f315c2d87d2ade319e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-3b558ce06a422634fdea",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-d1e4ea3d253fea0b25d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-4352d333af9c5aa54df4",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-7f30a7f4bbaf6d4cc88d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-55b050409d60652cf909",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-6af73a6468ce7ab0dad7",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-57a3f35e6b9e907d5577",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-11de52daba974ecfc498",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-5fc73be931de189a796b",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-bbbed9f12b214935b3fe",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-6f2b2b313a5a9a6f240f",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-e6da079b9949542ffa21",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-732cd0adbd9424172be0",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-39c9c440ae7a51294160",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-747e376f7ad913c1b2f3",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-759ef2dab667b5da1503",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-80323f82ef5a6b897d64",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-9e482b191ed95a1459fa",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-9534bd40329771b95d00",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-077bc47f506efccc54d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-9c2ad9ac3eac9757114b",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-0bdbb1d01b61e4caca78",
+        "evidence-aba9ef492915702e9ed0",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-9e51abcc8b751ba54d03",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-63e57f28965b42d0c303",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-9f0f8e13a65149d568cb",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-3029cfbfafa2964e865d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-a3ed0a06952ee050b0e4",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-ef08487e6531f013b447",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-bd749b31b9a780a509b8",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-b50e4fb21f68cca078ef",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-cbc4132ce1eb918d0852",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f785b20482a8c1bfa392"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-cecdf448d6e4069ec42f",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-e7c38e937527b1589b31",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-d043118d90cd4c1f96ce",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-43e46acdc9c25b126872",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-e128728626a624069ae2",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f551f1938886b6b0fb57"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-e22716553b2ef54906e6",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-2206a8ae436b1e3b6df9",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-f39a962daa4af8c0edfa",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-267e29f3f433b298edb4",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+      "relationship_id": "relationship-f8b280fcbfdb0db64bb0",
+      "rule_id": "compatibility-type-without-consumer-expectations",
+      "supporting_evidence_ids": [
+        "evidence-ee61b37af19da980e934",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    }
+  ],
+  "root_evaluation": {
+    "compatibility_state": "unknown",
+    "evidence_strength": "insufficient",
+    "explanation": "The supplied snapshot does not certify downstream accepted types.",
+    "reason_code": "DOWNSTREAM_TYPE_EXPECTATIONS_UNKNOWN",
+    "required_evidence": [
+      "downstream_expected_type",
+      "cast_or_conversion_semantics",
+      "contract_or_execution_validation"
+    ],
+    "rule_id": "compatibility-type-without-consumer-expectations",
+    "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+  },
+  "rules_applied": [
+    "compatibility-type-without-consumer-expectations"
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

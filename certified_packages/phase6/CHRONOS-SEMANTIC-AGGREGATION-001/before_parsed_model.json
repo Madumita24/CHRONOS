@@ -1,0 +1,81 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-AGGREGATION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "before_parsed_model",
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parsed_model": {
+    "canonical_ast_fingerprint": "sha256:e069b4cd074189fc4c7638da1d007bfe37710136471743bd6d1fb68622014800",
+    "canonical_sql": "SELECT SUM(o.order_total) AS order_total FROM order_entry_db.order_entry.orders AS o",
+    "ctes": [],
+    "dialect": "postgres",
+    "filter_columns": [],
+    "filter_literals": [],
+    "filter_operators": [],
+    "filter_predicate": null,
+    "grouping": [],
+    "joins": [],
+    "ordering": [],
+    "output_columns": [
+      {
+        "aggregations": [
+          {
+            "distinct": false,
+            "function": "SUM",
+            "input_references": [
+              {
+                "name": "order_total",
+                "normalized": "o.order_total",
+                "qualifier": "o"
+              }
+            ],
+            "normalized_expression": "SUM(o.order_total)"
+          }
+        ],
+        "data_type_state": "UNKNOWN",
+        "expression_fingerprint": "sha256:ddb3a45fca70d325b5c35b61d0ebe7763f19d6c6e0542ed8207463bd97e6a292",
+        "functions": [],
+        "has_case": false,
+        "has_window": false,
+        "input_columns": [
+          {
+            "name": "order_total",
+            "normalized": "o.order_total",
+            "qualifier": "o"
+          }
+        ],
+        "lineage_derivation": "CODE_DERIVED_REFERENCE",
+        "literals": [],
+        "normalized_expression": "SUM(o.order_total)",
+        "operators": [],
+        "ordinal": 0,
+        "output_name": "order_total",
+        "source_relations": [
+          "o"
+        ]
+      }
+    ],
+    "parser_name": "sqlglot",
+    "parser_version": "30.13.0",
+    "source_relations": [
+      {
+        "alias": "o",
+        "is_cte": false,
+        "qualified_name": "order_entry_db.order_entry.orders"
+      }
+    ],
+    "statement_type": "SELECT",
+    "unresolved_stars": [],
+    "windows": []
+  },
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:71377af9190182ed9434365b6b21d35d5a0adf1c1b19cf9d0ede29e5472b741c",
+  "proposal_id": "CHRONOS-SEMANTIC-AGGREGATION-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-AGGREGATION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres"
+}

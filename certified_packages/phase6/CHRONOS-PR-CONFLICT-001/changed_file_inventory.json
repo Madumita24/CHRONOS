@@ -1,0 +1,66 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "changed_file_inventory",
+  "base_commit": "fixture-base-conflict-v1",
+  "engine_version": "6.3.0",
+  "files": [
+    {
+      "base_content_fingerprint": "sha256:873da360e5393f6f792681d33b3be859fa7edee28dff2efc29da9ccb3451151a",
+      "base_path": "models/order_details.sql",
+      "base_size": 85,
+      "binary": false,
+      "category": "SQL_MODEL",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "head_content_fingerprint": "sha256:e187c4500ce63f21c483e954f52143f666b11b036df0dacdf668305a4aa7cf7b",
+      "head_path": "models/order_details.sql",
+      "head_size": 86,
+      "parser_assignment": "phase_6_2_sql_adapter",
+      "status": "MODIFIED",
+      "warnings": []
+    },
+    {
+      "base_content_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f",
+      "base_path": "models/schema.yml",
+      "base_size": 109,
+      "binary": false,
+      "category": "DBT_SCHEMA",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "head_content_fingerprint": "sha256:6b29af9114a11cd6c1598f4f3e12381a8adaea1f95ee21dd8573247e64d6df78",
+      "head_path": "models/schema.yml",
+      "head_size": 110,
+      "parser_assignment": "bounded_dbt_schema",
+      "status": "MODIFIED",
+      "warnings": []
+    },
+    {
+      "base_content_fingerprint": "sha256:68819737da0043c5820221fc0cda190e4f82214ae1d84f9ac53df344a3a1ccaf",
+      "base_path": "dags/orders_pipeline.py",
+      "base_size": 132,
+      "binary": false,
+      "category": "PIPELINE_DAG",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "head_content_fingerprint": "sha256:90fc48cefdf80ea3078460eca5c508b09d68884b66533809cdc2e064cd90bdce",
+      "head_path": "dags/orders_pipeline.py",
+      "head_size": 181,
+      "parser_assignment": "python_ast_static_dag",
+      "status": "MODIFIED",
+      "warnings": []
+    }
+  ],
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-MULTIFILE-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "binary_count": 0,
+    "changed_file_count": 3,
+    "supported_count": 3,
+    "unsupported_count": 0
+  }
+}

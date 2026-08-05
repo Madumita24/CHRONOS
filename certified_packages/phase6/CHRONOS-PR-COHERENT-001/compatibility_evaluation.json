@@ -1,0 +1,50 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "base_commit": "fixture-base-coherent-v1",
+  "dimensions_are_independent": true,
+  "engine_version": "6.3.0",
+  "evaluations": [
+    {
+      "certainty": "UNRESOLVED",
+      "delta_id": "semantic-delta-633d300829a0f0565a5a",
+      "dimension": "SEMANTIC_COMPATIBILITY",
+      "evaluation_id": "pr-compat-36b103fe6bcace2f0364",
+      "reason_code": "AGGREGATION_DEFINITION_CHANGED_WITHOUT_APPROVAL",
+      "required_evidence": [
+        "approved_metric_definition",
+        "model_owner_or_contract_approval",
+        "downstream_semantic_tests",
+        "execution_comparison"
+      ],
+      "result": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+      "rule_id": "semantic-aggregation-definition-unresolved"
+    },
+    {
+      "certainty": "insufficient",
+      "delta_id": "semantic-delta-41cbe5c61ac7bdf329be",
+      "dimension": "STRUCTURAL_COMPATIBILITY",
+      "evaluation_id": "pr-compat-c9162439da886c768124",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "required_evidence": [
+        "explicit_rename_mapping",
+        "transformation_or_query_semantics",
+        "execution_validation"
+      ],
+      "result": "unknown",
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    }
+  ],
+  "execution_validity": "UNVERIFIED",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_coherence": "COHERENT",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

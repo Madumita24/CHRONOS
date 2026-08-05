@@ -1,0 +1,24 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repository_identity",
+  "base_commit": "fixture-base-coherent-v1",
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository": {
+    "analysis_root": ".",
+    "base_commit": "fixture-base-coherent-v1",
+    "head_commit": "fixture-head-coherent-v1",
+    "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+    "repository_name": "chronos-multifile-coherent",
+    "repository_namespace": "Madumita24"
+  },
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

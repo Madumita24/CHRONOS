@@ -1,0 +1,145 @@
+{
+  "adapted_references": [
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "file_path": "quality/order_checks.yml",
+      "future_field": "order_amount",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "reference_id": "pr-adapted-50ed4778e849d5fc4411"
+    },
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "future_field": "order_amount",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "reference_id": "pr-adapted-5bba0c713ca66de079f3"
+    }
+  ],
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_metadata_state",
+  "base_commit": "fixture-base-coherent-v1",
+  "conflicting_alternatives": [],
+  "counterfactual_entities": [
+    {
+      "counterfactual_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "current_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "resolution_state": "COUNTERFACTUAL"
+    }
+  ],
+  "current_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "current_snapshot_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_groups": [
+    {
+      "change_categories": [
+        "FieldReferenceDelta",
+        "ModelContractDelta",
+        "PipelineTaskDelta",
+        "QualityExpectationDelta",
+        "SemanticSqlDelta",
+        "StructuralFieldDelta"
+      ],
+      "coherence_state": "COHERENT",
+      "contract_delta_ids": [
+        "pr-delta-5a27fc6c51982093a333",
+        "pr-delta-ae1381ec53130635a53f",
+        "pr-delta-b6a108da5e6839398ba9",
+        "pr-delta-c0c13a00a24b919055d3"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-3c1d30b2b3aca04b82b2",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "counterfactual_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "current_field": "order_total",
+      "evidence_references": [
+        "pr-delta-04f80ede6eacf77cde7b",
+        "pr-delta-462dda0b0ce33097426b",
+        "pr-delta-5a27fc6c51982093a333",
+        "pr-delta-ae1381ec53130635a53f",
+        "pr-delta-b6a108da5e6839398ba9",
+        "pr-delta-b88efba064ec8ffb6cdb",
+        "pr-delta-c0c13a00a24b919055d3",
+        "semantic-delta-41cbe5c61ac7bdf329be",
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "future_fields": [
+        "order_amount"
+      ],
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "pipeline_delta_ids": [
+        "pr-delta-04f80ede6eacf77cde7b",
+        "pr-delta-462dda0b0ce33097426b",
+        "pr-delta-b88efba064ec8ffb6cdb"
+      ],
+      "resolved_current_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+      ],
+      "root_cause_candidates": [
+        "pr-root-19f072ef9ac4dda4b9ed",
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-47faab2d26d91d84c6b8",
+        "pr-root-5948c074dc337c1bccbe",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-954c22db1a8f801fda93",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-c9162439da886c768124",
+        "pr-root-d0d9b7770e89b90ae00d"
+      ],
+      "semantic_delta_ids": [
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "structural_delta_ids": [
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "warnings": [
+        "execution_validity_unverified"
+      ]
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "removed_entities": [],
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "stale_references": [],
+  "state": "COMPOSITE_PROPOSED",
+  "unresolved_references": []
+}

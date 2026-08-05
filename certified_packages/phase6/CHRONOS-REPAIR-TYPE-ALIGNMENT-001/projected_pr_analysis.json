@@ -1,0 +1,575 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "projected_pr_analysis",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "changed_file_inventory": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "changed_file_inventory",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "engine_version": "6.3.0",
+    "files": [
+      {
+        "base_content_fingerprint": "sha256:8111000f1b4f9ee7a11a549a0902c6ce690216dd38cefa1373aab5c984fc0277",
+        "base_path": "models/schema.yml",
+        "base_size": 109,
+        "binary": false,
+        "category": "DBT_SCHEMA",
+        "file_change_id": "pr-file-4f4487c1cbff180710d6",
+        "head_content_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f",
+        "head_path": "models/schema.yml",
+        "head_size": 109,
+        "parser_assignment": "bounded_dbt_schema",
+        "status": "MODIFIED",
+        "warnings": []
+      },
+      {
+        "base_content_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+        "base_path": "contracts/order_details.yml",
+        "base_size": 66,
+        "binary": false,
+        "category": "SCHEMA_CONTRACT",
+        "file_change_id": "pr-file-af3cba3d5c11f38f91ca",
+        "head_content_fingerprint": "sha256:c2dbb183e9a4886ba9deb4c90d011aaf3b8a2e26d797d3a72be5b3da922e5315",
+        "head_path": "contracts/order_details.yml",
+        "head_size": 66,
+        "parser_assignment": "bounded_contract_pipeline_config",
+        "status": "MODIFIED",
+        "warnings": []
+      }
+    ],
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+    "summary": {
+      "binary_count": 0,
+      "changed_file_count": 2,
+      "supported_count": 2,
+      "unsupported_count": 0
+    }
+  },
+  "composite_change_set": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "composite_change_set",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "changed_file_ids": [
+      "pr-file-4f4487c1cbff180710d6",
+      "pr-file-af3cba3d5c11f38f91ca"
+    ],
+    "coherence_state": "UNRESOLVED",
+    "conflicts": [],
+    "counterfactual_entities": [],
+    "delta_ids": [
+      "pr-delta-26908759368b4a2a9e24",
+      "pr-delta-43016b8059bad3288140"
+    ],
+    "engine_version": "6.3.0",
+    "evidence_summary": {
+      "conflict_count": 0,
+      "file_count": 2,
+      "material_delta_count": 2,
+      "root_cause_count": 2
+    },
+    "file_analysis_ids": [
+      "pr-file-4f4487c1cbff180710d6",
+      "pr-file-af3cba3d5c11f38f91ca"
+    ],
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "logical_change_group_ids": [
+      "logical-change-85eaf3b820b9cebc365b",
+      "logical-change-d929fb4bd57945b75cc3"
+    ],
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "pr_identity": {
+      "base": "fixture-base-type-alignment-v1",
+      "head": "fixture-head-type-alignment-v1"
+    },
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "repository_identity": {
+      "analysis_root": ".",
+      "base_commit": "fixture-base-type-alignment-v1",
+      "head_commit": "fixture-head-type-alignment-v1",
+      "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+      "repository_name": "chronos-type-alignment",
+      "repository_namespace": "Madumita24"
+    },
+    "resolved_entities": [],
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+    "unresolved_references": [],
+    "warnings": [
+      "execution_validity_unverified"
+    ]
+  },
+  "conflicts": [],
+  "counterfactual_metadata_state": {
+    "adapted_references": [],
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "counterfactual_metadata_state",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "conflicting_alternatives": [],
+    "counterfactual_entities": [],
+    "current_entities": [],
+    "current_snapshot_mutated": false,
+    "engine_version": "6.3.0",
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "logical_change_groups": [
+      {
+        "change_categories": [
+          "ModelContractDelta"
+        ],
+        "coherence_state": "UNRESOLVED",
+        "contract_delta_ids": [
+          "pr-delta-43016b8059bad3288140"
+        ],
+        "contributing_file_ids": [
+          "pr-file-af3cba3d5c11f38f91ca"
+        ],
+        "counterfactual_entities": [],
+        "current_field": null,
+        "evidence_references": [
+          "pr-delta-43016b8059bad3288140"
+        ],
+        "future_fields": [],
+        "logical_change_id": "logical-change-85eaf3b820b9cebc365b",
+        "model_dataset_urn": null,
+        "pipeline_delta_ids": [],
+        "resolved_current_entities": [],
+        "root_cause_candidates": [
+          "pr-root-63fa7f5d8f16d6a1ae61"
+        ],
+        "semantic_delta_ids": [],
+        "structural_delta_ids": [],
+        "warnings": [
+          "no_cross_file_identity_evidence"
+        ]
+      },
+      {
+        "change_categories": [
+          "ModelContractDelta"
+        ],
+        "coherence_state": "UNRESOLVED",
+        "contract_delta_ids": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "contributing_file_ids": [
+          "pr-file-4f4487c1cbff180710d6"
+        ],
+        "counterfactual_entities": [],
+        "current_field": null,
+        "evidence_references": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "future_fields": [],
+        "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+        "model_dataset_urn": null,
+        "pipeline_delta_ids": [],
+        "resolved_current_entities": [],
+        "root_cause_candidates": [
+          "pr-root-11b39da8421d787f7498"
+        ],
+        "semantic_delta_ids": [],
+        "structural_delta_ids": [],
+        "warnings": [
+          "no_cross_file_identity_evidence"
+        ]
+      }
+    ],
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "removed_entities": [],
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+    "stale_references": [],
+    "state": "COMPOSITE_PROPOSED",
+    "unresolved_references": []
+  },
+  "engine_version": "6.4.0",
+  "file_analysis_results": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "file_analysis_results",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "engine_version": "6.3.0",
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "results": [
+      {
+        "analysis_status": "ANALYZED",
+        "base_fingerprint": "sha256:8111000f1b4f9ee7a11a549a0902c6ce690216dd38cefa1373aab5c984fc0277",
+        "category": "DBT_SCHEMA",
+        "detected_deltas": [
+          {
+            "after": "numeric",
+            "before": "integer",
+            "delta_class": "ModelContractDelta",
+            "delta_id": "pr-delta-26908759368b4a2a9e24",
+            "delta_type": "DECLARED_TYPE_CHANGED",
+            "evidence_class": "CODE_DERIVED_EVIDENCE",
+            "explanation": "The declared dbt column type changed.",
+            "material": true,
+            "path": "models/schema.yml",
+            "references": [
+              "order_details",
+              "order_total"
+            ],
+            "scope": "model:order_details:column:order_total"
+          }
+        ],
+        "evidence_records": [
+          {
+            "evidence_class": "CODE_DERIVED_EVIDENCE",
+            "evidence_id": "pr-evidence-48e64b2670dd1d1c05f8",
+            "parser": "6.3.0/pyyaml-6.0.3"
+          }
+        ],
+        "file_change_id": "pr-file-4f4487c1cbff180710d6",
+        "head_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f",
+        "parsed_base": {
+          "models": {
+            "order_details": {
+              "columns": {
+                "order_total": {
+                  "constraints": [],
+                  "data_type": "integer",
+                  "description": null,
+                  "meta": {},
+                  "name": "order_total",
+                  "tags": [],
+                  "tests": []
+                }
+              },
+              "constraints": [],
+              "contract_enforced": null,
+              "description": null,
+              "meta": {},
+              "name": "order_details",
+              "tags": [],
+              "tests": []
+            }
+          }
+        },
+        "parsed_head": {
+          "models": {
+            "order_details": {
+              "columns": {
+                "order_total": {
+                  "constraints": [],
+                  "data_type": "numeric",
+                  "description": null,
+                  "meta": {},
+                  "name": "order_total",
+                  "tags": [],
+                  "tests": []
+                }
+              },
+              "constraints": [],
+              "contract_enforced": null,
+              "description": null,
+              "meta": {},
+              "name": "order_details",
+              "tags": [],
+              "tests": []
+            }
+          }
+        },
+        "parser": {
+          "name": "bounded_dbt_schema",
+          "version": "6.3.0/pyyaml-6.0.3"
+        },
+        "resolved_entities": [],
+        "unresolved_references": [],
+        "warnings": []
+      },
+      {
+        "analysis_status": "ANALYZED",
+        "base_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+        "category": "SCHEMA_CONTRACT",
+        "detected_deltas": [
+          {
+            "after": {
+              "type": "numeric"
+            },
+            "before": {
+              "type": "integer"
+            },
+            "delta_class": "ModelContractDelta",
+            "delta_id": "pr-delta-43016b8059bad3288140",
+            "delta_type": "CONTRACT_CHANGED",
+            "evidence_class": "CODE_DERIVED_EVIDENCE",
+            "explanation": "A bounded contract guarantee changed.",
+            "material": true,
+            "path": "contracts/order_details.yml",
+            "references": [
+              "order_details"
+            ],
+            "scope": "CONTRACT"
+          }
+        ],
+        "evidence_records": [
+          {
+            "evidence_class": "CODE_DERIVED_EVIDENCE",
+            "evidence_id": "pr-evidence-447d25f794787c28758a",
+            "parser": "6.3.0/pyyaml-6.0.3"
+          }
+        ],
+        "file_change_id": "pr-file-af3cba3d5c11f38f91ca",
+        "head_fingerprint": "sha256:c2dbb183e9a4886ba9deb4c90d011aaf3b8a2e26d797d3a72be5b3da922e5315",
+        "parsed_base": {
+          "enforced": true,
+          "model": "order_details",
+          "type": "integer"
+        },
+        "parsed_head": {
+          "enforced": true,
+          "model": "order_details",
+          "type": "numeric"
+        },
+        "parser": {
+          "name": "bounded_contract_pipeline_config",
+          "version": "6.3.0/pyyaml-6.0.3"
+        },
+        "resolved_entities": [],
+        "unresolved_references": [],
+        "warnings": []
+      }
+    ],
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "head_commit": "fixture-head-type-alignment-v1",
+  "impact_synthesis": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "impact_synthesis",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "blocking_questions": [],
+    "decision": {
+      "certainty": "high_confidence",
+      "decision_rule_id": "pr-decision-material-unresolved",
+      "disposition": "hold_for_review",
+      "precedence": [
+        "confirmed_blocking_incompatibility",
+        "material_unresolved_compatibility",
+        "no_material_change"
+      ]
+    },
+    "engine_version": "6.3.0",
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "required_evidence": [],
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+    "summary": {
+      "coherence_state": "UNRESOLVED",
+      "confirmed_runtime_failure_count": 0,
+      "conflict_count": 0,
+      "downstream_field_count": 0,
+      "logical_change_group_count": 2,
+      "material_delta_count": 2,
+      "root_cause_count": 2
+    },
+    "warnings": [
+      "execution_validity_unverified"
+    ]
+  },
+  "logical_change_groups": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "logical_change_groups",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "engine_version": "6.3.0",
+    "groups": [
+      {
+        "change_categories": [
+          "ModelContractDelta"
+        ],
+        "coherence_state": "UNRESOLVED",
+        "contract_delta_ids": [
+          "pr-delta-43016b8059bad3288140"
+        ],
+        "contributing_file_ids": [
+          "pr-file-af3cba3d5c11f38f91ca"
+        ],
+        "counterfactual_entities": [],
+        "current_field": null,
+        "evidence_references": [
+          "pr-delta-43016b8059bad3288140"
+        ],
+        "future_fields": [],
+        "logical_change_id": "logical-change-85eaf3b820b9cebc365b",
+        "model_dataset_urn": null,
+        "pipeline_delta_ids": [],
+        "resolved_current_entities": [],
+        "root_cause_candidates": [
+          "pr-root-63fa7f5d8f16d6a1ae61"
+        ],
+        "semantic_delta_ids": [],
+        "structural_delta_ids": [],
+        "warnings": [
+          "no_cross_file_identity_evidence"
+        ]
+      },
+      {
+        "change_categories": [
+          "ModelContractDelta"
+        ],
+        "coherence_state": "UNRESOLVED",
+        "contract_delta_ids": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "contributing_file_ids": [
+          "pr-file-4f4487c1cbff180710d6"
+        ],
+        "counterfactual_entities": [],
+        "current_field": null,
+        "evidence_references": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "future_fields": [],
+        "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+        "model_dataset_urn": null,
+        "pipeline_delta_ids": [],
+        "resolved_current_entities": [],
+        "root_cause_candidates": [
+          "pr-root-11b39da8421d787f7498"
+        ],
+        "semantic_delta_ids": [],
+        "structural_delta_ids": [],
+        "warnings": [
+          "no_cross_file_identity_evidence"
+        ]
+      }
+    ],
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "projected_analysis_fingerprint": "sha256:344857cabc9a68f742639b8eb105f16a930d796947a9d2fa6eb94f7899157a2f",
+  "projected_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "projection_state": "STATIC_PROJECTED",
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_action_derived_roots_are_not_new_unresolved_defects": [
+    "pr-root-63fa7f5d8f16d6a1ae61"
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_code_executed": false,
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "runtime_verified": false,
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "technical_impact_analysis": {
+    "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+    "artifact_schema_version": "1.0",
+    "artifact_type": "technical_impact_analysis",
+    "base_commit": "fixture-base-type-alignment-v1",
+    "confirmed_runtime_failures": 0,
+    "engine_version": "6.3.0",
+    "findings": [
+      {
+        "certainty": "UNRESOLVED_RUNTIME_EFFECT",
+        "consequence": "CONTRACT_MISMATCH",
+        "contributing_file_ids": [
+          "pr-file-4f4487c1cbff180710d6"
+        ],
+        "downstream_target_count": 0,
+        "finding_id": "pr-impact-83fbfc356b45fdcf6085",
+        "root_cause_id": "pr-root-11b39da8421d787f7498"
+      },
+      {
+        "certainty": "UNRESOLVED_RUNTIME_EFFECT",
+        "consequence": "CONTRACT_MISMATCH",
+        "contributing_file_ids": [
+          "pr-file-af3cba3d5c11f38f91ca"
+        ],
+        "downstream_target_count": 0,
+        "finding_id": "pr-impact-33e254fa5b674a8c7886",
+        "root_cause_id": "pr-root-63fa7f5d8f16d6a1ae61"
+      }
+    ],
+    "head_commit": "fixture-head-type-alignment-v1",
+    "intake_mode": "EXPORTED_PR_BUNDLE",
+    "operation": "MULTI_FILE_PR_CHANGE",
+    "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+    "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+    "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+    "root_causes": [
+      {
+        "compatibility_state": "UNRESOLVED",
+        "contributing_file_ids": [
+          "pr-file-4f4487c1cbff180710d6"
+        ],
+        "delta_ids": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "evidence_state": "CODE_DERIVED",
+        "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+        "resolved_entities": [
+          "order_details",
+          "order_total"
+        ],
+        "root_cause_id": "pr-root-11b39da8421d787f7498",
+        "root_type": "CONTRACT_CHANGE",
+        "scope": "model:order_details:column:order_total"
+      },
+      {
+        "compatibility_state": "UNRESOLVED",
+        "contributing_file_ids": [
+          "pr-file-af3cba3d5c11f38f91ca"
+        ],
+        "delta_ids": [
+          "pr-delta-43016b8059bad3288140"
+        ],
+        "evidence_state": "CODE_DERIVED",
+        "logical_change_id": "logical-change-85eaf3b820b9cebc365b",
+        "resolved_entities": [
+          "order_details"
+        ],
+        "root_cause_id": "pr-root-63fa7f5d8f16d6a1ae61",
+        "root_type": "CONTRACT_CHANGE",
+        "scope": "CONTRACT"
+      }
+    ],
+    "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+  }
+}

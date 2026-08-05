@@ -1,0 +1,46 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "file_patch_records",
+  "base_commit": "fixture-base-primary-v1",
+  "engine_version": "6.4.0",
+  "files": [
+    {
+      "candidate_content_fingerprint": "sha256:8403b77214bd7a836c795a0df4eb76d3162fa79466889d9228eae7756291f471",
+      "candidate_preview_path": "repairs/repaired_files/dags/orders_pipeline.py",
+      "file_patch_path": "repairs/patches/files/dags/orders_pipeline.py.patch",
+      "original_content_fingerprint": "sha256:9c2bc8a698b421e54bb07c461ef17bc1134215ed6dfa8ae4102a93615ff675db",
+      "patch_applies_to_certified_head_copy": true,
+      "patch_fingerprint": "sha256:85126a92b82f7ece2708970c2f1c66f56ace065515c8dbdc89b0908f76bb17a0",
+      "patch_hunk_count": 1,
+      "repair_action_ids": [
+        "repair-action-534cc6722d9b405f0dcf"
+      ],
+      "target_path": "dags/orders_pipeline.py"
+    },
+    {
+      "candidate_content_fingerprint": "sha256:1a270eddb86fe7c4264087f4249a149663e38474925a684ac35a327c7feec146",
+      "candidate_preview_path": "repairs/repaired_files/quality/order_checks.yml",
+      "file_patch_path": "repairs/patches/files/quality/order_checks.yml.patch",
+      "original_content_fingerprint": "sha256:b0c5602493ce4f5a083e1f0a69ae52220dd0f43fbe892045866cfcd7f440671c",
+      "patch_applies_to_certified_head_copy": true,
+      "patch_fingerprint": "sha256:24d4332aba19e6121aaaaebc7bf4d5e592bdba99c0d63c017f515d6b4ba41efa",
+      "patch_hunk_count": 1,
+      "repair_action_ids": [
+        "repair-action-8afe9abf7b6e3db8afc5"
+      ],
+      "target_path": "quality/order_checks.yml"
+    }
+  ],
+  "head_commit": "fixture-head-primary-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

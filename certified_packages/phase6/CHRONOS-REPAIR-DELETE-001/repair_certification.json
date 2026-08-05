@@ -1,0 +1,168 @@
+{
+  "artifact_fingerprints": {
+    "affected_file_inventory.json": "sha256:31efb2fdc3dd7f84bf6d46b451c73660a4cb45ed5ecc8fcdc0d426a50c2b95ad",
+    "candidate_file_fingerprints.json": "sha256:c88bf7de992c1984722320ab3b91fe4349f6d1c004542e53aa07e81e0b033f07",
+    "combined_patch.json": "sha256:e5e461c2c21856d8b19451088cc4cc3007e0d2fc4b3ab61924133df1ee1416a2",
+    "explanation_bundle.json": "sha256:c4028988ee7e6453bdcd914eadf2f1dbb9e2147e4901300a0e0cd05165253127",
+    "file_patch_records.json": "sha256:5c3709ab2357fb86eb8fa935a49b33f1c81e23840325f9838eca9289e779e274",
+    "original_file_fingerprints.json": "sha256:57dee023f0234fa96c91d0f6f6f58ce628137cff16617103fc4bede34cb7e95a",
+    "patch_manifest.json": "sha256:689e6e10cb9cbc979e810050b10e9eb000c930116546c06d54afbc4d77596d32",
+    "predecessor_trust_validation.json": "sha256:95737a7331cbb75ccebaed01ab9695fce71bd0896991f49ecdee376f1fc51c14",
+    "projected_coherence_evaluation.json": "sha256:2b105ac3a10db8581f0ef8cdb6f8499364e6642ab5d743c3fcb9f91fc6bb8aa1",
+    "projected_dependency_propagation.json": "sha256:18d4482128bfdf9eacbc4ee5a49d5fed41b4e3883f68c076e54ef6fda150a015",
+    "projected_future_metadata_graph.json": "sha256:7462836211486902f5133fd37cac74781bb8d9263f3cb90515111c927d8f98b6",
+    "projected_pr_analysis.json": "sha256:5a52c8ab70168da4b240e45782a2ea91e03fa4680b608585fdd9f7bedccd7871",
+    "projected_repository_state.json": "sha256:58173521bd2675a328c9ce961b7974445be1f516fdbd9461c44dee52c4817809",
+    "proposal_validation.json": "sha256:a41ac005be6eb34c31da5b240094e5de11ab7f13ba2287ad25b09a15b337c8a5",
+    "protected_semantics_validation.json": "sha256:716a770b568810d999762b1ba5fbe071f3b419acf5a14ac24c4c90da431a6caa",
+    "remaining_findings.json": "sha256:e7bd2a138d3157f13c0bd881d1924de59f8b75b9efbe9e898638fa37cf903bee",
+    "repair_actions.json": "sha256:7da5cc59633461791d18bd50e8ba7458603d05ac31485e9ab26025eafe99af3d",
+    "repair_comparison.json": "sha256:d9edd4b5d7daa3fdcdecbf8309c5a57536dbe581b2c949a5f10fd851abafcc60",
+    "repair_generation_proposal.json": "sha256:d5cb1397e2f88ad2c95319b08086bd55f84f12193617965b1784759dd52f86bb",
+    "repair_plan.json": "sha256:ca416a9a3872d3a84ff7101425fe11e08bd2ac16283ce0dc8af3179973b90ca8",
+    "repair_rule_evaluation.json": "sha256:4900c635e8c80b93c108ddbc91ae82630d86a126f854151c2f13a7454e66e71d",
+    "repairability_classification.json": "sha256:f02542d7d75a739935010a7fd8480257dffe0a3eb67a82ced6e0c5185feeddd6",
+    "required_phase_7_validation.json": "sha256:389aa32f54c2707adad2addb2c763c3eb1fbdda000b9eba2dd3cc2f58f972a2a",
+    "selected_root_causes.json": "sha256:d332f06841bd17ebe808da1d17b1742f2b57ac9d11aead4b20f8d83b5c37b59c",
+    "static_patch_validation.json": "sha256:7fc9c65cee8ae738fcab32229b9d58e5835f2985ddc3b8a56142871e56c14fe0"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_certification",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "certification_scope": "deterministic_candidate_generation_and_static_projection",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "proposal_predecessor_and_identity_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "selected_root_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "repairability_rule_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "action_to_root_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "action_to_file_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "exact_current_and_replacement_evidence",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_and_editor_assignment",
+      "status": "passed"
+    },
+    {
+      "check_id": "patch_target_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "candidate_file_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "unified_diff_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "patch_clean_application_to_certified_head_copy",
+      "status": "passed"
+    },
+    {
+      "check_id": "static_parser_validity",
+      "status": "passed"
+    },
+    {
+      "check_id": "protected_semantic_invariants",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_unsupported_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_conflict_blocked_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_manual_intent_root_modified",
+      "status": "passed"
+    },
+    {
+      "check_id": "projected_reanalysis_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "projected_coherence_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_new_unresolved_root_cause",
+      "status": "passed"
+    },
+    {
+      "check_id": "no_new_conflict",
+      "status": "passed"
+    },
+    {
+      "check_id": "remaining_findings_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "required_phase_7_validation_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "artifact_and_patch_fingerprint_input_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "manifest_input_completeness",
+      "status": "passed"
+    },
+    {
+      "check_id": "portable_relative_paths",
+      "status": "passed"
+    },
+    {
+      "check_id": "absence_of_credentials_and_absolute_paths",
+      "status": "passed"
+    },
+    {
+      "check_id": "runtime_correctness_not_certified",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "patch_fingerprints": {
+    "repairs/patches/combined.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+    "repairs/patches/files/quality/order_checks.yml.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+    "repairs/patches/groups/logical-change-c1f873b076b1024a2d48.patch": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb"
+  },
+  "predecessor_analysis_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "proposal_fingerprint": "sha256:5dfb7bc4e0334157c3404ae83bd6d6b8b33a4fe0554d664109cd62a1f4e8cb44",
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "repair_completeness": "FULLY_ADDRESSED_SELECTED_ROOTS",
+  "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+  "repair_semantic_fingerprint": "sha256:c2348236ccddd00259ec785e4e5222bbda463e0aff2f2c142a9157f56a1f109c",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "runtime_correctness_certified": false,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "warnings": [
+    "candidate_patch_is_unapplied",
+    "human_review_is_mandatory",
+    "phase_7_execution_validation_is_required"
+  ]
+}

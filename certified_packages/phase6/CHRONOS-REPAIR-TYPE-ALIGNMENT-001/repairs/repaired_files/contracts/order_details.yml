@@ -1,0 +1,4 @@
+contract:
+  model: order_details
+  type: numeric
+  enforced: true

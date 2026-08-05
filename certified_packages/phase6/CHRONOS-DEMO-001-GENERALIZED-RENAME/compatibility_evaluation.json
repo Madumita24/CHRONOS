@@ -1,0 +1,1060 @@
+{
+  "aggregate": {
+    "compatible": 0,
+    "conditionally_compatible": 0,
+    "incompatible": 0,
+    "total": 27,
+    "unknown": 27
+  },
+  "analysis_id": "CHRONOS-DEMO-001-GENERALIZED-RENAME",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "created_at": "2026-08-05T00:00:00Z",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "engine_version": "6.1.0",
+  "operation": "FIELD_RENAME",
+  "path_evaluations": [
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-04684623c326194bce85",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-19dbde9d8672a2267861"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-050d452a7934f9b656f7",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-05ba35d1044acde92c51",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-2ff27e4da41ffbe3da6d",
+        "relationship-ad7ee6aa194e56b94942"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-0a8faffa9ff757f3cd04",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-d2bffe0d646c7c1e5a7b",
+        "relationship-796fbc84702069fcc556"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-0dcea53d6e6817fd5de1",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-10813a2cef200c8b87be",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-2ff27e4da41ffbe3da6d"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-14e70bd843a804b76f5d",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-807cb806e161f43af0db"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-1694ef2a03f0cfd22ea4",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-d6cff85433120377fd8b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-16fdd1aa6a5d70b31c5c",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-b34d4f4d4e69f1deca9c"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-229e22068096166cf76e",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-fb78c4a5d46c1efeb4e3"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-25a3ffef4149c11562a1",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-b34d4f4d4e69f1deca9c",
+        "relationship-822d02115ffe9002a869"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-29e232b598c3750cb078",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-f1e1ebb6ca2eb702ecc5"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-2a8355768f7aab6977b2",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-cee006f36503460a3474"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-3612cf47b0e299dfb3e6",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-b34d4f4d4e69f1deca9c",
+        "relationship-822d02115ffe9002a869"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-3a5cd2e7421b63ab984d",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-c8791576c2661ae34312"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-47034f0eac77f63a4e4a",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-38c878f07ca5b6eb0f89"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-4a00c37efd5ef8fdf14d",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-fb78c4a5d46c1efeb4e3"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-4fc591e6becd6c0931f5",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-2ff27e4da41ffbe3da6d",
+        "relationship-ad7ee6aa194e56b94942"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-554f0a48929ed3cfd21d",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-c8791576c2661ae34312",
+        "relationship-562f6af8be2254378e41"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-56178c96bdc0f69a2562",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-c8791576c2661ae34312",
+        "relationship-562f6af8be2254378e41"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-61268c79add9f35da433",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-9f05ad257ce041f2b845"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-64e01e23ba4ca9a76fe9",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-b34d4f4d4e69f1deca9c"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-69683e3d71280a548ad9",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-d2bffe0d646c7c1e5a7b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-720d67c8d9d7e0c4df08",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-d6cff85433120377fd8b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-790ce2ef1328305c3187",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-38c878f07ca5b6eb0f89",
+        "relationship-f41a8ffc68ad6918b330"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-7fbd01cc71b570805ae2",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-840d28e678987019e46b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-8098b36a6a63acd32db5",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-38c878f07ca5b6eb0f89"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-8fcda7b42ae02625512e",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-c8791576c2661ae34312"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-98957097da7597fc6e61",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-c6d2fc3cf0b80b11d360"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-9bfbf4ce9f1c2a526208",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-f1e1ebb6ca2eb702ecc5"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-9f4bcc28a42429edad73",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-d2bffe0d646c7c1e5a7b",
+        "relationship-796fbc84702069fcc556"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-9f69893322f49ee3a668",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-807cb806e161f43af0db"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a29878d529f09e3a2644",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-19dbde9d8672a2267861"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a5ca804915eeae5bbad8",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-840d28e678987019e46b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a6ca6402e1ee01c7ae32",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-cee006f36503460a3474",
+        "relationship-4d4e2157dfb9ccbc2f61"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-a9494c0a3adf172df105",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-c6d2fc3cf0b80b11d360"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-aaf41cc1e39705c34961",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-40bc525225bc467c672b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-b4a118929865a4ea4598",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-2ff27e4da41ffbe3da6d"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-bad64505b92b467c4df9",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-bca64371d14eebe05438",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-c0bea5979510d77fc8c5",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-9f05ad257ce041f2b845"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-c0febe0943a0e1ac1772",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-d2bffe0d646c7c1e5a7b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-c1ee03070143e2953e66",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-cee006f36503460a3474"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-d61e25a6809d2e5ad989",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-2ccbf4aadd0e9a0e9e24",
+        "relationship-cee006f36503460a3474",
+        "relationship-4d4e2157dfb9ccbc2f61"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-dfb0524589659d0861b0",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-e7398d39728f11d7a71a",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-f9a06d7602055bd0efcb",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-40bc525225bc467c672b"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    },
+    {
+      "compatibility_state": "unknown",
+      "path_id": "path-ffa9d4fdd0caa4ddd016",
+      "reason_codes": [
+        "SOURCE_RENAME_SEMANTICS_UNKNOWN"
+      ],
+      "relationship_ids": [
+        "relationship-f186ad1af19916254143",
+        "relationship-16774ea2f1d5f8339dc7",
+        "relationship-bdcc301ae43acd049879",
+        "relationship-3130f46ecea62576f9ed",
+        "relationship-bbe112305ec5d8cd17ce",
+        "relationship-38c878f07ca5b6eb0f89",
+        "relationship-f41a8ffc68ad6918b330"
+      ],
+      "rule_id": "compatibility-rename-without-execution-evidence"
+    }
+  ],
+  "proposal_fingerprint": "sha256:9a861dc0df9b95ca3cdbe13dbce395452d99b80f7e0866078063c4433cc93e51",
+  "proposal_id": "CHRONOS-DEMO-001-PROPOSAL-001",
+  "registry_version": "1.0",
+  "relationship_evaluations": [
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-16774ea2f1d5f8339dc7",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-b50e4fb21f68cca078ef",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-19dbde9d8672a2267861",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-63e57f28965b42d0c303",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-2ccbf4aadd0e9a0e9e24",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-39c9c440ae7a51294160",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-2ff27e4da41ffbe3da6d",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-ee61b37af19da980e934",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-3130f46ecea62576f9ed",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f785b20482a8c1bfa392"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-38c878f07ca5b6eb0f89",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f551f1938886b6b0fb57"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-40bc525225bc467c672b",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-e7c38e937527b1589b31",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-4d4e2157dfb9ccbc2f61",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-267e29f3f433b298edb4",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-562f6af8be2254378e41",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-759ef2dab667b5da1503",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-796fbc84702069fcc556",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-bbbed9f12b214935b3fe",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-807cb806e161f43af0db",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-3029cfbfafa2964e865d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-822d02115ffe9002a869",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-ef08487e6531f013b447",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-840d28e678987019e46b",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-0bdbb1d01b61e4caca78",
+        "evidence-aba9ef492915702e9ed0",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-9f05ad257ce041f2b845",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-e6da079b9949542ffa21",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-ad7ee6aa194e56b94942",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-e2024105e09ff117e71e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-b34d4f4d4e69f1deca9c",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-9ceba247a084ddfca067",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-bbe112305ec5d8cd17ce",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-d1e4ea3d253fea0b25d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-bdcc301ae43acd049879",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-ac651d83fd0e630ab3ae",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-c6d2fc3cf0b80b11d360",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-7f30a7f4bbaf6d4cc88d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-c8791576c2661ae34312",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-43e46acdc9c25b126872",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-cee006f36503460a3474",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-6af73a6468ce7ab0dad7",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-d2bffe0d646c7c1e5a7b",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-077bc47f506efccc54d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-d6cff85433120377fd8b",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-9e482b191ed95a1459fa",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-f186ad1af19916254143",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-8a551fe12a61460bdc5a",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-f1e1ebb6ca2eb702ecc5",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-11de52daba974ecfc498",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-f41a8ffc68ad6918b330",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-2206a8ae436b1e3b6df9",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "unknown",
+      "evidence_strength": "insufficient",
+      "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+      "relationship_id": "relationship-fb78c4a5d46c1efeb4e3",
+      "rule_id": "compatibility-rename-without-execution-evidence",
+      "supporting_evidence_ids": [
+        "evidence-d9f315c2d87d2ade319e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    }
+  ],
+  "root_evaluation": {
+    "compatibility_state": "unknown",
+    "evidence_strength": "insufficient",
+    "explanation": "The first consumer boundary has no certified rename-adaptation evidence.",
+    "reason_code": "SOURCE_RENAME_SEMANTICS_UNKNOWN",
+    "required_evidence": [
+      "explicit_rename_mapping",
+      "transformation_or_query_semantics",
+      "execution_validation"
+    ],
+    "rule_id": "compatibility-rename-without-execution-evidence",
+    "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+  },
+  "rules_applied": [
+    "compatibility-rename-without-execution-evidence"
+  ],
+  "scenario_id": "CHRONOS-DEMO-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,137 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "file_analysis_results",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "results": [
+    {
+      "analysis_status": "ANALYZED",
+      "base_fingerprint": "sha256:8111000f1b4f9ee7a11a549a0902c6ce690216dd38cefa1373aab5c984fc0277",
+      "category": "DBT_SCHEMA",
+      "detected_deltas": [
+        {
+          "after": "numeric",
+          "before": "integer",
+          "delta_class": "ModelContractDelta",
+          "delta_id": "pr-delta-26908759368b4a2a9e24",
+          "delta_type": "DECLARED_TYPE_CHANGED",
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "explanation": "The declared dbt column type changed.",
+          "material": true,
+          "path": "models/schema.yml",
+          "references": [
+            "order_details",
+            "order_total"
+          ],
+          "scope": "model:order_details:column:order_total"
+        }
+      ],
+      "evidence_records": [
+        {
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "evidence_id": "pr-evidence-48e64b2670dd1d1c05f8",
+          "parser": "6.3.0/pyyaml-6.0.3"
+        }
+      ],
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "head_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f",
+      "parsed_base": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "order_total": {
+                "constraints": [],
+                "data_type": "integer",
+                "description": null,
+                "meta": {},
+                "name": "order_total",
+                "tags": [],
+                "tests": []
+              }
+            },
+            "constraints": [],
+            "contract_enforced": null,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "parsed_head": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "order_total": {
+                "constraints": [],
+                "data_type": "numeric",
+                "description": null,
+                "meta": {},
+                "name": "order_total",
+                "tags": [],
+                "tests": []
+              }
+            },
+            "constraints": [],
+            "contract_enforced": null,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "parser": {
+        "name": "bounded_dbt_schema",
+        "version": "6.3.0/pyyaml-6.0.3"
+      },
+      "resolved_entities": [],
+      "unresolved_references": [],
+      "warnings": []
+    },
+    {
+      "analysis_status": "ANALYZED",
+      "base_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+      "category": "SCHEMA_CONTRACT",
+      "detected_deltas": [],
+      "evidence_records": [
+        {
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "evidence_id": "pr-evidence-447d25f794787c28758a",
+          "parser": "6.3.0/pyyaml-6.0.3"
+        }
+      ],
+      "file_change_id": "pr-file-af3cba3d5c11f38f91ca",
+      "head_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+      "parsed_base": {
+        "enforced": true,
+        "model": "order_details",
+        "type": "integer"
+      },
+      "parsed_head": {
+        "enforced": true,
+        "model": "order_details",
+        "type": "integer"
+      },
+      "parser": {
+        "name": "bounded_contract_pipeline_config",
+        "version": "6.3.0/pyyaml-6.0.3"
+      },
+      "resolved_entities": [],
+      "unresolved_references": [],
+      "warnings": []
+    }
+  ],
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,22 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-JOIN-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "severity_criticality_analysis",
+  "context_criticality": "elevated_context",
+  "engine_version": "6.2.0",
+  "evidence_certainty": "unresolved",
+  "exposure_breadth": "widespread",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:40f925aee62f3e3aca581307069123372bde75eb0bd23f877d03bec5c5952908",
+  "proposal_id": "CHRONOS-SEMANTIC-JOIN-PROPOSAL-001",
+  "rule_id": "semantic-severity-unresolved-broad-reach",
+  "scenario_id": "CHRONOS-SEMANTIC-JOIN",
+  "semantic_consequence": "JOIN_SEMANTICS_CHANGED",
+  "severity_if_realized": "high",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "snowflake"
+}

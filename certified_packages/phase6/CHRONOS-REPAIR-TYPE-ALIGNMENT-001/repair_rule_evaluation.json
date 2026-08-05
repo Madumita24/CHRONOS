@@ -1,0 +1,140 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_rule_evaluation",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "classification_rule_ids": [
+    "repair.type.declaration-alignment.v1"
+  ],
+  "editor_registry": [
+    {
+      "editor_name": "dbt_schema_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "python_dag_static_editor",
+      "editor_version": "6.4.0/python-ast-source-span",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_DAG_STATIC_ARGUMENT",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "sqlglot_ast_editor",
+      "editor_version": "6.4.0/sqlglot-30.13.0",
+      "executes_content": false,
+      "supported_operations": [
+        "UPDATE_SQL_IDENTIFIER",
+        "UPDATE_SQL_OUTPUT_ALIAS"
+      ]
+    },
+    {
+      "editor_name": "static_reference_editor",
+      "editor_version": "6.4.0/static-reference-dispatch",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_config_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_contract_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    }
+  ],
+  "engine_version": "6.4.0",
+  "evaluated_rules": [
+    {
+      "conditional": true,
+      "edit_strategy": "UPDATE_CONTRACT_TYPE",
+      "editor_name": "structured_config_editor",
+      "explanation_template": "Align the declared type {current} to the explicit certified future type {future}; no cast is added.",
+      "post_generation_static_checks": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "preconditions": [
+        "approved_declaration_type_transition"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_runtime_conversion_and_contract_validation"
+      ],
+      "repair_rule_id": "repair.type.declaration-alignment.v1",
+      "required_evidence": [
+        "certified_explicit_type_transition",
+        "one_proposed_future_type",
+        "one_parser_confirmed_declaration",
+        "no_runtime_cast_required"
+      ],
+      "supported_file_categories": [
+        "DBT_SCHEMA",
+        "SCHEMA_CONTRACT",
+        "QUALITY_CONFIG",
+        "PIPELINE_CONFIG"
+      ],
+      "supported_root_types": [
+        "CONTRACT_CHANGE",
+        "STRUCTURAL_CHANGE"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-type-alignment-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

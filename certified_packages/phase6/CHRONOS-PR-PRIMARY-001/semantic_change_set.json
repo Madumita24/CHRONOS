@@ -1,0 +1,70 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "semantic_change_set",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "deltas": [
+    {
+      "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "affected_output_field": "order_amount",
+      "after_representation": [
+        {
+          "distinct": false,
+          "function": "AVG",
+          "input_references": [
+            {
+              "name": "order_total",
+              "normalized": "o.order_total",
+              "qualifier": "o"
+            }
+          ],
+          "normalized_expression": "AVG(o.order_total)"
+        }
+      ],
+      "before_representation": [
+        {
+          "distinct": false,
+          "function": "SUM",
+          "input_references": [
+            {
+              "name": "order_total",
+              "normalized": "o.order_total",
+              "qualifier": "o"
+            }
+          ],
+          "normalized_expression": "SUM(o.order_total)"
+        }
+      ],
+      "certainty": "DERIVED",
+      "change_components": [
+        "function_changed"
+      ],
+      "delta_class": "SemanticSqlDelta",
+      "delta_id": "semantic-delta-633d300829a0f0565a5a",
+      "delta_type": "AGGREGATION_CHANGE",
+      "evidence_references": [
+        "before_parsed_model",
+        "after_parsed_model"
+      ],
+      "explanation": "Aggregation semantics changed for output order_amount: function_changed.",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "file_path": "models/order_details.sql",
+      "input_references": [
+        "o.order_total"
+      ],
+      "material": true,
+      "scope": "OUTPUT_FIELD"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

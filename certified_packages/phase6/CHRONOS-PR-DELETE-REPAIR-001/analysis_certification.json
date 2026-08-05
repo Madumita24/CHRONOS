@@ -1,0 +1,78 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "analysis_semantic_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "artifact_fingerprints": {
+    "business_context_propagation.json": "sha256:be71bab7c8ca84489abcd38bbd8177c930cf79b7ea56581138264cb95122ccc6",
+    "changed_file_inventory.json": "sha256:df734997296544b97773953a02e1df45351b7356857a981d0072f6687579fa3f",
+    "coherence_evaluation.json": "sha256:b4c1f64ef6dccfc4372248bf91dcbc969df256ea677e7b285374291f174dc666",
+    "compatibility_evaluation.json": "sha256:4389ce64b76a12476f2322b46e4812278a25966cd6314cf29ab0771da9f17da4",
+    "composite_change_set.json": "sha256:714d1e571f30a52b9b62f52dd99fc702a19ba4f84efd0106ed70cdc1c3acd68f",
+    "contract_quality_change_set.json": "sha256:92938803f140656c09fc1a3d49c557057549df1bfd5ca7a7920b590e8fa6fa6c",
+    "counterfactual_metadata_state.json": "sha256:ead4ecfed77771aec520f0bebb1bb7e50ecaa8ddad1c067c3abfcff73766ce4f",
+    "counterfactual_repository_state.json": "sha256:fd4ef9588dd1306436f7f7f06b617477a3d41c5e2b830d100c79298d5d32b82c",
+    "dependency_propagation.json": "sha256:9cb315128ad5f5eb0ecf46a6ec6ceefa7236a407476353c4891348a4cfdea659",
+    "entity_resolution.json": "sha256:24364ba3eba732888fcd6deca040c37a2e7d7009ad2b9e222eb1e01688795e68",
+    "explanation_bundle.json": "sha256:e5368a0a8ff69aff9215e2bbafad194833e41d45334517769f0b045cab6b20f6",
+    "file_analysis_results.json": "sha256:7b928cdad587f4ec73bf506aea1fabc2100271d7a33382beb29d7c4a0c0766dd",
+    "file_classification.json": "sha256:4d347ee37430c661c1606a62f5b15d167a213a3acb83ef26f8b16790799a4699",
+    "future_metadata_graph.json": "sha256:43cb2cb14994b15e42267d7a422837ebe173a6a11546256f51ac7d8beeb80177",
+    "impact_synthesis.json": "sha256:d0fd04f3617ff4e1a0fadc236aa1ee6d72ca2f9f866652b716c428844c52254b",
+    "logical_change_groups.json": "sha256:993bb00c2955c58f9cdd864f252838bea6a9533118b6fdd2df4e8b7b85bde9e7",
+    "pipeline_change_set.json": "sha256:a0d50601833b5bc37a89c31a43c84e2e80817c878d8eb011e9278cee0ce2d88a",
+    "pr_analysis_proposal.json": "sha256:e174975a974f0a9f8779f521c795e5c59fa1af08bcae1cea67f811a6e015d6b2",
+    "proposal_validation.json": "sha256:8e188b45aab66cc35a40d27c2d4cab564936cc950bbba78bed362db1f4b33352",
+    "repository_identity.json": "sha256:853ddb89cb948c87a71df138af41e07ee1e09094ac4f39ff349b974fe94c6e67",
+    "semantic_change_set.json": "sha256:374b795e3168ca8e5d1417ce9c28fb43eafc6919aeb817981ab35d180679e298",
+    "severity_criticality_analysis.json": "sha256:127fa2bb5109b6d22b84573d3d26448a5275101db9d1c1e1b1a81e8ebafe910b",
+    "structural_change_set.json": "sha256:6978e05cbf2ac3486d1652fb0ee7e31b5bb8a291d973cdc5b8dcdc051422269f",
+    "technical_impact_analysis.json": "sha256:24fb7ea8a17833d7f1c677ac333e62e6eb834fec01eac0e79c87c395264a4efd"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pr_analysis_certification",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "package_contract",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_snapshot_repository_base_head",
+      "status": "passed"
+    },
+    {
+      "check_id": "changed_file_inventory_and_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_assignments_and_file_results",
+      "status": "passed"
+    },
+    {
+      "check_id": "typed_delta_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "correlation_groups_coherence_conflicts",
+      "status": "passed"
+    },
+    {
+      "check_id": "counterfactual_graph_paths_and_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "compatibility_impact_severity_decision",
+      "status": "passed"
+    },
+    {
+      "check_id": "evidence_security_and_portability",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c"
+}

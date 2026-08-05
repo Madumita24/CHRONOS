@@ -1,0 +1,47 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repairability_classification",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "classifications": [
+    {
+      "eligible_file_categories": [
+        "DBT_SCHEMA",
+        "SCHEMA_CONTRACT",
+        "QUALITY_CONFIG",
+        "PIPELINE_CONFIG"
+      ],
+      "logical_change_group_id": "logical-change-d929fb4bd57945b75cc3",
+      "reason": "The approved explicit type transition supports declaration alignment only; no runtime cast is generated.",
+      "remaining_uncertainty": [
+        "phase_7_runtime_conversion_and_contract_validation"
+      ],
+      "repairability": "CONDITIONALLY_REPAIRABLE",
+      "repairability_rule_id": "repair.type.declaration-alignment.v1",
+      "required_preconditions": [
+        "approved_declaration_type_transition"
+      ],
+      "root_cause_id": "pr-root-11b39da8421d787f7498",
+      "root_type": "CONTRACT_CHANGE",
+      "supporting_evidence": [
+        "pr-delta-26908759368b4a2a9e24",
+        "pr-file-af3cba3d5c11f38f91ca"
+      ]
+    }
+  ],
+  "counts": {
+    "CONDITIONALLY_REPAIRABLE": 1
+  },
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

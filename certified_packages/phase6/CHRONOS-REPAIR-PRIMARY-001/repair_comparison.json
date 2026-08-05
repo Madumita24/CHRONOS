@@ -1,0 +1,103 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_comparison",
+  "base_commit": "fixture-base-primary-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-primary-v1",
+  "missing_execution_evidence": true,
+  "new_conflict_ids": [],
+  "new_unresolved_root_ids": [],
+  "operation": "GENERATE_REPAIR",
+  "original_coherence": "INCONSISTENT",
+  "original_conflict_ids": [],
+  "original_downstream_exposure": {
+    "downstream_dataset_count": 16,
+    "downstream_field_count": 21,
+    "maximum_depth": 3,
+    "multipath_target_count": 21,
+    "path_count": 88,
+    "relationship_count": 25,
+    "root_count": 7
+  },
+  "original_root_ids": [
+    "pr-root-2297cb428bdd70d7b419",
+    "pr-root-36b103fe6bcace2f0364",
+    "pr-root-7817b15a88cbffb9ef50",
+    "pr-root-a2da326fddd0ab9aa305",
+    "pr-root-a98a2a0a7336ab9891d8",
+    "pr-root-c9162439da886c768124",
+    "pr-root-eeb16f4cbad69d12f847"
+  ],
+  "original_stale_reference_count": 2,
+  "phase_6_3_raw_projected_coherence": "UNRESOLVED",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "projected_closed_root_ids": [
+    "pr-root-2297cb428bdd70d7b419",
+    "pr-root-eeb16f4cbad69d12f847"
+  ],
+  "projected_coherence": "COHERENT",
+  "projected_conflict_ids": [],
+  "projected_downstream_exposure": {
+    "downstream_dataset_count": 16,
+    "downstream_field_count": 21,
+    "maximum_depth": 3,
+    "multipath_target_count": 21,
+    "path_count": 198,
+    "relationship_count": 25,
+    "root_count": 10
+  },
+  "projected_stale_reference_count": 0,
+  "projection_state": "STATIC_PROJECTED",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "repair_action_derived_root_ids": [
+    "pr-root-19f072ef9ac4dda4b9ed",
+    "pr-root-47faab2d26d91d84c6b8",
+    "pr-root-5948c074dc337c1bccbe",
+    "pr-root-954c22db1a8f801fda93",
+    "pr-root-d0d9b7770e89b90ae00d"
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "runtime_verified": false,
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "targeted_root_ids": [
+    "pr-root-2297cb428bdd70d7b419",
+    "pr-root-36b103fe6bcace2f0364",
+    "pr-root-7817b15a88cbffb9ef50",
+    "pr-root-a2da326fddd0ab9aa305",
+    "pr-root-a98a2a0a7336ab9891d8",
+    "pr-root-c9162439da886c768124",
+    "pr-root-eeb16f4cbad69d12f847"
+  ],
+  "unchanged_root_ids": [
+    "pr-root-36b103fe6bcace2f0364",
+    "pr-root-7817b15a88cbffb9ef50",
+    "pr-root-a2da326fddd0ab9aa305",
+    "pr-root-a98a2a0a7336ab9891d8",
+    "pr-root-c9162439da886c768124"
+  ],
+  "unresolved_semantic_questions": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "resolved_entities": [
+        "o.order_total"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "root_type": "SEMANTIC_DEFINITION_CHANGED",
+      "scope": "OUTPUT_FIELD"
+    }
+  ]
+}

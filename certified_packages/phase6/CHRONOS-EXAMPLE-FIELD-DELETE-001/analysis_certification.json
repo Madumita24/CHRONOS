@@ -1,0 +1,73 @@
+{
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-DELETE-001",
+  "analysis_semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201",
+  "artifact_fingerprints": {
+    "business_context_propagation.json": "sha256:7ef8c381ac8a6363861ae3522e65c64ebfc37ae134ecfe56125d3db34c7de7d2",
+    "change_semantic_contract.json": "sha256:5a495e5a4e17391272c9955587f3497f036d26c4ffa3404299182ba688c5c33c",
+    "compatibility_evaluation.json": "sha256:e93c1d4f4d60533ece1cdf429a1d68ed283c902b1cab26482ab8c76ed791a758",
+    "counterfactual_source_state.json": "sha256:da6165ec0e7cec7df4f7819d0569fba05a38ba7d52dbe71b2b77c59c570f330e",
+    "dependency_propagation.json": "sha256:77bbe94d7f68456323331888c73dc905556d53407e3c7173f0af3a2ef093ac77",
+    "explanation_bundle.json": "sha256:9b4273b77a97a79bbfef1fdc88492f9bbdea5a974a69af989adf67d72660be95",
+    "future_metadata_graph.json": "sha256:8401f49cdac539ea46abd0e90b52e2482aacb90233026b6ee9a1ad3b532e75bc",
+    "impact_synthesis.json": "sha256:13c9badc3963d7314a36afdb0d1943772111fd6fd5da8afe2dded74efde89dce",
+    "proposal.json": "sha256:cb11aa6de34180c945422d457cbd6f2884f4840b8eca5e251f8ce0a1ac36a8d1",
+    "proposal_validation.json": "sha256:0ae72e98adb70ed20e4454f4864111670ac323f9fef44994a0319c7ac1210b13",
+    "severity_criticality_analysis.json": "sha256:427d7902da3062255503a3d2230e45cab2671c4a84482758bb7297434c2e748d",
+    "technical_impact_analysis.json": "sha256:6b3bfa04d1f163f0b666f55f552dad92b80ca1c6641a3694740a3e9b0c98cca2"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "phase_6_1_generalized_certification",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "manifest_contract",
+      "statement": "The required pre-certification artifact set is complete.",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_consistency",
+      "statement": "All artifacts carry the same analysis identity.",
+      "status": "passed"
+    },
+    {
+      "check_id": "counterfactual_invariants",
+      "statement": "Projected schema invariants hold.",
+      "status": "passed"
+    },
+    {
+      "check_id": "operation_semantics",
+      "statement": "Operation-specific invariants hold.",
+      "status": "passed"
+    },
+    {
+      "check_id": "graph_integrity",
+      "statement": "All graph and path references resolve.",
+      "status": "passed"
+    },
+    {
+      "check_id": "rule_traceability",
+      "statement": "Compatibility, severity, and decision rules are identified.",
+      "status": "passed"
+    },
+    {
+      "check_id": "impact_traceability",
+      "statement": "Impact findings and decision summary trace to propagation and one shared cause.",
+      "status": "passed"
+    },
+    {
+      "check_id": "context_distinction",
+      "statement": "Connected context is not asserted to be broken or critical.",
+      "status": "passed"
+    },
+    {
+      "check_id": "artifact_portability",
+      "statement": "No artifact contains an absolute local path.",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.1.0",
+  "operation": "FIELD_DELETE",
+  "proposal_fingerprint": "sha256:bb382f0ad34354a3964cf64b122cf70aba405fefbb42a74df0c7b0e00fd3ef82",
+  "proposal_id": "CHRONOS-EXAMPLE-DELETE-PROPOSAL-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c"
+}

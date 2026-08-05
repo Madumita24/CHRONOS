@@ -1,0 +1,1058 @@
+{
+  "aggregate": {
+    "compatible": 0,
+    "conditionally_compatible": 0,
+    "incompatible": 27,
+    "total": 27,
+    "unknown": 0
+  },
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-DELETE-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "compatibility_evaluation",
+  "created_at": "2026-08-05T00:00:00Z",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "engine_version": "6.1.0",
+  "operation": "FIELD_DELETE",
+  "path_evaluations": [
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-0b65016397218797dddc",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-4a6f461119e7d96df871"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-10e9c00e3992e2ff8449",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-fec9e813736aeb8ad3d9"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-11dd2011455d5eefeda3",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-200c33c590599fc662ef"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-1289ca01949a7f5ed6c4",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-47d8236193aca66b5bee",
+        "relationship-f51e6618fe72a5523179"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-129697356fb2b964d869",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-200c33c590599fc662ef",
+        "relationship-052115bab992660f9307"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-2139ca0145de09cfea26",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-47d8236193aca66b5bee"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-286f87f10ccb12f2b952",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-200c33c590599fc662ef",
+        "relationship-052115bab992660f9307"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-31f0d6c3e98f05460183",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-341958fad838747e858f",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-2b9f1b83e4917c5e5d1d"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-362816dfe1002b5f229a",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-079a72f0e3b7dcb4f941"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-40fcc930a9b8305db012",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-2b9f1b83e4917c5e5d1d",
+        "relationship-4e26613044ad6e73f6d5"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-4b614b68aa9ecd74ca47",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-f4e2d0bb9b2b5874cfb6"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-50df45437231df50bda9",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-c37c96a324c399184997"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-5c626d8ff25c9848dd6d",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-079a72f0e3b7dcb4f941"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-5d7d9ac7dba76c748312",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-7d542f5500d812c2c5f3",
+        "relationship-b1c4db90640ed444f1c5"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-628e564e5820fa9c709f",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-7d542f5500d812c2c5f3"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-63c921c9a86721068f47",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-2b9f1b83e4917c5e5d1d",
+        "relationship-4e26613044ad6e73f6d5"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6b1dce8435decf2f53be",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-5c3d57c310b508f40aa0"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6b2d34ae00071673ca60",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-c37c96a324c399184997"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6b7f30f830b8e31f0a95",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-200c33c590599fc662ef"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6ead95098dbb4455aae1",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-29b40b5a1b64e5bcddc1",
+        "relationship-10e5d8e4ffa8bdd235ee"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6f3144761e1ff723170e",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-6f682d99bdcca55ffc7f",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-7d542f5500d812c2c5f3",
+        "relationship-b1c4db90640ed444f1c5"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-78fd69ba19d792c5b03f",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-e92ca7642c0a0ac0cbf1"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-7f2710cd6918437441f6",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-f8b231743fcf461ceff4"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-82c521cc9066f2330f6c",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-8b983a94595104227be2",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-f4e2d0bb9b2b5874cfb6"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-9989e26b249ee12e46c8",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-4a6f461119e7d96df871"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-9ba2586d1c22b6f609ec",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-9c9c1a3a177e734801ef",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-ca20092d7786f882b8b7"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-9eac7d0210919a97ac38",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-adf110120543a600ff0d",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-29b40b5a1b64e5bcddc1",
+        "relationship-10e5d8e4ffa8bdd235ee"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-b11e8d129006006d5589",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-5c3d57c310b508f40aa0"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-b33e01f86f5c6f6f218d",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-fec9e813736aeb8ad3d9"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-b831f657a4a18649481d",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-7d542f5500d812c2c5f3"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-bc1b9fac55763acc18d1",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-5c3d57c310b508f40aa0",
+        "relationship-388e02dee0938210e166"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-c18372430289dd6c2d0b",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-e92ca7642c0a0ac0cbf1"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-c2d01bbf9683cd1cb96f",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-5c3d57c310b508f40aa0",
+        "relationship-388e02dee0938210e166"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-d4c47d4c9c1b74efcac2",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-d8cce14fb4a4e1c69ef1",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-ca20092d7786f882b8b7"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-da105b4e28a95d9c4531",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-29b40b5a1b64e5bcddc1"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-dab27bf4b57117af8af0",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-29b40b5a1b64e5bcddc1"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-e8c6082b521b77e3ddb8",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-f8b231743fcf461ceff4"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-ec47c0c988ed40e44907",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-6922be4bd98dfec18a70"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-ef66b10dfbb6d1c11a9e",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-47d8236193aca66b5bee",
+        "relationship-f51e6618fe72a5523179"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-f223a59d78a35705cdbb",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-47d8236193aca66b5bee"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-f31afd7b9d8edc361057",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-80e6e4f21c7dcba3b3ca",
+        "relationship-1a51f3d65bb2a0a65856",
+        "relationship-a489aa106af98a7ee204",
+        "relationship-6922be4bd98dfec18a70"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    },
+    {
+      "compatibility_state": "incompatible",
+      "path_id": "path-f91432e044a573266c65",
+      "reason_codes": [
+        "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY"
+      ],
+      "relationship_ids": [
+        "relationship-f9070e5583934316492e",
+        "relationship-7a34060965db4c776f4e",
+        "relationship-4826f20b0ee32ba7a550",
+        "relationship-2b9f1b83e4917c5e5d1d"
+      ],
+      "rule_id": "compatibility-delete-active-dependency"
+    }
+  ],
+  "proposal_fingerprint": "sha256:bb382f0ad34354a3964cf64b122cf70aba405fefbb42a74df0c7b0e00fd3ef82",
+  "proposal_id": "CHRONOS-EXAMPLE-DELETE-PROPOSAL-001",
+  "registry_version": "1.0",
+  "relationship_evaluations": [
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-052115bab992660f9307",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-2206a8ae436b1e3b6df9",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-079a72f0e3b7dcb4f941",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-63e57f28965b42d0c303",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-10e5d8e4ffa8bdd235ee",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-267e29f3f433b298edb4",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-1a51f3d65bb2a0a65856",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f785b20482a8c1bfa392"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-200c33c590599fc662ef",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f551f1938886b6b0fb57"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-29b40b5a1b64e5bcddc1",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-6af73a6468ce7ab0dad7",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-2b9f1b83e4917c5e5d1d",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-077bc47f506efccc54d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-388e02dee0938210e166",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-ef08487e6531f013b447",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-47d8236193aca66b5bee",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-43e46acdc9c25b126872",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-4826f20b0ee32ba7a550",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-39c9c440ae7a51294160",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-4a6f461119e7d96df871",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-3029cfbfafa2964e865d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-4e26613044ad6e73f6d5",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-bbbed9f12b214935b3fe",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-5c3d57c310b508f40aa0",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-9ceba247a084ddfca067",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-6922be4bd98dfec18a70",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-9e482b191ed95a1459fa",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-7a34060965db4c776f4e",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-b50e4fb21f68cca078ef",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-7d542f5500d812c2c5f3",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-ee61b37af19da980e934",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-80e6e4f21c7dcba3b3ca",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-ac651d83fd0e630ab3ae",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-a489aa106af98a7ee204",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-d1e4ea3d253fea0b25d1",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-b1c4db90640ed444f1c5",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-e2024105e09ff117e71e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-c37c96a324c399184997",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-11de52daba974ecfc498",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-ca20092d7786f882b8b7",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-e7c38e937527b1589b31",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-e92ca7642c0a0ac0cbf1",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-d9f315c2d87d2ade319e",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-f4e2d0bb9b2b5874cfb6",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-0bdbb1d01b61e4caca78",
+        "evidence-aba9ef492915702e9ed0",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-f51e6618fe72a5523179",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-759ef2dab667b5da1503",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-f8b231743fcf461ceff4",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-7f30a7f4bbaf6d4cc88d",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-f9070e5583934316492e",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-8a551fe12a61460bdc5a",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    },
+    {
+      "compatibility_state": "incompatible",
+      "evidence_strength": "derived",
+      "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+      "relationship_id": "relationship-fec9e813736aeb8ad3d9",
+      "rule_id": "compatibility-delete-active-dependency",
+      "supporting_evidence_ids": [
+        "evidence-e6da079b9949542ffa21",
+        "evidence-f1b70943eeeb666852b4"
+      ]
+    }
+  ],
+  "root_evaluation": {
+    "compatibility_state": "incompatible",
+    "evidence_strength": "derived",
+    "explanation": "A certified current field dependency has no active future source field.",
+    "reason_code": "SOURCE_FIELD_REMOVED_WITH_ACTIVE_DEPENDENCY",
+    "required_evidence": [
+      "certified_field_lineage",
+      "certified_future_deletion"
+    ],
+    "rule_id": "compatibility-delete-active-dependency",
+    "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+  },
+  "rules_applied": [
+    "compatibility-delete-active-dependency"
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

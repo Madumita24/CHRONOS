@@ -1,0 +1,17 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pipeline_change_set",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "deltas": [],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,17 @@
+--- a/dags/orders_pipeline.py
++++ b/dags/orders_pipeline.py
+@@ -1,4 +1,4 @@
+ from airflow.operators.python import PythonOperator
+ 
+ # The task description changed, but its static output reference did not.
+-publish = PythonOperator(task_id="publish_orders", output_field="order_total")
++publish = PythonOperator(task_id="publish_orders", output_field="order_amount")
+--- a/quality/order_checks.yml
++++ b/quality/order_checks.yml
+@@ -1,5 +1,5 @@
+ quality:
+   description: Validate the proposed order metric.
+   checks:
+-    - field: order_total
++    - field: order_amount
+       expected_type: numeric

@@ -1,0 +1,88 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-FILTER-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "decision_evidence": {
+    "decision": {
+      "certainty": "high_confidence",
+      "disposition": "hold_for_review",
+      "reason_codes": [
+        "semantic_compatibility_unresolved",
+        "certified_downstream_reach"
+      ],
+      "rule_id": "semantic-decision-hold-unresolved-downstream-reach"
+    },
+    "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN"
+  },
+  "detected_changes": [
+    "A model-wide filter was added: o.order_status = 1."
+  ],
+  "downstream_evidence": {
+    "dataset_count": 16,
+    "field_count": 21,
+    "path_ids": [
+      "semantic-path-09546ad1235fa1e7d64e",
+      "semantic-path-0f09dea50d96b820d306",
+      "semantic-path-12e179ce78293af3df1b",
+      "semantic-path-16ec4b31326e66972f41",
+      "semantic-path-1a4437eca2c2e82bf4aa",
+      "semantic-path-1adf43f5cdb6431bec00",
+      "semantic-path-1f0afd1630e307038aad",
+      "semantic-path-21bcfcc12a252bb8778a",
+      "semantic-path-2429c56a8adae63179e6",
+      "semantic-path-2e829a8ca80bae6d8359",
+      "semantic-path-4345a9dbdafbd8639d7a",
+      "semantic-path-6f2744a92e7502d039f6",
+      "semantic-path-89bcaaf2e209d9082e60",
+      "semantic-path-8bd88a1ad12cb062390b",
+      "semantic-path-946d7032b6d05aa99b66",
+      "semantic-path-9679e2f8628290c2b0d8",
+      "semantic-path-a6780800d7c09a6209a1",
+      "semantic-path-a8ae5ff7d9cbcd109796",
+      "semantic-path-b779bcb0d1572ae480ce",
+      "semantic-path-d2dcee720567f1cd6629",
+      "semantic-path-da5fa34f89f8a63a6304",
+      "semantic-path-f0e4703091a7fa6301c6"
+    ],
+    "source": "OBSERVED_DATAHUB_EDGES"
+  },
+  "engine_version": "6.2.0",
+  "evidence_classes": {
+    "code_derived": "Parsed SQL AST contracts and semantic deltas.",
+    "counterfactual": "Future semantic state and overlay over preserved topology.",
+    "decision": "Deterministic compatibility, reach, severity, and decision rules.",
+    "missing": "Contract approval, consumer expectations, and execution comparison.",
+    "observed_datahub": "Resolved Dataset/schema-field identities, edges, and context relationships."
+  },
+  "limitations": [
+    "SQL and dbt code were parsed but never executed.",
+    "No exact row-count, null-rate, uniqueness, or cardinality outcome is claimed.",
+    "Code-derived references are not represented as already stored DataHub lineage."
+  ],
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:c58babb40980c649d3c0ca328c820e7877f7d3bfd25b3a0691e88d83af34515c",
+  "proposal_id": "CHRONOS-SEMANTIC-FILTER-PROPOSAL-001",
+  "resolved_model": {
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+    "environment": "PROD",
+    "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+    "platform": "dbt",
+    "resolution_state": "RESOLVED"
+  },
+  "resolved_outputs": [
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "mapping_state": "RESOLVED_CURRENT_OUTPUT",
+      "output_name": "order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-FILTER",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "unresolved_references": []
+}

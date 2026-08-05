@@ -1,0 +1,88 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "decision_evidence": {
+    "decision": {
+      "certainty": "high_confidence",
+      "disposition": "hold_for_review",
+      "reason_codes": [
+        "semantic_compatibility_unresolved",
+        "certified_downstream_reach"
+      ],
+      "rule_id": "semantic-decision-hold-unresolved-downstream-reach"
+    },
+    "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN"
+  },
+  "detected_changes": [
+    "Derived expression semantics changed for output order_total: literal_changed."
+  ],
+  "downstream_evidence": {
+    "dataset_count": 16,
+    "field_count": 21,
+    "path_ids": [
+      "semantic-path-028ec86ecce4bd5fa4c8",
+      "semantic-path-0e9d451d5f0b7fa5a0fb",
+      "semantic-path-1e2cac3dcab2afd3a8fb",
+      "semantic-path-23f1a353f61cb4c10586",
+      "semantic-path-444de93eb87f9f66712c",
+      "semantic-path-56b9076b5214a4340a86",
+      "semantic-path-57d0789f97f9029b6dfd",
+      "semantic-path-64d3f40d643230de86bd",
+      "semantic-path-849a85e736c580b0f920",
+      "semantic-path-8528b05638c07c46c6fc",
+      "semantic-path-855ca595d7e7832f1731",
+      "semantic-path-8f6e74aba9db8b1ea641",
+      "semantic-path-9461f10afd7bf9a1b31b",
+      "semantic-path-95c1d9f585230a74cfcf",
+      "semantic-path-97cb880c363a81f06267",
+      "semantic-path-aa88a4dae8bb88cd4644",
+      "semantic-path-ad4c15e88d520d550634",
+      "semantic-path-c1a7d0132f90fcbe9c6d",
+      "semantic-path-de1c2b1feb0b10404737",
+      "semantic-path-e5aa4c13c9141f330b5e",
+      "semantic-path-f77e29260e2fd87d1ae6",
+      "semantic-path-f8c268a286c3f82d10e8"
+    ],
+    "source": "OBSERVED_DATAHUB_EDGES"
+  },
+  "engine_version": "6.2.0",
+  "evidence_classes": {
+    "code_derived": "Parsed SQL AST contracts and semantic deltas.",
+    "counterfactual": "Future semantic state and overlay over preserved topology.",
+    "decision": "Deterministic compatibility, reach, severity, and decision rules.",
+    "missing": "Contract approval, consumer expectations, and execution comparison.",
+    "observed_datahub": "Resolved Dataset/schema-field identities, edges, and context relationships."
+  },
+  "limitations": [
+    "SQL and dbt code were parsed but never executed.",
+    "No exact row-count, null-rate, uniqueness, or cardinality outcome is claimed.",
+    "Code-derived references are not represented as already stored DataHub lineage."
+  ],
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "resolved_model": {
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+    "environment": "PROD",
+    "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+    "platform": "dbt",
+    "resolution_state": "RESOLVED"
+  },
+  "resolved_outputs": [
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "mapping_state": "IDENTITY_PRESERVED_SEMANTICS_CHANGED",
+      "output_name": "order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "unresolved_references": []
+}

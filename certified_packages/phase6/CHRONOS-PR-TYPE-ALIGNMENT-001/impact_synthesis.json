@@ -1,0 +1,40 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "blocking_questions": [],
+  "decision": {
+    "certainty": "high_confidence",
+    "decision_rule_id": "pr-decision-material-unresolved",
+    "disposition": "hold_for_review",
+    "precedence": [
+      "confirmed_blocking_incompatibility",
+      "material_unresolved_compatibility",
+      "no_material_change"
+    ]
+  },
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "required_evidence": [],
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "coherence_state": "UNRESOLVED",
+    "confirmed_runtime_failure_count": 0,
+    "conflict_count": 0,
+    "downstream_field_count": 0,
+    "logical_change_group_count": 1,
+    "material_delta_count": 1,
+    "root_cause_count": 1
+  },
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

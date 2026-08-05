@@ -1,0 +1,78 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "analysis_semantic_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "artifact_fingerprints": {
+    "business_context_propagation.json": "sha256:fcc1fa95b019ab75f121abb150e2af4982d8dd27475f7ca12432760a08a7599b",
+    "changed_file_inventory.json": "sha256:a3a99efaf616d7a67b3eca3ac4488d6f2d5de195ccf4eed6e355f3712c9c9043",
+    "coherence_evaluation.json": "sha256:f1a250c34e4d7293bfde89095714dda2acdb60a49f86b3930984dd5422ff6a36",
+    "compatibility_evaluation.json": "sha256:a5ba0120f4a01fe32d91ba952b6b738c90e64dff0b45670c3dfd3b6de7fd4848",
+    "composite_change_set.json": "sha256:6fd87606cd556baa75afbeb8af105f70b65bfabe62e0e8827b0cf2da01b1e049",
+    "contract_quality_change_set.json": "sha256:323d476345e6f764294228286222ad3e2638987ca455bf5a61dd69c1eac64c17",
+    "counterfactual_metadata_state.json": "sha256:bec7d19dabe2cb04a49a3534c78614da8081e8e727ec089307e02f2d28d8dedd",
+    "counterfactual_repository_state.json": "sha256:2f7e0b542051fda3892a2acd714b3bada8f3dd1e5c67be40edb7d6206659929c",
+    "dependency_propagation.json": "sha256:f5c7a4350b8ac4d8c3277ea8f23b96c1904c8460559986ff217cbac93f04b040",
+    "entity_resolution.json": "sha256:3563f9dde76ba572ad2db9dc152a7d6f2f3ff19e74cae9fd87d490c8e22783af",
+    "explanation_bundle.json": "sha256:dfd720631c3b2b0d22254380a6432d3cb9b0e9245128f770cd2e48b50606d99b",
+    "file_analysis_results.json": "sha256:828104130e923503358326c090ac304f2c1c6d4d447d82585424b4a526e72265",
+    "file_classification.json": "sha256:85d125cd2d5147969f3941c152361c6d3c3bbb71a1c7dbe7f336a93c0ce12385",
+    "future_metadata_graph.json": "sha256:1dc76b750005b39f7c62eaffc855cdb0cb4fc7d6f3d1d05c1621de2abe3a0fb9",
+    "impact_synthesis.json": "sha256:3daa66aabb854a04257d045406c1fd656bdfb2363c1ae74460d975eba258898b",
+    "logical_change_groups.json": "sha256:b5c441da692cd74bd5dd636b07371ffc953dcd6ca0fdd2971c113a68e20be7ed",
+    "pipeline_change_set.json": "sha256:c1f2500f3e3ee1a12fc3c7947a2d7c4bb2d5b0a706f3de93578ac3ce98469f89",
+    "pr_analysis_proposal.json": "sha256:200d97562d7249a63b7c9ab9a37b8b98bb909e14eb243ed7b9b174630288fd9b",
+    "proposal_validation.json": "sha256:2ef08190f6d3b174ca9a999b4a7eb2a57f1eea439ae4e6a39a04551ef440878c",
+    "repository_identity.json": "sha256:cab65eb46913ecab9f382fd3ed21d02af0ff204d1f5076b0d029d84ba8315069",
+    "semantic_change_set.json": "sha256:211dfaad76a92df964e0127c2606c3227843558ddac6a0b2571faaee8d442c4c",
+    "severity_criticality_analysis.json": "sha256:088672eb535f5857e0eada4061d96bab95deb0ae99e8f74380e3bb8263554b23",
+    "structural_change_set.json": "sha256:b4d9a453b9b7147a1543fb1a53c1bb252b1d91f0ea47e27847463031c23d73a6",
+    "technical_impact_analysis.json": "sha256:d66c6736fad69e34a9531542e712db96f9c9f84d99da9ccbc32449d97ee1cead"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pr_analysis_certification",
+  "base_commit": "fixture-base-primary-v1",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "package_contract",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_snapshot_repository_base_head",
+      "status": "passed"
+    },
+    {
+      "check_id": "changed_file_inventory_and_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_assignments_and_file_results",
+      "status": "passed"
+    },
+    {
+      "check_id": "typed_delta_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "correlation_groups_coherence_conflicts",
+      "status": "passed"
+    },
+    {
+      "check_id": "counterfactual_graph_paths_and_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "compatibility_impact_severity_decision",
+      "status": "passed"
+    },
+    {
+      "check_id": "evidence_security_and_portability",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c"
+}

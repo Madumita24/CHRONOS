@@ -1,0 +1,171 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "base_commit": "fixture-base-primary-v1",
+  "blocking_questions": [
+    {
+      "affected_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "contributing_file_ids": [
+        "pr-file-3c1d30b2b3aca04b82b2"
+      ],
+      "downstream_scope": "quality/order_checks.yml",
+      "question": "Should the supported pipeline or quality reference still target the current field identity?",
+      "question_id": "pr-question-32392dad19aa72d6fd1f",
+      "required_evidence_types": [
+        "updated_pipeline_or_quality_mapping",
+        "task_or_quality_validation"
+      ],
+      "root_cause_id": "pr-root-2297cb428bdd70d7b419"
+    },
+    {
+      "affected_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "contributing_file_ids": [
+        "pr-file-ab119079a84818f63689"
+      ],
+      "downstream_scope": "dags/orders_pipeline.py",
+      "question": "Should the supported pipeline or quality reference still target the current field identity?",
+      "question_id": "pr-question-634d578827a60561f137",
+      "required_evidence_types": [
+        "updated_pipeline_or_quality_mapping",
+        "task_or_quality_validation"
+      ],
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847"
+    },
+    {
+      "affected_entities": [
+        "o.order_total"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "downstream_scope": "OUTPUT_FIELD",
+      "question": "Is the parsed semantic definition change approved by the model owner?",
+      "question_id": "pr-question-7fbaf68a068370f9623a",
+      "required_evidence_types": [
+        "approved_metric_or_semantic_definition",
+        "execution_comparison",
+        "downstream_semantic_tests"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364"
+    },
+    {
+      "affected_entities": [],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "downstream_scope": "STRUCTURAL",
+      "question": "Has every active consumer adapted to the proposed structural identity?",
+      "question_id": "pr-question-a22ae0045a6380b78d9f",
+      "required_evidence_types": [
+        "explicit_rename_mapping",
+        "consumer_contract_or_execution_validation"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124"
+    }
+  ],
+  "created_at": "2026-08-05T00:00:00Z",
+  "decision": {
+    "certainty": "high_confidence",
+    "decision_rule_id": "pr-decision-material-unresolved",
+    "disposition": "hold_for_review",
+    "precedence": [
+      "confirmed_blocking_incompatibility",
+      "material_unresolved_compatibility",
+      "no_material_change"
+    ]
+  },
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "required_evidence": [
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-04b45303e2b300b7f2af",
+      "requirement_type": "execution_comparison",
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-0aae98556d9117a95c56",
+      "requirement_type": "updated_pipeline_or_quality_mapping",
+      "root_cause_id": "pr-root-2297cb428bdd70d7b419",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-231b34868b7ec23bdbf8",
+      "requirement_type": "updated_pipeline_or_quality_mapping",
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-3d114543e10e9e37f228",
+      "requirement_type": "explicit_rename_mapping",
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-7838915f3aa11ea935d2",
+      "requirement_type": "consumer_contract_or_execution_validation",
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-7df4832e904ce7c19c5f",
+      "requirement_type": "downstream_semantic_tests",
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-b93254dcd4fad5e56a98",
+      "requirement_type": "approved_metric_or_semantic_definition",
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-beb7dfa538ceefa53d1c",
+      "requirement_type": "task_or_quality_validation",
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-cfd1cdd3fe33dd7517ad",
+      "requirement_type": "task_or_quality_validation",
+      "root_cause_id": "pr-root-2297cb428bdd70d7b419",
+      "state": "MISSING"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "coherence_state": "INCONSISTENT",
+    "confirmed_runtime_failure_count": 0,
+    "conflict_count": 0,
+    "downstream_field_count": 21,
+    "logical_change_group_count": 2,
+    "material_delta_count": 5,
+    "root_cause_count": 7
+  },
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-DELETE-001",
+  "analysis_semantic_fingerprint": "sha256:5d41548509113343a62bf99005342bc6009d8522437f0b93a6dea4f083a95201",
+  "artifact_fingerprints": {
+    "analysis_certification.json": "sha256:ddd9ef08311a8efce5be6175cdbc23eb2fb7a2dce6ee4c64c96061c727913714",
+    "business_context_propagation.json": "sha256:7ef8c381ac8a6363861ae3522e65c64ebfc37ae134ecfe56125d3db34c7de7d2",
+    "change_semantic_contract.json": "sha256:5a495e5a4e17391272c9955587f3497f036d26c4ffa3404299182ba688c5c33c",
+    "compatibility_evaluation.json": "sha256:e93c1d4f4d60533ece1cdf429a1d68ed283c902b1cab26482ab8c76ed791a758",
+    "counterfactual_source_state.json": "sha256:da6165ec0e7cec7df4f7819d0569fba05a38ba7d52dbe71b2b77c59c570f330e",
+    "dependency_propagation.json": "sha256:77bbe94d7f68456323331888c73dc905556d53407e3c7173f0af3a2ef093ac77",
+    "explanation_bundle.json": "sha256:9b4273b77a97a79bbfef1fdc88492f9bbdea5a974a69af989adf67d72660be95",
+    "future_metadata_graph.json": "sha256:8401f49cdac539ea46abd0e90b52e2482aacb90233026b6ee9a1ad3b532e75bc",
+    "impact_synthesis.json": "sha256:13c9badc3963d7314a36afdb0d1943772111fd6fd5da8afe2dded74efde89dce",
+    "proposal.json": "sha256:cb11aa6de34180c945422d457cbd6f2884f4840b8eca5e251f8ce0a1ac36a8d1",
+    "proposal_validation.json": "sha256:0ae72e98adb70ed20e4454f4864111670ac323f9fef44994a0319c7ac1210b13",
+    "severity_criticality_analysis.json": "sha256:427d7902da3062255503a3d2230e45cab2671c4a84482758bb7297434c2e748d",
+    "technical_impact_analysis.json": "sha256:6b3bfa04d1f163f0b666f55f552dad92b80ca1c6641a3694740a3e9b0c98cca2"
+  },
+  "artifact_names": [
+    "proposal.json",
+    "proposal_validation.json",
+    "change_semantic_contract.json",
+    "counterfactual_source_state.json",
+    "future_metadata_graph.json",
+    "dependency_propagation.json",
+    "compatibility_evaluation.json",
+    "technical_impact_analysis.json",
+    "business_context_propagation.json",
+    "severity_criticality_analysis.json",
+    "impact_synthesis.json",
+    "explanation_bundle.json",
+    "analysis_certification.json",
+    "manifest.json"
+  ],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "analysis_manifest",
+  "certification_status": "certified",
+  "current_state": {
+    "field_path": "order_total",
+    "snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "decision": {
+    "certainty": "high_confidence",
+    "disposition": "block_confirmed_incompatibility",
+    "reason_codes": [
+      "confirmed_incompatibility",
+      "material_severity_if_realized"
+    ],
+    "rule_id": "decision-block-confirmed-material-incompatibility"
+  },
+  "engine_version": "6.1.0",
+  "future_state": {
+    "current_field_path": "order_total",
+    "current_native_type": "DOUBLE PRECISION",
+    "current_normalized_type": "Number",
+    "projected_field_path": null,
+    "projected_state": "removed"
+  },
+  "operation": "FIELD_DELETE",
+  "proposal": {
+    "analysis_id": "CHRONOS-EXAMPLE-FIELD-DELETE-001",
+    "created_at": "2026-08-05T00:00:00Z",
+    "current_field_path": "order_total",
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "description": "Delete a real source field with downstream lineage in the frozen snapshot.",
+    "operation": "FIELD_DELETE",
+    "proposal_id": "CHRONOS-EXAMPLE-DELETE-PROPOSAL-001",
+    "proposal_metadata": {
+      "source": "official_frozen_snapshot"
+    },
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "proposal_fingerprint": "sha256:bb382f0ad34354a3964cf64b122cf70aba405fefbb42a74df0c7b0e00fd3ef82",
+  "proposal_id": "CHRONOS-EXAMPLE-DELETE-PROPOSAL-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "warnings": []
+}

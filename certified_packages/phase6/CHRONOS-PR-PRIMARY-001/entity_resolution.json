@@ -1,0 +1,53 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "entity_resolution",
+  "base_commit": "fixture-base-primary-v1",
+  "counterfactual_entities": [
+    {
+      "counterfactual_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "current_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "resolution_state": "COUNTERFACTUAL"
+    }
+  ],
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "resolved_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "counterfactual_count": 1,
+    "resolved_count": 3,
+    "unresolved_count": 0
+  },
+  "unresolved_references": []
+}

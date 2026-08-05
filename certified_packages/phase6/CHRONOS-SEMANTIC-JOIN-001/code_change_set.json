@@ -1,0 +1,85 @@
+{
+  "after_ast_fingerprint": "sha256:37f894923bb883d10842d8e3422781db120e9b730140a88805189ca9cc6bbbdc",
+  "analysis_id": "CHRONOS-SEMANTIC-JOIN-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "code_change_set",
+  "before_ast_fingerprint": "sha256:5d883cd4661478788c887851b8bc83be4ea919e2b0701b4ea929b2a2cc2dceba",
+  "code_change_set_fingerprint": "sha256:8392f0d6eb3e6f4d5ac6d858a4a769ad88fa39a56fa7a5a7d5e5deb8ceb371a3",
+  "engine_version": "6.2.0",
+  "evidence_summary": {
+    "code_derived_delta_count": 1,
+    "observed_model_count": 1,
+    "unresolved_reference_count": 0
+  },
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:40f925aee62f3e3aca581307069123372bde75eb0bd23f877d03bec5c5952908",
+  "proposal_id": "CHRONOS-SEMANTIC-JOIN-PROPOSAL-001",
+  "resolved_entities": {
+    "model": {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    "outputs": [
+      {
+        "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+        "mapping_state": "RESOLVED_CURRENT_OUTPUT",
+        "output_name": "order_total"
+      }
+    ],
+    "relations": [
+      {
+        "alias": "h",
+        "code_relation": "order_entry_db.analytics.order_history",
+        "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+        "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+        "resolution_state": "RESOLVED",
+        "resolution_type": "EXACT_PLATFORM_RELATION"
+      },
+      {
+        "alias": "o",
+        "code_relation": "order_entry_db.order_entry.orders",
+        "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+        "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+        "resolution_state": "RESOLVED",
+        "resolution_type": "EXACT_PLATFORM_RELATION"
+      }
+    ]
+  },
+  "scenario_id": "CHRONOS-SEMANTIC-JOIN",
+  "semantic_deltas": [
+    {
+      "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "affected_output_field": null,
+      "after_representation": "INNER",
+      "before_representation": "LEFT JOIN",
+      "certainty": "DERIVED",
+      "change_components": [
+        "join_type_changed"
+      ],
+      "delta_id": "semantic-delta-7392cfb823f2cc003a33",
+      "delta_type": "JOIN_TYPE_CHANGE",
+      "evidence_references": [
+        "before_parsed_model",
+        "after_parsed_model"
+      ],
+      "explanation": "Join type changed from LEFT JOIN to INNER; row preservation may change.",
+      "input_references": [],
+      "scope": "MODEL_WIDE"
+    }
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "snowflake",
+  "structural_deltas": [],
+  "unresolved_references": [],
+  "warnings": [
+    "Semantic compatibility remains unresolved without contract or execution evidence."
+  ]
+}

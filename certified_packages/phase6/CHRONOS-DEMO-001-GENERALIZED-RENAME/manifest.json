@@ -1,0 +1,83 @@
+{
+  "analysis_id": "CHRONOS-DEMO-001-GENERALIZED-RENAME",
+  "analysis_semantic_fingerprint": "sha256:3f825888b035868f685b55d7d7505a84b09d42b131194c8a7a705d9ba52d2f99",
+  "artifact_fingerprints": {
+    "analysis_certification.json": "sha256:846632298bb0a0a89646a7c2536f816422b3cb61be72bea17a05302d54f7328a",
+    "business_context_propagation.json": "sha256:85e2d009582651d800b01ca17213f68a004dee3362d351a2372ba2ab1c23328f",
+    "change_semantic_contract.json": "sha256:310b04b583dff36cd4a219903dfcfb75181b8da1ae21052af3adad7ca214c7cb",
+    "compatibility_evaluation.json": "sha256:ec45f989927b6e60ce056f52bccedd4f210c4d5a1319bc22543224a393f5e8b7",
+    "counterfactual_source_state.json": "sha256:a6ff7123100396fab1f18d0218845b1b960e89464b39e0ee3a7a47e99237592b",
+    "dependency_propagation.json": "sha256:0a4fe3055a30c43c54ed13be8470cf127e886f457b4b01c15d43f9e81a75b24a",
+    "explanation_bundle.json": "sha256:bda8c000024f1cd5155aaf01b659929a41cb0f06ef6d9ac2f6c0f6f5065d0e1a",
+    "future_metadata_graph.json": "sha256:a9c090527eba6c01e95877d7511d002f47f66c8035f34ec60a34662ac487a7c8",
+    "impact_synthesis.json": "sha256:918b577a78276582f891d846a794b6cd07e68f2f6c8261ebd34f054b8fcce6de",
+    "proposal.json": "sha256:0a2f42beadf62053860be306ffd69fe015fe16c9393a570395d6969798cef475",
+    "proposal_validation.json": "sha256:ecc7407e92e105de8e344584a2c03427a618b1898ec61bdb8af70f6539382084",
+    "severity_criticality_analysis.json": "sha256:f2bc13ea2cd3257347c551f9a983c021e83cf9e317d00dbd5db3b4fe7955001b",
+    "technical_impact_analysis.json": "sha256:ec14a59e9544a746cafbe082424b07a465da87a70aeb1953ef7b42fcc7c78e6c"
+  },
+  "artifact_names": [
+    "proposal.json",
+    "proposal_validation.json",
+    "change_semantic_contract.json",
+    "counterfactual_source_state.json",
+    "future_metadata_graph.json",
+    "dependency_propagation.json",
+    "compatibility_evaluation.json",
+    "technical_impact_analysis.json",
+    "business_context_propagation.json",
+    "severity_criticality_analysis.json",
+    "impact_synthesis.json",
+    "explanation_bundle.json",
+    "analysis_certification.json",
+    "manifest.json"
+  ],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "analysis_manifest",
+  "certification_status": "certified",
+  "current_state": {
+    "field_path": "order_total",
+    "snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "decision": {
+    "certainty": "high_confidence",
+    "disposition": "hold_for_review",
+    "reason_codes": [
+      "unresolved_source_compatibility",
+      "material_severity_if_realized",
+      "widespread_dependency_reach",
+      "missing_execution_evidence"
+    ],
+    "rule_id": "decision-hold-unresolved-material-broad"
+  },
+  "engine_version": "6.1.0",
+  "future_state": {
+    "current_field_path": "order_total",
+    "current_native_type": "DOUBLE PRECISION",
+    "current_normalized_type": "Number",
+    "projected_field_path": "order_amount",
+    "projected_state": "renamed"
+  },
+  "operation": "FIELD_RENAME",
+  "proposal": {
+    "analysis_id": "CHRONOS-DEMO-001-GENERALIZED-RENAME",
+    "created_at": "2026-08-05T00:00:00Z",
+    "current_field_path": "order_total",
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "description": "Generalized-engine replay of the frozen canonical rename scenario.",
+    "operation": "FIELD_RENAME",
+    "proposal_id": "CHRONOS-DEMO-001-PROPOSAL-001",
+    "proposal_metadata": {
+      "scenario": "CHRONOS-DEMO-001",
+      "source": "official_frozen_snapshot"
+    },
+    "proposed_field_path": "order_amount",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+  },
+  "proposal_fingerprint": "sha256:9a861dc0df9b95ca3cdbe13dbce395452d99b80f7e0866078063c4433cc93e51",
+  "proposal_id": "CHRONOS-DEMO-001-PROPOSAL-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "warnings": []
+}

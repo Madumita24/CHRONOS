@@ -1,0 +1,968 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-FILTER-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "future_metadata_graph",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "model_semantics_changed": true,
+  "nodes": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "SEMANTIC_ORIGIN",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": [
+        "semantic-delta-f3ecd7450458ce4acd9d"
+      ]
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total",
+      "field_path": "order_details.order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue",
+      "field_path": "Total Revenue",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL",
+      "field_path": "ORDER_TOTAL",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "field_path": "order_total",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "field_path": "AVERAGE_ORDER_VALUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "field_path": "TOTAL_REVENUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "field_path": "AVERAGE_ORDER_VALUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "field_path": "TOTAL_REVENUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE",
+      "field_path": "AVERAGE_ORDER_VALUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE",
+      "field_path": "TOTAL_REVENUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE",
+      "field_path": "AVERAGE_ORDER_VALUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    },
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE",
+      "field_path": "TOTAL_REVENUE",
+      "node_state": "INHERITED",
+      "observed_in_snapshot": true,
+      "semantic_delta_ids": []
+    }
+  ],
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "origin_field_keys": [
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+  ],
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "paths": [
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+      ],
+      "path_id": "semantic-path-09546ad1235fa1e7d64e",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-e1ec13323056ddfa019e",
+        "semantic-relationship-5148d2b44ace5c3fefd7"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "path_id": "semantic-path-0f09dea50d96b820d306",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-23317de2f1d659df403e"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-12e179ce78293af3df1b",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-560ce2288eefe7919e0d"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 1,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-16ec4b31326e66972f41",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "path_id": "semantic-path-1a4437eca2c2e82bf4aa",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-f3bc2b97bf10711fad28",
+        "semantic-relationship-b1f7d5b85d863870c53d"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-1adf43f5cdb6431bec00",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-8145e3721d813597c38e"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "path_id": "semantic-path-1f0afd1630e307038aad",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-23317de2f1d659df403e",
+        "semantic-relationship-516409a845cd9286855c"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-21bcfcc12a252bb8778a",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-f60491d0694ecc52efa4"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-2429c56a8adae63179e6",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-ef192e3f6058eed2850b"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-2e829a8ca80bae6d8359",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-71028eac6577ec57e5bf"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+      ],
+      "path_id": "semantic-path-4345a9dbdafbd8639d7a",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-e1ec13323056ddfa019e"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+      ],
+      "path_id": "semantic-path-6f2744a92e7502d039f6",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-b947c07cd5a0ddee7867",
+        "semantic-relationship-a08537abf5af747eaf44"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-89bcaaf2e209d9082e60",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-d6148d4ecbd46fb440f3"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+      ],
+      "path_id": "semantic-path-8bd88a1ad12cb062390b",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-b947c07cd5a0ddee7867"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "path_id": "semantic-path-946d7032b6d05aa99b66",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-f3bc2b97bf10711fad28"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-9679e2f8628290c2b0d8",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-63b383b3b1ab4361d4ab"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+      ],
+      "path_id": "semantic-path-a6780800d7c09a6209a1",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-8145e3721d813597c38e",
+        "semantic-relationship-c1a2fc3ec24e271091c3"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-a8ae5ff7d9cbcd109796",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-45bfaa041175ff18ae0b"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 3,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-b779bcb0d1572ae480ce",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-293374eb55c7b9e3377a",
+        "semantic-relationship-74594265deb2cae976d1"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+      ],
+      "path_id": "semantic-path-d2dcee720567f1cd6629",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-293374eb55c7b9e3377a"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "path_id": "semantic-path-da5fa34f89f8a63a6304",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-7e794ac9d73bb381c312"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "depth": 2,
+      "evidence_class": "COUNTERFACTUAL_DERIVATION_FROM_OBSERVED_EDGES",
+      "node_keys": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+      ],
+      "path_id": "semantic-path-f0e4703091a7fa6301c6",
+      "relationship_ids": [
+        "semantic-relationship-a7f1031c3a0514fb70b1",
+        "semantic-relationship-feda2cddda23a19590ba"
+      ],
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    }
+  ],
+  "proposal_fingerprint": "sha256:c58babb40980c649d3c0ca328c820e7877f7d3bfd25b3a0691e88d83af34515c",
+  "proposal_id": "CHRONOS-SEMANTIC-FILTER-PROPOSAL-001",
+  "relationships": [
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-16c580c8027aa8982444",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-63e57f28965b42d0c303",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-560ce2288eefe7919e0d",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-1ecea13ee78af7769bba",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f551f1938886b6b0fb57"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|upstreamLineage|2"
+      ],
+      "relationship_id": "semantic-relationship-e1ec13323056ddfa019e",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-24a6922c0e6dbb8a31c3",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-43e46acdc9c25b126872",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "semantic-relationship-293374eb55c7b9e3377a",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-279b836e68667e1a5ab2",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-ee61b37af19da980e934",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "semantic-relationship-23317de2f1d659df403e",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-2c7ac5cae92dc7c19258",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-ef08487e6531f013b447",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "semantic-relationship-a08537abf5af747eaf44",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "classification": "direct",
+      "current_edge_id": "lineage-edge-4279a5839fd7fb8ff416",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-e6da079b9949542ffa21",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-63b383b3b1ab4361d4ab",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "direct",
+      "current_edge_id": "lineage-edge-4d77c16b585b20e01c0e",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-d1e4ea3d253fea0b25d1",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|upstreamLineage|41"
+      ],
+      "relationship_id": "semantic-relationship-a7f1031c3a0514fb70b1",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-7753073f07127d7779dc",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-9ceba247a084ddfca067",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|upstreamLineage|2"
+      ],
+      "relationship_id": "semantic-relationship-b947c07cd5a0ddee7867",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-96721d2453ba1dff4a6b",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-e2024105e09ff117e71e",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|upstreamLineage|1"
+      ],
+      "relationship_id": "semantic-relationship-516409a845cd9286855c",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "classification": "direct",
+      "current_edge_id": "lineage-edge-9cdf0701751cd779485c",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-0bdbb1d01b61e4caca78",
+        "evidence-aba9ef492915702e9ed0",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|3",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|5"
+      ],
+      "relationship_id": "semantic-relationship-d6148d4ecbd46fb440f3",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-c5960a664e2d565404b4",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-bbbed9f12b214935b3fe",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|upstreamLineage|0"
+      ],
+      "relationship_id": "semantic-relationship-b1f7d5b85d863870c53d",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-c972fd6173ba92960a3c",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-2206a8ae436b1e3b6df9",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-5148d2b44ace5c3fefd7",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-ca4ec76991290d397a4b",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-11de52daba974ecfc498",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-7e794ac9d73bb381c312",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-cd3881343cccfaec5c4e",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-9e482b191ed95a1459fa",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|upstreamLineage|57"
+      ],
+      "relationship_id": "semantic-relationship-feda2cddda23a19590ba",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-cf9a5075831b4dc5709f",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-267e29f3f433b298edb4",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|upstreamLineage|30"
+      ],
+      "relationship_id": "semantic-relationship-c1a2fc3ec24e271091c3",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-d2a5c718e94750fdc615",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-d9f315c2d87d2ade319e",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-f60491d0694ecc52efa4",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-d6232ff40009c7ab2062",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-7f30a7f4bbaf6d4cc88d",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-ef192e3f6058eed2850b",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-e74dbf8e7bf54b78a322",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-6af73a6468ce7ab0dad7",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|upstreamLineage|30"
+      ],
+      "relationship_id": "semantic-relationship-8145e3721d813597c38e",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-eaafa26160825abef0c3",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-e7c38e937527b1589b31",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-45bfaa041175ff18ae0b",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "direct",
+      "current_edge_id": "lineage-edge-ef801c18bf6caa8ade3f",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-759ef2dab667b5da1503",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-74594265deb2cae976d1",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-f9bd882cdaaa2497394d",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-3029cfbfafa2964e865d",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "semantic-relationship-71028eac6577ec57e5bf",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "classification": "unknown",
+      "current_edge_id": "lineage-edge-fca7e3e38abfd1690038",
+      "downstream_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "evidence_ids": [
+        "evidence-077bc47f506efccc54d1",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "semantic-relationship-f3bc2b97bf10711fad28",
+      "source_entity_urns": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)"
+      ],
+      "structural_state": "PRESERVED",
+      "upstream_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-FILTER",
+  "semantic_delta_ids": [
+    "semantic-delta-f3ecd7450458ce4acd9d"
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "structural_topology_state": "PRESERVED"
+}

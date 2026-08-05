@@ -1,0 +1,132 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_plan",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "operation": "GENERATE_REPAIR",
+  "plan": {
+    "affected_files": [
+      "quality/order_checks.yml"
+    ],
+    "application_order": [
+      "repair-action-3230feec7470cf3f7f5d"
+    ],
+    "blocked_root_ids": [],
+    "classifications": [
+      {
+        "eligible_file_categories": [
+          "QUALITY_CONFIG",
+          "PIPELINE_CONFIG",
+          "SCHEMA_CONTRACT",
+          "DBT_SCHEMA"
+        ],
+        "logical_change_group_id": "logical-change-c1f873b076b1024a2d48",
+        "reason": "Explicit certified deletion intent and exact structured stale targets satisfy the conditional rule.",
+        "remaining_uncertainty": [
+          "phase_7_consumer_and_quality_validation"
+        ],
+        "repairability": "CONDITIONALLY_REPAIRABLE",
+        "repairability_rule_id": "repair.delete.structured-stale-reference.v1",
+        "required_preconditions": [
+          "approved_explicit_delete_without_replacement"
+        ],
+        "root_cause_id": "pr-root-7598a0e1f1900946f565",
+        "root_type": "STRUCTURAL_CHANGE",
+        "supporting_evidence": [
+          "pr-file-3c1d30b2b3aca04b82b2",
+          "semantic-delta-b78cd5bffc279952ffb3"
+        ]
+      }
+    ],
+    "edit_dependencies": [],
+    "expected_compatibility_limitations": [
+      "phase_7_consumer_and_quality_validation"
+    ],
+    "expected_repository_coherence_improvement": "deterministic_projected_reanalysis_required",
+    "non_repairable_root_ids": [],
+    "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+    "repair_actions": [
+      {
+        "confidence": "CERTIFIED_STATIC_EXACT",
+        "current_evidence": {
+          "datahub_or_current_entities": [
+            "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+          ],
+          "editor_name": "structured_config_editor",
+          "head_content_fingerprint": "sha256:3804650172143f572adb81f505dc7da531e0dce5dc4294dfe64543bde9520fed",
+          "kind": "field",
+          "location": "quality.field",
+          "parser": {
+            "name": "bounded_contract_pipeline_config",
+            "version": "6.3.0/pyyaml-6.0.3"
+          },
+          "predecessor_root_cause_id": "pr-root-7598a0e1f1900946f565",
+          "value": "order_total"
+        },
+        "dependency_actions": [],
+        "edit_operation": "REMOVE_STALE_STATIC_REFERENCE",
+        "expected_changed_identities": [
+          "order_total"
+        ],
+        "file_category": "QUALITY_CONFIG",
+        "human_explanation": "Remove one static declaration that only references the explicitly deleted identity order_total.",
+        "intended_future_evidence": {
+          "counterfactual_entities": [],
+          "identity_claim_evidence": [
+            "semantic-delta-b78cd5bffc279952ffb3"
+          ],
+          "value": null
+        },
+        "logical_change_group_id": "logical-change-c1f873b076b1024a2d48",
+        "preconditions": [
+          "approved_explicit_delete_without_replacement"
+        ],
+        "remaining_evidence_requirements": [
+          "phase_7_consumer_and_quality_validation"
+        ],
+        "repair_action_id": "repair-action-3230feec7470cf3f7f5d",
+        "repair_rule_id": "repair.delete.structured-stale-reference.v1",
+        "root_cause_id": "pr-root-7598a0e1f1900946f565",
+        "static_validation_requirements": [
+          "candidate_parses",
+          "exact_intended_target_changed",
+          "untargeted_structure_equivalent",
+          "generated_diff_matches_candidate",
+          "patch_applies_to_certified_head_copy"
+        ],
+        "target_file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+        "target_location": "quality.field",
+        "target_path": "quality/order_checks.yml"
+      }
+    ],
+    "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+    "required_human_decisions": [],
+    "required_phase_7_validations": [
+      "apply_candidate_patch_in_disposable_checkout",
+      "execute_affected_project_validation",
+      "obtain_human_review_and_owner_approval",
+      "phase_7_consumer_and_quality_validation",
+      "verify_runtime_and_data_semantics"
+    ],
+    "selected_root_cause_ids": [
+      "pr-root-7598a0e1f1900946f565"
+    ],
+    "warnings": [
+      "candidate_repairs_are_unapplied",
+      "runtime_correctness_unverified",
+      "human_review_required"
+    ]
+  },
+  "plan_created_before_candidate_edits": true,
+  "predecessor_analysis_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "proposal_fingerprint": "sha256:5dfb7bc4e0334157c3404ae83bd6d6b8b33a4fe0554d664109cd62a1f4e8cb44",
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-REPAIR-DELETE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

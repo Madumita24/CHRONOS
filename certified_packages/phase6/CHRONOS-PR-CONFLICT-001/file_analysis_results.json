@@ -1,0 +1,408 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "file_analysis_results",
+  "base_commit": "fixture-base-conflict-v1",
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "results": [
+    {
+      "analysis_status": "ANALYZED",
+      "base_fingerprint": "sha256:873da360e5393f6f792681d33b3be859fa7edee28dff2efc29da9ccb3451151a",
+      "category": "SQL_MODEL",
+      "detected_deltas": [
+        {
+          "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+          "affected_output_field": "order_total",
+          "after_representation": "order_amount",
+          "before_representation": "order_total",
+          "certainty": "DERIVED",
+          "change_components": [],
+          "delta_class": "StructuralFieldDelta",
+          "delta_id": "semantic-delta-41cbe5c61ac7bdf329be",
+          "delta_type": "OUTPUT_COLUMN_RENAME",
+          "evidence_references": [
+            "output_identity"
+          ],
+          "explanation": "Output column order_total was renamed to order_amount.",
+          "file_path": "models/order_details.sql",
+          "input_references": [],
+          "material": true,
+          "scope": "STRUCTURAL"
+        }
+      ],
+      "evidence_records": [
+        {
+          "dbt_references": [],
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "evidence_id": "pr-evidence-818b86520fb27bf2f51d",
+          "parser": "6.3.0/sqlglot-30.13.0"
+        }
+      ],
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "head_fingerprint": "sha256:e187c4500ce63f21c483e954f52143f666b11b036df0dacdf668305a4aa7cf7b",
+      "parsed_base": {
+        "canonical_ast_fingerprint": "sha256:e069b4cd074189fc4c7638da1d007bfe37710136471743bd6d1fb68622014800",
+        "canonical_sql": "SELECT SUM(o.order_total) AS order_total FROM order_entry_db.order_entry.orders AS o",
+        "ctes": [],
+        "dialect": "postgres",
+        "filter_columns": [],
+        "filter_literals": [],
+        "filter_operators": [],
+        "filter_predicate": null,
+        "grouping": [],
+        "joins": [],
+        "ordering": [],
+        "output_columns": [
+          {
+            "aggregations": [
+              {
+                "distinct": false,
+                "function": "SUM",
+                "input_references": [
+                  {
+                    "name": "order_total",
+                    "normalized": "o.order_total",
+                    "qualifier": "o"
+                  }
+                ],
+                "normalized_expression": "SUM(o.order_total)"
+              }
+            ],
+            "data_type_state": "UNKNOWN",
+            "expression_fingerprint": "sha256:ddb3a45fca70d325b5c35b61d0ebe7763f19d6c6e0542ed8207463bd97e6a292",
+            "functions": [],
+            "has_case": false,
+            "has_window": false,
+            "input_columns": [
+              {
+                "name": "order_total",
+                "normalized": "o.order_total",
+                "qualifier": "o"
+              }
+            ],
+            "lineage_derivation": "CODE_DERIVED_REFERENCE",
+            "literals": [],
+            "normalized_expression": "SUM(o.order_total)",
+            "operators": [],
+            "ordinal": 0,
+            "output_name": "order_total",
+            "source_relations": [
+              "o"
+            ]
+          }
+        ],
+        "parser_name": "sqlglot",
+        "parser_version": "30.13.0",
+        "source_relations": [
+          {
+            "alias": "o",
+            "is_cte": false,
+            "qualified_name": "order_entry_db.order_entry.orders"
+          }
+        ],
+        "statement_type": "SELECT",
+        "unresolved_stars": [],
+        "windows": []
+      },
+      "parsed_head": {
+        "canonical_ast_fingerprint": "sha256:28d9749abf91baa6eea9a0796b7b20a239faaf1907af55102fa97d31413bfd57",
+        "canonical_sql": "SELECT SUM(o.order_total) AS order_amount FROM order_entry_db.order_entry.orders AS o",
+        "ctes": [],
+        "dialect": "postgres",
+        "filter_columns": [],
+        "filter_literals": [],
+        "filter_operators": [],
+        "filter_predicate": null,
+        "grouping": [],
+        "joins": [],
+        "ordering": [],
+        "output_columns": [
+          {
+            "aggregations": [
+              {
+                "distinct": false,
+                "function": "SUM",
+                "input_references": [
+                  {
+                    "name": "order_total",
+                    "normalized": "o.order_total",
+                    "qualifier": "o"
+                  }
+                ],
+                "normalized_expression": "SUM(o.order_total)"
+              }
+            ],
+            "data_type_state": "UNKNOWN",
+            "expression_fingerprint": "sha256:ddb3a45fca70d325b5c35b61d0ebe7763f19d6c6e0542ed8207463bd97e6a292",
+            "functions": [],
+            "has_case": false,
+            "has_window": false,
+            "input_columns": [
+              {
+                "name": "order_total",
+                "normalized": "o.order_total",
+                "qualifier": "o"
+              }
+            ],
+            "lineage_derivation": "CODE_DERIVED_REFERENCE",
+            "literals": [],
+            "normalized_expression": "SUM(o.order_total)",
+            "operators": [],
+            "ordinal": 0,
+            "output_name": "order_amount",
+            "source_relations": [
+              "o"
+            ]
+          }
+        ],
+        "parser_name": "sqlglot",
+        "parser_version": "30.13.0",
+        "source_relations": [
+          {
+            "alias": "o",
+            "is_cte": false,
+            "qualified_name": "order_entry_db.order_entry.orders"
+          }
+        ],
+        "statement_type": "SELECT",
+        "unresolved_stars": [],
+        "windows": []
+      },
+      "parser": {
+        "name": "phase_6_2_sql_adapter",
+        "version": "6.3.0/sqlglot-30.13.0"
+      },
+      "resolved_entities": [
+        {
+          "alias": "o",
+          "code_relation": "order_entry_db.order_entry.orders",
+          "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+          "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+          "resolution_state": "RESOLVED",
+          "resolution_type": "EXACT_PLATFORM_RELATION"
+        },
+        {
+          "alias": "o",
+          "code_relation": "order_entry_db.order_entry.orders",
+          "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+          "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+          "resolution_state": "RESOLVED",
+          "resolution_type": "EXACT_PLATFORM_RELATION"
+        },
+        {
+          "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+          "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+          "mapping_state": "REMOVED_OUTPUT",
+          "output_name": "order_total"
+        },
+        {
+          "datahub_field_key": null,
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "mapping_state": "NEW_OUTPUT",
+          "output_name": "order_amount"
+        },
+        {
+          "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+          "environment": "PROD",
+          "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+          "platform": "dbt",
+          "resolution_state": "RESOLVED"
+        }
+      ],
+      "unresolved_references": [],
+      "warnings": []
+    },
+    {
+      "analysis_status": "ANALYZED",
+      "base_fingerprint": "sha256:170acb65724a4e15fde6e3a1bd9eef15d650f6971749d9098762dd0d84296a8f",
+      "category": "DBT_SCHEMA",
+      "detected_deltas": [
+        {
+          "after": null,
+          "before": {
+            "constraints": [],
+            "data_type": "numeric",
+            "description": null,
+            "meta": {},
+            "name": "order_total",
+            "tags": [],
+            "tests": []
+          },
+          "delta_class": "ModelContractDelta",
+          "delta_id": "pr-delta-bbb7074ea4274a953734",
+          "delta_type": "COLUMN_REMOVED",
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "explanation": "A dbt schema column declaration was added or removed.",
+          "material": true,
+          "path": "models/schema.yml",
+          "references": [
+            "order_details",
+            "order_total"
+          ],
+          "scope": "model:order_details:column:order_total"
+        },
+        {
+          "after": {
+            "constraints": [],
+            "data_type": "numeric",
+            "description": null,
+            "meta": {},
+            "name": "total_amount",
+            "tags": [],
+            "tests": []
+          },
+          "before": null,
+          "delta_class": "ModelContractDelta",
+          "delta_id": "pr-delta-f552bbc8164e098604b6",
+          "delta_type": "COLUMN_ADDED",
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "explanation": "A dbt schema column declaration was added or removed.",
+          "material": true,
+          "path": "models/schema.yml",
+          "references": [
+            "order_details",
+            "total_amount"
+          ],
+          "scope": "model:order_details:column:total_amount"
+        }
+      ],
+      "evidence_records": [
+        {
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "evidence_id": "pr-evidence-48e64b2670dd1d1c05f8",
+          "parser": "6.3.0/pyyaml-6.0.3"
+        }
+      ],
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "head_fingerprint": "sha256:6b29af9114a11cd6c1598f4f3e12381a8adaea1f95ee21dd8573247e64d6df78",
+      "parsed_base": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "order_total": {
+                "constraints": [],
+                "data_type": "numeric",
+                "description": null,
+                "meta": {},
+                "name": "order_total",
+                "tags": [],
+                "tests": []
+              }
+            },
+            "constraints": [],
+            "contract_enforced": null,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "parsed_head": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "total_amount": {
+                "constraints": [],
+                "data_type": "numeric",
+                "description": null,
+                "meta": {},
+                "name": "total_amount",
+                "tags": [],
+                "tests": []
+              }
+            },
+            "constraints": [],
+            "contract_enforced": null,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "parser": {
+        "name": "bounded_dbt_schema",
+        "version": "6.3.0/pyyaml-6.0.3"
+      },
+      "resolved_entities": [],
+      "unresolved_references": [],
+      "warnings": []
+    },
+    {
+      "analysis_status": "ANALYZED",
+      "base_fingerprint": "sha256:68819737da0043c5820221fc0cda190e4f82214ae1d84f9ac53df344a3a1ccaf",
+      "category": "PIPELINE_DAG",
+      "detected_deltas": [],
+      "evidence_records": [
+        {
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "evidence_id": "pr-evidence-eea1d7bb8863865d28c2",
+          "parser": "6.3.0/python-ast"
+        }
+      ],
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "head_fingerprint": "sha256:90fc48cefdf80ea3078460eca5c508b09d68884b66533809cdc2e064cd90bdce",
+      "parsed_base": {
+        "dependencies": [],
+        "dynamic": [],
+        "references": [
+          {
+            "kind": "output_field",
+            "task_id": "publish_orders",
+            "value": "order_total"
+          }
+        ],
+        "tasks": [
+          {
+            "operator_type": "PythonOperator",
+            "static_arguments": {
+              "output_field": "order_total"
+            },
+            "task_id": "publish_orders",
+            "variable": "publish"
+          }
+        ]
+      },
+      "parsed_head": {
+        "dependencies": [],
+        "dynamic": [],
+        "references": [
+          {
+            "kind": "output_field",
+            "task_id": "publish_orders",
+            "value": "order_total"
+          }
+        ],
+        "tasks": [
+          {
+            "operator_type": "PythonOperator",
+            "static_arguments": {
+              "output_field": "order_total"
+            },
+            "task_id": "publish_orders",
+            "variable": "publish"
+          }
+        ]
+      },
+      "parser": {
+        "name": "python_ast_static_dag",
+        "version": "6.3.0/python-ast"
+      },
+      "resolved_entities": [],
+      "unresolved_references": [],
+      "warnings": []
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

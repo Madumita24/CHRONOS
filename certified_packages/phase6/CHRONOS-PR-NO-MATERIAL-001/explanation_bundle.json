@@ -1,0 +1,40 @@
+{
+  "analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "base_commit": "fixture-base-no-material-v1",
+  "decision_explanation": {
+    "reason": "Explicit deterministic precedence over certified conflict, unresolved material change, and no-material state.",
+    "selected_rule": "pr-decision-no-material-change"
+  },
+  "downstream_target_explanations": [],
+  "engine_version": "6.3.0",
+  "file_explanations": [],
+  "head_commit": "fixture-head-no-material-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_group_explanations": [],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_explanation": {
+    "decision": {
+      "certainty": "high_confidence",
+      "decision_rule_id": "pr-decision-no-material-change",
+      "disposition": "no_material_change",
+      "precedence": [
+        "confirmed_blocking_incompatibility",
+        "material_unresolved_compatibility",
+        "no_material_change"
+      ]
+    },
+    "files_agree": "COHERENT",
+    "known": "Parsed code/config claims and supplied DataHub observations are retained with separate provenance.",
+    "unresolved": "Runtime execution validity and missing contract/test evidence remain unverified.",
+    "what_changed": "0 supported material deltas were correlated across one repository transition."
+  },
+  "proposal_fingerprint": "sha256:cf734e418b9f56c23d4dbc0325be837cd784ccb8f9cc02dae1cf09acca9c8424",
+  "proposal_id": "CHRONOS-PR-NO-MATERIAL-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+  "root_cause_explanations": [],
+  "scenario_id": "CHRONOS-MULTIFILE-NO-MATERIAL",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,78 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "analysis_semantic_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+  "artifact_fingerprints": {
+    "business_context_propagation.json": "sha256:bb147731b1812d3abb1dbe82a11db9d3ec753a4d0683885fd038c4c0fddfa6bb",
+    "changed_file_inventory.json": "sha256:c26b36853a107856456988d49ceddcfe8d9e6df8b268218d8cf1e61544048e9a",
+    "coherence_evaluation.json": "sha256:4dd329aa10c9c8a97b6f788714a6228abaf61aa57ed0e1ee6bb1e40c93419297",
+    "compatibility_evaluation.json": "sha256:05c96e1800f49b4b57577dad9d732afa30b36083ecac818e70fac0fedf023168",
+    "composite_change_set.json": "sha256:054ac67852325eb22f65dc37d3458bc60677c527571d5fc8cd67776b03d62c9f",
+    "contract_quality_change_set.json": "sha256:0290fbfd490a6c957e90b02ef883ea2d46845109dac7da8aa8c2199d737b16d6",
+    "counterfactual_metadata_state.json": "sha256:86179951de394916737498eeb8d9a3bd8e8a061aa241b232b0e3debf195d802a",
+    "counterfactual_repository_state.json": "sha256:3819c35e689853f47e81ced25c76a5b2df3a136fbaebab7d5a93957454c410c5",
+    "dependency_propagation.json": "sha256:f85e9bcb06cf256007bee679421f2bdd613417f652eb754b699704608c28dbdc",
+    "entity_resolution.json": "sha256:9058b46785378ad39702cca1c899cccea6f5ee776b28b483384aefa8bc08c337",
+    "explanation_bundle.json": "sha256:9985f6179db8c11e281d40e3c64e8cba18af924f2789ffb4b3f2c15da45d101f",
+    "file_analysis_results.json": "sha256:5c3cf621887c1ffa18dfffb6608842cd975cbe3fcbd9fcf0f872310c273f5296",
+    "file_classification.json": "sha256:c22478fc2f968724e5d6da51983b6008afb8fe63f0352fc6f2edb6b563045ca2",
+    "future_metadata_graph.json": "sha256:ca34ec74d71a0e2e7e9d9a208d3ffcef4c9e1317acdca283b1d68bf818cbb374",
+    "impact_synthesis.json": "sha256:c48efc907840d95c068f430efc2745e55985e8b28830288eaf105ba7d9b2c2bb",
+    "logical_change_groups.json": "sha256:cb5d57150b7cf111792ad654e3db74ebaccc53124d20793d736c6c552205124d",
+    "pipeline_change_set.json": "sha256:033442b3f8881da3d670a26a46ca4960d2c85ffecc9f93887a1fd0a91fba2c49",
+    "pr_analysis_proposal.json": "sha256:401e21da24077255dea0acb4de93b248b876c9b5adcf96bf5d4c146c3cf66c86",
+    "proposal_validation.json": "sha256:494e91d52d3feafcad46ce308c44f3aa220dd7950c279ff83c7f7c4a71bf53b1",
+    "repository_identity.json": "sha256:87f365fc5b8ea82006f8deb628d6598b72f1d3de0ddb3b20914f34bedd7e8a0c",
+    "semantic_change_set.json": "sha256:ca8680b9a02afe8e409a4908545e8c0b5b0eac06a9d929843bbbbffa2998f8d6",
+    "severity_criticality_analysis.json": "sha256:4d2c75a9862e7ee7beefd075a90d824ce97fc2287bfe386211b2f60c8e522af6",
+    "structural_change_set.json": "sha256:d5da969651ff875f8a34e9406b7732a5082df1ba83ebdb5cad10b7693d2dfe3b",
+    "technical_impact_analysis.json": "sha256:64f0591d3de1b1f8640d278e8f1a5dd26ee6d8424175b4e6c203cb5759f25fa0"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pr_analysis_certification",
+  "base_commit": "fixture-base-conflict-v1",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "package_contract",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_snapshot_repository_base_head",
+      "status": "passed"
+    },
+    {
+      "check_id": "changed_file_inventory_and_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_assignments_and_file_results",
+      "status": "passed"
+    },
+    {
+      "check_id": "typed_delta_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "correlation_groups_coherence_conflicts",
+      "status": "passed"
+    },
+    {
+      "check_id": "counterfactual_graph_paths_and_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "compatibility_impact_severity_decision",
+      "status": "passed"
+    },
+    {
+      "check_id": "evidence_security_and_portability",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c"
+}

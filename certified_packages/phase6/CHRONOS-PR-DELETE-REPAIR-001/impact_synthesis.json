@@ -1,0 +1,72 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "blocking_questions": [
+    {
+      "affected_entities": [
+        "o.order_total"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "downstream_scope": "STRUCTURAL",
+      "question": "Has every active consumer adapted to the proposed structural identity?",
+      "question_id": "pr-question-ed8c94b45c2af33d1028",
+      "required_evidence_types": [
+        "explicit_rename_mapping",
+        "consumer_contract_or_execution_validation"
+      ],
+      "root_cause_id": "pr-root-7598a0e1f1900946f565"
+    }
+  ],
+  "decision": {
+    "certainty": "high_confidence",
+    "decision_rule_id": "pr-decision-material-unresolved",
+    "disposition": "hold_for_review",
+    "precedence": [
+      "confirmed_blocking_incompatibility",
+      "material_unresolved_compatibility",
+      "no_material_change"
+    ]
+  },
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "required_evidence": [
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-5aaaeabd71c27fd27c98",
+      "requirement_type": "explicit_rename_mapping",
+      "root_cause_id": "pr-root-7598a0e1f1900946f565",
+      "state": "MISSING"
+    },
+    {
+      "instruction_type": "EVIDENCE_NOT_REPAIR",
+      "requirement_id": "pr-required-evidence-fe2fc746e3a7f84def50",
+      "requirement_type": "consumer_contract_or_execution_validation",
+      "root_cause_id": "pr-root-7598a0e1f1900946f565",
+      "state": "MISSING"
+    }
+  ],
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "summary": {
+    "coherence_state": "UNRESOLVED",
+    "confirmed_runtime_failure_count": 0,
+    "conflict_count": 0,
+    "downstream_field_count": 21,
+    "logical_change_group_count": 1,
+    "material_delta_count": 1,
+    "root_cause_count": 1
+  },
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

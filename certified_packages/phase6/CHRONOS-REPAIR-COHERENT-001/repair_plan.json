@@ -1,0 +1,287 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_plan",
+  "base_commit": "fixture-base-coherent-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "operation": "GENERATE_REPAIR",
+  "plan": {
+    "affected_files": [],
+    "application_order": [],
+    "blocked_root_ids": [],
+    "classifications": [
+      {
+        "eligible_file_categories": [
+          "PIPELINE_DAG"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-19f072ef9ac4dda4b9ed",
+        "root_type": "FIELD_REFERENCE_CHANGED",
+        "supporting_evidence": [
+          "pr-delta-04f80ede6eacf77cde7b",
+          "pr-file-ab119079a84818f63689",
+          "pr-root-19f072ef9ac4dda4b9ed"
+        ]
+      },
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "Aggregation, filter, join, expression, or metric intent is not repaired automatically.",
+        "remaining_uncertainty": [
+          "product_or_model_owner_intent",
+          "runtime_semantic_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.semantic-intent.v1",
+        "required_preconditions": [
+          "certified_expected_semantic_definition",
+          "owner_approval"
+        ],
+        "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+        "root_type": "SEMANTIC_DEFINITION_CHANGED",
+        "supporting_evidence": [
+          "pr-file-1e0c866550dd9ac8b244",
+          "pr-root-36b103fe6bcace2f0364",
+          "semantic-delta-633d300829a0f0565a5a"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "PIPELINE_DAG"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-47faab2d26d91d84c6b8",
+        "root_type": "PIPELINE_TASK_CHANGED",
+        "supporting_evidence": [
+          "pr-delta-b88efba064ec8ffb6cdb",
+          "pr-file-ab119079a84818f63689",
+          "pr-root-47faab2d26d91d84c6b8"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "QUALITY_CONFIG"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-5948c074dc337c1bccbe",
+        "root_type": "QUALITY_EXPECTATION_CHANGED",
+        "supporting_evidence": [
+          "pr-delta-b6a108da5e6839398ba9",
+          "pr-file-3c1d30b2b3aca04b82b2",
+          "pr-root-5948c074dc337c1bccbe"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "DBT_SCHEMA"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+        "root_type": "CONTRACT_CHANGE",
+        "supporting_evidence": [
+          "pr-delta-ae1381ec53130635a53f",
+          "pr-file-4f4487c1cbff180710d6",
+          "pr-root-7817b15a88cbffb9ef50"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "QUALITY_CONFIG"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-954c22db1a8f801fda93",
+        "root_type": "QUALITY_EXPECTATION_CHANGED",
+        "supporting_evidence": [
+          "pr-delta-c0c13a00a24b919055d3",
+          "pr-file-3c1d30b2b3aca04b82b2",
+          "pr-root-954c22db1a8f801fda93"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "DBT_SCHEMA"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+        "root_type": "CONTRACT_CHANGE",
+        "supporting_evidence": [
+          "pr-delta-5a27fc6c51982093a333",
+          "pr-file-4f4487c1cbff180710d6",
+          "pr-root-a2da326fddd0ab9aa305"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "SQL_MODEL"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-c9162439da886c768124",
+        "root_type": "STRUCTURAL_CHANGE",
+        "supporting_evidence": [
+          "pr-file-1e0c866550dd9ac8b244",
+          "pr-root-c9162439da886c768124",
+          "semantic-delta-41cbe5c61ac7bdf329be"
+        ]
+      },
+      {
+        "eligible_file_categories": [
+          "PIPELINE_DAG"
+        ],
+        "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+        "reason": "This root records a proposed change or unresolved intent, not an independently proven stale target.",
+        "remaining_uncertainty": [
+          "repair_target_not_established",
+          "runtime_validation"
+        ],
+        "repairability": "MANUAL_DECISION_REQUIRED",
+        "repairability_rule_id": "repair.manual.change-source-or-intent.v1",
+        "required_preconditions": [
+          "one_exact_stale_target_or_approved_intent"
+        ],
+        "root_cause_id": "pr-root-d0d9b7770e89b90ae00d",
+        "root_type": "FIELD_REFERENCE_CHANGED",
+        "supporting_evidence": [
+          "pr-delta-462dda0b0ce33097426b",
+          "pr-file-ab119079a84818f63689",
+          "pr-root-d0d9b7770e89b90ae00d"
+        ]
+      }
+    ],
+    "edit_dependencies": [],
+    "expected_compatibility_limitations": [
+      "product_or_model_owner_intent",
+      "repair_target_not_established",
+      "runtime_semantic_validation",
+      "runtime_validation"
+    ],
+    "expected_repository_coherence_improvement": "none",
+    "non_repairable_root_ids": [
+      "pr-root-19f072ef9ac4dda4b9ed",
+      "pr-root-36b103fe6bcace2f0364",
+      "pr-root-47faab2d26d91d84c6b8",
+      "pr-root-5948c074dc337c1bccbe",
+      "pr-root-7817b15a88cbffb9ef50",
+      "pr-root-954c22db1a8f801fda93",
+      "pr-root-a2da326fddd0ab9aa305",
+      "pr-root-c9162439da886c768124",
+      "pr-root-d0d9b7770e89b90ae00d"
+    ],
+    "predecessor_analysis_id": "CHRONOS-PR-COHERENT-001",
+    "repair_actions": [],
+    "repair_analysis_id": "CHRONOS-REPAIR-COHERENT-001",
+    "required_human_decisions": [
+      "pr-root-19f072ef9ac4dda4b9ed",
+      "pr-root-36b103fe6bcace2f0364",
+      "pr-root-47faab2d26d91d84c6b8",
+      "pr-root-5948c074dc337c1bccbe",
+      "pr-root-7817b15a88cbffb9ef50",
+      "pr-root-954c22db1a8f801fda93",
+      "pr-root-a2da326fddd0ab9aa305",
+      "pr-root-c9162439da886c768124",
+      "pr-root-d0d9b7770e89b90ae00d"
+    ],
+    "required_phase_7_validations": [
+      "apply_candidate_patch_in_disposable_checkout",
+      "execute_affected_project_validation",
+      "obtain_human_review_and_owner_approval",
+      "verify_runtime_and_data_semantics"
+    ],
+    "selected_root_cause_ids": [
+      "pr-root-19f072ef9ac4dda4b9ed",
+      "pr-root-36b103fe6bcace2f0364",
+      "pr-root-47faab2d26d91d84c6b8",
+      "pr-root-5948c074dc337c1bccbe",
+      "pr-root-7817b15a88cbffb9ef50",
+      "pr-root-954c22db1a8f801fda93",
+      "pr-root-a2da326fddd0ab9aa305",
+      "pr-root-c9162439da886c768124",
+      "pr-root-d0d9b7770e89b90ae00d"
+    ],
+    "warnings": [
+      "candidate_repairs_are_unapplied",
+      "runtime_correctness_unverified",
+      "human_review_required"
+    ]
+  },
+  "plan_created_before_candidate_edits": true,
+  "predecessor_analysis_fingerprint": "sha256:116d18943cfca658d4a072b9a11ed0d46452d21c0ff00fe66dc2f83da7b23621",
+  "predecessor_analysis_id": "CHRONOS-PR-COHERENT-001",
+  "predecessor_manifest_fingerprint": "sha256:c365a6736f2b0bd2a972206523a784cb5daa17a25ede41841d6f7aeac2edd94a",
+  "proposal_fingerprint": "sha256:d431bc20f8d8ea5fd980e6164da764d8ac8c6890b08bfd8f3407dcdee0491115",
+  "proposal_id": "CHRONOS-REPAIR-COHERENT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-COHERENT-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-REPAIR-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

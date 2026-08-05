@@ -1,0 +1,71 @@
+{
+  "after_input_columns": [
+    {
+      "code_reference": "o.order_total",
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    }
+  ],
+  "after_relations": [
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "entity_resolution",
+  "before_input_columns": [
+    {
+      "code_reference": "o.order_total",
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    }
+  ],
+  "before_relations": [
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "engine_version": "6.2.0",
+  "model": {
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+    "environment": "PROD",
+    "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+    "platform": "dbt",
+    "resolution_state": "RESOLVED"
+  },
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "output_mappings": [
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "mapping_state": "IDENTITY_PRESERVED_SEMANTICS_CHANGED",
+      "output_name": "order_total"
+    }
+  ],
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "star_expansions": [],
+  "unresolved_references": []
+}

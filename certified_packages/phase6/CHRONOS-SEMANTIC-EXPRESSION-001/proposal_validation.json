@@ -1,0 +1,30 @@
+{
+  "after_input_kind": "plain_or_compiled_sql",
+  "after_raw_content_fingerprint": "sha256:e6b2b2d4d1a3452b5655b6822ca9a7738bc3a5dfe61581f027d0da40d74ac2fc",
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "proposal_validation",
+  "before_input_kind": "plain_or_compiled_sql",
+  "before_raw_content_fingerprint": "sha256:573f7899fa59ba05a0b83dffef927d35a59cca6adb4efc1f3aa5c4ba1720504d",
+  "checks": [
+    "strict_proposal",
+    "safe_code_paths",
+    "snapshot_identity",
+    "single_select_model",
+    "parser_version",
+    "exact_model_resolution"
+  ],
+  "dbt_references": [],
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "state": "valid"
+}

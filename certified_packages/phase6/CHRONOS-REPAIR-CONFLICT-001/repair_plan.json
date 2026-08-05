@@ -1,0 +1,160 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_plan",
+  "base_commit": "fixture-base-conflict-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "operation": "GENERATE_REPAIR",
+  "plan": {
+    "affected_files": [],
+    "application_order": [],
+    "blocked_root_ids": [
+      "pr-root-5a2ea23c792396a48c2e",
+      "pr-root-88a67c0122ccdf45b1aa",
+      "pr-root-a131c4680a349328b974",
+      "pr-root-c9162439da886c768124",
+      "pr-root-eeb16f4cbad69d12f847"
+    ],
+    "classifications": [
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-313ca281d034f2ee660a",
+        "reason": "The certified predecessor preserves competing future identities; Phase 6.4 cannot choose one.",
+        "remaining_uncertainty": [
+          "authoritative_future_identity"
+        ],
+        "repairability": "BLOCKED_BY_CONFLICT",
+        "repairability_rule_id": "repair.blocked.explicit-conflict.v1",
+        "required_preconditions": [
+          "one_separately_validated_authoritative_future_identity"
+        ],
+        "root_cause_id": "pr-root-5a2ea23c792396a48c2e",
+        "root_type": "CONTRACT_CHANGE",
+        "supporting_evidence": [
+          "pr-delta-f552bbc8164e098604b6",
+          "pr-file-4f4487c1cbff180710d6",
+          "pr-root-5a2ea23c792396a48c2e"
+        ]
+      },
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-313ca281d034f2ee660a",
+        "reason": "The certified predecessor preserves competing future identities; Phase 6.4 cannot choose one.",
+        "remaining_uncertainty": [
+          "authoritative_future_identity"
+        ],
+        "repairability": "BLOCKED_BY_CONFLICT",
+        "repairability_rule_id": "repair.blocked.explicit-conflict.v1",
+        "required_preconditions": [
+          "one_separately_validated_authoritative_future_identity"
+        ],
+        "root_cause_id": "pr-root-88a67c0122ccdf45b1aa",
+        "root_type": "CONFLICTING_FUTURE_FIELD_IDENTITIES",
+        "supporting_evidence": [
+          "pr-file-1e0c866550dd9ac8b244",
+          "pr-file-4f4487c1cbff180710d6",
+          "pr-file-ab119079a84818f63689",
+          "pr-root-88a67c0122ccdf45b1aa"
+        ]
+      },
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-313ca281d034f2ee660a",
+        "reason": "The certified predecessor preserves competing future identities; Phase 6.4 cannot choose one.",
+        "remaining_uncertainty": [
+          "authoritative_future_identity"
+        ],
+        "repairability": "BLOCKED_BY_CONFLICT",
+        "repairability_rule_id": "repair.blocked.explicit-conflict.v1",
+        "required_preconditions": [
+          "one_separately_validated_authoritative_future_identity"
+        ],
+        "root_cause_id": "pr-root-a131c4680a349328b974",
+        "root_type": "CONTRACT_CHANGE",
+        "supporting_evidence": [
+          "pr-delta-bbb7074ea4274a953734",
+          "pr-file-4f4487c1cbff180710d6",
+          "pr-root-a131c4680a349328b974"
+        ]
+      },
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-313ca281d034f2ee660a",
+        "reason": "The certified predecessor preserves competing future identities; Phase 6.4 cannot choose one.",
+        "remaining_uncertainty": [
+          "authoritative_future_identity"
+        ],
+        "repairability": "BLOCKED_BY_CONFLICT",
+        "repairability_rule_id": "repair.blocked.explicit-conflict.v1",
+        "required_preconditions": [
+          "one_separately_validated_authoritative_future_identity"
+        ],
+        "root_cause_id": "pr-root-c9162439da886c768124",
+        "root_type": "STRUCTURAL_CHANGE",
+        "supporting_evidence": [
+          "pr-file-1e0c866550dd9ac8b244",
+          "pr-root-c9162439da886c768124",
+          "semantic-delta-41cbe5c61ac7bdf329be"
+        ]
+      },
+      {
+        "eligible_file_categories": [],
+        "logical_change_group_id": "logical-change-313ca281d034f2ee660a",
+        "reason": "The certified predecessor preserves competing future identities; Phase 6.4 cannot choose one.",
+        "remaining_uncertainty": [
+          "authoritative_future_identity"
+        ],
+        "repairability": "BLOCKED_BY_CONFLICT",
+        "repairability_rule_id": "repair.blocked.explicit-conflict.v1",
+        "required_preconditions": [
+          "one_separately_validated_authoritative_future_identity"
+        ],
+        "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+        "root_type": "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+        "supporting_evidence": [
+          "pr-file-ab119079a84818f63689",
+          "pr-root-eeb16f4cbad69d12f847"
+        ]
+      }
+    ],
+    "edit_dependencies": [],
+    "expected_compatibility_limitations": [
+      "authoritative_future_identity"
+    ],
+    "expected_repository_coherence_improvement": "none",
+    "non_repairable_root_ids": [],
+    "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+    "repair_actions": [],
+    "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+    "required_human_decisions": [],
+    "required_phase_7_validations": [
+      "apply_candidate_patch_in_disposable_checkout",
+      "execute_affected_project_validation",
+      "obtain_human_review_and_owner_approval",
+      "verify_runtime_and_data_semantics"
+    ],
+    "selected_root_cause_ids": [
+      "pr-root-5a2ea23c792396a48c2e",
+      "pr-root-88a67c0122ccdf45b1aa",
+      "pr-root-a131c4680a349328b974",
+      "pr-root-c9162439da886c768124",
+      "pr-root-eeb16f4cbad69d12f847"
+    ],
+    "warnings": [
+      "candidate_repairs_are_unapplied",
+      "runtime_correctness_unverified",
+      "human_review_required"
+    ]
+  },
+  "plan_created_before_candidate_edits": true,
+  "predecessor_analysis_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+  "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "predecessor_manifest_fingerprint": "sha256:b5f185680543f7e9bb422a9a4302e6d7d05b41cbbfe0ecb5015b0162dab1eae2",
+  "proposal_fingerprint": "sha256:a2e551cb9219ddf4d28927727766c465406231d9ed098fc147dee42a838b48b3",
+  "proposal_id": "CHRONOS-REPAIR-CONFLICT-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-REPAIR-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

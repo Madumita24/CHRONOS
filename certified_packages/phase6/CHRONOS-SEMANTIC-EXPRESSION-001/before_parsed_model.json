@@ -1,0 +1,71 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "before_parsed_model",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parsed_model": {
+    "canonical_ast_fingerprint": "sha256:f606bc2ba8c53d0882e9f48d7e4885e0f45575f3d93cdc3db4afeb9cfab767b4",
+    "canonical_sql": "SELECT o.order_total * 1.0 AS order_total FROM order_entry_db.order_entry.orders AS o",
+    "ctes": [],
+    "dialect": "postgres",
+    "filter_columns": [],
+    "filter_literals": [],
+    "filter_operators": [],
+    "filter_predicate": null,
+    "grouping": [],
+    "joins": [],
+    "ordering": [],
+    "output_columns": [
+      {
+        "aggregations": [],
+        "data_type_state": "UNKNOWN",
+        "expression_fingerprint": "sha256:12b64916811f8f44e1218e98f757934249b47a6fd9175555261a57efb9a7ad3a",
+        "functions": [],
+        "has_case": false,
+        "has_window": false,
+        "input_columns": [
+          {
+            "name": "order_total",
+            "normalized": "o.order_total",
+            "qualifier": "o"
+          }
+        ],
+        "lineage_derivation": "CODE_DERIVED_REFERENCE",
+        "literals": [
+          "1.0"
+        ],
+        "normalized_expression": "o.order_total * 1.0",
+        "operators": [
+          "MUL"
+        ],
+        "ordinal": 0,
+        "output_name": "order_total",
+        "source_relations": [
+          "o"
+        ]
+      }
+    ],
+    "parser_name": "sqlglot",
+    "parser_version": "30.13.0",
+    "source_relations": [
+      {
+        "alias": "o",
+        "is_cte": false,
+        "qualified_name": "order_entry_db.order_entry.orders"
+      }
+    ],
+    "statement_type": "SELECT",
+    "unresolved_stars": [],
+    "windows": []
+  },
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres"
+}

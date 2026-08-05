@@ -1,0 +1,115 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "remaining_findings",
+  "base_commit": "fixture-base-conflict-v1",
+  "blocked_root_ids": [
+    "pr-root-5a2ea23c792396a48c2e",
+    "pr-root-88a67c0122ccdf45b1aa",
+    "pr-root-a131c4680a349328b974",
+    "pr-root-c9162439da886c768124",
+    "pr-root-eeb16f4cbad69d12f847"
+  ],
+  "engine_version": "6.4.0",
+  "execution_evidence_state": "MISSING_PHASE_7_VALIDATION",
+  "head_commit": "fixture-head-conflict-v1",
+  "manual_decision_root_ids": [],
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:c3d58ad7f89cc5d0269eaa5dc23681fecb87136f71958ecfe06e646959280a6a",
+  "predecessor_analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "predecessor_manifest_fingerprint": "sha256:b5f185680543f7e9bb422a9a4302e6d7d05b41cbbfe0ecb5015b0162dab1eae2",
+  "projection_state": "STATIC_PROJECTED_NO_PATCH",
+  "proposal_fingerprint": "sha256:a2e551cb9219ddf4d28927727766c465406231d9ed098fc147dee42a838b48b3",
+  "proposal_id": "CHRONOS-REPAIR-CONFLICT-PROPOSAL-001",
+  "remaining_predecessor_roots": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-f552bbc8164e098604b6"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-313ca281d034f2ee660a",
+      "resolved_entities": [
+        "order_details",
+        "total_amount"
+      ],
+      "root_cause_id": "pr-root-5a2ea23c792396a48c2e",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:total_amount"
+    },
+    {
+      "compatibility_state": "CONFIRMED_CONFLICT",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "delta_ids": [],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": null,
+      "resolved_entities": [
+        "order_amount",
+        "total_amount"
+      ],
+      "root_cause_id": "pr-root-88a67c0122ccdf45b1aa",
+      "root_type": "CONFLICTING_FUTURE_FIELD_IDENTITIES",
+      "scope": "order_total"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-bbb7074ea4274a953734"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-313ca281d034f2ee660a",
+      "resolved_entities": [
+        "order_details",
+        "order_total"
+      ],
+      "root_cause_id": "pr-root-a131c4680a349328b974",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:order_total"
+    },
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-313ca281d034f2ee660a",
+      "resolved_entities": [],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "root_type": "STRUCTURAL_CHANGE",
+      "scope": "STRUCTURAL"
+    },
+    {
+      "compatibility_state": "REPOSITORY_INCONSISTENT",
+      "contributing_file_ids": [
+        "pr-file-ab119079a84818f63689"
+      ],
+      "delta_ids": [],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": null,
+      "resolved_entities": [
+        "order_total",
+        "order_amount"
+      ],
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "root_type": "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+      "scope": "dags/orders_pipeline.py"
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-CONFLICT-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-REPAIR-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

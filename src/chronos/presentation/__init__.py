@@ -13,6 +13,7 @@ from .explorer_service import CertifiedImpactExplorerService
 from .graph_models import CertifiedGraphReview
 from .graph_service import CertifiedGraphService
 from .service import CertifiedReviewService
+from .phase6_service import Phase6PresentationService
 
 __all__ = [
     "EXPECTED_PHASE4_CERTIFICATION_FINGERPRINT",
@@ -23,6 +24,7 @@ __all__ = [
     "CertifiedImpactExplorerService",
     "CertifiedReviewNotFound",
     "CertifiedReviewService",
+    "Phase6PresentationService",
     "PresentationBoundaryError",
     "PresentationIntegrityError",
     "create_app",

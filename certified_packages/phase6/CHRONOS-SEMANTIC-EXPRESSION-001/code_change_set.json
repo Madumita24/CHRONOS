@@ -1,0 +1,79 @@
+{
+  "after_ast_fingerprint": "sha256:9d5311a5726502e733be07930de935265f7d9cc7ef09c9f74561cf633d8f960c",
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "code_change_set",
+  "before_ast_fingerprint": "sha256:f606bc2ba8c53d0882e9f48d7e4885e0f45575f3d93cdc3db4afeb9cfab767b4",
+  "code_change_set_fingerprint": "sha256:e2193f5df963c4e64e91d1ab550b661c4999f0b6fa095d2cd1d608133c625e7f",
+  "engine_version": "6.2.0",
+  "evidence_summary": {
+    "code_derived_delta_count": 1,
+    "observed_model_count": 1,
+    "unresolved_reference_count": 0
+  },
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+  "resolved_entities": {
+    "model": {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    "outputs": [
+      {
+        "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+        "mapping_state": "IDENTITY_PRESERVED_SEMANTICS_CHANGED",
+        "output_name": "order_total"
+      }
+    ],
+    "relations": [
+      {
+        "alias": "o",
+        "code_relation": "order_entry_db.order_entry.orders",
+        "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+        "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+        "resolution_state": "RESOLVED",
+        "resolution_type": "EXACT_PLATFORM_RELATION"
+      }
+    ]
+  },
+  "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+  "semantic_deltas": [
+    {
+      "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "affected_output_field": "order_total",
+      "after_representation": "o.order_total * 0.9",
+      "before_representation": "o.order_total * 1.0",
+      "certainty": "DERIVED",
+      "change_components": [
+        "literal_changed"
+      ],
+      "delta_id": "semantic-delta-eed5dc9cc5981138286b",
+      "delta_type": "DERIVED_EXPRESSION_CHANGE",
+      "evidence_references": [
+        "before_parsed_model",
+        "after_parsed_model"
+      ],
+      "explanation": "Derived expression semantics changed for output order_total: literal_changed.",
+      "input_references": [
+        "o.order_total"
+      ],
+      "scope": "OUTPUT_FIELD"
+    }
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "structural_deltas": [],
+  "unresolved_references": [],
+  "warnings": [
+    "Semantic compatibility remains unresolved without contract or execution evidence."
+  ]
+}

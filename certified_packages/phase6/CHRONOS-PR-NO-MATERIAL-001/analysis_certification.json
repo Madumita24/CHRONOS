@@ -1,0 +1,78 @@
+{
+  "analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "analysis_semantic_fingerprint": "sha256:3e755795e55b832a1b464be7a7ca2dad28ac2829d2fdcb4c0a44347a4180ca23",
+  "artifact_fingerprints": {
+    "business_context_propagation.json": "sha256:07cda6e415b774a4032c4b58a1ef218cbc55d004ef5ebcd394214d299b7e053f",
+    "changed_file_inventory.json": "sha256:d9236aa858a3dddf00dc757262ff26fd722f5a2072b9da8ec82bb884c7c6902e",
+    "coherence_evaluation.json": "sha256:df35edb2e1033a290c009ff91f48ea59c3c01aca649d2486a01439fbc1bf903a",
+    "compatibility_evaluation.json": "sha256:c8879a68c6ffff804437031d6cfb1fd30ef621a531e1caa9dff9bbd937279f89",
+    "composite_change_set.json": "sha256:1c79a91eb056d71dc26375260025b321aedad6b467edf857472c0ff67b831fd9",
+    "contract_quality_change_set.json": "sha256:f24217f51bf7dcada140456c352ce8fa4070a24c22633a733d172e4366bf98b0",
+    "counterfactual_metadata_state.json": "sha256:a702ccefdc8851fc2060cdf74e05e229a2d101e24161f9318a4f4777415c7523",
+    "counterfactual_repository_state.json": "sha256:7a2910c072ce990f46b5e9239f7cb8e90e25fed0b58d3ec5cf3671caf9c14547",
+    "dependency_propagation.json": "sha256:5ceee452b8fd4bca85e7eea7f8c6c39a27903ebc5224434ab7945ee59287ea6d",
+    "entity_resolution.json": "sha256:6ad9181f57169e21944cadb3776d38f1439d6aab9864e406bd80b7ebe7e6a938",
+    "explanation_bundle.json": "sha256:d82a4b362b6dd20c185ec458a8d77c5feb145b7533803d0d6af7381b0aa05cdd",
+    "file_analysis_results.json": "sha256:d0a733c486cc2077ecee54b8de487c8828414ef70bc59cd92c81a7798a38ac5c",
+    "file_classification.json": "sha256:1ee77dc7214c5ce8bd25f225fac1403cb55a2016ae9718bad92e87aa3111f99d",
+    "future_metadata_graph.json": "sha256:86e08264bd2d13c788f67642c51e98f1e4a98f312f13b471bd561e68811fa305",
+    "impact_synthesis.json": "sha256:1d8276437f03a9d6114907b9c4517a5c64f70bc2cf2286639028409fcbc35557",
+    "logical_change_groups.json": "sha256:50b181336ba8be787758e57376f3b78c98522dfa6244d662a03eff49b39464a6",
+    "pipeline_change_set.json": "sha256:032e34f793711dde5e7f71aa39638c64f359ceaf781a1b01926f10d7807140c0",
+    "pr_analysis_proposal.json": "sha256:9f8437fc4123ed7f8c0a5aa8d732ff387f96bb14a645116f711b094fd9c1c29b",
+    "proposal_validation.json": "sha256:6d522ea5c9ac9b0af56f4c962bafdf30be9a9369e55573982aec6545c42394ba",
+    "repository_identity.json": "sha256:4a5a51fef06a167d4fc72799436173cfcc5d3127656bca569066835bd695798a",
+    "semantic_change_set.json": "sha256:a8519129a29df5b70dba8e70949a07ecc5a41b92863ebf169487860fa5badd82",
+    "severity_criticality_analysis.json": "sha256:e2dd06d98a4aeb1c3bf56c0e44d935f46108cc601d3016d911d93603f86962d0",
+    "structural_change_set.json": "sha256:d1b6a38ce370935e3a6744d236b0472b1ce69e20b0adaf71e9011866c20ddc36",
+    "technical_impact_analysis.json": "sha256:236a1fa825bac6aac0e8e63f1864d7af86644eb34cef43cfa5e41ad7a3c98989"
+  },
+  "artifact_schema_version": "1.0",
+  "artifact_type": "pr_analysis_certification",
+  "base_commit": "fixture-base-no-material-v1",
+  "certification_status": "certified",
+  "checks": [
+    {
+      "check_id": "package_contract",
+      "status": "passed"
+    },
+    {
+      "check_id": "identity_snapshot_repository_base_head",
+      "status": "passed"
+    },
+    {
+      "check_id": "changed_file_inventory_and_fingerprints",
+      "status": "passed"
+    },
+    {
+      "check_id": "parser_assignments_and_file_results",
+      "status": "passed"
+    },
+    {
+      "check_id": "typed_delta_integrity",
+      "status": "passed"
+    },
+    {
+      "check_id": "correlation_groups_coherence_conflicts",
+      "status": "passed"
+    },
+    {
+      "check_id": "counterfactual_graph_paths_and_traceability",
+      "status": "passed"
+    },
+    {
+      "check_id": "compatibility_impact_severity_decision",
+      "status": "passed"
+    },
+    {
+      "check_id": "evidence_security_and_portability",
+      "status": "passed"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-no-material-v1",
+  "proposal_fingerprint": "sha256:cf734e418b9f56c23d4dbc0325be837cd784ccb8f9cc02dae1cf09acca9c8424",
+  "proposal_id": "CHRONOS-PR-NO-MATERIAL-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c"
+}

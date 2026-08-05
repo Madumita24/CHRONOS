@@ -1,0 +1,100 @@
+.p6-graph-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.p6-graph-tabs button {
+  border: 1px solid var(--p6-line, #cbd5e1);
+  border-radius: 0.45rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+}
+
+.p6-graph-tabs button[aria-selected="true"] {
+  border-color: #2563eb;
+  box-shadow: inset 0 -3px #2563eb;
+}
+
+.p6-path-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.p6-path-buttons button {
+  border: 1px solid var(--p6-line, #cbd5e1);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0.45rem 0.75rem;
+}
+
+.p6-path-buttons button[aria-pressed="true"] {
+  border-color: #2563eb;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.p6-path-detail {
+  border-left: 3px solid #2563eb;
+  background: #eff6ff;
+  color: #172554;
+  margin: 0 0 1rem;
+  overflow-wrap: anywhere;
+  padding: 1rem;
+}
+
+.p6-path-detail dl {
+  margin-bottom: 0;
+}
+
+.p6-related {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.p6-trace-group {
+  border: 1px solid var(--p6-line, #cbd5e1);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  margin: 0.75rem;
+  padding: 0.45rem 0.7rem;
+}
+
+.p6-panel,
+.p6-patches,
+.p6-patch {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.p6-diff {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+}
+
+.p6-diff > div {
+  min-width: 600px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .p6-path-buttons button[aria-pressed="true"],
+  .p6-path-detail {
+    background: #172554;
+    color: #dbeafe;
+  }
+}

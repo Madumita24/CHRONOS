@@ -1,0 +1,110 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "logical_change_groups",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.3.0",
+  "groups": [
+    {
+      "change_categories": [
+        "DocumentationOnlyDelta",
+        "ModelContractDelta",
+        "SemanticSqlDelta",
+        "StructuralFieldDelta"
+      ],
+      "coherence_state": "INCONSISTENT",
+      "contract_delta_ids": [
+        "pr-delta-5a27fc6c51982093a333",
+        "pr-delta-ae1381ec53130635a53f"
+      ],
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244",
+        "pr-file-3c1d30b2b3aca04b82b2",
+        "pr-file-4f4487c1cbff180710d6",
+        "pr-file-ab119079a84818f63689"
+      ],
+      "counterfactual_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "current_field": "order_total",
+      "evidence_references": [
+        "pr-delta-5a27fc6c51982093a333",
+        "pr-delta-ae1381ec53130635a53f",
+        "pr-delta-f31bcc0dcb707a90d47f",
+        "pr-stale-a5b4bdb8f3fe2e5fb55b",
+        "pr-stale-fac24903886b23238ee7",
+        "semantic-delta-41cbe5c61ac7bdf329be",
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "future_fields": [
+        "order_amount"
+      ],
+      "logical_change_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "pipeline_delta_ids": [],
+      "resolved_current_entities": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+      ],
+      "root_cause_candidates": [
+        "pr-root-2297cb428bdd70d7b419",
+        "pr-root-36b103fe6bcace2f0364",
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-a98a2a0a7336ab9891d8",
+        "pr-root-c9162439da886c768124",
+        "pr-root-eeb16f4cbad69d12f847"
+      ],
+      "semantic_delta_ids": [
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "structural_delta_ids": [
+        "semantic-delta-41cbe5c61ac7bdf329be"
+      ],
+      "warnings": [
+        "execution_validity_unverified"
+      ]
+    },
+    {
+      "change_categories": [
+        "ModelContractDelta"
+      ],
+      "coherence_state": "UNRESOLVED",
+      "contract_delta_ids": [
+        "pr-delta-a61eafde7eab35f8b410"
+      ],
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_entities": [],
+      "current_field": null,
+      "evidence_references": [
+        "pr-delta-a61eafde7eab35f8b410"
+      ],
+      "future_fields": [],
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+      "model_dataset_urn": null,
+      "pipeline_delta_ids": [],
+      "resolved_current_entities": [],
+      "root_cause_candidates": [
+        "pr-root-7817b15a88cbffb9ef50",
+        "pr-root-a2da326fddd0ab9aa305",
+        "pr-root-a98a2a0a7336ab9891d8"
+      ],
+      "semantic_delta_ids": [],
+      "structural_delta_ids": [],
+      "warnings": [
+        "no_cross_file_identity_evidence"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

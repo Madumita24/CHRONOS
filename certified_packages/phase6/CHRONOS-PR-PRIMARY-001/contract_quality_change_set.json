@@ -1,0 +1,133 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "contract_quality_change_set",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "deltas": [
+    {
+      "after": null,
+      "before": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "order_total",
+        "tags": [],
+        "tests": [
+          "not_null"
+        ]
+      },
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-5a27fc6c51982093a333",
+      "delta_type": "COLUMN_REMOVED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_details",
+        "order_total"
+      ],
+      "scope": "model:order_details:column:order_total"
+    },
+    {
+      "after": true,
+      "before": false,
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-a61eafde7eab35f8b410",
+      "delta_type": "CONTRACT_ENFORCEMENT_CHANGED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "dbt model contract enforcement changed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_details"
+      ],
+      "scope": "model:order_details"
+    },
+    {
+      "after": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "order_amount",
+        "tags": [],
+        "tests": [
+          "not_null"
+        ]
+      },
+      "before": null,
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-ae1381ec53130635a53f",
+      "delta_type": "COLUMN_ADDED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_amount",
+        "order_details"
+      ],
+      "scope": "model:order_details:column:order_amount"
+    },
+    {
+      "after": {
+        "references": [
+          {
+            "kind": "expected_type",
+            "location": "quality.checks[0].expected_type",
+            "value": "numeric"
+          },
+          {
+            "kind": "field",
+            "location": "quality.checks[0].field",
+            "value": "order_total"
+          }
+        ]
+      },
+      "before": {
+        "references": [
+          {
+            "kind": "expected_type",
+            "location": "quality.checks[0].expected_type",
+            "value": "numeric"
+          },
+          {
+            "kind": "field",
+            "location": "quality.checks[0].field",
+            "value": "order_total"
+          }
+        ]
+      },
+      "delta_class": "DocumentationOnlyDelta",
+      "delta_id": "pr-delta-f31bcc0dcb707a90d47f",
+      "delta_type": "CONFIG_DOCUMENTATION_CHANGED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "Configuration text changed without changing an allowlisted static reference.",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "file_path": "quality/order_checks.yml",
+      "material": false,
+      "path": "quality/order_checks.yml",
+      "references": [],
+      "scope": "FILE"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

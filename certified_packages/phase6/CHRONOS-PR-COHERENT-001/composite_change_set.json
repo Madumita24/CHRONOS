@@ -1,0 +1,96 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "composite_change_set",
+  "base_commit": "fixture-base-coherent-v1",
+  "changed_file_ids": [
+    "pr-file-1e0c866550dd9ac8b244",
+    "pr-file-3c1d30b2b3aca04b82b2",
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-ab119079a84818f63689"
+  ],
+  "coherence_state": "COHERENT",
+  "conflicts": [],
+  "counterfactual_entities": [
+    {
+      "counterfactual_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "current_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "resolution_state": "COUNTERFACTUAL"
+    }
+  ],
+  "delta_ids": [
+    "pr-delta-04f80ede6eacf77cde7b",
+    "pr-delta-462dda0b0ce33097426b",
+    "pr-delta-5a27fc6c51982093a333",
+    "pr-delta-ae1381ec53130635a53f",
+    "pr-delta-b6a108da5e6839398ba9",
+    "pr-delta-b88efba064ec8ffb6cdb",
+    "pr-delta-c0c13a00a24b919055d3",
+    "semantic-delta-41cbe5c61ac7bdf329be",
+    "semantic-delta-633d300829a0f0565a5a"
+  ],
+  "engine_version": "6.3.0",
+  "evidence_summary": {
+    "conflict_count": 0,
+    "file_count": 4,
+    "material_delta_count": 9,
+    "root_cause_count": 9
+  },
+  "file_analysis_ids": [
+    "pr-file-1e0c866550dd9ac8b244",
+    "pr-file-3c1d30b2b3aca04b82b2",
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-ab119079a84818f63689"
+  ],
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_group_ids": [
+    "logical-change-126d3f18d2b8ecd8f7db"
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_identity": {
+    "base": "fixture-base-coherent-v1",
+    "head": "fixture-head-coherent-v1"
+  },
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "repository_identity": {
+    "analysis_root": ".",
+    "base_commit": "fixture-base-coherent-v1",
+    "head_commit": "fixture-head-coherent-v1",
+    "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+    "repository_name": "chronos-multifile-coherent",
+    "repository_namespace": "Madumita24"
+  },
+  "resolved_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "unresolved_references": [],
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

@@ -1,0 +1,607 @@
+{
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-TYPE-CHANGE-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_source_state",
+  "created_at": "2026-08-05T00:00:00Z",
+  "current_source_schema": {
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "field_count": 15,
+    "fields": [
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_id",
+        "field_path": "order_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 0,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_date",
+        "field_path": "order_date",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 1,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_mode",
+        "field_path": "order_mode",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 2,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "customer_id",
+        "field_path": "customer_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 3,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_status",
+        "field_path": "order_status",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 4,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_total",
+        "field_path": "order_total",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "DOUBLE PRECISION",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 5,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "sales_rep_id",
+        "field_path": "sales_rep_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 6,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "promotion_id",
+        "field_path": "promotion_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "DOUBLE PRECISION",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 7,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "warehouse_id",
+        "field_path": "warehouse_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 8,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "delivery_type",
+        "field_path": "delivery_type",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 9,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "cost_of_delivery",
+        "field_path": "cost_of_delivery",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "DOUBLE PRECISION",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 10,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "wait_till_complete_yn",
+        "field_path": "wait_till_complete_yn",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 11,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "billing_address_id",
+        "field_path": "billing_address_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 12,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "delivery_address_id",
+        "field_path": "delivery_address_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 13,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "payment_method_code",
+        "field_path": "payment_method_code",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 14,
+        "recursive": false,
+        "schema_field_urn": null
+      }
+    ]
+  },
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "engine_version": "6.1.0",
+  "invariants": {
+    "current_field_paths_unique": true,
+    "projected_field_paths_unique": true,
+    "unaffected_field_order_preserved": true
+  },
+  "operation": "FIELD_TYPE_CHANGE",
+  "projected_source_schema": {
+    "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "field_count": 15,
+    "fields": [
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_id",
+        "field_path": "order_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 0,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_date",
+        "field_path": "order_date",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 1,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_mode",
+        "field_path": "order_mode",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 2,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "customer_id",
+        "field_path": "customer_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 3,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_status",
+        "field_path": "order_status",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 4,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "STRING",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "order_total",
+        "field_path": "order_total",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "STRING",
+        "nullable": true,
+        "position": 5,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "sales_rep_id",
+        "field_path": "sales_rep_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 6,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "promotion_id",
+        "field_path": "promotion_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "DOUBLE PRECISION",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 7,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "warehouse_id",
+        "field_path": "warehouse_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 8,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "delivery_type",
+        "field_path": "delivery_type",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 9,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "cost_of_delivery",
+        "field_path": "cost_of_delivery",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "DOUBLE PRECISION",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 10,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "wait_till_complete_yn",
+        "field_path": "wait_till_complete_yn",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 11,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "billing_address_id",
+        "field_path": "billing_address_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 12,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "NumberTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "delivery_address_id",
+        "field_path": "delivery_address_id",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "BIGINT",
+        "normalized_type": "Number",
+        "nullable": true,
+        "position": 13,
+        "recursive": false,
+        "schema_field_urn": null
+      },
+      {
+        "datahub_type": "StringTypeClass",
+        "description": null,
+        "evidence_ids": [
+          "evidence-bebb57d7bd9c4afc03bf"
+        ],
+        "field_name": "payment_method_code",
+        "field_path": "payment_method_code",
+        "is_part_of_key": false,
+        "is_partitioning_key": null,
+        "json_path": null,
+        "label": null,
+        "native_type": "TEXT",
+        "normalized_type": "String",
+        "nullable": true,
+        "position": 14,
+        "recursive": false,
+        "schema_field_urn": null
+      }
+    ]
+  },
+  "proposal_fingerprint": "sha256:088e995d8193a209b44693683b1693c36722e4ac4ca727a7d9e790d3729c7de6",
+  "proposal_id": "CHRONOS-EXAMPLE-TYPE-PROPOSAL-001",
+  "source_change": {
+    "current_field_path": "order_total",
+    "current_native_type": "DOUBLE PRECISION",
+    "current_normalized_type": "Number",
+    "projected_field_path": "order_total",
+    "projected_state": "type_changed"
+  },
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

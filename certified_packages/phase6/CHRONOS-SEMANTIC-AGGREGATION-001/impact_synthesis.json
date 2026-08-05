@@ -1,0 +1,80 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-AGGREGATION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "blocking_questions": [
+    {
+      "affected_output_field": "order_total",
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "question": "Is the aggregation change for order_total an approved redefinition of the downstream metric?",
+      "question_id": "semantic-question-5d6a162c9ffeba8a3009",
+      "required_evidence_ids": [
+        "semantic-required-evidence-0a2e5baa9faea9417b90",
+        "semantic-required-evidence-33fd01597bd8ba2135b1",
+        "semantic-required-evidence-37a8561abf00914400ce",
+        "semantic-required-evidence-8bf4cc26b31f261cfa66"
+      ],
+      "resolution_state": "UNRESOLVED",
+      "subject": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)"
+    }
+  ],
+  "created_at": "2026-08-05T00:00:00Z",
+  "decision": {
+    "certainty": "high_confidence",
+    "disposition": "hold_for_review",
+    "reason_codes": [
+      "semantic_compatibility_unresolved",
+      "certified_downstream_reach"
+    ],
+    "rule_id": "semantic-decision-hold-unresolved-downstream-reach"
+  },
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:71377af9190182ed9434365b6b21d35d5a0adf1c1b19cf9d0ede29e5472b741c",
+  "proposal_id": "CHRONOS-SEMANTIC-AGGREGATION-PROPOSAL-001",
+  "required_evidence": [
+    {
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "required_evidence_id": "semantic-required-evidence-0a2e5baa9faea9417b90",
+      "requirement_type": "approved_metric_definition",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "order_total"
+    },
+    {
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "required_evidence_id": "semantic-required-evidence-33fd01597bd8ba2135b1",
+      "requirement_type": "model_owner_or_contract_approval",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "order_total"
+    },
+    {
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "required_evidence_id": "semantic-required-evidence-37a8561abf00914400ce",
+      "requirement_type": "downstream_semantic_tests",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "order_total"
+    },
+    {
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "required_evidence_id": "semantic-required-evidence-8bf4cc26b31f261cfa66",
+      "requirement_type": "execution_comparison",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-AGGREGATION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "summary": {
+    "affected_dataset_count": 16,
+    "affected_field_count": 21,
+    "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+    "semantic_delta_count": 1,
+    "severity_if_realized": "high",
+    "structural_delta_count": 0
+  }
+}

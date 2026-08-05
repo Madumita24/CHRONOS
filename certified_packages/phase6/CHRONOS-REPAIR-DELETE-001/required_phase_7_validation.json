@@ -1,0 +1,46 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "required_phase_7_validation",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "engine_version": "6.4.0",
+  "execution_performed_in_phase_6_4": false,
+  "head_commit": "fixture-head-delete-repair-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "proposal_fingerprint": "sha256:5dfb7bc4e0334157c3404ae83bd6d6b8b33a4fe0554d664109cd62a1f4e8cb44",
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-REPAIR-DELETE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "validations": [
+    {
+      "phase": "7",
+      "state": "REQUIRED_NOT_EXECUTED",
+      "validation_id": "apply_candidate_patch_in_disposable_checkout"
+    },
+    {
+      "phase": "7",
+      "state": "REQUIRED_NOT_EXECUTED",
+      "validation_id": "execute_affected_project_validation"
+    },
+    {
+      "phase": "7",
+      "state": "REQUIRED_NOT_EXECUTED",
+      "validation_id": "obtain_human_review_and_owner_approval"
+    },
+    {
+      "phase": "7",
+      "state": "REQUIRED_NOT_EXECUTED",
+      "validation_id": "phase_7_consumer_and_quality_validation"
+    },
+    {
+      "phase": "7",
+      "state": "REQUIRED_NOT_EXECUTED",
+      "validation_id": "verify_runtime_and_data_semantics"
+    }
+  ]
+}

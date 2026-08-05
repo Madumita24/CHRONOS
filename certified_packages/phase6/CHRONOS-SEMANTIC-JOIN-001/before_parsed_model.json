@@ -1,0 +1,95 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-JOIN-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "before_parsed_model",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parsed_model": {
+    "canonical_ast_fingerprint": "sha256:5d883cd4661478788c887851b8bc83be4ea919e2b0701b4ea929b2a2cc2dceba",
+    "canonical_sql": "SELECT o.order_total AS order_total FROM order_entry_db.order_entry.orders AS o LEFT JOIN order_entry_db.analytics.order_history AS h ON o.order_total = h.order_total",
+    "ctes": [],
+    "dialect": "snowflake",
+    "filter_columns": [],
+    "filter_literals": [],
+    "filter_operators": [],
+    "filter_predicate": null,
+    "grouping": [],
+    "joins": [
+      {
+        "join_type": "LEFT JOIN",
+        "normalized_predicate": "o.order_total = h.order_total",
+        "ordinal": 0,
+        "predicate_columns": [
+          {
+            "name": "order_total",
+            "normalized": "h.order_total",
+            "qualifier": "h"
+          },
+          {
+            "name": "order_total",
+            "normalized": "o.order_total",
+            "qualifier": "o"
+          }
+        ],
+        "relation": {
+          "alias": "h",
+          "is_cte": false,
+          "qualified_name": "order_entry_db.analytics.order_history"
+        }
+      }
+    ],
+    "ordering": [],
+    "output_columns": [
+      {
+        "aggregations": [],
+        "data_type_state": "UNKNOWN",
+        "expression_fingerprint": "sha256:da39e2960eaf5591d8fe026dfff43ba63ac63f0447a8c83d90b3c429280e754d",
+        "functions": [],
+        "has_case": false,
+        "has_window": false,
+        "input_columns": [
+          {
+            "name": "order_total",
+            "normalized": "o.order_total",
+            "qualifier": "o"
+          }
+        ],
+        "lineage_derivation": "CODE_DERIVED_REFERENCE",
+        "literals": [],
+        "normalized_expression": "o.order_total",
+        "operators": [],
+        "ordinal": 0,
+        "output_name": "order_total",
+        "source_relations": [
+          "o"
+        ]
+      }
+    ],
+    "parser_name": "sqlglot",
+    "parser_version": "30.13.0",
+    "source_relations": [
+      {
+        "alias": "h",
+        "is_cte": false,
+        "qualified_name": "order_entry_db.analytics.order_history"
+      },
+      {
+        "alias": "o",
+        "is_cte": false,
+        "qualified_name": "order_entry_db.order_entry.orders"
+      }
+    ],
+    "statement_type": "SELECT",
+    "unresolved_stars": [],
+    "windows": []
+  },
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:40f925aee62f3e3aca581307069123372bde75eb0bd23f877d03bec5c5952908",
+  "proposal_id": "CHRONOS-SEMANTIC-JOIN-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-JOIN",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "snowflake"
+}

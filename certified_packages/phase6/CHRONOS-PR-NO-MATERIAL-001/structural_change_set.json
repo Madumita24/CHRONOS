@@ -1,0 +1,17 @@
+{
+  "analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "structural_change_set",
+  "base_commit": "fixture-base-no-material-v1",
+  "deltas": [],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-no-material-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:cf734e418b9f56c23d4dbc0325be837cd784ccb8f9cc02dae1cf09acca9c8424",
+  "proposal_id": "CHRONOS-PR-NO-MATERIAL-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+  "scenario_id": "CHRONOS-MULTIFILE-NO-MATERIAL",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

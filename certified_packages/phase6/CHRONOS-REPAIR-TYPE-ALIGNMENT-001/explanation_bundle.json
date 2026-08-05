@@ -1,0 +1,141 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_explanation_bundle",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "diff_hunk_explanations": [
+    {
+      "patch_fingerprint": "sha256:9819cf932c25fe7a66a86176d67e1153cb3f0dda6a42114f180aec795e27be8c",
+      "patch_hunk_count": 1,
+      "reason": "Every hunk is generated from one or more certified repair actions.",
+      "target_path": "contracts/order_details.yml"
+    }
+  ],
+  "engine_version": "6.4.0",
+  "file_explanations": [
+    {
+      "candidate_preview_path": "repairs/repaired_files/contracts/order_details.yml",
+      "repair_action_ids": [
+        "repair-action-f61f2a48f1d8320c270b"
+      ],
+      "target_path": "contracts/order_details.yml"
+    }
+  ],
+  "head_commit": "fixture-head-type-alignment-v1",
+  "logical_group_explanations": [
+    {
+      "application_order": [
+        "repair-action-f61f2a48f1d8320c270b"
+      ],
+      "logical_change_group_id": "logical-change-d929fb4bd57945b75cc3",
+      "repair_action_ids": [
+        "repair-action-f61f2a48f1d8320c270b"
+      ]
+    }
+  ],
+  "operation": "GENERATE_REPAIR",
+  "package_explanation": {
+    "remaining": {
+      "blocked_root_ids": [],
+      "execution_evidence_state": "MISSING_PHASE_7_VALIDATION",
+      "manual_decision_root_ids": [],
+      "projection_state": "STATIC_PROJECTED",
+      "remaining_predecessor_roots": [
+        {
+          "compatibility_state": "UNRESOLVED",
+          "contributing_file_ids": [
+            "pr-file-4f4487c1cbff180710d6"
+          ],
+          "delta_ids": [
+            "pr-delta-26908759368b4a2a9e24"
+          ],
+          "evidence_state": "CODE_DERIVED",
+          "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+          "resolved_entities": [
+            "order_details",
+            "order_total"
+          ],
+          "root_cause_id": "pr-root-11b39da8421d787f7498",
+          "root_type": "CONTRACT_CHANGE",
+          "scope": "model:order_details:column:order_total"
+        }
+      ],
+      "unresolved_semantic_intent": []
+    },
+    "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+    "required_validation": [
+      "apply_candidate_patch_in_disposable_checkout",
+      "execute_affected_project_validation",
+      "obtain_human_review_and_owner_approval",
+      "phase_7_runtime_conversion_and_contract_validation",
+      "verify_runtime_and_data_semantics"
+    ],
+    "what_was_not_changed": "Semantic business intent, dynamic constructs, unsupported roots, and source repository contents.",
+    "why": "Generate only parser-backed candidate edits for certified repository inconsistencies."
+  },
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "projected_post_repair_explanation": {
+    "coherence": "UNRESOLVED",
+    "runtime_verified": false,
+    "state": "STATIC_PROJECTED"
+  },
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "remaining_root_explanations": {
+    "blocked_root_ids": [],
+    "execution_evidence_state": "MISSING_PHASE_7_VALIDATION",
+    "manual_decision_root_ids": [],
+    "projection_state": "STATIC_PROJECTED",
+    "remaining_predecessor_roots": [
+      {
+        "compatibility_state": "UNRESOLVED",
+        "contributing_file_ids": [
+          "pr-file-4f4487c1cbff180710d6"
+        ],
+        "delta_ids": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "evidence_state": "CODE_DERIVED",
+        "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+        "resolved_entities": [
+          "order_details",
+          "order_total"
+        ],
+        "root_cause_id": "pr-root-11b39da8421d787f7498",
+        "root_type": "CONTRACT_CHANGE",
+        "scope": "model:order_details:column:order_total"
+      }
+    ],
+    "unresolved_semantic_intent": []
+  },
+  "repair_action_explanations": [
+    {
+      "protected_semantics": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "remaining_validation": [
+        "phase_7_runtime_conversion_and_contract_validation"
+      ],
+      "repair_action_id": "repair-action-f61f2a48f1d8320c270b",
+      "replacement_evidence": {
+        "counterfactual_entities": [],
+        "identity_claim_evidence": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "value": "numeric"
+      },
+      "root_cause_id": "pr-root-11b39da8421d787f7498",
+      "why_selected": "Align the declared type integer to the explicit certified future type numeric; no cast is added."
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

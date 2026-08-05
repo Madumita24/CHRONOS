@@ -1,0 +1,141 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_rule_evaluation",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "classification_rule_ids": [
+    "repair.delete.structured-stale-reference.v1"
+  ],
+  "editor_registry": [
+    {
+      "editor_name": "dbt_schema_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "python_dag_static_editor",
+      "editor_version": "6.4.0/python-ast-source-span",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_DAG_STATIC_ARGUMENT",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "sqlglot_ast_editor",
+      "editor_version": "6.4.0/sqlglot-30.13.0",
+      "executes_content": false,
+      "supported_operations": [
+        "UPDATE_SQL_IDENTIFIER",
+        "UPDATE_SQL_OUTPUT_ALIAS"
+      ]
+    },
+    {
+      "editor_name": "static_reference_editor",
+      "editor_version": "6.4.0/static-reference-dispatch",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_config_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_contract_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    }
+  ],
+  "engine_version": "6.4.0",
+  "evaluated_rules": [
+    {
+      "conditional": true,
+      "edit_strategy": "REMOVE_STALE_STATIC_REFERENCE",
+      "editor_name": "structured_config_editor",
+      "explanation_template": "Remove one static declaration that only references the explicitly deleted identity {current}.",
+      "post_generation_static_checks": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "preconditions": [
+        "approved_explicit_delete_without_replacement"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_consumer_and_quality_validation"
+      ],
+      "repair_rule_id": "repair.delete.structured-stale-reference.v1",
+      "required_evidence": [
+        "certified_explicit_deletion",
+        "no_replacement_identity",
+        "one_parser_confirmed_target",
+        "target_has_no_independent_purpose"
+      ],
+      "supported_file_categories": [
+        "QUALITY_CONFIG",
+        "PIPELINE_CONFIG",
+        "SCHEMA_CONTRACT",
+        "DBT_SCHEMA"
+      ],
+      "supported_root_types": [
+        "STRUCTURAL_CHANGE",
+        "QUALITY_EXPECTATION_CHANGED",
+        "CONFIGURATION_CHANGED"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-delete-repair-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "proposal_fingerprint": "sha256:5dfb7bc4e0334157c3404ae83bd6d6b8b33a4fe0554d664109cd62a1f4e8cb44",
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-REPAIR-DELETE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

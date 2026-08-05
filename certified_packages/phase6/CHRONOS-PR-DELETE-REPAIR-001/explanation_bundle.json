@@ -1,0 +1,370 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "explanation_bundle",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "decision_explanation": {
+    "reason": "Explicit deterministic precedence over certified conflict, unresolved material change, and no-material state.",
+    "selected_rule": "pr-decision-material-unresolved"
+  },
+  "downstream_target_explanations": [
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-17198ee27efd07113d7e"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-b5fab61fc3689dcb7026"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-a53749b7d9fcb495ba57"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-e28aa989fa8e794fa27b"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-b98eb482409ed615acb8"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-155841a1e078aed1a36e"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-d265cac7a1a2315b27f1"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-238e2a6b3a3a328a8faf"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-da6d7630a00b1687bb3e"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-f06b33fa89f885312bbe"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-022d07b98ca9c67a3a23"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-492d05a16393701f903b"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": true,
+      "path_ids": [
+        "pr-path-86cee03d127904c8c419",
+        "pr-path-a0ae1faea257725afe04"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-8c81b7277b2737466740"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-35199f4c2e7b095cbbaf"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-5b10eb366270c27b7ff9"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-996a4662cefad13da99d"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-1cd890d89a9e7e2adeed"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-038a4ac78b8188863ee1"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-7a1fd6a2e588452a8957"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "evidence_class": "COUNTERFACTUAL_DERIVATION",
+      "multipath": false,
+      "path_ids": [
+        "pr-path-e8e45d9bb0f77cc7a669"
+      ],
+      "root_cause_ids": [
+        "pr-root-7598a0e1f1900946f565"
+      ],
+      "target_field_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "file_explanations": [
+    {
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "root_types": [
+        "STRUCTURAL_CHANGE"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_group_explanations": [
+    {
+      "coherence_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "correlation_basis": "Exact model mapping, field transition, parser evidence, and supported static references.",
+      "logical_change_id": "logical-change-c1f873b076b1024a2d48"
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_explanation": {
+    "decision": {
+      "certainty": "high_confidence",
+      "decision_rule_id": "pr-decision-material-unresolved",
+      "disposition": "hold_for_review",
+      "precedence": [
+        "confirmed_blocking_incompatibility",
+        "material_unresolved_compatibility",
+        "no_material_change"
+      ]
+    },
+    "files_agree": "UNRESOLVED",
+    "known": "Parsed code/config claims and supplied DataHub observations are retained with separate provenance.",
+    "unresolved": "Runtime execution validity and missing contract/test evidence remain unverified.",
+    "what_changed": "1 supported material deltas were correlated across one repository transition."
+  },
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "root_cause_explanations": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "delta_ids": [
+        "semantic-delta-b78cd5bffc279952ffb3"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-c1f873b076b1024a2d48",
+      "resolved_entities": [
+        "o.order_total"
+      ],
+      "root_cause_id": "pr-root-7598a0e1f1900946f565",
+      "root_type": "STRUCTURAL_CHANGE",
+      "scope": "STRUCTURAL"
+    }
+  ],
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

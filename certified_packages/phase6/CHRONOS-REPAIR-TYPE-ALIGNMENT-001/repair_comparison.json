@@ -1,0 +1,62 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_comparison",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "missing_execution_evidence": true,
+  "new_conflict_ids": [],
+  "new_unresolved_root_ids": [],
+  "operation": "GENERATE_REPAIR",
+  "original_coherence": "UNRESOLVED",
+  "original_conflict_ids": [],
+  "original_downstream_exposure": {
+    "downstream_dataset_count": 0,
+    "downstream_field_count": 0,
+    "maximum_depth": 0,
+    "multipath_target_count": 0,
+    "path_count": 0,
+    "relationship_count": 0,
+    "root_count": 1
+  },
+  "original_root_ids": [
+    "pr-root-11b39da8421d787f7498"
+  ],
+  "original_stale_reference_count": 0,
+  "phase_6_3_raw_projected_coherence": "UNRESOLVED",
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "projected_closed_root_ids": [],
+  "projected_coherence": "UNRESOLVED",
+  "projected_conflict_ids": [],
+  "projected_downstream_exposure": {
+    "downstream_dataset_count": 0,
+    "downstream_field_count": 0,
+    "maximum_depth": 0,
+    "multipath_target_count": 0,
+    "path_count": 0,
+    "relationship_count": 0,
+    "root_count": 2
+  },
+  "projected_stale_reference_count": 0,
+  "projection_state": "STATIC_PROJECTED",
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_action_derived_root_ids": [
+    "pr-root-63fa7f5d8f16d6a1ae61"
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "runtime_verified": false,
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "targeted_root_ids": [
+    "pr-root-11b39da8421d787f7498"
+  ],
+  "unchanged_root_ids": [
+    "pr-root-11b39da8421d787f7498"
+  ],
+  "unresolved_semantic_questions": []
+}

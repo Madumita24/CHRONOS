@@ -1,0 +1,196 @@
+{
+  "application_order": [
+    "repair-action-534cc6722d9b405f0dcf",
+    "repair-action-8afe9abf7b6e3db8afc5"
+  ],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_actions",
+  "base_commit": "fixture-base-primary-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-primary-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "repair_actions": [
+    {
+      "confidence": "CERTIFIED_STATIC_EXACT",
+      "current_evidence": {
+        "datahub_or_current_entities": [
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+        ],
+        "editor_name": "python_dag_static_editor",
+        "head_content_fingerprint": "sha256:9c2bc8a698b421e54bb07c461ef17bc1134215ed6dfa8ae4102a93615ff675db",
+        "kind": "output_field",
+        "parser": {
+          "name": "python_ast_static_dag",
+          "version": "6.3.0/python-ast"
+        },
+        "predecessor_root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+        "task_id": "publish_orders",
+        "value": "order_total"
+      },
+      "dependency_actions": [],
+      "edit_operation": "UPDATE_DAG_STATIC_ARGUMENT",
+      "expected_changed_identities": [
+        "order_total",
+        "order_amount"
+      ],
+      "file_category": "PIPELINE_DAG",
+      "generation": {
+        "candidate_content_in_artifact": false,
+        "edit_provenance": {
+          "current_value": "order_total",
+          "future_value": "order_amount",
+          "source_span": {
+            "end": 203,
+            "start": 190
+          },
+          "target_count": 1,
+          "target_kind": "output_field",
+          "task_id": "publish_orders"
+        },
+        "editor": {
+          "name": "python_dag_static_editor",
+          "version": "6.4.0/python-ast-source-span"
+        },
+        "formatting_changes": [],
+        "protected_semantics": {
+          "dag_structure_after": "sha256:d73150734fb6af1f2e11978602f55324aee7184d38a6c27047b545dfb4d80214",
+          "dag_structure_before": "sha256:d73150734fb6af1f2e11978602f55324aee7184d38a6c27047b545dfb4d80214",
+          "unchanged": true
+        },
+        "repair_action_id": "repair-action-534cc6722d9b405f0dcf",
+        "target_path": "dags/orders_pipeline.py"
+      },
+      "human_explanation": "Align the exact stale DAG field argument order_total to the certified future identity order_amount.",
+      "intended_future_evidence": {
+        "counterfactual_entities": [
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+        ],
+        "identity_claim_evidence": [
+          "pr-delta-5a27fc6c51982093a333",
+          "pr-delta-ae1381ec53130635a53f",
+          "pr-delta-f31bcc0dcb707a90d47f",
+          "pr-stale-a5b4bdb8f3fe2e5fb55b",
+          "pr-stale-fac24903886b23238ee7",
+          "semantic-delta-41cbe5c61ac7bdf329be",
+          "semantic-delta-633d300829a0f0565a5a"
+        ],
+        "value": "order_amount"
+      },
+      "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "preconditions": [
+        "static_string_argument"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_dag_parse_and_execution"
+      ],
+      "repair_action_id": "repair-action-534cc6722d9b405f0dcf",
+      "repair_rule_id": "repair.stale-field.dag-static.v1",
+      "root_cause_id": "pr-root-eeb16f4cbad69d12f847",
+      "static_validation_requirements": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy",
+        "dag_dependencies_unchanged"
+      ],
+      "target_file_change_id": "pr-file-ab119079a84818f63689",
+      "target_location": null,
+      "target_path": "dags/orders_pipeline.py"
+    },
+    {
+      "confidence": "CERTIFIED_STATIC_EXACT",
+      "current_evidence": {
+        "datahub_or_current_entities": [
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+        ],
+        "editor_name": "structured_config_editor",
+        "head_content_fingerprint": "sha256:b0c5602493ce4f5a083e1f0a69ae52220dd0f43fbe892045866cfcd7f440671c",
+        "kind": "field",
+        "location": "quality.checks[0].field",
+        "parser": {
+          "name": "bounded_contract_pipeline_config",
+          "version": "6.3.0/pyyaml-6.0.3"
+        },
+        "predecessor_root_cause_id": "pr-root-2297cb428bdd70d7b419",
+        "value": "order_total"
+      },
+      "dependency_actions": [
+        "repair-action-534cc6722d9b405f0dcf"
+      ],
+      "edit_operation": "UPDATE_QUALITY_REFERENCE",
+      "expected_changed_identities": [
+        "order_total",
+        "order_amount"
+      ],
+      "file_category": "QUALITY_CONFIG",
+      "generation": {
+        "candidate_content_in_artifact": false,
+        "edit_provenance": {
+          "current_value": "order_total",
+          "future_value": "order_amount",
+          "structured_location": "quality.checks[0].field",
+          "target_count": 1
+        },
+        "editor": {
+          "name": "structured_config_editor",
+          "version": "6.4.0/pyyaml-6.0.3-json-stdlib"
+        },
+        "formatting_changes": [],
+        "protected_semantics": {
+          "unchanged": true,
+          "untargeted_structure_after": "sha256:955ffa281382621c2d5ad7c70f02065a02eae2e41e56bd1708edd161e335f42d",
+          "untargeted_structure_before": "sha256:955ffa281382621c2d5ad7c70f02065a02eae2e41e56bd1708edd161e335f42d"
+        },
+        "repair_action_id": "repair-action-8afe9abf7b6e3db8afc5",
+        "target_path": "quality/order_checks.yml"
+      },
+      "human_explanation": "Align the exact stale quality reference order_total to the certified future identity order_amount.",
+      "intended_future_evidence": {
+        "counterfactual_entities": [
+          "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+        ],
+        "identity_claim_evidence": [
+          "pr-delta-5a27fc6c51982093a333",
+          "pr-delta-ae1381ec53130635a53f",
+          "pr-delta-f31bcc0dcb707a90d47f",
+          "pr-stale-a5b4bdb8f3fe2e5fb55b",
+          "pr-stale-fac24903886b23238ee7",
+          "semantic-delta-41cbe5c61ac7bdf329be",
+          "semantic-delta-633d300829a0f0565a5a"
+        ],
+        "value": "order_amount"
+      },
+      "logical_change_group_id": "logical-change-126d3f18d2b8ecd8f7db",
+      "preconditions": [
+        "allowlisted_structured_reference"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_quality_validation"
+      ],
+      "repair_action_id": "repair-action-8afe9abf7b6e3db8afc5",
+      "repair_rule_id": "repair.stale-field.quality-config.v1",
+      "root_cause_id": "pr-root-2297cb428bdd70d7b419",
+      "static_validation_requirements": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "target_file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "target_location": "quality.checks[0].field",
+      "target_path": "quality/order_checks.yml"
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,63 @@
+{
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "structural_change_set",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "deltas": [
+    {
+      "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "affected_output_field": "order_total",
+      "after_representation": null,
+      "before_representation": {
+        "aggregations": [],
+        "data_type_state": "UNKNOWN",
+        "expression_fingerprint": "sha256:090b2f385cd463f0a82797938eb9d1581af66eb598c5d984a8c879c9128edea5",
+        "functions": [],
+        "has_case": false,
+        "has_window": false,
+        "input_columns": [
+          {
+            "name": "order_total",
+            "normalized": "o.order_total",
+            "qualifier": "o"
+          }
+        ],
+        "lineage_derivation": "CODE_DERIVED_REFERENCE",
+        "literals": [],
+        "normalized_expression": "o.order_total",
+        "operators": [],
+        "ordinal": 0,
+        "output_name": "order_total",
+        "source_relations": [
+          "o"
+        ]
+      },
+      "certainty": "DERIVED",
+      "change_components": [],
+      "delta_class": "StructuralFieldDelta",
+      "delta_id": "semantic-delta-b78cd5bffc279952ffb3",
+      "delta_type": "OUTPUT_COLUMN_REMOVED",
+      "evidence_references": [
+        "output_identity"
+      ],
+      "explanation": "Output column order_total was removed.",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "file_path": "models/order_details.sql",
+      "input_references": [
+        "o.order_total"
+      ],
+      "material": true,
+      "scope": "STRUCTURAL"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

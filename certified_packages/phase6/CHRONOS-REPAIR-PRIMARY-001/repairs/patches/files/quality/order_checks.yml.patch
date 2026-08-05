@@ -1,0 +1,9 @@
+--- a/quality/order_checks.yml
++++ b/quality/order_checks.yml
+@@ -1,5 +1,5 @@
+ quality:
+   description: Validate the proposed order metric.
+   checks:
+-    - field: order_total
++    - field: order_amount
+       expected_type: numeric

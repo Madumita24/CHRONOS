@@ -1,0 +1,91 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+  "analysis_semantic_fingerprint": "sha256:74d2e450b368a49e9206e74b155b85a70669729c695e7829aa76a8b53cee88cc",
+  "artifact_fingerprints": {
+    "after_parsed_model.json": "sha256:d0744fc720069e5ef3bd1beaadc36973a74ea173f36f7f451c4b4559dbee4732",
+    "analysis_certification.json": "sha256:a1aa0386f53538f2d2eb4813c4f9eee5d06a68290a45be3dc418ffd5e3c239ad",
+    "before_parsed_model.json": "sha256:bd2dc6484324bf33e8a8fbff3fafa182aa0d36f0c3c20afb01db805eb1582fca",
+    "business_context_propagation.json": "sha256:435a0348f54222aefa172ed0de6822184de58f84af79a573713096169f8dbfe7",
+    "code_change_set.json": "sha256:1b2f44f2bf42dad3277e7ac4646933b139ed9f57540faf921f9f80709aafd4f2",
+    "compatibility_evaluation.json": "sha256:5e15837ed346cef013f120d2fe96848c60d587d6b5a8797ef24bcfe65d994a71",
+    "counterfactual_semantic_state.json": "sha256:bf300ef414756a3b8396bb78d79cf75b3063680285f32f2a21532755536c26aa",
+    "dependency_propagation.json": "sha256:4042f6f16bf4dd4380217ba5dfc518bda0d7d4f97fb74703cf305786ac5aaff8",
+    "entity_resolution.json": "sha256:144622e7aed9a4d48df41f09c1ac1909871f778c0431c4e3ffdf862fc278a577",
+    "explanation_bundle.json": "sha256:d7ee65f13791fc6f4d4104c824a58259afb12f3d29816c942ce1e097978e166d",
+    "future_metadata_graph.json": "sha256:02164aa86ec9bb97457402870b2aecc4e6520896e6f418ce2b6024c54450038e",
+    "impact_synthesis.json": "sha256:9cf01b913844cfc741b29bbc52a27843a886d83b41cdc0529fd356476e1698ce",
+    "proposal_validation.json": "sha256:181b770cfda2ade27cb1d6a35a02cde3f0b5228c89098e5174c3287653051f9c",
+    "semantic_change_proposal.json": "sha256:d63e0f73e1ebbed6188feffa0f91ae7368b4fe64575bb625cf5254f7c1e4ae0b",
+    "semantic_diff.json": "sha256:1ea26864a5575cf7f3dde640bdc88db0dc0c1db8ddfde7dd21c05865eb662fc7",
+    "severity_criticality_analysis.json": "sha256:11d84d4f6ec5e4be77971a8d4a3df7b6b53fd25ee128e72a92a4832508202531",
+    "technical_impact_analysis.json": "sha256:97d0195e0c14b0af040d5deb6cc7eb77e9e5fba7c0b9a03bd0ccf1731d5814d5"
+  },
+  "artifact_names": [
+    "semantic_change_proposal.json",
+    "proposal_validation.json",
+    "before_parsed_model.json",
+    "after_parsed_model.json",
+    "semantic_diff.json",
+    "entity_resolution.json",
+    "code_change_set.json",
+    "counterfactual_semantic_state.json",
+    "future_metadata_graph.json",
+    "dependency_propagation.json",
+    "compatibility_evaluation.json",
+    "technical_impact_analysis.json",
+    "business_context_propagation.json",
+    "severity_criticality_analysis.json",
+    "impact_synthesis.json",
+    "explanation_bundle.json",
+    "analysis_certification.json",
+    "manifest.json"
+  ],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "semantic_analysis_manifest",
+  "certification_status": "certified",
+  "code_state": {
+    "after_ast_fingerprint": "sha256:9d5311a5726502e733be07930de935265f7d9cc7ef09c9f74561cf633d8f960c",
+    "before_ast_fingerprint": "sha256:f606bc2ba8c53d0882e9f48d7e4885e0f45575f3d93cdc3db4afeb9cfab767b4"
+  },
+  "decision": {
+    "certainty": "high_confidence",
+    "disposition": "hold_for_review",
+    "reason_codes": [
+      "semantic_compatibility_unresolved",
+      "certified_downstream_reach"
+    ],
+    "rule_id": "semantic-decision-hold-unresolved-downstream-reach"
+  },
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser": {
+    "name": "sqlglot",
+    "version": "30.13.0"
+  },
+  "proposal": {
+    "after_code_reference": "examples/semantic_expression/after.sql",
+    "analysis_id": "CHRONOS-SEMANTIC-EXPRESSION-001",
+    "before_code_reference": "examples/semantic_expression/before.sql",
+    "description": "CHRONOS fixture changing a derived expression literal on a real model output.",
+    "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+    "model_relation": "order_entry_db.analytics.order_details",
+    "operation": "SEMANTIC_CODE_CHANGE",
+    "proposal_id": "CHRONOS-SEMANTIC-EXPRESSION-PROPOSAL-001",
+    "proposal_metadata": {
+      "code_provenance": "chronos_example_fixture"
+    },
+    "scenario_id": "CHRONOS-SEMANTIC-EXPRESSION",
+    "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+    "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+    "sql_dialect": "postgres"
+  },
+  "proposal_fingerprint": "sha256:65112e3fe152754e3ef57090a85f51198c818de7428fff83f2fe397e52d17aac",
+  "semantic_delta_count": 1,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "sql_dialect": "postgres",
+  "structural_delta_count": 0,
+  "warnings": [
+    "Semantic compatibility is unresolved without certified contract or execution evidence."
+  ]
+}

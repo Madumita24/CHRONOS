@@ -1,0 +1,70 @@
+{
+  "after_ast_fingerprint": "sha256:08327c7f540aa60e7084fb8596acbd170d2c22ec397632eda1eb9ee1c76130e6",
+  "analysis_id": "CHRONOS-SEMANTIC-AGGREGATION-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "semantic_diff",
+  "before_ast_fingerprint": "sha256:e069b4cd074189fc4c7638da1d007bfe37710136471743bd6d1fb68622014800",
+  "change_state": "CHANGES_DETECTED",
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:71377af9190182ed9434365b6b21d35d5a0adf1c1b19cf9d0ede29e5472b741c",
+  "proposal_id": "CHRONOS-SEMANTIC-AGGREGATION-PROPOSAL-001",
+  "scenario_id": "CHRONOS-SEMANTIC-AGGREGATION",
+  "semantic_deltas": [
+    {
+      "affected_model_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "affected_output_field": "order_total",
+      "after_representation": [
+        {
+          "distinct": false,
+          "function": "AVG",
+          "input_references": [
+            {
+              "name": "order_total",
+              "normalized": "o.order_total",
+              "qualifier": "o"
+            }
+          ],
+          "normalized_expression": "AVG(o.order_total)"
+        }
+      ],
+      "before_representation": [
+        {
+          "distinct": false,
+          "function": "SUM",
+          "input_references": [
+            {
+              "name": "order_total",
+              "normalized": "o.order_total",
+              "qualifier": "o"
+            }
+          ],
+          "normalized_expression": "SUM(o.order_total)"
+        }
+      ],
+      "certainty": "DERIVED",
+      "change_components": [
+        "function_changed"
+      ],
+      "delta_id": "semantic-delta-95435e4a710842bdcf9a",
+      "delta_type": "AGGREGATION_CHANGE",
+      "evidence_references": [
+        "before_parsed_model",
+        "after_parsed_model"
+      ],
+      "explanation": "Aggregation semantics changed for output order_total: function_changed.",
+      "input_references": [
+        "o.order_total"
+      ],
+      "scope": "OUTPUT_FIELD"
+    }
+  ],
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "structural_deltas": []
+}

@@ -1,0 +1,95 @@
+{
+  "application_order": [
+    "repair-action-f61f2a48f1d8320c270b"
+  ],
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_actions",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:f431858268bcd89242fcb7d5581cf2b38fbb16a7e92c2cf8a47cc61f4610b6dd",
+  "predecessor_analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "predecessor_manifest_fingerprint": "sha256:eb615e7ec69874219e2337d15d38f24cfe85dc040eadfb4f37c3daae67a7b709",
+  "proposal_fingerprint": "sha256:da6e16cac1cd2cccb18cb08509a35d832ffc30824ed4f609c2118daddc5c50db",
+  "proposal_id": "CHRONOS-REPAIR-TYPE-PROPOSAL-001",
+  "repair_actions": [
+    {
+      "confidence": "CERTIFIED_STATIC_EXACT",
+      "current_evidence": {
+        "datahub_or_current_entities": [],
+        "editor_name": "structured_config_editor",
+        "head_content_fingerprint": "sha256:03469576183f635294970da5c04eb873f5441199acc1156a6d24314c8a38f2f1",
+        "kind": "type",
+        "location": "contract.type",
+        "parser": {
+          "name": "bounded_contract_pipeline_config",
+          "version": "6.3.0/pyyaml-6.0.3"
+        },
+        "predecessor_root_cause_id": "pr-root-11b39da8421d787f7498",
+        "value": "integer"
+      },
+      "dependency_actions": [],
+      "edit_operation": "UPDATE_CONTRACT_TYPE",
+      "expected_changed_identities": [
+        "integer",
+        "numeric"
+      ],
+      "file_category": "SCHEMA_CONTRACT",
+      "generation": {
+        "candidate_content_in_artifact": false,
+        "edit_provenance": {
+          "current_value": "integer",
+          "future_value": "numeric",
+          "structured_location": "contract.type",
+          "target_count": 1
+        },
+        "editor": {
+          "name": "structured_config_editor",
+          "version": "6.4.0/pyyaml-6.0.3-json-stdlib"
+        },
+        "formatting_changes": [],
+        "protected_semantics": {
+          "unchanged": true,
+          "untargeted_structure_after": "sha256:f4140576a3e42955cb79f566719bcb36d889284653af5cde87a2e63c86e4a90d",
+          "untargeted_structure_before": "sha256:f4140576a3e42955cb79f566719bcb36d889284653af5cde87a2e63c86e4a90d"
+        },
+        "repair_action_id": "repair-action-f61f2a48f1d8320c270b",
+        "target_path": "contracts/order_details.yml"
+      },
+      "human_explanation": "Align the declared type integer to the explicit certified future type numeric; no cast is added.",
+      "intended_future_evidence": {
+        "counterfactual_entities": [],
+        "identity_claim_evidence": [
+          "pr-delta-26908759368b4a2a9e24"
+        ],
+        "value": "numeric"
+      },
+      "logical_change_group_id": "logical-change-d929fb4bd57945b75cc3",
+      "preconditions": [
+        "approved_declaration_type_transition"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_runtime_conversion_and_contract_validation"
+      ],
+      "repair_action_id": "repair-action-f61f2a48f1d8320c270b",
+      "repair_rule_id": "repair.type.declaration-alignment.v1",
+      "root_cause_id": "pr-root-11b39da8421d787f7498",
+      "static_validation_requirements": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "target_file_change_id": "pr-file-af3cba3d5c11f38f91ca",
+      "target_location": "contract.type",
+      "target_path": "contracts/order_details.yml"
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-TYPE-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "scenario_id": "CHRONOS-REPAIR-TYPE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

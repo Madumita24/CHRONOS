@@ -1,0 +1,24 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "proposal_validation",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "checks": [
+    "strict_proposal",
+    "snapshot_identity",
+    "intake_mode",
+    "repository_identity",
+    "base_head_identity"
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "state": "valid"
+}

@@ -1,0 +1,108 @@
+{
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "contract_quality_change_set",
+  "base_commit": "fixture-base-coherent-v1",
+  "deltas": [
+    {
+      "after": null,
+      "before": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "order_total",
+        "tags": [],
+        "tests": [
+          "not_null"
+        ]
+      },
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-5a27fc6c51982093a333",
+      "delta_type": "COLUMN_REMOVED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_details",
+        "order_total"
+      ],
+      "scope": "model:order_details:column:order_total"
+    },
+    {
+      "after": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "order_amount",
+        "tags": [],
+        "tests": [
+          "not_null"
+        ]
+      },
+      "before": null,
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-ae1381ec53130635a53f",
+      "delta_type": "COLUMN_ADDED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_amount",
+        "order_details"
+      ],
+      "scope": "model:order_details:column:order_amount"
+    },
+    {
+      "after": "order_amount",
+      "before": null,
+      "delta_class": "QualityExpectationDelta",
+      "delta_id": "pr-delta-b6a108da5e6839398ba9",
+      "delta_type": "STATIC_REFERENCE_ADDED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "An allowlisted static configuration reference was added.",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "file_path": "quality/order_checks.yml",
+      "material": true,
+      "path": "quality/order_checks.yml",
+      "references": [
+        "order_amount"
+      ],
+      "scope": "quality.checks[0].field"
+    },
+    {
+      "after": null,
+      "before": "order_total",
+      "delta_class": "QualityExpectationDelta",
+      "delta_id": "pr-delta-c0c13a00a24b919055d3",
+      "delta_type": "STATIC_REFERENCE_REMOVED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "An allowlisted static configuration reference was removed.",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "file_path": "quality/order_checks.yml",
+      "material": true,
+      "path": "quality/order_checks.yml",
+      "references": [
+        "order_total"
+      ],
+      "scope": "quality.checks[0].field"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

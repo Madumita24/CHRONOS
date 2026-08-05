@@ -1,0 +1,2572 @@
+{
+  "affected_dataset_urns": [
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+    "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)"
+  ],
+  "analysis_id": "CHRONOS-EXAMPLE-FIELD-TYPE-CHANGE-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "business_context_propagation",
+  "category_counts": {
+    "bi_reachable_context": 15,
+    "data_product_membership": 4,
+    "document_relationship": 18,
+    "domain_assignment": 6,
+    "field_lineage": 27,
+    "glossary_assignment": 38,
+    "ownership": 27,
+    "pipeline_context": 4,
+    "structured_property_assignment": 105,
+    "tag_assignment": 8
+  },
+  "context_asset_count": 84,
+  "context_relationships": [
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-b991c09b22024680b06f"
+      ],
+      "relationship_id": "relationship-0314820b7f8def318b1a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-f2b1010e78f85eed71d1"
+      ],
+      "relationship_id": "relationship-045654769bd0cf392396",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-2c2f3abf1233030a2ca1"
+      ],
+      "relationship_id": "relationship-0539868686b698dee417",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-runbook-order-count"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-85a3eb790aad58a42652"
+      ],
+      "relationship_id": "relationship-05f1560a2b043d56d217",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.26e268c3-3688-4281-949e-8c1aa2600c02"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7504c252c2b147c9e043"
+      ],
+      "relationship_id": "relationship-06606eacffc9757aa18b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-8a551fe12a61460bdc5a"
+      ],
+      "relationship_id": "relationship-06eaac2ba60b04d15a93",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)|order_total"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-80daaea1282e76b1aea5"
+      ],
+      "relationship_id": "relationship-0ab4df0af2bd7a4df7ee",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.1e0398a3-113f-475e-b6fc-32ab72a634d2"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-bc23b78a12efd7e9c715"
+      ],
+      "relationship_id": "relationship-0acfae2a33ed1a1e7d37",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-analytics"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-ad7de753aca5882d3aa6"
+      ],
+      "relationship_id": "relationship-0f04cff56660eb123779",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "unresolved",
+      "target_key": "urn:li:tag:b2fd91.ecommerce"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-55c185132557175f29c6"
+      ],
+      "relationship_id": "relationship-0f13902f684f81bbd21c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-6b2acd3cb4de9a178dda"
+      ],
+      "relationship_id": "relationship-11057c123208450c3683",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-c20767804227150fb0e5"
+      ],
+      "relationship_id": "relationship-111d3bab2481f3350a12",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-205cb6d29c945283e1dc"
+      ],
+      "relationship_id": "relationship-11885248e6324342267b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.1caf2b7c-ca73-4708-bdec-6687d78cab0e"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-5768b4fcd06f4ba67b58"
+      ],
+      "relationship_id": "relationship-1267e2b533e4c67702af",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-6af73a6468ce7ab0dad7"
+      ],
+      "relationship_id": "relationship-15e2c1c2e93481968867",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-87545015227ae60c7cf1"
+      ],
+      "relationship_id": "relationship-161d6b36ed425a4a8ef6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.Authoritative Source"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-c399636ab3eda0371044"
+      ],
+      "relationship_id": "relationship-1689ceba8b4ccaee881a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-6692e00650c091e5e13c"
+      ],
+      "relationship_id": "relationship-16900471fa85de7c882d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-22fe2fa9ab952cc15c97"
+      ],
+      "relationship_id": "relationship-1849fd8602351c3f37c9",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-077bc47f506efccc54d1"
+      ],
+      "relationship_id": "relationship-196323308468420fa2fd",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-5b3b7318e088c6285f1c"
+      ],
+      "relationship_id": "relationship-1b22054d1413b5de70bd",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-3ecf05bd0749feb44a92"
+      ],
+      "relationship_id": "relationship-1c17acbbb44577237572",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-897fe0eda59a41735095"
+      ],
+      "relationship_id": "relationship-1c6e4f1a885072691496",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-d13536f3b2b0fe1df3eb"
+      ],
+      "relationship_id": "relationship-1cb7482422508f58ac1d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-701ffc9b1fe90fac46ac"
+      ],
+      "relationship_id": "relationship-1d81487b6664f26d7ceb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-c267c14a2055ffc1f658"
+      ],
+      "relationship_id": "relationship-1ec9574be28d25571151",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-7b7eeab21e9f2f17716f"
+      ],
+      "relationship_id": "relationship-1fc33d083cf6332c2476",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-runbook-order-count"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-2aa35bae1026c603650d"
+      ],
+      "relationship_id": "relationship-211a8d3c329e27892135",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-d91bb63d26e6e2306748"
+      ],
+      "relationship_id": "relationship-23e2b8c881b81490a628",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.26e268c3-3688-4281-949e-8c1aa2600c02"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c32a7ba1c069ca34344c"
+      ],
+      "relationship_id": "relationship-24d546a1883068384484",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-e573a6e7ac5324f2076d"
+      ],
+      "relationship_id": "relationship-2517fbc6c2f6daf4ae93",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "data_product_membership",
+      "evidence_ids": [
+        "evidence-fe365fac7bf1ff6a446c"
+      ],
+      "relationship_id": "relationship-25abc8c5598b9f64bc15",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dataProduct:b2fd91.716c9cdd-8643-489f-8909-ee51e884bc68"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-760c0025f76dd196de4c"
+      ],
+      "relationship_id": "relationship-293b5150164ebafe0eae",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.brock1@example.com"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-63e57f28965b42d0c303"
+      ],
+      "relationship_id": "relationship-295ce6387e438dcd7eeb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "data_product_membership",
+      "evidence_ids": [
+        "evidence-15924d13179d7e3569e1"
+      ],
+      "relationship_id": "relationship-2a408f03322f4b5202ba",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dataProduct:b2fd91.38e6dc7c-83d7-46c2-aece-e4918bd00d09"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-267e29f3f433b298edb4"
+      ],
+      "relationship_id": "relationship-2b8469cec81d248cf33f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7f2d036904e54337f760"
+      ],
+      "relationship_id": "relationship-2bd8eba2378be9d4d7ea",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-08ebee9ade3e8ddb8e65"
+      ],
+      "relationship_id": "relationship-2c4044b228050466c77f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.sam@example.com"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-3c04374db02369af0d97"
+      ],
+      "relationship_id": "relationship-2ced244e49134a27b63e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.__default_large_table"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-005650938b61ba864491"
+      ],
+      "relationship_id": "relationship-2d164cdf6599f9a2f906",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_DATA_PLATFORM"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-a1b2e58ac36215d5bb46"
+      ],
+      "relationship_id": "relationship-2d8dd79ddce1dd86131e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.1caf2b7c-ca73-4708-bdec-6687d78cab0e"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-6cc5497a5747f0d5c26c"
+      ],
+      "relationship_id": "relationship-2e09678c9728ee5fa27e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.__default_high_queries"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-5ad90dbcd1ba5911c890"
+      ],
+      "relationship_id": "relationship-2e1d2854b3841ab178c8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-orders"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-88b652e60d8dd1fe197e"
+      ],
+      "relationship_id": "relationship-2fa7129bf8b83d6d95b8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-95809cb930f2918385d0"
+      ],
+      "relationship_id": "relationship-3033ffb9aac2679c5510",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-2af030f652268c8c50e4"
+      ],
+      "relationship_id": "relationship-30d0a8dda8aec6e0614b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(looker,b2fd91.dashboard_elements.222)"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-38a189b1152010ab2bab"
+      ],
+      "relationship_id": "relationship-31c8293986635fe6d779",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-orders"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-f75ace8a914e2fbbc695"
+      ],
+      "relationship_id": "relationship-31d4b099aeea346d6359",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-39c9c440ae7a51294160"
+      ],
+      "relationship_id": "relationship-32810b4a9a7030091831",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-94c2e462d610f80daaa5"
+      ],
+      "relationship_id": "relationship-34ee0f8b1f539d2ac1e9",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-metrics"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-9604ce306360c33bad97"
+      ],
+      "relationship_id": "relationship-35960e46a23bd0231774",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-825c1e210f2f6867eaf5"
+      ],
+      "relationship_id": "relationship-376392666efc19b90cc5",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-331ecfbf8dee53ed059d"
+      ],
+      "relationship_id": "relationship-39d24a711dac7de13d5b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-order-history"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-759ef2dab667b5da1503"
+      ],
+      "relationship_id": "relationship-3a10aca9f1154b745bb6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-c2d8ac932ec4c95ee203"
+      ],
+      "relationship_id": "relationship-3e063a08ffa009c6bcbb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-orders"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-63754ec9403b33fec95d"
+      ],
+      "relationship_id": "relationship-3e69a3daf09a913e0d69",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-4d9479161fc3dbadedfc"
+      ],
+      "relationship_id": "relationship-3fb34e039c62a342a865",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-ca68a47029d05b47195f"
+      ],
+      "relationship_id": "relationship-3fe928c71ece6dbad664",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-2206a8ae436b1e3b6df9"
+      ],
+      "relationship_id": "relationship-40367c84c502bf021c2a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-a92462633a054afbbede"
+      ],
+      "relationship_id": "relationship-43d51466e5b8e7a45a2b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.1caf2b7c-ca73-4708-bdec-6687d78cab0e"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c2c9ae4ced1990213f31"
+      ],
+      "relationship_id": "relationship-44eba36988cf6c8cf297",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-e44fa8bd0e5d47a5a555"
+      ],
+      "relationship_id": "relationship-450b0a52e9d5b2c6bfad",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.1e0398a3-113f-475e-b6fc-32ab72a634d2"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c1cc7d4e48af8076dec4"
+      ],
+      "relationship_id": "relationship-456eed22cf85a54dfe22",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-1215999470f49302c655"
+      ],
+      "relationship_id": "relationship-46e16b17a67b28f23629",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.__default_large_table"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-60bf96b4616b2dd118fc"
+      ],
+      "relationship_id": "relationship-47032549eab6e7e466c8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-ab2019aba51a2b648efc"
+      ],
+      "relationship_id": "relationship-470f8f9270ee9c67cb1d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-86e6461bc73b64db5855"
+      ],
+      "relationship_id": "relationship-475afa264ed89f43b951",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-bbddd3fcc58386169396"
+      ],
+      "relationship_id": "relationship-476a5d8fe531486f325b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.marty@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-f0942ec347c4e4098ebe"
+      ],
+      "relationship_id": "relationship-47d64183149a6b42eed2",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-6de423c717801b155959"
+      ],
+      "relationship_id": "relationship-47f7894e727a20d97669",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c459074a31b3027a7eac"
+      ],
+      "relationship_id": "relationship-4817b33a9e57dcb255be",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7c7aa5da653dbd9e96a6"
+      ],
+      "relationship_id": "relationship-4a39171ad95e92b38c4f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "relationship_id": "relationship-4a86c7d52d17bd554c8e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-005650938b61ba864491"
+      ],
+      "relationship_id": "relationship-4b087d21327f525ad5f2",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_DATA_PLATFORM"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-726e081d6df05443f2df"
+      ],
+      "relationship_id": "relationship-4c160ea29844ea191763",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-1097008836ffa275e509"
+      ],
+      "relationship_id": "relationship-4cb94c16fde3a2b13153",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dashboard:(powerbi,b2fd91.reports.66666666-7777-8888-9999-000000000000)"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-e55c33912039c110f926"
+      ],
+      "relationship_id": "relationship-4d13fe0d1264b7240449",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-runbooks"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-493372327f2fba62f08c"
+      ],
+      "relationship_id": "relationship-4da4109ac88403177ff8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(tableau,b2fd91.e36d7772-ac4d-4fd0-a893-aec88f3aa13e)"
+    },
+    {
+      "category": "pipeline_context",
+      "evidence_ids": [
+        "evidence-a2285f335fbd1249ebbe"
+      ],
+      "relationship_id": "relationship-5107def3f15fbed0069d",
+      "source_key": "urn:li:dataJob:(urn:li:dataFlow:(spark,b2fd91.import_table_orders_to_snowflake,b2fd91.default),b2fd91.import_table_orders_to_snowflake)",
+      "state": "present",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-e2640cf25c24f244e768"
+      ],
+      "relationship_id": "relationship-525b8de7a2f86d5e36e3",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-3d3ed8926ebebbe15ab2"
+      ],
+      "relationship_id": "relationship-52eaa3aa897f4cb3ad9f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-3029cfbfafa2964e865d"
+      ],
+      "relationship_id": "relationship-55b9fa88cadf874cdf7d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-d2a762981090b4fd0843"
+      ],
+      "relationship_id": "relationship-55bcc20466465437f685",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-43e46acdc9c25b126872"
+      ],
+      "relationship_id": "relationship-563b64a9668c17bd4b1d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-51ad7b5dbb6788174d58"
+      ],
+      "relationship_id": "relationship-572803ad8e8587eda712",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-bfa364c573b59082e19e"
+      ],
+      "relationship_id": "relationship-581fbb67cedd7c76d7dc",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-a8deb16ab8b1577a012a"
+      ],
+      "relationship_id": "relationship-5b65ee2fa76d6454a421",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.alex@example.com"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-7f3b9c45df8559109b98"
+      ],
+      "relationship_id": "relationship-5c94fe3beb70a7c8820e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.EMP006"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-ef08487e6531f013b447"
+      ],
+      "relationship_id": "relationship-5db7c8661f1c264f7d07",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-4fa93d53d7a09cc55367"
+      ],
+      "relationship_id": "relationship-5f47ce419b77327f3bef",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.__default_high_queries"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-37f671c8f3d70777a93c"
+      ],
+      "relationship_id": "relationship-607e7885c1f94ef26591",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-31710ea16a239fd5d8ab"
+      ],
+      "relationship_id": "relationship-60d2360a65600a1bc01f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-dd06e33a09e604a2b4c0"
+      ],
+      "relationship_id": "relationship-61edfba012c392fbd24c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-d3247a16b84a0530447e"
+      ],
+      "relationship_id": "relationship-620b2e35790e42298e84",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(powerbi,b2fd91.pages.66666666-7777-8888-9999-000000000000.3f48c0bf859b2d14dcd0)"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-afd90aff07ff1590785b"
+      ],
+      "relationship_id": "relationship-6232cfd6e9b451026b10",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-runbook-order-count"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-69af912604621e33f559"
+      ],
+      "relationship_id": "relationship-6460794e9f49fd9a4255",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.brock1@example.com"
+    },
+    {
+      "category": "data_product_membership",
+      "evidence_ids": [
+        "evidence-d01caf2b79b2a9835d27"
+      ],
+      "relationship_id": "relationship-6554db0fa2841bc06873",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dataProduct:b2fd91.e0e95662-34bb-42fc-9dcc-29002bbbfeda"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-53e714cc199dc66301bf"
+      ],
+      "relationship_id": "relationship-656dae84ae3642fba47b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c21135fa874ab733d176"
+      ],
+      "relationship_id": "relationship-663549e82f810044dd77",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-b60823312a7112e0c703"
+      ],
+      "relationship_id": "relationship-66fe7a0038535ff0bd97",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7d3de06eeb6a2a99ffc9"
+      ],
+      "relationship_id": "relationship-67591d257b063ba3fdb4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-376201752078361ec651"
+      ],
+      "relationship_id": "relationship-677c3e881df0b52e5501",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_DATA_PLATFORM"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-5e6ed2c73807b18f8464"
+      ],
+      "relationship_id": "relationship-699c879406037dcf1bcb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-246a77f9525cd2b3fa0c"
+      ],
+      "relationship_id": "relationship-6a6cddf42dad6f5a5b3a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-11f9ae77b2a2332d5eb3"
+      ],
+      "relationship_id": "relationship-6a6f08471ebc140413f6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_DATA_PLATFORM"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-6d57a5ff68f0f1c85a16"
+      ],
+      "relationship_id": "relationship-6ca4af0fd23f46d84809",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-order-details"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-97926312d1aa97b63594"
+      ],
+      "relationship_id": "relationship-6d05e4ab8a44a165506b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-6a19326bee0660301721"
+      ],
+      "relationship_id": "relationship-6d086d97193d913c33fd",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.bryan@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-4012bfaffbd4be99d6d4"
+      ],
+      "relationship_id": "relationship-6d0961d4a968608cc2e6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-45ce47d2fb7a14dea69e"
+      ],
+      "relationship_id": "relationship-6e3e93928048d079dfa5",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-b553e06456fdbb94f3bc"
+      ],
+      "relationship_id": "relationship-6fb0383e02ae4037e27f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-158d669ad508aa72d8ac"
+      ],
+      "relationship_id": "relationship-6fc366649d4c233f8ba7",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-source-tables"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-8f2c5c1bec199534b328"
+      ],
+      "relationship_id": "relationship-7097cf7546548b2295c9",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-51836f7c9eadc3419c89"
+      ],
+      "relationship_id": "relationship-70a11dba2a2cc5a2ba98",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-79ca2e147ac78205ea9b"
+      ],
+      "relationship_id": "relationship-7168da382caff81a1672",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "pipeline_context",
+      "evidence_ids": [
+        "evidence-1c927cb820c1d8d3bb59"
+      ],
+      "relationship_id": "relationship-7372fb31539be02a8667",
+      "source_key": "urn:li:dataJob:(urn:li:dataFlow:(spark,b2fd91.export_table_orders_to_s3,b2fd91.default),b2fd91.export_table_orders_to_s3)",
+      "state": "present",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-e8d1a16dd9c66500a987"
+      ],
+      "relationship_id": "relationship-73ad3bd0d9f86de5d5bd",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.brock1@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-fdc657f255f56aca27a6"
+      ],
+      "relationship_id": "relationship-73c4db5669e73040952e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-b857d99238adde906aa6"
+      ],
+      "relationship_id": "relationship-7416213a54e00e8e26d3",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-a16f10c1c15d70e694e8"
+      ],
+      "relationship_id": "relationship-7578d8e930e5943dcdf0",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-6cc0fb3727c3a12e0b10"
+      ],
+      "relationship_id": "relationship-7586639b594fe698ac1b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-1630d077460f8b352586"
+      ],
+      "relationship_id": "relationship-79d203d26489f13edeb4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-runbook-promotions"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-e88f89cd9e147b4ec9eb"
+      ],
+      "relationship_id": "relationship-7c46ee4edb4ad6cd436e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-e7c38e937527b1589b31"
+      ],
+      "relationship_id": "relationship-7d58530ccc3dd636f325",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-528576fb9bd44734824d"
+      ],
+      "relationship_id": "relationship-827f8edd6cba91cfd4ed",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.kirk@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c6ece0e7cb43df7b688a"
+      ],
+      "relationship_id": "relationship-82c3304d5b03aa396cad",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-1d1b4ad1691c59760f0b"
+      ],
+      "relationship_id": "relationship-839132acf9dcf81e793a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-b974bd1e3509c20318d9"
+      ],
+      "relationship_id": "relationship-83e08476b3a6e26b3076",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-9ff6eff0e49d3f3f96c1"
+      ],
+      "relationship_id": "relationship-849ed63897239a4e8ea8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-22c560696fe5298c5947"
+      ],
+      "relationship_id": "relationship-8623023160c3ba4da675",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-b50e4fb21f68cca078ef"
+      ],
+      "relationship_id": "relationship-868e60487ec9574ba273",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-dbf9d2c199fc2d9a5f97"
+      ],
+      "relationship_id": "relationship-88a554c879446ed7d34b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(powerbi,b2fd91.pages.66666666-7777-8888-9999-000000000000.83a9aaa3207edd6c721e)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-0498c2fd84a3fffd0425"
+      ],
+      "relationship_id": "relationship-8c30f976f37fd785d705",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-23c9cad074697f015c3e"
+      ],
+      "relationship_id": "relationship-8d3f62cc0787f08b73ba",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-f802418d5443902363e4"
+      ],
+      "relationship_id": "relationship-8d83ba6aa6203e911716",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-7f97918421abc1ceb6dc"
+      ],
+      "relationship_id": "relationship-8d95e9191af5c8016030",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.d4f24004-fb54-4e3c-8dea-2b7e209230b0"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-11de52daba974ecfc498"
+      ],
+      "relationship_id": "relationship-8f74d70c0fc25d194133",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-410581b608e232f4d0d1"
+      ],
+      "relationship_id": "relationship-8f976e84dcc354fe7682",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-order-details"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-591115f525ff21a3f8a8"
+      ],
+      "relationship_id": "relationship-9001bb8c20619fcbc340",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(powerbi,b2fd91.pages.66666666-7777-8888-9999-000000000000.217abe0d5c1cd421c384)"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-23f09a1dc55e37cd09eb"
+      ],
+      "relationship_id": "relationship-90908e118fc51951b2e2",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.26e268c3-3688-4281-949e-8c1aa2600c02"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-8baed0cc95f6953a69e3"
+      ],
+      "relationship_id": "relationship-93271560d195dfa5f083",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-9e27a74b1ed02b567fdf"
+      ],
+      "relationship_id": "relationship-94770fd73866807d38f0",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7d203ecc77f3e07b05ad"
+      ],
+      "relationship_id": "relationship-9548c9db38e0a1af4470",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-449ee9cecd74f28fbd1b"
+      ],
+      "relationship_id": "relationship-95abc08f5c79d2da131b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-e9a5cc16c95dd4347b39"
+      ],
+      "relationship_id": "relationship-95f87af75111aefee651",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-b34fcfbc13aa8112970d"
+      ],
+      "relationship_id": "relationship-96df63b84fe47b81a25e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-d37999cb1a935a7b9896"
+      ],
+      "relationship_id": "relationship-983fb1a4e5460deb3b4f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(looker,b2fd91.dashboard_elements.221)"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-6b1d0c2d8a5a9bdbff03"
+      ],
+      "relationship_id": "relationship-9941d44c1f7675d771c3",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.f5bb0410-d9cd-4b24-ade4-361ff6bde7ea"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-3fd7c639dcfe457e2385"
+      ],
+      "relationship_id": "relationship-9ae87d9c00d17c62e6cd",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.jonny1@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c8e236327fd3d3ee1c38"
+      ],
+      "relationship_id": "relationship-9c44306500425bd39c90",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-7f30a7f4bbaf6d4cc88d"
+      ],
+      "relationship_id": "relationship-9c776cffd36a7788fb3e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-9170f9bb08a96018143f"
+      ],
+      "relationship_id": "relationship-9c7787f057fa4d4eac03",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(looker,b2fd91.dashboard_elements.224)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-036104fae89c58ef74bd"
+      ],
+      "relationship_id": "relationship-9c9fc2e4c45b07de11aa",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-ac651d83fd0e630ab3ae"
+      ],
+      "relationship_id": "relationship-9dc1bce4d08bc23fcc6b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-c548a89c0b1ee615e243"
+      ],
+      "relationship_id": "relationship-9dd31c38f7bf20443b5c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-5a902672645d690c29f4"
+      ],
+      "relationship_id": "relationship-a0b931bd27b3075b0cae",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-87cb02be311c6b612b0a"
+      ],
+      "relationship_id": "relationship-a6592d1e7e09753a52cb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-0c89b7edec9628661339"
+      ],
+      "relationship_id": "relationship-a71da422f50fa440a394",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-bbbed9f12b214935b3fe"
+      ],
+      "relationship_id": "relationship-a7c706697dd663c23caf",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-d9f315c2d87d2ade319e"
+      ],
+      "relationship_id": "relationship-a824ad72865c14622a23",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-2a351efc222ec7fd2752"
+      ],
+      "relationship_id": "relationship-a944e1351d15b20d1f62",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-orders"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-e2024105e09ff117e71e"
+      ],
+      "relationship_id": "relationship-abee34cfcb39cebdee11",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-60154740377ec7b6a204"
+      ],
+      "relationship_id": "relationship-ac0128b0631047977499",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-cca31705405fb2301012"
+      ],
+      "relationship_id": "relationship-ac1ad5cd9b5fe538e15a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_DATA_PLATFORM"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-dab651c48797fa980187"
+      ],
+      "relationship_id": "relationship-acdb6c8564efba8560dc",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-3e7061b9bd7bad17f878"
+      ],
+      "relationship_id": "relationship-ad0925e029c762642bd8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-5ff6768df9dd5db8147d"
+      ],
+      "relationship_id": "relationship-ad90598d4fe10d68d61b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-18d0adcb707f03143e5c"
+      ],
+      "relationship_id": "relationship-adad070b83a09e01ab9d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-2ba2b2b4daf97a110e75"
+      ],
+      "relationship_id": "relationship-aeab7754500e691d3b64",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(tableau,b2fd91.89f38fd7-058d-b66a-6db0-4f85f105468a)"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-b5bd7b8a515fe689b17f"
+      ],
+      "relationship_id": "relationship-afccbe3ce3dc0231f43d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.309dd98b-a96c-49de-93ad-acff10e963a2"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-86789e8dc395afa0ccd4"
+      ],
+      "relationship_id": "relationship-affb67d1eeb99c1fe734",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-1d84d638a9c6a741d309"
+      ],
+      "relationship_id": "relationship-b1da073f67ac88bf5773",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-2a28bbe1dc8eda8aceda"
+      ],
+      "relationship_id": "relationship-b23b55a397cd7a156bf6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-51d41a59a918fcd11bca"
+      ],
+      "relationship_id": "relationship-b2c9ebb0f5ee478aee8c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-e6da079b9949542ffa21"
+      ],
+      "relationship_id": "relationship-b377177bb63a657ff9f0",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-410a5de7ecab7269f682"
+      ],
+      "relationship_id": "relationship-b5eb7ff5ca6444184b6b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.e7106c45-b307-4eb6-9c8c-e7fff15f095a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-377c0d535c00eb8ea193"
+      ],
+      "relationship_id": "relationship-b6ce2c5d34f1434a407c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-94150004ca50482f5b38"
+      ],
+      "relationship_id": "relationship-b7c84b5a9942c125b1d6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-37400f2466fb6dad80c3"
+      ],
+      "relationship_id": "relationship-b9aa66b915d10af62c8e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-bc3febce4a4e41104cd2"
+      ],
+      "relationship_id": "relationship-bc28eefd7a32dee86943",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.91994180-93ee-43f7-9c97-5e74a4a43fbd"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-03241a45497b590faaf7"
+      ],
+      "relationship_id": "relationship-bca8f285fba73b85d7c8",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "pipeline_context",
+      "evidence_ids": [
+        "evidence-a2285f335fbd1249ebbe"
+      ],
+      "relationship_id": "relationship-bd011a7528276ca65db4",
+      "source_key": "urn:li:dataJob:(urn:li:dataFlow:(spark,b2fd91.import_table_orders_to_snowflake,b2fd91.default),b2fd91.import_table_orders_to_snowflake)",
+      "state": "present",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)|order_total"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-4a91a33d325a8abdc708"
+      ],
+      "relationship_id": "relationship-bed62bda5a744bbfce35",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-0b8b070aa1ec425535dc"
+      ],
+      "relationship_id": "relationship-bf380541eb1660d6b7a7",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-metrics"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-8e4b71b73827e2b5e6e6"
+      ],
+      "relationship_id": "relationship-bf443bf9e4ab498bc6e5",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dashboard:(looker,b2fd91.dashboards.53)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-f4f324031067d3988aae"
+      ],
+      "relationship_id": "relationship-c12d76ff41527605fb6c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-358eb9d004a676a121c5"
+      ],
+      "relationship_id": "relationship-c27e7a10088e4427de2c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-0df03a6d5a10aa50106f"
+      ],
+      "relationship_id": "relationship-c3f5d430bb4f38a1b81d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-9ece10fbfed9eb51ea31"
+      ],
+      "relationship_id": "relationship-c50d063b1d52e2573b80",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(powerbi,b2fd91.pages.66666666-7777-8888-9999-000000000000.85e432543b30346a0507)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-421285a89d99aa8caa4a"
+      ],
+      "relationship_id": "relationship-c65a0eb8bd82698207e7",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-45458e873027ab89e7b2"
+      ],
+      "relationship_id": "relationship-c6eb2be92df1201bef43",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.brock1@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-bf91db95007be47c296a"
+      ],
+      "relationship_id": "relationship-c77f71ca500195a1fc18",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-abb0ebe3e3224ef226da"
+      ],
+      "relationship_id": "relationship-c91a1deda52e4c51549e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.kirk@example.com"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-0c154ecbd3c184b1743b"
+      ],
+      "relationship_id": "relationship-c945dd2a9dd0f73a446b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7f84357f1f88296ef93c"
+      ],
+      "relationship_id": "relationship-ca9ed1dfd2b6604531c9",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-c136d36e1060539d4fed"
+      ],
+      "relationship_id": "relationship-cbfbd266842580c72fb4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-596c95af805cd1835e73"
+      ],
+      "relationship_id": "relationship-cd80901e445aa95c622a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(tableau,b2fd91.e051d978-989f-a329-5458-e01721b05570)"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-14b7b8bb966e037698e2"
+      ],
+      "relationship_id": "relationship-cdf8c3aac3b2eb78e37b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.EMP006"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-ac304caa7e1ac5b6eacd"
+      ],
+      "relationship_id": "relationship-ceb5d19eeb64fc144ff4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-06c977c4ed1da1da16e6"
+      ],
+      "relationship_id": "relationship-cf487d46f4478779aca1",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.marty@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-ba7902a7b059beb2e063"
+      ],
+      "relationship_id": "relationship-cfc0684667c7e37e9f5f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-9e482b191ed95a1459fa"
+      ],
+      "relationship_id": "relationship-d2f1ffc38b05a6e65474",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-9ba301063d9d63e49666"
+      ],
+      "relationship_id": "relationship-d3992238858938a3e64e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-6630df99e8b4b70900af"
+      ],
+      "relationship_id": "relationship-d3d8b4785f603e1d1e4f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-3a1e7b170d56a44fed6a"
+      ],
+      "relationship_id": "relationship-d48e61ca4e754fe0d402",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.EMP006"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-cb84b54b7ba5220be14a"
+      ],
+      "relationship_id": "relationship-d4ee8cbb876934e8bdb4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.309dd98b-a96c-49de-93ad-acff10e963a2"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-9592935f7c200fce0395"
+      ],
+      "relationship_id": "relationship-d662ddb1a5f1cc8b3fa6",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-cd698c09fc690d9fe4a4"
+      ],
+      "relationship_id": "relationship-d6a2aaabe95a33e95de0",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.EMP006"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-0cae325e7c20b700b7f3"
+      ],
+      "relationship_id": "relationship-d701b6cc583522f154bf",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-eb064148da699d9c0361"
+      ],
+      "relationship_id": "relationship-d7c09547ba30379c9564",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-ee12edcac8cc0f359694"
+      ],
+      "relationship_id": "relationship-d9421b40bc1f97d163b4",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dashboard:(tableau,b2fd91.843bf583-900b-f1ba-0532-b5e67a0373dc)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-5ab4411147fd8df02e9c"
+      ],
+      "relationship_id": "relationship-d97aff0081d990f0f78a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-1cbe6a0139f2b0b082c5"
+      ],
+      "relationship_id": "relationship-da131ac489a90a988852",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-0f8f965557d26c8f3b6d"
+      ],
+      "relationship_id": "relationship-dadc14ae71f59d8eb92f",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-ee61b37af19da980e934"
+      ],
+      "relationship_id": "relationship-db81b4c371ffc52b64ac",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-0bdbb1d01b61e4caca78"
+      ],
+      "relationship_id": "relationship-dbbbc8f6e614a9fe8328",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-fcc1bb60c158e2979128"
+      ],
+      "relationship_id": "relationship-dc2df19786176e013617",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpGroup:b2fd91.ORG_BACKEND_ENG"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-fd42d847c76bd8e5c920"
+      ],
+      "relationship_id": "relationship-dc4c8b0e426da2b633db",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(tableau,b2fd91.b8c660a8-10ea-e32a-b823-fa655e1c2f43)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-1031e6a2fc818755fad4"
+      ],
+      "relationship_id": "relationship-dd0ee01e2aefe1a1a0f5",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-fc5168b7e415bdec471e"
+      ],
+      "relationship_id": "relationship-dd97b6e79c8d2f489e8b",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-9ceba247a084ddfca067"
+      ],
+      "relationship_id": "relationship-ddb0254f3172ada11adb",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-74b7b950426de21a09af"
+      ],
+      "relationship_id": "relationship-df80ca4d513184089a30",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.costCenter"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-57f13f2049d159acd28b"
+      ],
+      "relationship_id": "relationship-e092ddbd4d56e2352088",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-c607c599ceb2a92608c3"
+      ],
+      "relationship_id": "relationship-e24e3bb5d558849b8d46",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.PII_Data"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-d9feda1ba2f8e334292e"
+      ],
+      "relationship_id": "relationship-e3ae141e470158982377",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.1598cf93-c199-43a1-8833-fce96faa9a1a"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-7fbbe1f1482f9813c0a2"
+      ],
+      "relationship_id": "relationship-e3c987496d3e9c3a85b7",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-5d8c6586d7d3c44826b3"
+      ],
+      "relationship_id": "relationship-e444cc7307d9b147310e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.jonny1@example.com"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-714980eb824f4c4139ad"
+      ],
+      "relationship_id": "relationship-e5ddde8d8a0e260d3c7a",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-1754a3e1912f001a74e7"
+      ],
+      "relationship_id": "relationship-e742d73a42907f70d469",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-analytics"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-b26185607b3cae41c0dd"
+      ],
+      "relationship_id": "relationship-e841a49cf62c0c6ed401",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-1b03ee1c46f1cbd2bd91"
+      ],
+      "relationship_id": "relationship-e869b0a80519278c3765",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-b918631aac23e0f54c6d"
+      ],
+      "relationship_id": "relationship-e9a6dface2b2ce8be684",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-d1e4ea3d253fea0b25d1"
+      ],
+      "relationship_id": "relationship-ea5da057382e1689834d",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-a1a84a4404e33015e7df"
+      ],
+      "relationship_id": "relationship-eaa5b86f015f25ccf89c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.26e268c3-3688-4281-949e-8c1aa2600c02"
+    },
+    {
+      "category": "tag_assignment",
+      "evidence_ids": [
+        "evidence-cd0db65038e73f8922d1"
+      ],
+      "relationship_id": "relationship-ec9b0fd9733beae734fa",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:tag:b2fd91.__default_large_table"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-857c54768eb70da84374"
+      ],
+      "relationship_id": "relationship-ed312ab8dcddd26b1f1c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "field_lineage",
+      "evidence_ids": [
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "relationship_id": "relationship-eea1fea61192feb79301",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "state": "verified",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-8db1d078c47c16ebeff9"
+      ],
+      "relationship_id": "relationship-eeaac8d5bf17f4d80c76",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-0387ceede8d43f6a5a87"
+      ],
+      "relationship_id": "relationship-efb8f0d90d6d38d63b42",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-370506cf1bc73a324df3"
+      ],
+      "relationship_id": "relationship-efbb20c99b8affe7825e",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.escalationContact"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-52ae42ee6b3859938d4b"
+      ],
+      "relationship_id": "relationship-f036e1ee37efda6f2148",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.retentionPeriod"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-71f9b12352b209f49fe6"
+      ],
+      "relationship_id": "relationship-f1143cfa2330fc622c36",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "pipeline_context",
+      "evidence_ids": [
+        "evidence-1c927cb820c1d8d3bb59"
+      ],
+      "relationship_id": "relationship-f22712136075e8900416",
+      "source_key": "urn:li:dataJob:(urn:li:dataFlow:(spark,b2fd91.export_table_orders_to_s3,b2fd91.default),b2fd91.export_table_orders_to_s3)",
+      "state": "present",
+      "target_key": "urn:li:dataset:(urn:li:dataPlatform:s3,b2fd91.demo-data-bucket/order_entry/orders,PROD)|order_total"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-06c977c4ed1da1da16e6"
+      ],
+      "relationship_id": "relationship-f2abd13a5117ab7934bf",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.marty@example.com"
+    },
+    {
+      "category": "bi_reachable_context",
+      "evidence_ids": [
+        "evidence-a076283d3f7808304b80"
+      ],
+      "relationship_id": "relationship-f5ce006dd1071a3918a9",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:chart:(looker,b2fd91.dashboard_elements.223)"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-eeb9876df267233a1fbb"
+      ],
+      "relationship_id": "relationship-f63f7093970f32209c00",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataFreshnessSla"
+    },
+    {
+      "category": "structured_property_assignment",
+      "evidence_ids": [
+        "evidence-2181e216690b64f69693"
+      ],
+      "relationship_id": "relationship-f64d0daee089101d7d8c",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:structuredProperty:showcase.dataQualityScore"
+    },
+    {
+      "category": "ownership",
+      "evidence_ids": [
+        "evidence-ce281b7f72e2f56b6ab5"
+      ],
+      "relationship_id": "relationship-f8b1933c29fad96d0c13",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:corpuser:b2fd91.jonny2@example.com"
+    },
+    {
+      "category": "domain_assignment",
+      "evidence_ids": [
+        "evidence-de24254e5c255e64cf59"
+      ],
+      "relationship_id": "relationship-f8d3b9066ad0a39da542",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:domain:b2fd91.1caf2b7c-ca73-4708-bdec-6687d78cab0e"
+    },
+    {
+      "category": "glossary_assignment",
+      "evidence_ids": [
+        "evidence-c1d8520d9b24ae16f973"
+      ],
+      "relationship_id": "relationship-f8f7956b54891ca20d03",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total",
+      "state": "present",
+      "target_key": "urn:li:glossaryTerm:b2fd91.42266719-3cab-42b8-a8d2-49d782876dbc"
+    },
+    {
+      "category": "data_product_membership",
+      "evidence_ids": [
+        "evidence-a480047774c3a70eed65"
+      ],
+      "relationship_id": "relationship-f98951191ab735884edf",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "state": "present",
+      "target_key": "urn:li:dataProduct:b2fd91.e0e95662-34bb-42fc-9dcc-29002bbbfeda"
+    },
+    {
+      "category": "document_relationship",
+      "evidence_ids": [
+        "evidence-8a36e49e7d6af50473bb"
+      ],
+      "relationship_id": "relationship-faa95bed65b1daf683f5",
+      "source_key": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)",
+      "state": "present",
+      "target_key": "urn:li:document:ecomm-analytics"
+    }
+  ],
+  "created_at": "2026-08-05T00:00:00Z",
+  "criticality_statement": "Context is present, but no criticality is inferred from relationship presence.",
+  "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+  "engine_version": "6.1.0",
+  "operation": "FIELD_TYPE_CHANGE",
+  "proposal_fingerprint": "sha256:088e995d8193a209b44693683b1693c36722e4ac4ca727a7d9e790d3729c7de6",
+  "proposal_id": "CHRONOS-EXAMPLE-TYPE-PROPOSAL-001",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

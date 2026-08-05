@@ -1,0 +1,139 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_explanation_bundle",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "diff_hunk_explanations": [
+    {
+      "patch_fingerprint": "sha256:603a940a9cbdfa7cdaf9bbeb1cf0ae434f001f56ca7a00e0eeca9828b8ec87bb",
+      "patch_hunk_count": 1,
+      "reason": "Every hunk is generated from one or more certified repair actions.",
+      "target_path": "quality/order_checks.yml"
+    }
+  ],
+  "engine_version": "6.4.0",
+  "file_explanations": [
+    {
+      "candidate_preview_path": "repairs/repaired_files/quality/order_checks.yml",
+      "repair_action_ids": [
+        "repair-action-3230feec7470cf3f7f5d"
+      ],
+      "target_path": "quality/order_checks.yml"
+    }
+  ],
+  "head_commit": "fixture-head-delete-repair-v1",
+  "logical_group_explanations": [
+    {
+      "application_order": [
+        "repair-action-3230feec7470cf3f7f5d"
+      ],
+      "logical_change_group_id": "logical-change-c1f873b076b1024a2d48",
+      "repair_action_ids": [
+        "repair-action-3230feec7470cf3f7f5d"
+      ]
+    }
+  ],
+  "operation": "GENERATE_REPAIR",
+  "package_explanation": {
+    "remaining": {
+      "blocked_root_ids": [],
+      "execution_evidence_state": "MISSING_PHASE_7_VALIDATION",
+      "manual_decision_root_ids": [],
+      "projection_state": "STATIC_PROJECTED",
+      "remaining_predecessor_roots": [
+        {
+          "compatibility_state": "UNRESOLVED",
+          "contributing_file_ids": [
+            "pr-file-1e0c866550dd9ac8b244"
+          ],
+          "delta_ids": [
+            "semantic-delta-b78cd5bffc279952ffb3"
+          ],
+          "evidence_state": "CODE_DERIVED",
+          "logical_change_id": "logical-change-c1f873b076b1024a2d48",
+          "resolved_entities": [
+            "o.order_total"
+          ],
+          "root_cause_id": "pr-root-7598a0e1f1900946f565",
+          "root_type": "STRUCTURAL_CHANGE",
+          "scope": "STRUCTURAL"
+        }
+      ],
+      "unresolved_semantic_intent": []
+    },
+    "repair_disposition": "REPAIR_CANDIDATE_READY_FOR_REVIEW",
+    "required_validation": [
+      "apply_candidate_patch_in_disposable_checkout",
+      "execute_affected_project_validation",
+      "obtain_human_review_and_owner_approval",
+      "phase_7_consumer_and_quality_validation",
+      "verify_runtime_and_data_semantics"
+    ],
+    "what_was_not_changed": "Semantic business intent, dynamic constructs, unsupported roots, and source repository contents.",
+    "why": "Generate only parser-backed candidate edits for certified repository inconsistencies."
+  },
+  "predecessor_analysis_fingerprint": "sha256:aca9fd368cfbdf92b2d4ffbb94b093494a829035591cf8cce3f89af221398892",
+  "predecessor_analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "predecessor_manifest_fingerprint": "sha256:e526897f632dff21ae33d1343b7e298d63223516cb7bd823d4ac65716c75c6fb",
+  "projected_post_repair_explanation": {
+    "coherence": "UNRESOLVED",
+    "runtime_verified": false,
+    "state": "STATIC_PROJECTED"
+  },
+  "proposal_fingerprint": "sha256:5dfb7bc4e0334157c3404ae83bd6d6b8b33a4fe0554d664109cd62a1f4e8cb44",
+  "proposal_id": "CHRONOS-REPAIR-DELETE-PROPOSAL-001",
+  "remaining_root_explanations": {
+    "blocked_root_ids": [],
+    "execution_evidence_state": "MISSING_PHASE_7_VALIDATION",
+    "manual_decision_root_ids": [],
+    "projection_state": "STATIC_PROJECTED",
+    "remaining_predecessor_roots": [
+      {
+        "compatibility_state": "UNRESOLVED",
+        "contributing_file_ids": [
+          "pr-file-1e0c866550dd9ac8b244"
+        ],
+        "delta_ids": [
+          "semantic-delta-b78cd5bffc279952ffb3"
+        ],
+        "evidence_state": "CODE_DERIVED",
+        "logical_change_id": "logical-change-c1f873b076b1024a2d48",
+        "resolved_entities": [
+          "o.order_total"
+        ],
+        "root_cause_id": "pr-root-7598a0e1f1900946f565",
+        "root_type": "STRUCTURAL_CHANGE",
+        "scope": "STRUCTURAL"
+      }
+    ],
+    "unresolved_semantic_intent": []
+  },
+  "repair_action_explanations": [
+    {
+      "protected_semantics": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "remaining_validation": [
+        "phase_7_consumer_and_quality_validation"
+      ],
+      "repair_action_id": "repair-action-3230feec7470cf3f7f5d",
+      "replacement_evidence": {
+        "counterfactual_entities": [],
+        "identity_claim_evidence": [
+          "semantic-delta-b78cd5bffc279952ffb3"
+        ],
+        "value": null
+      },
+      "root_cause_id": "pr-root-7598a0e1f1900946f565",
+      "why_selected": "Remove one static declaration that only references the explicitly deleted identity order_total."
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-DELETE-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-REPAIR-DELETE",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,5 @@
+quality:
+  description: Validate the proposed order metric.
+  checks:
+    - field: order_amount
+      expected_type: numeric

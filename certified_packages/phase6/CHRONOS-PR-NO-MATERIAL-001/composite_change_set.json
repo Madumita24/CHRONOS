@@ -1,0 +1,81 @@
+{
+  "analysis_id": "CHRONOS-PR-NO-MATERIAL-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "composite_change_set",
+  "base_commit": "fixture-base-no-material-v1",
+  "changed_file_ids": [
+    "pr-file-1e0c866550dd9ac8b244",
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-6c30740f6ee51bba5f72",
+    "pr-file-ab119079a84818f63689"
+  ],
+  "coherence_state": "COHERENT",
+  "conflicts": [],
+  "counterfactual_entities": [],
+  "delta_ids": [
+    "pr-delta-2fd3e8d8b9f3139d1519",
+    "pr-delta-4ea319f84d9b270c3a62"
+  ],
+  "engine_version": "6.3.0",
+  "evidence_summary": {
+    "conflict_count": 0,
+    "file_count": 4,
+    "material_delta_count": 0,
+    "root_cause_count": 0
+  },
+  "file_analysis_ids": [
+    "pr-file-1e0c866550dd9ac8b244",
+    "pr-file-4f4487c1cbff180710d6",
+    "pr-file-6c30740f6ee51bba5f72",
+    "pr-file-ab119079a84818f63689"
+  ],
+  "head_commit": "fixture-head-no-material-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "logical_change_group_ids": [],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "pr_identity": {
+    "base": "fixture-base-no-material-v1",
+    "head": "fixture-head-no-material-v1"
+  },
+  "proposal_fingerprint": "sha256:cf734e418b9f56c23d4dbc0325be837cd784ccb8f9cc02dae1cf09acca9c8424",
+  "proposal_id": "CHRONOS-PR-NO-MATERIAL-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+  "repository_identity": {
+    "analysis_root": ".",
+    "base_commit": "fixture-base-no-material-v1",
+    "head_commit": "fixture-head-no-material-v1",
+    "repository_fingerprint": "sha256:3e7f1e3cda3388309e4b25ef3353c83613d19930d0ce75f7dec523799e4127c5",
+    "repository_name": "chronos-multifile-no-material",
+    "repository_namespace": "Madumita24"
+  },
+  "resolved_entities": [
+    {
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+      "environment": "PROD",
+      "logical_name": "b2fd91.ORDER_ENTRY_DB.analytics.order_details",
+      "platform": "dbt",
+      "resolution_state": "RESOLVED"
+    },
+    {
+      "datahub_field_key": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "mapping_state": "RESOLVED_CURRENT_OUTPUT",
+      "output_name": "order_total"
+    },
+    {
+      "alias": "o",
+      "code_relation": "order_entry_db.order_entry.orders",
+      "dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)",
+      "evidence_class": "OBSERVED_DATAHUB_EVIDENCE",
+      "resolution_state": "RESOLVED",
+      "resolution_type": "EXACT_PLATFORM_RELATION"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-NO-MATERIAL",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "unresolved_references": [],
+  "warnings": [
+    "execution_validity_unverified"
+  ]
+}

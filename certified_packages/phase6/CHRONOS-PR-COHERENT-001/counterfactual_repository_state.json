@@ -1,0 +1,180 @@
+{
+  "active_and_removed_files": [
+    {
+      "active_head_path": "models/order_details.sql",
+      "category": "SQL_MODEL",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "head_content_fingerprint": "sha256:6f4074251b0681b5b1fa43df1517a9ab80f613a1ef9327843e0c29c0c6b2745a",
+      "parsed_head": {
+        "canonical_ast_fingerprint": "sha256:0976bfc44cf0307548b61d50791994ed6010888b0c173499c5f5cc243580ce92",
+        "canonical_sql": "SELECT AVG(o.order_total) AS order_amount FROM order_entry_db.order_entry.orders AS o",
+        "ctes": [],
+        "dialect": "postgres",
+        "filter_columns": [],
+        "filter_literals": [],
+        "filter_operators": [],
+        "filter_predicate": null,
+        "grouping": [],
+        "joins": [],
+        "ordering": [],
+        "output_columns": [
+          {
+            "aggregations": [
+              {
+                "distinct": false,
+                "function": "AVG",
+                "input_references": [
+                  {
+                    "name": "order_total",
+                    "normalized": "o.order_total",
+                    "qualifier": "o"
+                  }
+                ],
+                "normalized_expression": "AVG(o.order_total)"
+              }
+            ],
+            "data_type_state": "UNKNOWN",
+            "expression_fingerprint": "sha256:4ce78c64972f4323b738c703009234edc37e7ef22f5537da8291a2d19f122be8",
+            "functions": [],
+            "has_case": false,
+            "has_window": false,
+            "input_columns": [
+              {
+                "name": "order_total",
+                "normalized": "o.order_total",
+                "qualifier": "o"
+              }
+            ],
+            "lineage_derivation": "CODE_DERIVED_REFERENCE",
+            "literals": [],
+            "normalized_expression": "AVG(o.order_total)",
+            "operators": [],
+            "ordinal": 0,
+            "output_name": "order_amount",
+            "source_relations": [
+              "o"
+            ]
+          }
+        ],
+        "parser_name": "sqlglot",
+        "parser_version": "30.13.0",
+        "source_relations": [
+          {
+            "alias": "o",
+            "is_cte": false,
+            "qualified_name": "order_entry_db.order_entry.orders"
+          }
+        ],
+        "statement_type": "SELECT",
+        "unresolved_stars": [],
+        "windows": []
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "quality/order_checks.yml",
+      "category": "QUALITY_CONFIG",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "head_content_fingerprint": "sha256:365495567a3b61e9cbb381c8da66b2813bd71b8e8f07ba5be5f15b7795917975",
+      "parsed_head": {
+        "references": [
+          {
+            "kind": "expected_type",
+            "location": "quality.checks[0].expected_type",
+            "value": "numeric"
+          },
+          {
+            "kind": "field",
+            "location": "quality.checks[0].field",
+            "value": "order_amount"
+          }
+        ]
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "models/schema.yml",
+      "category": "DBT_SCHEMA",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "head_content_fingerprint": "sha256:c5a54be2c7872039e311a6dc3a37f7f8f9fa335cf2ce98a62b0202a21094f620",
+      "parsed_head": {
+        "models": {
+          "order_details": {
+            "columns": {
+              "order_amount": {
+                "constraints": [],
+                "data_type": "numeric",
+                "description": null,
+                "meta": {},
+                "name": "order_amount",
+                "tags": [],
+                "tests": [
+                  "not_null"
+                ]
+              }
+            },
+            "constraints": [],
+            "contract_enforced": null,
+            "description": null,
+            "meta": {},
+            "name": "order_details",
+            "tags": [],
+            "tests": []
+          }
+        }
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    },
+    {
+      "active_head_path": "dags/orders_pipeline.py",
+      "category": "PIPELINE_DAG",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "head_content_fingerprint": "sha256:9cb049436a24c4e70a87176ecc7cb6dc8850964dddcd57a5226ab40733d532d1",
+      "parsed_head": {
+        "dependencies": [],
+        "dynamic": [],
+        "references": [
+          {
+            "kind": "output_field",
+            "task_id": "publish_orders",
+            "value": "order_amount"
+          }
+        ],
+        "tasks": [
+          {
+            "operator_type": "PythonOperator",
+            "static_arguments": {
+              "output_field": "order_amount"
+            },
+            "task_id": "publish_orders",
+            "variable": "publish"
+          }
+        ]
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    }
+  ],
+  "analysis_id": "CHRONOS-PR-COHERENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_repository_state",
+  "base_commit": "fixture-base-coherent-v1",
+  "current_repository_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-coherent-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:296f4ab93dff592d1aa9a96900d96ae246040c425dc7b6cda66b1a629d657ba1",
+  "proposal_id": "CHRONOS-PR-COHERENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:c577dd1b5a9ecac1bc0784afeeca5d3668401430905d9df94a5b600ae6465ff7",
+  "scenario_id": "CHRONOS-MULTIFILE-COHERENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

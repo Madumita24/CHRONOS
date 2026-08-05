@@ -1,0 +1,70 @@
+{
+  "analysis_id": "CHRONOS-PR-CONFLICT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "contract_quality_change_set",
+  "base_commit": "fixture-base-conflict-v1",
+  "deltas": [
+    {
+      "after": null,
+      "before": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "order_total",
+        "tags": [],
+        "tests": []
+      },
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-bbb7074ea4274a953734",
+      "delta_type": "COLUMN_REMOVED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_details",
+        "order_total"
+      ],
+      "scope": "model:order_details:column:order_total"
+    },
+    {
+      "after": {
+        "constraints": [],
+        "data_type": "numeric",
+        "description": null,
+        "meta": {},
+        "name": "total_amount",
+        "tags": [],
+        "tests": []
+      },
+      "before": null,
+      "delta_class": "ModelContractDelta",
+      "delta_id": "pr-delta-f552bbc8164e098604b6",
+      "delta_type": "COLUMN_ADDED",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "A dbt schema column declaration was added or removed.",
+      "file_change_id": "pr-file-4f4487c1cbff180710d6",
+      "file_path": "models/schema.yml",
+      "material": true,
+      "path": "models/schema.yml",
+      "references": [
+        "order_details",
+        "total_amount"
+      ],
+      "scope": "model:order_details:column:total_amount"
+    }
+  ],
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-conflict-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:af16349aa857298e01344c7079e764cc88db9386ba6137cd2179ee781dc6f6cc",
+  "proposal_id": "CHRONOS-PR-CONFLICT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:40df1d58284e9c0ea3450c437a0c5e24a386e82abad9f444a7a6659c1e5a3219",
+  "scenario_id": "CHRONOS-MULTIFILE-CONFLICT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

@@ -1,0 +1,109 @@
+{
+  "active_and_removed_files": [
+    {
+      "active_head_path": "models/order_details.sql",
+      "category": "SQL_MODEL",
+      "file_change_id": "pr-file-1e0c866550dd9ac8b244",
+      "head_content_fingerprint": "sha256:b62bb63f940c9debdba12dc2c3a28789e68941df7eab279af4f6dbcc16202310",
+      "parsed_head": {
+        "canonical_ast_fingerprint": "sha256:2e3afe964c2d87ef2203b1cf7ee618ddabc6dc69e1966a4bdd7c6a3239b2136e",
+        "canonical_sql": "SELECT o.order_status FROM order_entry_db.order_entry.orders AS o",
+        "ctes": [],
+        "dialect": "postgres",
+        "filter_columns": [],
+        "filter_literals": [],
+        "filter_operators": [],
+        "filter_predicate": null,
+        "grouping": [],
+        "joins": [],
+        "ordering": [],
+        "output_columns": [
+          {
+            "aggregations": [],
+            "data_type_state": "UNKNOWN",
+            "expression_fingerprint": "sha256:0aadff36f59be17c6c6bd4848041b9e844ec866a1b8e390013a98ba78910baa5",
+            "functions": [],
+            "has_case": false,
+            "has_window": false,
+            "input_columns": [
+              {
+                "name": "order_status",
+                "normalized": "o.order_status",
+                "qualifier": "o"
+              }
+            ],
+            "lineage_derivation": "CODE_DERIVED_REFERENCE",
+            "literals": [],
+            "normalized_expression": "o.order_status",
+            "operators": [],
+            "ordinal": 0,
+            "output_name": "order_status",
+            "source_relations": [
+              "o"
+            ]
+          }
+        ],
+        "parser_name": "sqlglot",
+        "parser_version": "30.13.0",
+        "source_relations": [
+          {
+            "alias": "o",
+            "is_cte": false,
+            "qualified_name": "order_entry_db.order_entry.orders"
+          }
+        ],
+        "statement_type": "SELECT",
+        "unresolved_stars": [],
+        "windows": []
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": [
+        {
+          "datahub_field_key": null,
+          "evidence_class": "CODE_DERIVED_EVIDENCE",
+          "mapping_state": "UNRESOLVED_OUTPUT",
+          "output_name": "order_status"
+        }
+      ]
+    },
+    {
+      "active_head_path": "quality/order_checks.yml",
+      "category": "QUALITY_CONFIG",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "head_content_fingerprint": "sha256:3804650172143f572adb81f505dc7da531e0dce5dc4294dfe64543bde9520fed",
+      "parsed_head": {
+        "references": [
+          {
+            "kind": "field",
+            "location": "quality.field",
+            "value": "order_status"
+          },
+          {
+            "kind": "field",
+            "location": "quality.field",
+            "value": "order_total"
+          }
+        ]
+      },
+      "removed_base_path": null,
+      "status": "MODIFIED",
+      "unresolved_constructs": []
+    }
+  ],
+  "analysis_id": "CHRONOS-PR-DELETE-REPAIR-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_repository_state",
+  "base_commit": "fixture-base-delete-repair-v1",
+  "current_repository_mutated": false,
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-delete-repair-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:7e863e898e87e372ac661384b9ab49f3ade18061fb3d362a9a143a3d04ba32de",
+  "proposal_id": "CHRONOS-PR-DELETE-REPAIR-PROPOSAL-001",
+  "repository_fingerprint": "sha256:08d7000398d3b2a246f65e99879a5529fb3933483919d68d726463cc9cd1bcca",
+  "scenario_id": "CHRONOS-DELETE-REPAIR",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

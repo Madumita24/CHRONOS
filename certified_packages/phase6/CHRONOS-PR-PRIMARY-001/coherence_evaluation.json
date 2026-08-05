@@ -1,0 +1,41 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "coherence_evaluation",
+  "base_commit": "fixture-base-primary-v1",
+  "conflicts": [],
+  "created_at": "2026-08-05T00:00:00Z",
+  "engine_version": "6.3.0",
+  "findings": [
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "The proposed repository still contains a supported static reference to order_total while the model proposes order_amount.",
+      "file_change_id": "pr-file-ab119079a84818f63689",
+      "file_path": "dags/orders_pipeline.py",
+      "finding_id": "pr-stale-a5b4bdb8f3fe2e5fb55b",
+      "finding_type": "STALE_REFERENCE",
+      "future_field": "order_amount"
+    },
+    {
+      "current_field": "order_total",
+      "evidence_class": "CODE_DERIVED_EVIDENCE",
+      "explanation": "The proposed repository still contains a supported static reference to order_total while the model proposes order_amount.",
+      "file_change_id": "pr-file-3c1d30b2b3aca04b82b2",
+      "file_path": "quality/order_checks.yml",
+      "finding_id": "pr-stale-fac24903886b23238ee7",
+      "finding_type": "STALE_REFERENCE",
+      "future_field": "order_amount"
+    }
+  ],
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "state": "INCONSISTENT"
+}

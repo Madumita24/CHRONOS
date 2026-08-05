@@ -1,0 +1,178 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "repair_rule_evaluation",
+  "base_commit": "fixture-base-primary-v1",
+  "classification_rule_ids": [
+    "repair.manual.change-source-or-intent.v1",
+    "repair.manual.semantic-intent.v1",
+    "repair.stale-field.dag-static.v1",
+    "repair.stale-field.quality-config.v1"
+  ],
+  "editor_registry": [
+    {
+      "editor_name": "dbt_schema_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "python_dag_static_editor",
+      "editor_version": "6.4.0/python-ast-source-span",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_DAG_STATIC_ARGUMENT",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "sqlglot_ast_editor",
+      "editor_version": "6.4.0/sqlglot-30.13.0",
+      "executes_content": false,
+      "supported_operations": [
+        "UPDATE_SQL_IDENTIFIER",
+        "UPDATE_SQL_OUTPUT_ALIAS"
+      ]
+    },
+    {
+      "editor_name": "static_reference_editor",
+      "editor_version": "6.4.0/static-reference-dispatch",
+      "executes_content": false,
+      "supported_operations": [
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_MODEL_FILE_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_config_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    },
+    {
+      "editor_name": "structured_contract_editor",
+      "editor_version": "6.4.0/pyyaml-6.0.3-json-stdlib",
+      "executes_content": false,
+      "supported_operations": [
+        "REMOVE_STALE_STATIC_REFERENCE",
+        "RENAME_MAPPING_KEY",
+        "REPLACE_STATIC_SCALAR",
+        "UPDATE_CONTRACT_FIELD",
+        "UPDATE_CONTRACT_TYPE",
+        "UPDATE_DBT_COLUMN_NAME",
+        "UPDATE_MAPPING_VALUE",
+        "UPDATE_MODEL_FILE_REFERENCE",
+        "UPDATE_PIPELINE_CONFIG_REFERENCE",
+        "UPDATE_QUALITY_REFERENCE"
+      ]
+    }
+  ],
+  "engine_version": "6.4.0",
+  "evaluated_rules": [
+    {
+      "conditional": false,
+      "edit_strategy": "UPDATE_DAG_STATIC_ARGUMENT",
+      "editor_name": "python_dag_static_editor",
+      "explanation_template": "Align the exact stale DAG field argument {current} to the certified future identity {future}.",
+      "post_generation_static_checks": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy",
+        "dag_dependencies_unchanged"
+      ],
+      "preconditions": [
+        "static_string_argument"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_dag_parse_and_execution"
+      ],
+      "repair_rule_id": "repair.stale-field.dag-static.v1",
+      "required_evidence": [
+        "certified_predecessor",
+        "matching_head_content_fingerprint",
+        "exact_current_static_value",
+        "one_coherent_future_identity",
+        "one_parser_confirmed_target",
+        "no_competing_future_identity"
+      ],
+      "supported_file_categories": [
+        "PIPELINE_DAG"
+      ],
+      "supported_root_types": [
+        "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+        "FIELD_REFERENCE_CHANGED"
+      ]
+    },
+    {
+      "conditional": false,
+      "edit_strategy": "UPDATE_QUALITY_REFERENCE",
+      "editor_name": "structured_config_editor",
+      "explanation_template": "Align the exact stale quality reference {current} to the certified future identity {future}.",
+      "post_generation_static_checks": [
+        "candidate_parses",
+        "exact_intended_target_changed",
+        "untargeted_structure_equivalent",
+        "generated_diff_matches_candidate",
+        "patch_applies_to_certified_head_copy"
+      ],
+      "preconditions": [
+        "allowlisted_structured_reference"
+      ],
+      "remaining_evidence_requirements": [
+        "phase_7_quality_validation"
+      ],
+      "repair_rule_id": "repair.stale-field.quality-config.v1",
+      "required_evidence": [
+        "certified_predecessor",
+        "matching_head_content_fingerprint",
+        "exact_current_static_value",
+        "one_coherent_future_identity",
+        "one_parser_confirmed_target",
+        "no_competing_future_identity"
+      ],
+      "supported_file_categories": [
+        "QUALITY_CONFIG"
+      ],
+      "supported_root_types": [
+        "STALE_PIPELINE_OR_QUALITY_REFERENCE",
+        "QUALITY_EXPECTATION_CHANGED"
+      ]
+    }
+  ],
+  "head_commit": "fixture-head-primary-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

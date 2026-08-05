@@ -1,0 +1,37 @@
+{
+  "artifact_schema_version": "1.0",
+  "artifact_type": "protected_semantics_validation",
+  "base_commit": "fixture-base-primary-v1",
+  "dag_dependency_graph_changed_by_repair": false,
+  "engine_version": "6.4.0",
+  "head_commit": "fixture-head-primary-v1",
+  "operation": "GENERATE_REPAIR",
+  "predecessor_analysis_fingerprint": "sha256:612c05df17c97b33afdae40b683a7fc9be12e434c2e79658c7e2de2bdc910aba",
+  "predecessor_analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "predecessor_manifest_fingerprint": "sha256:bcf7c2daf1a37aaaf1725a24159ab716819a4e87b67f3fe5c0d11d8344cc7af6",
+  "proposal_fingerprint": "sha256:dca3e25c08f32a3ac9f4f9ea2833386c0f9ded94c32c9ad5c6e60942fa2e8df1",
+  "proposal_id": "CHRONOS-REPAIR-PRIMARY-PROPOSAL-001",
+  "records": [
+    {
+      "dag_structure_after": "sha256:d73150734fb6af1f2e11978602f55324aee7184d38a6c27047b545dfb4d80214",
+      "dag_structure_before": "sha256:d73150734fb6af1f2e11978602f55324aee7184d38a6c27047b545dfb4d80214",
+      "repair_action_id": "repair-action-534cc6722d9b405f0dcf",
+      "target_path": "dags/orders_pipeline.py",
+      "unchanged": true
+    },
+    {
+      "repair_action_id": "repair-action-8afe9abf7b6e3db8afc5",
+      "target_path": "quality/order_checks.yml",
+      "unchanged": true,
+      "untargeted_structure_after": "sha256:955ffa281382621c2d5ad7c70f02065a02eae2e41e56bd1708edd161e335f42d",
+      "untargeted_structure_before": "sha256:955ffa281382621c2d5ad7c70f02065a02eae2e41e56bd1708edd161e335f42d"
+    }
+  ],
+  "repair_analysis_id": "CHRONOS-REPAIR-PRIMARY-001",
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "scenario_id": "CHRONOS-REPAIR-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_aggregation_filter_join_expression_changed_by_repair": false,
+  "state": "PROTECTED_SEMANTICS_PRESERVED"
+}

@@ -1,0 +1,38 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-FILTER-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_semantic_state",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "model_semantic_state": "SEMANTICS_CHANGED",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "outputs": [
+    {
+      "change_classifications": [
+        "semantic-delta-f3ecd7450458ce4acd9d"
+      ],
+      "current_expression_fingerprint": "sha256:090b2f385cd463f0a82797938eb9d1581af66eb598c5d984a8c879c9128edea5",
+      "current_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_expression_fingerprint": "sha256:090b2f385cd463f0a82797938eb9d1581af66eb598c5d984a8c879c9128edea5",
+      "future_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "output_name": "order_total",
+      "resolved_inputs": [
+        "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_status",
+        "urn:li:dataset:(urn:li:dataPlatform:postgres,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+      ],
+      "semantic_state": "SEMANTICS_CHANGED",
+      "structural_state": "PRESERVED",
+      "unresolved_inputs": []
+    }
+  ],
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:c58babb40980c649d3c0ca328c820e7877f7d3bfd25b3a0691e88d83af34515c",
+  "proposal_id": "CHRONOS-SEMANTIC-FILTER-PROPOSAL-001",
+  "row_set_semantics_changed": true,
+  "scenario_id": "CHRONOS-SEMANTIC-FILTER",
+  "snapshot_mutated": false,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres"
+}

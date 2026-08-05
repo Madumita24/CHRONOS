@@ -1,0 +1,38 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-JOIN-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "counterfactual_semantic_state",
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "model_semantic_state": "SEMANTICS_CHANGED",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "outputs": [
+    {
+      "change_classifications": [
+        "semantic-delta-7392cfb823f2cc003a33"
+      ],
+      "current_expression_fingerprint": "sha256:da39e2960eaf5591d8fe026dfff43ba63ac63f0447a8c83d90b3c429280e754d",
+      "current_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_expression_fingerprint": "sha256:da39e2960eaf5591d8fe026dfff43ba63ac63f0447a8c83d90b3c429280e754d",
+      "future_identity": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "output_name": "order_total",
+      "resolved_inputs": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.order_entry.orders,PROD)|order_total"
+      ],
+      "semantic_state": "SEMANTICS_CHANGED",
+      "structural_state": "PRESERVED",
+      "unresolved_inputs": []
+    }
+  ],
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:40f925aee62f3e3aca581307069123372bde75eb0bd23f877d03bec5c5952908",
+  "proposal_id": "CHRONOS-SEMANTIC-JOIN-PROPOSAL-001",
+  "row_set_semantics_changed": true,
+  "scenario_id": "CHRONOS-SEMANTIC-JOIN",
+  "snapshot_mutated": false,
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "snowflake"
+}

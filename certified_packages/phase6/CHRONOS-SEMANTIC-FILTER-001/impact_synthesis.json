@@ -1,0 +1,71 @@
+{
+  "analysis_id": "CHRONOS-SEMANTIC-FILTER-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "impact_synthesis",
+  "blocking_questions": [
+    {
+      "affected_output_field": null,
+      "delta_id": "semantic-delta-f3ecd7450458ce4acd9d",
+      "question": "Is the changed row filter for urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD) part of the certified model contract?",
+      "question_id": "semantic-question-be0f09efe26554fe7d28",
+      "required_evidence_ids": [
+        "semantic-required-evidence-8f23826fda9529f27dc2",
+        "semantic-required-evidence-1297632b1738d633c832",
+        "semantic-required-evidence-56b53a5ce7d6213ac14c"
+      ],
+      "resolution_state": "UNRESOLVED",
+      "subject": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)"
+    }
+  ],
+  "decision": {
+    "certainty": "high_confidence",
+    "disposition": "hold_for_review",
+    "reason_codes": [
+      "semantic_compatibility_unresolved",
+      "certified_downstream_reach"
+    ],
+    "rule_id": "semantic-decision-hold-unresolved-downstream-reach"
+  },
+  "engine_version": "6.2.0",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "parser_name": "sqlglot",
+  "parser_version": "30.13.0",
+  "proposal_fingerprint": "sha256:c58babb40980c649d3c0ca328c820e7877f7d3bfd25b3a0691e88d83af34515c",
+  "proposal_id": "CHRONOS-SEMANTIC-FILTER-PROPOSAL-001",
+  "required_evidence": [
+    {
+      "delta_id": "semantic-delta-f3ecd7450458ce4acd9d",
+      "required_evidence_id": "semantic-required-evidence-8f23826fda9529f27dc2",
+      "requirement_type": "certified_population_contract",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)"
+    },
+    {
+      "delta_id": "semantic-delta-f3ecd7450458ce4acd9d",
+      "required_evidence_id": "semantic-required-evidence-1297632b1738d633c832",
+      "requirement_type": "row_count_comparison",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)"
+    },
+    {
+      "delta_id": "semantic-delta-f3ecd7450458ce4acd9d",
+      "required_evidence_id": "semantic-required-evidence-56b53a5ce7d6213ac14c",
+      "requirement_type": "downstream_consumer_test",
+      "state": "REQUIRED_FOR_DECISION_RESOLUTION",
+      "subject": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)"
+    }
+  ],
+  "scenario_id": "CHRONOS-SEMANTIC-FILTER",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres",
+  "summary": {
+    "affected_dataset_count": 16,
+    "affected_field_count": 21,
+    "semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+    "semantic_delta_count": 1,
+    "severity_if_realized": "high",
+    "structural_delta_count": 0
+  }
+}

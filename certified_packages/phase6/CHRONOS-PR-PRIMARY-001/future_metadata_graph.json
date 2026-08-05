@@ -1,0 +1,2379 @@
+{
+  "analysis_id": "CHRONOS-PR-PRIMARY-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "future_metadata_graph",
+  "base_commit": "fixture-base-primary-v1",
+  "created_at": "2026-08-05T00:00:00Z",
+  "edge_classification": {
+    "counterfactual": "Explicit parser-derived proposed identity mapping.",
+    "observed": "Current supplied DataHub lineage only.",
+    "unresolved": "Static repository reference inconsistent with the proposed identity."
+  },
+  "engine_version": "6.3.0",
+  "head_commit": "fixture-head-primary-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "nodes": [
+    {
+      "node_id": "repo-file:dags/orders_pipeline.py",
+      "node_type": "REPOSITORY_FILE",
+      "state": "PROPOSED_HEAD"
+    },
+    {
+      "node_id": "repo-file:quality/order_checks.yml",
+      "node_type": "REPOSITORY_FILE",
+      "state": "PROPOSED_HEAD"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "node_type": "COUNTERFACTUAL_FIELD",
+      "state": "PROPOSED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    },
+    {
+      "node_id": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE",
+      "node_type": "DATAHUB_FIELD",
+      "state": "CURRENT_OBSERVED"
+    }
+  ],
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "paths": [
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-030105f45f76796574fc",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-177fc14ffd3feb04e514"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-03e1711eaca4c520a765",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282",
+        "pr-edge-a5df8c7d2d76ffb3f4f3"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-0474b7fc85a3186648a7",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-0493b46b65e561d3bdb9",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-24eceb6d9bb216969276"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-050eeb09b04692922f67",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-0b6ff047a6136542fb97",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4",
+        "pr-edge-8d764d2fc744d85a3184"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-1aac9ec6e87fbf09028f",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-1b8cc2164139a1abc38d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-256b1aa166aa9ee96b9b",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-28ab5fe56875388096d2",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02",
+        "pr-edge-1f9118a3049d2f439ba6"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-296238866a43425c5cc1",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-464731139c67313e8a32"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-2a1fc8aad8444b1cff77",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-707d79a35e8429420e28"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 1,
+      "path_id": "pr-path-2a3ca5e79e45b6122a80",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-2b67958b86ad47e04197",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-2f6a072d69ebef080c12",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-24eceb6d9bb216969276"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-3480ee86da49764a83b3",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-35b2b03968d1705a27f0",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4",
+        "pr-edge-8d764d2fc744d85a3184"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-38a6831deb2135b73a4d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4",
+        "pr-edge-8d764d2fc744d85a3184"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-3a519ec3c99aa87f2901",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-707d79a35e8429420e28"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-3d13bc673022a683639d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02",
+        "pr-edge-1f9118a3049d2f439ba6"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-3f43d2388d00f801bdc4",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-4213cc87faadf4ce6202",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2",
+        "pr-edge-ae178cd56cf88c4753cb"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-42b6114d194d6e93915d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02",
+        "pr-edge-1f9118a3049d2f439ba6"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-44a4a697e6d28867869d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e",
+        "pr-edge-3f551d9fdb959707d78d"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-475152f08d1726b59aa1",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-24eceb6d9bb216969276"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-47955c4ea2ad10ae1c6d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a4b6213a9d8161f3419a"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-494a79c65f54df2001f1",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-6f3fdef3a0edea0dc4ce"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-50c9dd54946a14729249",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-7c827dd286773dc15be7"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-5232c56e649a8df7eee0",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-2ce4f1db44724e5f4d10"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 1,
+      "path_id": "pr-path-5318ce11943ba1adff2e",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-5749e2d6e6b2acc729d6",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-aa1e12079b1b3f4d2177"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-594ca731790fa2da33bb",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-5dc50be5de510f76ba2f",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-2ce4f1db44724e5f4d10"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-5eff3571cfca88a7d2db",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-464731139c67313e8a32"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-6441c9d92c08d5971240",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-464731139c67313e8a32"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-66dc5cbea34f36943261",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a4b6213a9d8161f3419a"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 1,
+      "path_id": "pr-path-66e43a3f67fafd7a190b",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-69c7a0b19391053aef51",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-6bd112203bc3df35b49b",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-6f3fdef3a0edea0dc4ce"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-6f34269a0493394d0c4e",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-7b90f6591cfd2df2a668",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-24eceb6d9bb216969276"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-7d13fbd5725e3dee0ec2",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282",
+        "pr-edge-a5df8c7d2d76ffb3f4f3"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-7f5a56afebdb837e10dc",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee",
+        "pr-edge-fb2fb9339f6d110f9a5c"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 1,
+      "path_id": "pr-path-86c7fd6df0f46eebf331",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-87eba6df19cd88431499",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-89ad094c2a28b885fc55",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2",
+        "pr-edge-ae178cd56cf88c4753cb"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-932202e056602f8730b0",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-7c827dd286773dc15be7"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-9412f4fde092a4860675",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2",
+        "pr-edge-ae178cd56cf88c4753cb"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-94fe8abb0e87fe55bd81",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-464731139c67313e8a32"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-978ab2f7658366a7ba09",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-9b7363a676b5271ee698",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a4b6213a9d8161f3419a"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-9c560967470129202381",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-9dbd2c6118fd68dff9d4",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-177fc14ffd3feb04e514"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-9dcee82d9ff0d9fb54f3",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282",
+        "pr-edge-a5df8c7d2d76ffb3f4f3"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-a0317e4d286b8eb57f8e",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-707d79a35e8429420e28"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-a513851167c2614bf01b",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-7c827dd286773dc15be7"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-a71d4b1a5b28b34bf900",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e",
+        "pr-edge-3f551d9fdb959707d78d"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-a77f599a2e5603ec0822",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-ad976c2fce443b168df1",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-af81d7bf6db0937d4004",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-b1a66e7518cb7553ba94",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-aa1e12079b1b3f4d2177"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-b1b1a0644f5433e01359",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-aa1e12079b1b3f4d2177"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-b3870c37c31cfd200ddf",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2",
+        "pr-edge-ae178cd56cf88c4753cb"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-b64b42167e7f4c3d8b16",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-6f3fdef3a0edea0dc4ce"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-b91092741be6e34802cc",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-44da0d82c4a1384e4282",
+        "pr-edge-a5df8c7d2d76ffb3f4f3"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-b9eeb4df0ef0d5a81899",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4",
+        "pr-edge-8d764d2fc744d85a3184"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-c37e983da844c50d5316",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-2ce4f1db44724e5f4d10"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-c911491e9d6d7d278a60",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-2ce4f1db44724e5f4d10"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-c92cac34500a39338bee",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee",
+        "pr-edge-fb2fb9339f6d110f9a5c"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-caee394781def704381d",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee",
+        "pr-edge-fb2fb9339f6d110f9a5c"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-cc742f8911ca5afc2c99",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-177fc14ffd3feb04e514"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-d3931e2d08edbbdf206e",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-177fc14ffd3feb04e514"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-d71ed00a7ea226c054c2",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-707d79a35e8429420e28"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-d7ba69f18f60c9ce7879",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-d96e0fd713d9bc0e2e82",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-6f3fdef3a0edea0dc4ce"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-db0b9792fd80ddf79888",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-db3bfbf919b8c0b27583",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-360fc47b07caaa1b12ee",
+        "pr-edge-fb2fb9339f6d110f9a5c"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-dc341628d91a0ebde030",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02",
+        "pr-edge-1f9118a3049d2f439ba6"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-dcf06bd083d231f463bd",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-52030d9f2a6824373a02"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-e008028f5afefdd8c619",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-7c827dd286773dc15be7"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-e03822e32f1ecbe7de42",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-e4b48f64f6a6ddb348b9",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a3e8d90f0ed0f30ccfb4"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-e6bee761a28c8c9a2b12",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-e768603239997ad833f4",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-aa1e12079b1b3f4d2177"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-f53c20c29d94beaf88b5",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e",
+        "pr-edge-3f551d9fdb959707d78d"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-f656e3a456427b1a0b9f",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-1541e97829419a160cb2"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+      ],
+      "observed_edge_count": 3,
+      "path_id": "pr-path-f7dec807dfe924ec5afb",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-0c79c15759ec7e72456e",
+        "pr-edge-3f551d9fdb959707d78d"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total"
+    },
+    {
+      "code_derived_edge_count": 0,
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "counterfactual_edge_count": 0,
+      "node_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+      ],
+      "observed_edge_count": 2,
+      "path_id": "pr-path-fc5d03648bde419e2ece",
+      "relationship_ids": [
+        "pr-edge-7077f0d770e72f636490",
+        "pr-edge-a4b6213a9d8161f3419a"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL"
+    }
+  ],
+  "proposal_fingerprint": "sha256:74765bc95a776935ade115a4a23f33841dde21534b8179133ac3ba3ee4ed2808",
+  "proposal_id": "CHRONOS-PR-PRIMARY-PROPOSAL-001",
+  "relationships": [
+    {
+      "current_edge_id": "lineage-edge-e74dbf8e7bf54b78a322",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-6af73a6468ce7ab0dad7",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|upstreamLineage|30"
+      ],
+      "relationship_id": "pr-edge-0c79c15759ec7e72456e",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-279b836e68667e1a5ab2",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-ee61b37af19da980e934",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "pr-edge-1541e97829419a160cb2",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-4279a5839fd7fb8ff416",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-e6da079b9949542ffa21",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-177fc14ffd3feb04e514",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details_replica,PROD)|order_total",
+      "transform_operations": [
+        "COPY: \"ORDER_DETAILS\".\"ORDER_TOTAL\" AS \"ORDER_TOTAL\""
+      ]
+    },
+    {
+      "current_edge_id": "lineage-edge-c5960a664e2d565404b4",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-bbbed9f12b214935b3fe",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|upstreamLineage|0"
+      ],
+      "relationship_id": "pr-edge-1f9118a3049d2f439ba6",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|AVERAGE_ORDER_VALUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": null,
+      "edge_kind": "UNRESOLVED_REFERENCE",
+      "evidence_references": [
+        "pr-stale-fac24903886b23238ee7"
+      ],
+      "mapping_group_ids": [],
+      "relationship_id": "pr-edge-2297cb428bdd70d7b419",
+      "source": "repo-file:quality/order_checks.yml",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-f9bd882cdaaa2497394d",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-3029cfbfafa2964e865d",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-24eceb6d9bb216969276",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.ORDER_DETAILS,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-d6232ff40009c7ab2062",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-7f30a7f4bbaf6d4cc88d",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-2ce4f1db44724e5f4d10",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Time_Inteligence_Measures,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-1ecea13ee78af7769bba",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-f1b70943eeeb666852b4",
+        "evidence-f551f1938886b6b0fb57"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|upstreamLineage|2"
+      ],
+      "relationship_id": "pr-edge-360fc47b07caaa1b12ee",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-cf9a5075831b4dc5709f",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-267e29f3f433b298edb4",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|upstreamLineage|30"
+      ],
+      "relationship_id": "pr-edge-3f551d9fdb959707d78d",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry-looker.view.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:looker,b2fd91.order-entry.explore.order_details,PROD)|order_details.order_total",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-7753073f07127d7779dc",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-9ceba247a084ddfca067",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|upstreamLineage|2"
+      ],
+      "relationship_id": "pr-edge-44da0d82c4a1384e4282",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-16c580c8027aa8982444",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-63e57f28965b42d0c303",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-464731139c67313e8a32",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Product_Perfromance_Measures,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-fca7e3e38abfd1690038",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-077bc47f506efccc54d1",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "pr-edge-52030d9f2a6824373a02",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|AVERAGE_ORDER_VALUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-cd3881343cccfaec5c4e",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-9e482b191ed95a1459fa",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|upstreamLineage|57"
+      ],
+      "relationship_id": "pr-edge-6f3fdef3a0edea0dc4ce",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|Total Revenue",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-4d77c16b585b20e01c0e",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-d1e4ea3d253fea0b25d1",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|upstreamLineage|41"
+      ],
+      "relationship_id": "pr-edge-7077f0d770e72f636490",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "transform_operations": [
+        "NONE"
+      ]
+    },
+    {
+      "current_edge_id": "lineage-edge-9cdf0701751cd779485c",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-0bdbb1d01b61e4caca78",
+        "evidence-aba9ef492915702e9ed0",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|3",
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|5"
+      ],
+      "relationship_id": "pr-edge-707d79a35e8429420e28",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "transform_operations": [
+        "NONE"
+      ]
+    },
+    {
+      "current_edge_id": "lineage-edge-d2a5c718e94750fdc615",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-d9f315c2d87d2ade319e",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-7c827dd286773dc15be7",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Essential_KPI_Measures,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-ef801c18bf6caa8ade3f",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-759ef2dab667b5da1503",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-8d764d2fc744d85a3184",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_history,PROD)|order_total",
+      "transform_operations": [
+        "NONE"
+      ]
+    },
+    {
+      "current_edge_id": null,
+      "edge_kind": "COUNTERFACTUAL_EDGE",
+      "evidence_references": [
+        "pr-delta-5a27fc6c51982093a333",
+        "pr-delta-ae1381ec53130635a53f",
+        "pr-delta-f31bcc0dcb707a90d47f",
+        "pr-stale-a5b4bdb8f3fe2e5fb55b",
+        "pr-stale-fac24903886b23238ee7",
+        "semantic-delta-41cbe5c61ac7bdf329be",
+        "semantic-delta-633d300829a0f0565a5a"
+      ],
+      "mapping_group_ids": [],
+      "relationship_id": "pr-edge-9fc0bbe6474a00fb4a88",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount",
+      "transform_operations": [
+        "RENAME"
+      ]
+    },
+    {
+      "current_edge_id": "lineage-edge-24a6922c0e6dbb8a31c3",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-43e46acdc9c25b126872",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "pr-edge-a3e8d90f0ed0f30ccfb4",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_history,PROD)|order_total",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-eaafa26160825abef0c3",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-e7c38e937527b1589b31",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-a4b6213a9d8161f3419a",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Customer_Analytics_Measures,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-2c7ac5cae92dc7c19258",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-ef08487e6531f013b447",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|upstreamLineage|3"
+      ],
+      "relationship_id": "pr-edge-a5df8c7d2d76ffb3f4f3",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.37fcfb15-34ae-973a-5ae3-cf63691d48e3,PROD)|TOTAL_REVENUE",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.c067553a-127e-a871-14a0-5f32cb032c78,PROD)|TOTAL_REVENUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-ca4ec76991290d397a4b",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-11de52daba974ecfc498",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-aa1e12079b1b3f4d2177",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:snowflake,b2fd91.order_entry_db.analytics.order_details,PROD)|order_total",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:powerbi,b2fd91.datahub_order_entries.Geographic_Measures,PROD)|ORDER_TOTAL",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-96721d2453ba1dff4a6b",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-e2024105e09ff117e71e",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|upstreamLineage|1"
+      ],
+      "relationship_id": "pr-edge-ae178cd56cf88c4753cb",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|AVERAGE_ORDER_VALUE",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|AVERAGE_ORDER_VALUE",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": null,
+      "edge_kind": "UNRESOLVED_REFERENCE",
+      "evidence_references": [
+        "pr-stale-a5b4bdb8f3fe2e5fb55b"
+      ],
+      "mapping_group_ids": [],
+      "relationship_id": "pr-edge-eeb16f4cbad69d12f847",
+      "source": "repo-file:dags/orders_pipeline.py",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "transform_operations": []
+    },
+    {
+      "current_edge_id": "lineage-edge-c972fd6173ba92960a3c",
+      "edge_kind": "OBSERVED_DATAHUB_EDGE",
+      "evidence_references": [
+        "evidence-2206a8ae436b1e3b6df9",
+        "evidence-f1b70943eeeb666852b4"
+      ],
+      "mapping_group_ids": [
+        "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|upstreamLineage|4"
+      ],
+      "relationship_id": "pr-edge-fb2fb9339f6d110f9a5c",
+      "source": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.8bfe7483-1c9a-a0e1-ec84-57207dd37a15,PROD)|TOTAL_REVENUE",
+      "target": "urn:li:dataset:(urn:li:dataPlatform:tableau,b2fd91.b980a8c5-28eb-119e-f6ca-4da32732e5be,PROD)|TOTAL_REVENUE",
+      "transform_operations": []
+    }
+  ],
+  "repository_fingerprint": "sha256:6bb50643bcc114c8168ce0345b4f7957471d2fee767ac90dfe0510b8a7363cfa",
+  "roots": [
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "current_origin": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_origins": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "root_cause_id": "pr-root-36b103fe6bcace2f0364"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "current_origin": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_origins": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "root_cause_id": "pr-root-7817b15a88cbffb9ef50"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "current_origin": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_origins": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "root_cause_id": "pr-root-a2da326fddd0ab9aa305"
+    },
+    {
+      "contributing_file_ids": [
+        "pr-file-1e0c866550dd9ac8b244"
+      ],
+      "current_origin": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_total",
+      "future_origins": [
+        "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)|order_amount"
+      ],
+      "root_cause_id": "pr-root-c9162439da886c768124"
+    }
+  ],
+  "scenario_id": "CHRONOS-MULTIFILE-PRIMARY",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}

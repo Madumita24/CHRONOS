@@ -1,0 +1,49 @@
+{
+  "analysis_id": "CHRONOS-PR-TYPE-ALIGNMENT-001",
+  "artifact_schema_version": "1.0",
+  "artifact_type": "technical_impact_analysis",
+  "base_commit": "fixture-base-type-alignment-v1",
+  "confirmed_runtime_failures": 0,
+  "engine_version": "6.3.0",
+  "findings": [
+    {
+      "certainty": "UNRESOLVED_RUNTIME_EFFECT",
+      "consequence": "CONTRACT_MISMATCH",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "downstream_target_count": 0,
+      "finding_id": "pr-impact-83fbfc356b45fdcf6085",
+      "root_cause_id": "pr-root-11b39da8421d787f7498"
+    }
+  ],
+  "head_commit": "fixture-head-type-alignment-v1",
+  "intake_mode": "EXPORTED_PR_BUNDLE",
+  "operation": "MULTI_FILE_PR_CHANGE",
+  "proposal_fingerprint": "sha256:5e6e53d327fe1a70e7c56f39bb77ac9d34355ed00ab9969e27173280e97d27fd",
+  "proposal_id": "CHRONOS-PR-TYPE-ALIGNMENT-PROPOSAL-001",
+  "repository_fingerprint": "sha256:3a3aa364fe0b875843e852da6d165be05621f6a8f4dc616be4f2f2adffd79b30",
+  "root_causes": [
+    {
+      "compatibility_state": "UNRESOLVED",
+      "contributing_file_ids": [
+        "pr-file-4f4487c1cbff180710d6"
+      ],
+      "delta_ids": [
+        "pr-delta-26908759368b4a2a9e24"
+      ],
+      "evidence_state": "CODE_DERIVED",
+      "logical_change_id": "logical-change-d929fb4bd57945b75cc3",
+      "resolved_entities": [
+        "order_details",
+        "order_total"
+      ],
+      "root_cause_id": "pr-root-11b39da8421d787f7498",
+      "root_type": "CONTRACT_CHANGE",
+      "scope": "model:order_details:column:order_total"
+    }
+  ],
+  "scenario_id": "CHRONOS-TYPE-ALIGNMENT",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6"
+}
