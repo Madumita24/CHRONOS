@@ -7,6 +7,13 @@ Phase 6.1 adds a separate reusable backend structural-change engine for
 DataHub-derived snapshot, creates an isolated certified analysis package, and
 preserves the Phase 1-5 golden fixture and frontend behavior.
 
+Phase 6.2 adds a separate deterministic semantic SQL/dbt change engine for one
+logical model. It compares parser-normalized BEFORE/AFTER SQL, resolves exact
+DataHub model and field identities from the supplied snapshot, detects
+aggregation, filter, join, expression, and structural output deltas, and
+certifies an isolated 18-artifact analysis package. It never executes SQL or
+Jinja, queries or writes DataHub, generates repairs, or changes the frontend.
+
 CHRONOS has a read-only engineering review surface for the frozen
 `CHRONOS-DEMO-001` result. The review now includes a certified, interactive
 Current/Future/Diff field-lineage graph and a coordinated Impact & Evidence
@@ -98,6 +105,17 @@ or generate repairs.
 Architecture and verification are recorded in
 [PHASE_6_1_GENERALIZED_ENGINE_ARCHITECTURE.md](PHASE_6_1_GENERALIZED_ENGINE_ARCHITECTURE.md)
 and `PHASE_6_1_GENERALIZED_ENGINE_RESULT.md`.
+
+## Semantic SQL/dbt analysis
+
+See [the Phase 6.2 developer guide](PHASE_6_2_DEVELOPER_GUIDE.md) for the
+Python and CLI interfaces, strict proposal shape, safe dbt boundary, and four
+runnable examples. The architecture and verified evidence boundary are in
+[PHASE_6_2_SEMANTIC_CHANGE_ARCHITECTURE.md](PHASE_6_2_SEMANTIC_CHANGE_ARCHITECTURE.md),
+with pre-change inspection in
+[PHASE_6_2_SQL_SEMANTIC_INVENTORY.md](PHASE_6_2_SQL_SEMANTIC_INVENTORY.md).
+Final verification, fingerprints, and exact regression totals are recorded in
+[PHASE_6_2_SEMANTIC_CHANGE_RESULT.md](PHASE_6_2_SEMANTIC_CHANGE_RESULT.md).
 
 ## Phase 5 documents
 

@@ -1,0 +1,19 @@
+{
+  "after_code_reference": "examples/semantic_aggregation/after.sql",
+  "analysis_id": "CHRONOS-SEMANTIC-AGGREGATION-001",
+  "before_code_reference": "examples/semantic_aggregation/before.sql",
+  "created_at": "2026-08-05T00:00:00Z",
+  "description": "CHRONOS fixture changing the definition of the real order_total model output from SUM to AVG.",
+  "model_dataset_urn": "urn:li:dataset:(urn:li:dataPlatform:dbt,b2fd91.ORDER_ENTRY_DB.analytics.order_details,PROD)",
+  "model_relation": "order_entry_db.analytics.order_details",
+  "operation": "SEMANTIC_CODE_CHANGE",
+  "proposal_id": "CHRONOS-SEMANTIC-AGGREGATION-PROPOSAL-001",
+  "proposal_metadata": {
+    "code_provenance": "chronos_example_fixture",
+    "primary_demo": "true"
+  },
+  "scenario_id": "CHRONOS-SEMANTIC-AGGREGATION",
+  "source_snapshot_fingerprint": "sha256:774185f19c6fea113ef7adfc5e14583e05e7e08a1fad0c59bd6c6fad755db72c",
+  "source_snapshot_id": "snapshot-4981780a1e7123349ef6",
+  "sql_dialect": "postgres"
+}

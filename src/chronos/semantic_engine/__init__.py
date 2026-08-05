@@ -1,0 +1,66 @@
+"""Public deterministic Phase 6.2 semantic SQL/dbt analysis API."""
+
+from .engine import SEMANTIC_ARTIFACT_FILENAMES, analyze_semantic_code_change
+from .errors import (
+    SemanticCertificationError,
+    SemanticEngineError,
+    SemanticProposalError,
+    SemanticResolutionError,
+    SqlParseError,
+    UnsafeCodeInputError,
+    UnsupportedDbtError,
+)
+from .models import (
+    SEMANTIC_ENGINE_VERSION,
+    SQL_PARSER_NAME,
+    SQL_PARSER_VERSION,
+    AggregationChange,
+    Delta,
+    DeltaScope,
+    DeltaType,
+    DerivedExpressionChange,
+    FilterChange,
+    JoinPredicateChange,
+    JoinTypeChange,
+    JoinedRelationChange,
+    ParsedModel,
+    SemanticAnalysisIdentity,
+    SemanticAnalysisResult,
+    SemanticCodeChangeProposal,
+    SemanticCompatibilityState,
+    SemanticOperation,
+)
+from .parser import parse_model
+from .proposals import parse_semantic_proposal
+
+__all__ = [
+    "SEMANTIC_ARTIFACT_FILENAMES",
+    "SEMANTIC_ENGINE_VERSION",
+    "SQL_PARSER_NAME",
+    "SQL_PARSER_VERSION",
+    "AggregationChange",
+    "Delta",
+    "DeltaScope",
+    "DeltaType",
+    "DerivedExpressionChange",
+    "FilterChange",
+    "JoinPredicateChange",
+    "JoinTypeChange",
+    "JoinedRelationChange",
+    "ParsedModel",
+    "SemanticAnalysisIdentity",
+    "SemanticAnalysisResult",
+    "SemanticCertificationError",
+    "SemanticCodeChangeProposal",
+    "SemanticCompatibilityState",
+    "SemanticEngineError",
+    "SemanticOperation",
+    "SemanticProposalError",
+    "SemanticResolutionError",
+    "SqlParseError",
+    "UnsafeCodeInputError",
+    "UnsupportedDbtError",
+    "analyze_semantic_code_change",
+    "parse_model",
+    "parse_semantic_proposal",
+]

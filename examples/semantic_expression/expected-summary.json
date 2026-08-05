@@ -1,0 +1,9 @@
+{
+  "affected_output": "order_total",
+  "code_provenance": "CHRONOS example fixture, not retrieved SQL",
+  "expected_delta_types": [
+    "DERIVED_EXPRESSION_CHANGE"
+  ],
+  "expected_semantic_compatibility": "SEMANTIC_COMPATIBILITY_UNKNOWN",
+  "structural_delta_count": 0
+}

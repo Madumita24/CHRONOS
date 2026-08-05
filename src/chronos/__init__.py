@@ -8,6 +8,12 @@ from .structural_engine import (
     StructuralOperation,
     analyze_structural_change,
 )
+from .semantic_engine import (
+    SemanticAnalysisResult,
+    SemanticCodeChangeProposal,
+    SemanticCompatibilityState,
+    analyze_semantic_code_change,
+)
 
 __all__ = [
     "FieldDeleteProposal",
@@ -15,5 +21,9 @@ __all__ = [
     "FieldTypeChangeProposal",
     "StructuralAnalysisResult",
     "StructuralOperation",
+    "SemanticAnalysisResult",
+    "SemanticCodeChangeProposal",
+    "SemanticCompatibilityState",
+    "analyze_semantic_code_change",
     "analyze_structural_change",
 ]
